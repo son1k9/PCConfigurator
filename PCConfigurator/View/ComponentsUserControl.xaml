@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="PCConfigurator.View.ComponentsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels"
+             xmlns:views="clr-namespace:PCConfigurator.View.ComponentsUserControls" 
+             xmlns:viewmodel="clr-namespace:PCConfigurator.ViewModel" 
+             d:DataContext="{d:DesignInstance Type=viewmodel:ComponentsViewModel}"
+             mc:Ignorable="d" 
+             d:DesignWidth="1600" d:DesignHeight="850" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0" Margin="10">
+            <StackPanel.Resources>
+                <!-- Style for menu buttons-->
+                <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="MinHeight" Value="50"/>
+                    <Setter Property="MinWidth" Value="100"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="RadioButton">
+                                <Grid Background="{TemplateBinding Background}">
+                                    <TextBlock VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="{TemplateBinding Property=Content}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="AliceBlue"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="AliceBlue"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+
+            <RadioButton Content="Материнские платы" Command="{Binding NavigateMotherboardCommand}"/>
+            <RadioButton Content="Процессоры" Command="{Binding NavigateCpuCommand}"/>
+            <RadioButton Content="Кулеры" Command="{Binding NavigateCoolerCommand}"/>
+            <RadioButton Content="Оперативная память" Command="{Binding NavigateRamCommand}"/>
+            <RadioButton Content="Блоки питания" Command="{Binding NavigatePowerSupplyCommand}"/>
+            <RadioButton Content="Видеокарты" Command="{Binding NavigateGpuCommand}"/>
+            <RadioButton Content="SSD" Command="{Binding NavigateSsdCommand}"/>
+            <RadioButton Content="HDD" Command="{Binding NavigateHddCommand}"/>
+            <RadioButton Content="M2 SSD" Command="{Binding NavigateM2SsdCommand}"/>
+        </StackPanel>
+        <ContentControl Content="{Binding CurrentViewModel}" Grid.Column="1">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewmodels:MotherboardViewModel}">
+                    <views:MotherboardUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:CpuViewModel}">
+                    <views:CpuUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:CoolerViewModel}">
+                    <views:CoolerUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:RamViewModel}">
+                    <views:RamUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:PowerSupplyViewModel}">
+                    <views:PowerSupplyUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:GpuViewModel}">
+                    <views:GpuUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:SsdViewModel}">
+                    <views:SsdUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:HddViewModel}">
+                    <views:HddUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:M2SsdViewModel}">
+                    <views:M2SsdUserControl/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+    </Grid>
+</UserControl>
