@@ -431,8 +431,6 @@ public partial class App : Application
             M2Size = Model.Components.M2.M2Size._2280
         });
 
-        dbContext.SaveChanges();
-
         //Motherboards
         Motherboard motherboard = new Motherboard()
         {
@@ -443,10 +441,11 @@ public partial class App : Application
             PCIex16Slots = 1,
             RamType = RamType.DDR4,
             Socket = socket1,
-            Chipset = Chipset.FromString("A320")
+            Chipset = chipset1
         };
 
         dbContext.Add(motherboard);
+
 
         dbContext.SaveChanges();
     }
