@@ -1,15 +1,19 @@
-﻿#nullable disable
+﻿namespace PCConfigurator.Model.Components;
 
-namespace PCConfigurator.Model.Components
+internal class Chipset
 {
-    internal class Chipset
+    public int ChipsetId { get; set; }
+    public required string Name { get; set; }
+
+    public int SocketId { get; set; }
+    public required Socket Socket { get; set; }
+
+    public List<Motherboard> Motherboards { get; } = [];
+
+    public static Chipset FromString(string s)
     {
-        public int ChipsetId { get; set; }
-        public string Name { get; set; }
-
-        public int SocketId { get; set; }
-        public Socket Socket { get; set; }
-
-        public List<Motherboard> Motherboards { get; set; } = [];
+        ApplicationContext dbContext = new ApplicationContext();
+        Chipset chipset = dbContext.Chipsets.First();
+        return chipset;
     }
 }

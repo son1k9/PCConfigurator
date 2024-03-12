@@ -6,7 +6,7 @@
         xmlns:viewmodels="clr-namespace:PCConfigurator.ViewModel"
         xmlns:views="clr-namespace:PCConfigurator.View" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Title="MainWindow" Width="1600" Height="900" WindowStartupLocation="CenterScreen">
+        Title="PC Configurator" Width="1600" Height="900" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>

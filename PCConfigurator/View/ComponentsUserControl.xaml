@@ -14,77 +14,80 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <StackPanel Grid.Column="0" Margin="10">
-            <StackPanel.Resources>
-                <!-- Style for menu buttons-->
-                <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
-                    <Setter Property="VerticalAlignment" Value="Center"/>
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="MinHeight" Value="50"/>
-                    <Setter Property="MinWidth" Value="100"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="RadioButton">
-                                <Grid Background="{TemplateBinding Background}">
-                                    <TextBlock VerticalAlignment="Center"
+        <Border Grid.Column="0" Margin="10" BorderBrush="Black" BorderThickness="1">
+            <StackPanel>
+                <StackPanel.Resources>
+                    <!-- Style for menu buttons-->
+                    <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="MinHeight" Value="50"/>
+                        <Setter Property="MinWidth" Value="100"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="RadioButton">
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <TextBlock VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Text="{TemplateBinding Property=Content}"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="AliceBlue"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="AliceBlue"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </StackPanel.Resources>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="AliceBlue"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="AliceBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
 
-            <RadioButton Content="Материнские платы" Command="{Binding NavigateMotherboardCommand}"/>
-            <RadioButton Content="Процессоры" Command="{Binding NavigateCpuCommand}"/>
-            <RadioButton Content="Кулеры" Command="{Binding NavigateCoolerCommand}"/>
-            <RadioButton Content="Оперативная память" Command="{Binding NavigateRamCommand}"/>
-            <RadioButton Content="Блоки питания" Command="{Binding NavigatePowerSupplyCommand}"/>
-            <RadioButton Content="Видеокарты" Command="{Binding NavigateGpuCommand}"/>
-            <RadioButton Content="SSD" Command="{Binding NavigateSsdCommand}"/>
-            <RadioButton Content="HDD" Command="{Binding NavigateHddCommand}"/>
-            <RadioButton Content="M2 SSD" Command="{Binding NavigateM2SsdCommand}"/>
-        </StackPanel>
-        <ContentControl Content="{Binding CurrentViewModel}" Grid.Column="1">
-            <ContentControl.Resources>
-                <DataTemplate DataType="{x:Type viewmodels:MotherboardViewModel}">
-                    <views:MotherboardUserControl/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type viewmodels:CpuViewModel}">
-                    <views:CpuUserControl/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type viewmodels:CoolerViewModel}">
-                    <views:CoolerUserControl/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type viewmodels:RamViewModel}">
-                    <views:RamUserControl/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type viewmodels:PowerSupplyViewModel}">
-                    <views:PowerSupplyUserControl/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type viewmodels:GpuViewModel}">
-                    <views:GpuUserControl/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type viewmodels:SsdViewModel}">
-                    <views:SsdUserControl/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type viewmodels:HddViewModel}">
-                    <views:HddUserControl/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type viewmodels:M2SsdViewModel}">
-                    <views:M2SsdUserControl/>
-                </DataTemplate>
-            </ContentControl.Resources>
-        </ContentControl>
+                <RadioButton Content="Материнские платы" Command="{Binding NavigateMotherboardCommand}"/>
+                <RadioButton Content="Процессоры" Command="{Binding NavigateCpuCommand}"/>
+                <RadioButton Content="Кулеры" Command="{Binding NavigateCoolerCommand}"/>
+                <RadioButton Content="Оперативная память" Command="{Binding NavigateRamCommand}"/>
+                <RadioButton Content="Блоки питания" Command="{Binding NavigatePowerSupplyCommand}"/>
+                <RadioButton Content="Видеокарты" Command="{Binding NavigateGpuCommand}"/>
+                <RadioButton Content="SSD" Command="{Binding NavigateSsdCommand}"/>
+                <RadioButton Content="HDD" Command="{Binding NavigateHddCommand}"/>
+                <RadioButton Content="M2 SSD" Command="{Binding NavigateM2SsdCommand}"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2 0 0 0">
+            <ContentControl Content="{Binding CurrentViewModel}">
+                <ContentControl.Resources>
+                    <DataTemplate DataType="{x:Type viewmodels:MotherboardViewModel}">
+                        <views:MotherboardUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:CpuViewModel}">
+                        <views:CpuUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:CoolerViewModel}">
+                        <views:CoolerUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:RamViewModel}">
+                        <views:RamUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:PowerSupplyViewModel}">
+                        <views:PowerSupplyUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:GpuViewModel}">
+                        <views:GpuUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:SsdViewModel}">
+                        <views:SsdUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:HddViewModel}">
+                        <views:HddUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:M2SsdViewModel}">
+                        <views:M2SsdUserControl/>
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
+        </Border>
     </Grid>
 </UserControl>

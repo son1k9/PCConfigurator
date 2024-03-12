@@ -1,17 +1,14 @@
-﻿#nullable disable
+﻿namespace PCConfigurator.Model.Components;
 
-namespace PCConfigurator.Model.Components
+internal class Ssd
 {
-    internal class Ssd
-    {
-        public int SsdId { get; set; }
-        public string Model { get; set; }
-        public int Capacity { get; set; }
-        public int ReadSpeed { get; set; }
-        public int WriteSpeed { get; set; }
-        public int Tbw { get; set; }
-        public NandType NandType { get; set; }
+    public int SsdId { get; set; }
+    public required string Model { get; set; }
+    public required int Capacity { get; set; }
+    public required int ReadSpeed { get; set; }
+    public required int WriteSpeed { get; set; }
+    public required int Tbw { get; set; }
+    public required NandType NandType { get; set; }
 
-        public List<Configuration> Configurations { get; set; } = [];
-    }
+    public List<Configuration> Configurations { get; } = [];
 }

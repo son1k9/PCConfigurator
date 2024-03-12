@@ -1,14 +1,11 @@
-﻿#nullable disable
+﻿namespace PCConfigurator.Model.Components;
 
-namespace PCConfigurator.Model.Components
+internal class Hdd
 {
-    internal class Hdd
-    {
-        public int HddId { get; set; }
-        public string Model { get; set; }
-        public int Capacity { get; set; }
-        public int SpindelSpeed { get; set; }
+    public int HddId { get; set; }
+    public required string Model { get; set; }
+    public required int Capacity { get; set; }
+    public required int SpindelSpeed { get; set; }
 
-        public List<Configuration> Configurations { get; set; } = [];
-    }
+    public List<Configuration> Configurations { get; } = [];
 }

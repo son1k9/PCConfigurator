@@ -1,13 +1,10 @@
-﻿#nullable disable
+﻿namespace PCConfigurator.Model.Components;
 
-namespace PCConfigurator.Model.Components
+internal class PowerSupply
 {
-    internal class PowerSupply
-    {
-        public int PowerSupplyId { get; set; }
-        public string Model { get; set; }
-        public int Wattage { get; set; }
+    public int PowerSupplyId { get; set; }
+    public required string Model { get; set; }
+    public required int Wattage { get; set; }
 
-        public List<Configuration> Configurations { get; set; } = [];
-    }
+    public List<Configuration> Configurations { get; } = [];
 }

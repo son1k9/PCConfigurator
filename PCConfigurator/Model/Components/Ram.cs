@@ -1,18 +1,13 @@
-﻿#nullable disable
+﻿namespace PCConfigurator.Model.Components;
 
-namespace PCConfigurator.Model.Components
+internal class Ram
 {
-    internal class Ram
-    {
-        public int RamID { get; set; }
-        public string Model { get; set; }
-        public int Capacity { get; set; }
-        public int Clock { get; set; }
-        public int Cl { get; set; }
+    public int RamID { get; set; }
+    public required string Model { get; set; }
+    public required int Capacity { get; set; }
+    public required int Clock { get; set; }
+    public required int Cl { get; set; }
+    public required RamType RamType { get; set; }
 
-        public int RamTypeId { get; set; }
-        public RamType RamType { get; set; }
-
-        public List<Configuration> Configurations { get; set; } = [];
-    }
+    public List<Configuration> Configurations { get; } = [];
 }

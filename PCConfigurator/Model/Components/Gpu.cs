@@ -1,17 +1,14 @@
-﻿#nullable disable
+﻿namespace PCConfigurator.Model.Components;
 
-namespace PCConfigurator.Model.Components
+internal class Gpu
 {
-    internal class Gpu
-    {
-        public int GpuId { get; set; }
-        public string Model { get; set; }
-        public int CoreClock { get; set; }
-        public int BoostClock { get; set; }
-        public int VramCapacity { get; set; }
-        public int VramClock { get; set; }
-        public int Tdp { get; set; }
+    public int GpuId { get; set; }
+    public required string Model { get; set; }
+    public required float CoreClock { get; set; }
+    public required float BoostClock { get; set; }
+    public required int VramCapacity { get; set; }
+    public required float VramClock { get; set; }
+    public required int PowerConsumption { get; set; }
 
-        public List<Configuration> Configurations { get; set; } = [];
-    }
+    public List<Configuration> Configurations { get; set; } = [];
 }
