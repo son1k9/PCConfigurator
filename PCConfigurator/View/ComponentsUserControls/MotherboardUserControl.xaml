@@ -6,7 +6,24 @@
              xmlns:local="clr-namespace:PCConfigurator.View.ComponentsUserControls" xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" d:DataContext="{d:DesignInstance Type=componentsviewmodels:MotherboardViewModel}"
              mc:Ignorable="d" 
              d:DesignWidth="1400" d:DesignHeight="850" >
+    <UserControl.Resources>
+        <ContextMenu  x:Key="RowMenu">
+            <MenuItem Header="Редактировать" Command="{Binding DataContext.Edit, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+      CommandParameter="{Binding}">
+            </MenuItem>
+            <MenuItem Header="Удалить" Command="{Binding DataContext.Remove, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+      CommandParameter="{Binding}">
+                <MenuItem.Icon>
+                    <Image Source="/delete.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
 
+        <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow">
+            <Setter Property="ContextMenu" Value="{DynamicResource RowMenu}" />
+        </Style>
+        
+    </UserControl.Resources>
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -20,6 +37,7 @@
         <StackPanel Margin="15 0" Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button Content="Add" Width="80" Height="35" VerticalAlignment="Center" Command="{Binding Add}"/>
         </StackPanel>
-        <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" Style="{StaticResource componentsList}"/>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" Style="{StaticResource componentsList}"
+                  RowStyle="{StaticResource componentsListRow}"/>
     </Grid>
 </UserControl>

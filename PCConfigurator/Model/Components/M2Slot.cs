@@ -24,4 +24,18 @@ public class M2Slot
         }
         return result;
     }
+
+    public M2Slot Clone()
+    {
+        M2Slot m2Slot = new M2Slot()
+        {
+            M2SlotId = M2SlotId,
+            M2Interface = M2Interface,
+            SlotNumber = SlotNumber,
+            M2Size = M2Size,
+            MotherboardId = MotherboardId,
+            Motherboard = Motherboard
+        };
+        return m2Slot;
+    }
 }

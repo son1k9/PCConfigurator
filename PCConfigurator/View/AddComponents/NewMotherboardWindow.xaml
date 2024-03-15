@@ -7,14 +7,14 @@
         xmlns:components="clr-namespace:PCConfigurator.Model.Components" 
         d:DataContext="{d:DesignInstance Type=components:Motherboard}"
         mc:Ignorable="d"
-        Title="NewMotherboardWindow" Height="500" Width="350">
+        Title="NewMotherboardWindow" Height="550" Width="380">
 
     <Window.Resources>
-        <ObjectDataProvider x:Key="EnumDataSource"
-                        ObjectType="{x:Type sys:Enum}"
+        <ObjectDataProvider x:Key="RamTypeDataSource"
+                        ObjectType="{x:Type components:RamType}"
                         MethodName="GetValues">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="HorizontalAlignment" />
+                <x:Type Type="{x:Type components:RamType}"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
@@ -47,7 +47,25 @@
         <ComboBox Grid.Row="2" Grid.Column="1" SelectedItem="{Binding Chipset}" IsEditable="True" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxChipset"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Тип оперативной памяти: " Style="{StaticResource textBlockNewComponent}"/>
-        <ComboBox Grid.Row="3" Grid.Column="1" SelectedItem="{Binding RamType}" IsEditable="True" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxRamType"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" SelectedItem="{Binding RamType}" IsEditable="True" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxRamType"
+                  ItemsSource="{Binding Source={StaticResource RamTypeDataSource}}"/>
 
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Кол-во слотов ОЗУ: " Style="{StaticResource textBlockNewComponent}"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding RamSlots}" Style="{StaticResource textBoxNewComponent}"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Максимальный объем ОЗУ: " Style="{StaticResource textBlockNewComponent}"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding MaxRamCapacity}" Style="{StaticResource textBoxNewComponent}"/>
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Количество коннекторов SATA: " Style="{StaticResource textBlockNewComponent}"/>
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Sata3Ports}" Style="{StaticResource textBoxNewComponent}"/>
+
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="Количество слотов PCIex16: " Style="{StaticResource textBlockNewComponent}"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PCIex16Slots}" Style="{StaticResource textBoxNewComponent}"/>
+
+        <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
+            <Button Content="OK" VerticalAlignment="Center" Width="70" Height="30" Click="Button_Click"/>
+            <Button Content="Cancel" VerticalAlignment="Center" Width="70" Height="30" Margin="10 0 0 0" IsCancel="True"/>
+        </StackPanel>
+        
     </Grid>
 </Window>

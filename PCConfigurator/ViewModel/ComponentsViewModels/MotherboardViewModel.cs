@@ -29,8 +29,32 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
             _viewSource.Source = dbContext.Motherboard.Local.ToObservableCollection();
         }
 
-        private RelayCommand remove;
-        public ICommand Remove => remove ??= new RelayCommand(PerformRemove);
+
+        private RelayCommand _add;
+        public ICommand Add => _add ??= new RelayCommand(PerformAdd);
+
+        private void PerformAdd(object? commandParameter)
+        {
+            Motherboard motherboard = new Motherboard();
+
+            NewMotherboardWindow window = new NewMotherboardWindow
+            {
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = Application.Current.MainWindow,
+                DataContext = motherboard
+            };
+            window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
+            window.comboBoxChipset.ItemsSource = dbContext.Chipset.Local.ToObservableCollection();
+
+            if (window.ShowDialog() == true)
+            {
+                dbContext.Motherboard.Add(motherboard);
+                dbContext.SaveChanges();
+            }
+        }
+
+        private RelayCommand _remove;
+        public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
 
         private void PerformRemove(object? commandParameter)
         {
@@ -42,28 +66,33 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
                     motherboard.M2Slots.Clear();
                     dbContext.Motherboard.Remove(motherboard);
                     dbContext.SaveChanges();
-                    _viewSource.View.Refresh();
                 }
             }
         }
 
-        private RelayCommand add;
-        public ICommand Add => add ??= new RelayCommand(PerformAdd);
-       
-        private void PerformAdd(object? commandParameter)
-        {
-            NewMotherboardWindow window = new NewMotherboardWindow
-            {
-                WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                Owner = Application.Current.MainWindow,
-                DataContext = new Motherboard()
-            };
-            window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
-            window.comboBoxChipset.ItemsSource = dbContext.Chipset.Local.ToObservableCollection();
+        private RelayCommand _edit;
+        public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
 
-            if (window.ShowDialog() == true)
+        private void PerformEdit(object? commandParameter)
+        {
+            if (commandParameter is Motherboard motherboard)
             {
-                
+                Motherboard motherboardCopy = motherboard.Clone();
+                NewMotherboardWindow window = new NewMotherboardWindow
+                {
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    Owner = Application.Current.MainWindow,
+                    DataContext = motherboardCopy
+                };
+                window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
+                window.comboBoxChipset.ItemsSource = dbContext.Chipset.Local.ToObservableCollection();
+
+                if (window.ShowDialog() == true)
+                {
+                    dbContext.Entry(motherboard).CurrentValues.SetValues(motherboardCopy);
+                    dbContext.SaveChanges();
+                    ViewSource.Refresh();
+                }
             }
         }
     }

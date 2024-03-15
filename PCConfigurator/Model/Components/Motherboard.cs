@@ -28,6 +28,33 @@ namespace PCConfigurator.Model.Components
 
         public int PCIex16Slots { get; set; }
 
-        public virtual List<Configuration> Configurations { get; } = [];
+        public virtual List<Configuration> Configurations { get; set; } = [];
+
+        public Motherboard Clone()
+        {
+            List<M2Slot> m2Slots = [];
+            foreach (M2Slot slot in M2Slots)
+            {
+                m2Slots.Add(slot.Clone());
+            }
+
+            Motherboard motherboard = new Motherboard
+            {
+                MotherboardId = MotherboardId,
+                Model = Model,
+                SocketId = SocketId,
+                Socket = Socket,
+                ChipsetId = ChipsetId,
+                Chipset = Chipset,
+                RamType = RamType,
+                RamSlots = RamSlots,
+                MaxRamCapacity = MaxRamCapacity,
+                M2Slots = m2Slots, 
+                Sata3Ports = Sata3Ports,
+                PCIex16Slots = PCIex16Slots,
+                Configurations = Configurations
+            };
+            return motherboard;
+        }
     }
 }
