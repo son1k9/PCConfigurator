@@ -1,7 +1,7 @@
 ﻿namespace PCConfigurator.Model.Components
 {
     [Flags]
-    internal enum RamType
+    public enum RamType
     {
         DDR  = 0b00001,
         DDR2 = 0b00010,

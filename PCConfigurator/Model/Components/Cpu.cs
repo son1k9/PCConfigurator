@@ -1,6 +1,6 @@
 ﻿namespace PCConfigurator.Model.Components;
 
-internal class Cpu
+public class Cpu
 {
     public int CpuId { get; set; }
     public required string Model { get; set; }
@@ -17,7 +17,7 @@ internal class Cpu
     public required RamType RamTypes { get; set; }
 
     public int SocketId { get; set; }
-    public required Socket Socket { get; set; }
+    public virtual required Socket Socket { get; set; }
 
     //public Cpu(string model, int cores, int ecores, int threads, int l2Cache, int l3Cache, 
     //    int tdp, int maxRamCapacity, int coreClock, int boostClock, bool haveGraphics, Socket socket, params RamType[] ramTypes)
@@ -68,5 +68,5 @@ internal class Cpu
     //    RamTypes = ramTypes;
     //}
 
-    public List<Configuration> Configurations { get; } = [];
+    public virtual List<Configuration> Configurations { get; } = [];
 }

@@ -1,6 +1,6 @@
 ﻿namespace PCConfigurator.Model.Components;
 
-internal class Gpu
+public class Gpu
 {
     public int GpuId { get; set; }
     public required string Model { get; set; }
@@ -10,5 +10,5 @@ internal class Gpu
     public required float VramClock { get; set; }
     public required int PowerConsumption { get; set; }
 
-    public List<Configuration> Configurations { get; set; } = [];
+    public virtual List<Configuration> Configurations { get; set; } = [];
 }

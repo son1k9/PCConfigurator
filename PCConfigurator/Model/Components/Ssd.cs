@@ -1,6 +1,6 @@
 ﻿namespace PCConfigurator.Model.Components;
 
-internal class Ssd
+public class Ssd
 {
     public int SsdId { get; set; }
     public required string Model { get; set; }
@@ -10,5 +10,5 @@ internal class Ssd
     public required int Tbw { get; set; }
     public required NandType NandType { get; set; }
 
-    public List<Configuration> Configurations { get; } = [];
+    public virtual List<Configuration> Configurations { get; } = [];
 }

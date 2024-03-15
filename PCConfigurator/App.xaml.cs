@@ -13,19 +13,12 @@ namespace PCConfigurator;
 /// </summary>
 public partial class App : Application
 {
-
-    protected override void OnStartup(StartupEventArgs e)
-    {
-        Fill();
-        NavigationStorage navigationStorage = new NavigationStorage();
-        MainViewModel mainViewModel = new MainViewModel(navigationStorage);
-        MainWindow = new MainWindow() { DataContext = mainViewModel };
-        MainWindow.Show();
-    }
-
     public void Fill()
     {
         ApplicationContext dbContext = new ApplicationContext();
+
+        dbContext.Database.EnsureDeleted();
+        dbContext.Database.EnsureCreated();
 
         //Socket
         Socket socket1 = new Socket() { Name = "AM4" };
@@ -35,7 +28,7 @@ public partial class App : Application
 
 
         //CPU
-        dbContext.Cpus.Add(new Cpu()
+        dbContext.Cpu.Add(new Cpu()
         {
             Model = "AMD Ryzen 5 5600",
             Cores = 6,
@@ -52,7 +45,7 @@ public partial class App : Application
             RamTypes = RamType.DDR4 | RamType.DDR5
         });
 
-        dbContext.Cpus.Add(new Cpu()
+        dbContext.Cpu.Add(new Cpu()
         {
             Model = "AMD Ryzen 5 5600x",
             Cores = 6,
@@ -69,7 +62,7 @@ public partial class App : Application
             RamTypes = RamType.DDR4 | RamType.DDR5
         });
 
-        dbContext.Cpus.Add(new Cpu()
+        dbContext.Cpu.Add(new Cpu()
         {
             Model = "AMD Ryzen 3 1200",
             Cores = 4,
@@ -86,7 +79,7 @@ public partial class App : Application
             RamTypes = RamType.DDR4
         });
 
-        dbContext.Cpus.Add(new Cpu()
+        dbContext.Cpu.Add(new Cpu()
         {
             Model = "AMD Ryzen 5 1600",
             Cores = 6,
@@ -103,7 +96,7 @@ public partial class App : Application
             RamTypes = RamType.DDR4
         });
 
-        dbContext.Cpus.Add(new Cpu()
+        dbContext.Cpu.Add(new Cpu()
         {
             Model = "AMD FX-6300",
             Cores = 8,
@@ -120,7 +113,7 @@ public partial class App : Application
             RamTypes = RamType.DDR3
         });
 
-        dbContext.Cpus.Add(new Cpu()
+        dbContext.Cpu.Add(new Cpu()
         {
             Model = "AMD Ryzen 7 7800X3D",
             Cores = 8,
@@ -137,7 +130,7 @@ public partial class App : Application
             RamTypes = RamType.DDR5
         });
 
-        dbContext.Cpus.Add(new Cpu()
+        dbContext.Cpu.Add(new Cpu()
         {
             Model = "Intel Core i5-10400F",
             Cores = 6,
@@ -156,7 +149,7 @@ public partial class App : Application
 
 
         ///GPU
-        dbContext.Gpus.Add(new Gpu()
+        dbContext.Gpu.Add(new Gpu()
         {
             Model = "GIGABYTE GeForce RTX 4090 AERO OC",
             CoreClock = 2235,
@@ -166,7 +159,7 @@ public partial class App : Application
             PowerConsumption = 450
         });
 
-        dbContext.Gpus.Add(new Gpu()
+        dbContext.Gpu.Add(new Gpu()
         {
             Model = "MSI GeForce RTX 4070 VENTUS 3X E OC",
             CoreClock = 1920,
@@ -176,7 +169,7 @@ public partial class App : Application
             PowerConsumption = 200
         });
 
-        dbContext.Gpus.Add(new Gpu()
+        dbContext.Gpu.Add(new Gpu()
         {
             Model = "MSI GeForce RTX 4060 VENTUS 2X BLACK OC",
             CoreClock = 1830,
@@ -186,7 +179,7 @@ public partial class App : Application
             PowerConsumption = 115
         });
 
-        dbContext.Gpus.Add(new Gpu()
+        dbContext.Gpu.Add(new Gpu()
         {
             Model = "Sapphire AMD Radeon RX 7600 PULSE GAMING OC",
             CoreClock = 1720,
@@ -196,7 +189,7 @@ public partial class App : Application
             PowerConsumption = 185
         });
 
-        dbContext.Gpus.Add(new Gpu()
+        dbContext.Gpu.Add(new Gpu()
         {
             Model = "Sapphire AMD Radeon RX 6600 PULSE",
             CoreClock = 1626,
@@ -216,7 +209,7 @@ public partial class App : Application
             MaxRpm = 3050,
             Size = 92
         };
-        cooler1.Sockets.ToList().AddRange([socket1, socket2, socket5]);
+        cooler1.AddSockets([socket1, socket2, socket5]);
 
         Cooler cooler2 = new Cooler()
         {
@@ -226,7 +219,7 @@ public partial class App : Application
             MaxRpm = 1500,
             Size = 120
         };
-        cooler2.Sockets.ToList().AddRange([socket1, socket2, socket5]);
+        cooler2.AddSockets([socket1, socket2, socket5]);
 
         Cooler cooler3 = new Cooler()
         {
@@ -236,7 +229,7 @@ public partial class App : Application
             MaxRpm = 2200,
             Size = 92   
         };
-        cooler3.Sockets.ToList().AddRange([socket1, socket2]);
+        cooler3.AddSockets([socket1, socket2]);
 
         Cooler cooler4 = new Cooler()
         {
@@ -246,12 +239,12 @@ public partial class App : Application
             MaxRpm = 2000,
             Size = 120
         };
-        cooler4.Sockets.ToList().AddRange([socket3]);
+        cooler4.AddSockets([socket3]);
 
-        dbContext.Coolers.Add(cooler1);
-        dbContext.Coolers.Add(cooler2);
-        dbContext.Coolers.Add(cooler3);
-        dbContext.Coolers.Add(cooler4);
+        dbContext.Cooler.Add(cooler1);
+        dbContext.Cooler.Add(cooler2);
+        dbContext.Cooler.Add(cooler3);
+        dbContext.Cooler.Add(cooler4);
 
 
         //Chipset
@@ -285,15 +278,15 @@ public partial class App : Application
             Socket = socket5
         };
 
-        dbContext.Chipsets.Add(chipset1);
-        dbContext.Chipsets.Add(chipset2);
-        dbContext.Chipsets.Add(chipset3);
-        dbContext.Chipsets.Add(chipset4);
-        dbContext.Chipsets.Add(chipset5);
+        dbContext.Chipset.Add(chipset1);
+        dbContext.Chipset.Add(chipset2);
+        dbContext.Chipset.Add(chipset3);
+        dbContext.Chipset.Add(chipset4);
+        dbContext.Chipset.Add(chipset5);
 
 
         //RAM
-        dbContext.Rams.Add(new Ram()
+        dbContext.Ram.Add(new Ram()
         {
             Model = "Kingston FURY Beast Black",
             Capacity = 8,
@@ -301,7 +294,7 @@ public partial class App : Application
             Cl = 16,
             RamType = RamType.DDR4
         });
-        dbContext.Rams.Add(new Ram()
+        dbContext.Ram.Add(new Ram()
         {
             Model = "ADATA XPG Lancer Blade",
             Capacity = 16,
@@ -309,7 +302,7 @@ public partial class App : Application
             Cl = 46,
             RamType = RamType.DDR5
         });
-        dbContext.Rams.Add(new Ram()
+        dbContext.Ram.Add(new Ram()
         {
             Model = "Patriot Viper 3",
             Capacity = 8,
@@ -320,19 +313,19 @@ public partial class App : Application
 
 
         //Power Supply
-        dbContext.PowerSupplys.Add(new PowerSupply()
+        dbContext.PowerSupply.Add(new PowerSupply()
         {
             Model = "DEEPCOOL DQ750",
             Wattage = 750
         });
 
-        dbContext.PowerSupplys.Add(new PowerSupply()
+        dbContext.PowerSupply.Add(new PowerSupply()
         {
             Model = "Cougar STX 700W",
             Wattage = 700
         });
 
-        dbContext.PowerSupplys.Add(new PowerSupply()
+        dbContext.PowerSupply.Add(new PowerSupply()
         {
             Model = "Cougar GX 1050W",
             Wattage = 1050
@@ -340,21 +333,21 @@ public partial class App : Application
 
 
         //HDD
-        dbContext.Hdds.Add(new Hdd()
+        dbContext.Hdd.Add(new Hdd()
         {
             Model = "WD Blue",
             Capacity = 1,
             SpindelSpeed = 7200
         });
 
-        dbContext.Hdds.Add(new Hdd()
+        dbContext.Hdd.Add(new Hdd()
         {
             Model = "Toshiba P300",
             Capacity = 1,
             SpindelSpeed = 7200
         });
 
-        dbContext.Hdds.Add(new Hdd()
+        dbContext.Hdd.Add(new Hdd()
         {
             Model = "Seagate BarraCuda",
             Capacity = 2,
@@ -363,7 +356,7 @@ public partial class App : Application
 
 
         //SSD
-        dbContext.Ssds.Add(new Ssd()
+        dbContext.Ssd.Add(new Ssd()
         {
             Model = "Kingston A400",
             Capacity = 480,
@@ -373,7 +366,7 @@ public partial class App : Application
             NandType = NandType.TLC
         });
 
-        dbContext.Ssds.Add(new Ssd()
+        dbContext.Ssd.Add(new Ssd()
         {
             Model = "Samsung 870 EVO",
             Capacity = 1000,
@@ -383,7 +376,7 @@ public partial class App : Application
             NandType = NandType.TLC
         });
 
-        dbContext.Ssds.Add(new Ssd()
+        dbContext.Ssd.Add(new Ssd()
         {
             Model = "Samsung 870 QVO",
             Capacity = 1000,
@@ -395,7 +388,7 @@ public partial class App : Application
 
 
         //M2 SSD
-        dbContext.M2Ssds.Add(new M2Ssd()
+        dbContext.M2Ssd.Add(new M2Ssd()
         {
             Model = "ARDOR GAMING Ally AL1288",
             Capacity = 1024,
@@ -407,7 +400,7 @@ public partial class App : Application
             M2Size = Model.Components.M2.M2Size._2280
         });
 
-        dbContext.M2Ssds.Add(new M2Ssd()
+        dbContext.M2Ssd.Add(new M2Ssd()
         {
             Model = "Samsung 980 PRO",
             Capacity = 1000,
@@ -419,7 +412,7 @@ public partial class App : Application
             M2Size = Model.Components.M2.M2Size._2280
         });
 
-        dbContext.M2Ssds.Add(new M2Ssd()
+        dbContext.M2Ssd.Add(new M2Ssd()
         {
             Model = "Kingston NV2",
             Capacity = 500,
@@ -443,10 +436,25 @@ public partial class App : Application
             Socket = socket1,
             Chipset = chipset1
         };
+        motherboard.M2Slots = [new M2Slot() { M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata, 
+            M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260,
+            SlotNumber = 0},
+            new M2Slot() { M2Interface = Model.Components.M2.M2Interface.Sata,
+            M2Size = Model.Components.M2.M2Size._22110,
+            SlotNumber = 1}];
 
         dbContext.Add(motherboard);
 
 
         dbContext.SaveChanges();
+    }
+
+    private void Application_Startup(object sender, StartupEventArgs e)
+    {
+        Fill();
+        NavigationStorage navigationStorage = new NavigationStorage();
+        MainViewModel mainViewModel = new MainViewModel(navigationStorage);
+        MainWindow = new MainWindow() { DataContext = mainViewModel };
+        MainWindow.Show();
     }
 }

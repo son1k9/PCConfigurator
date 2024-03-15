@@ -2,7 +2,7 @@
 
 namespace PCConfigurator.Model.Components;
 
-internal class Cooler
+public class Cooler
 {
     public int CoolerId { get; set; }
     public required string Model { get; set; }
@@ -11,6 +11,14 @@ internal class Cooler
     public required int MaxRpm { get; set; }
     public required int Size { get; set; }
 
-    public ICollection<Socket> Sockets { get; } = new ObservableCollection<Socket>();
-    public List<Configuration> Configurations { get; } = [];
+    public virtual ICollection<Socket> Sockets { get; } = new ObservableCollection<Socket>();
+    public virtual List<Configuration> Configurations { get; } = [];
+
+    public void AddSockets(params Socket[] sockets)
+    {
+        foreach (var socket in sockets) 
+        {
+            Sockets.Add(socket);
+        }
+    }
 }

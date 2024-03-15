@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PCConfigurator.Model.Components.M2
 {
     [Flags]
-    internal enum M2Size
+    public enum M2Size
     {
         _2230  = 0b00001,
         _2242  = 0b00010, 
@@ -17,10 +17,9 @@ namespace PCConfigurator.Model.Components.M2
     }
 
     [Flags]
-    internal enum M2Interface
+    public enum M2Interface
     {
         Nvme = 0b01,
-        Sata = 0b10,
-        Both = Nvme | Sata
+        Sata = 0b10
     }
 }

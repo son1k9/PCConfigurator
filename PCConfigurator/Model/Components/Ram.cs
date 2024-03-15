@@ -1,6 +1,6 @@
 ﻿namespace PCConfigurator.Model.Components;
 
-internal class Ram
+public class Ram
 {
     public int RamID { get; set; }
     public required string Model { get; set; }
@@ -9,5 +9,5 @@ internal class Ram
     public required int Cl { get; set; }
     public required RamType RamType { get; set; }
 
-    public List<Configuration> Configurations { get; } = [];
+    public virtual List<Configuration> Configurations { get; } = [];
 }

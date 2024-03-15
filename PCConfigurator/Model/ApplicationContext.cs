@@ -7,19 +7,19 @@ internal class ApplicationContext : DbContext
 {
     private readonly string _dbPath;
 
-    public DbSet<Socket> Sockets { get; set; }
-    public DbSet<Chipset> Chipsets { get; set; }
-    public DbSet<Ram> Rams { get; set; }
-    public DbSet<M2Slot> M2Slots { get; set; }
-    public DbSet<Motherboard> Motherboards { get; set; }
-    public DbSet<Configuration> Configurations { get; set; }
-    public DbSet<Cpu> Cpus { get; set; }
-    public DbSet<PowerSupply> PowerSupplys { get; set; }
-    public DbSet<Cooler> Coolers { get; set; }
-    public DbSet<Gpu> Gpus { get; set; }
-    public DbSet<Hdd> Hdds { get; set; }
-    public DbSet<M2Ssd> M2Ssds { get; set; }
-    public DbSet<Ssd> Ssds { get; set; }
+    public DbSet<Socket> Socket { get; set; }
+    public DbSet<Chipset> Chipset { get; set; }
+    public DbSet<Ram> Ram { get; set; }
+    public DbSet<M2Slot> M2Slot { get; set; }
+    public DbSet<Motherboard> Motherboard { get; set; }
+    public DbSet<Configuration> Configuration { get; set; }
+    public DbSet<Cpu> Cpu { get; set; }
+    public DbSet<PowerSupply> PowerSupply { get; set; }
+    public DbSet<Cooler> Cooler { get; set; }
+    public DbSet<Gpu> Gpu { get; set; }
+    public DbSet<Hdd> Hdd { get; set; }
+    public DbSet<M2Ssd> M2Ssd { get; set; }
+    public DbSet<Ssd> Ssd { get; set; }
 
 
     public ApplicationContext()
@@ -31,9 +31,6 @@ internal class ApplicationContext : DbContext
             int index = _dbPath.IndexOf("bin");
             _dbPath = _dbPath[..index];
         }
-
-        Database.EnsureDeleted();
-        Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -93,6 +90,6 @@ internal class ApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite($"Filename={_dbPath}Model\\Database\\components.db");
+        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Model\\Database\\components.db");
     }
 }

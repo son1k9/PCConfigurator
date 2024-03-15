@@ -1,6 +1,6 @@
 ﻿namespace PCConfigurator.Model.Components;
 
-internal class M2Ssd
+public class M2Ssd
 {
     public int M2SsdId { get; set; }
     public required string Model { get; set; }
@@ -12,5 +12,5 @@ internal class M2Ssd
     public required M2.M2Interface M2Interface { get; set; }
     public required M2.M2Size M2Size { get; set; }
 
-    public List<Configuration> Configurations { get; } = [];
+    public virtual List<Configuration> Configurations { get; } = [];
 }

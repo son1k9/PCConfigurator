@@ -1,0 +1,53 @@
+﻿<Window x:Class="PCConfigurator.View.AddComponents.NewMotherboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCConfigurator.View.AddComponents" 
+        xmlns:components="clr-namespace:PCConfigurator.Model.Components" 
+        d:DataContext="{d:DesignInstance Type=components:Motherboard}"
+        mc:Ignorable="d"
+        Title="NewMotherboardWindow" Height="500" Width="350">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="EnumDataSource"
+                        ObjectType="{x:Type sys:Enum}"
+                        MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="HorizontalAlignment" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель: " Style="{StaticResource textBlockNewComponent}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Model}" Style="{StaticResource textBoxNewComponent}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Сокет: " Style="{StaticResource textBlockNewComponent}"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" SelectedItem="{Binding Socket}" IsEditable="True" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxSocket"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Чипсет: " Style="{StaticResource textBlockNewComponent}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" SelectedItem="{Binding Chipset}" IsEditable="True" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxChipset"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Тип оперативной памяти: " Style="{StaticResource textBlockNewComponent}"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" SelectedItem="{Binding RamType}" IsEditable="True" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxRamType"/>
+
+    </Grid>
+</Window>

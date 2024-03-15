@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PCConfigurator.Model.Components
 {
-    internal enum NandType
+    public enum NandType
     {
         SLC,
         MLC,

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCConfigurator.Converters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,32 @@ namespace PCConfigurator.View.ComponentsUserControls
         public MotherboardUserControl()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "M2Slots")
+            {
+                if (e.Column is DataGridTextColumn textColumn) 
+                {
+                    if (textColumn.Binding is Binding binding) 
+                    {
+                        binding.Converter = new M2SlotsConverter();
+                    }
+                }
+            }
+
+            if (e.PropertyName == "MotherboardId")
+                e.Cancel = true;
+
+            if (e.PropertyName == "Configurations")
+                e.Cancel = true;
+
+            if (e.PropertyName == "SocketId")
+                e.Cancel = true;
+
+            if (e.PropertyName == "ChipsetId")
+                e.Cancel = true;
         }
     }
 }
