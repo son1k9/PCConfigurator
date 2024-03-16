@@ -1,4 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using PCConfigurator.Commands;
+using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Windows.Input;
 
 #nullable disable
 
@@ -32,7 +35,7 @@ namespace PCConfigurator.Model.Components
 
         public Motherboard Clone()
         {
-            List<M2Slot> m2Slots = [];
+            ObservableCollection<M2Slot> m2Slots = [];
             foreach (M2Slot slot in M2Slots)
             {
                 m2Slots.Add(slot.Clone());

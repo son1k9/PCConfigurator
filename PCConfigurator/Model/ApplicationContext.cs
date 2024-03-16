@@ -77,15 +77,8 @@ internal class ApplicationContext : DbContext
                 j.HasKey("ConfigurationHddId");
             });
 
-        modelBuilder.Entity<Configuration>()
-            .HasMany(e => e.M2Ssds)
-            .WithMany(e => e.Configurations)
-            .UsingEntity(j =>
-            {
-                j.IndexerProperty<int>("ConfigurationM2SsdId");
-                j.HasKey("ConfigurationM2SsdId");
-                j.Property<int>("SlotNumber");
-            });
+        modelBuilder.Entity<ConfigurationM2Ssd>()
+            .HasKey(e => new { e.M2SlotId, e.ConfigurationId });
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

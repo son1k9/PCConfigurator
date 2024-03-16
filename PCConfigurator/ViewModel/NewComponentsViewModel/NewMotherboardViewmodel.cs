@@ -1,0 +1,31 @@
+﻿using PCConfigurator.Commands;
+using PCConfigurator.Model.Components;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+
+namespace PCConfigurator.ViewModel.NewComponentsViewModel
+{
+    internal class NewMotherboardViewmodel(Motherboard motherboard)
+    {
+        public Motherboard Motherboard { get; } = motherboard;
+
+
+        private RelayCommand _removeM2Slot;
+
+        [NotMapped]
+        public ICommand RemoveM2Slot => _removeM2Slot ??= new RelayCommand(PerformRemoveM2Slot);
+
+        public void PerformRemoveM2Slot(object? commandParametr)
+        {
+            if (commandParametr is M2Slot m2Slot)
+            {
+                Motherboard.M2Slots.Remove(m2Slot);
+            }
+        }
+    }
+}

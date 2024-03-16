@@ -19,6 +19,7 @@ namespace PCConfigurator.Model.Components
         public virtual List<Gpu> Gpus { get; set; } = [];
         public virtual List<Ssd> Ssds { get; set; } = [];
         public virtual List<Hdd> Hdds { get; set; } = [];
-        public virtual List<M2Ssd> M2Ssds { get; set; } = [];
+
+        public virtual List<ConfigurationM2Ssd> ConfigurationM2Ssds { get; set; } = [];
     }
 }

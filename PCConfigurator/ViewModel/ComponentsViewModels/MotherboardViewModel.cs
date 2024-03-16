@@ -3,6 +3,7 @@ using PCConfigurator.Commands;
 using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
 using PCConfigurator.View.AddComponents;
+using PCConfigurator.ViewModel.NewComponentsViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,13 +37,18 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
         private void PerformAdd(object? commandParameter)
         {
             Motherboard motherboard = new Motherboard();
+            NewMotherboardViewmodel motherboardViewmodel = new(motherboard);
 
-            NewMotherboardWindow window = new NewMotherboardWindow
+           NewMotherboardWindow window = new NewMotherboardWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
-                DataContext = motherboard
-            };
+                DataContext = motherboardViewmodel
+           };
+
+            dbContext.Socket.Load();
+            dbContext.Chipset.Load();
+
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
             window.comboBoxChipset.ItemsSource = dbContext.Chipset.Local.ToObservableCollection();
 
@@ -78,18 +84,30 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
             if (commandParameter is Motherboard motherboard)
             {
                 Motherboard motherboardCopy = motherboard.Clone();
+                NewMotherboardViewmodel motherboardViewmodel = new(motherboardCopy);
                 NewMotherboardWindow window = new NewMotherboardWindow
                 {
                     WindowStartupLocation = WindowStartupLocation.CenterOwner,
                     Owner = Application.Current.MainWindow,
-                    DataContext = motherboardCopy
+                    DataContext = motherboardViewmodel
                 };
+
+                dbContext.Socket.Load();
+                dbContext.Chipset.Load();
+
                 window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
                 window.comboBoxChipset.ItemsSource = dbContext.Chipset.Local.ToObservableCollection();
 
                 if (window.ShowDialog() == true)
                 {
-                    dbContext.Entry(motherboard).CurrentValues.SetValues(motherboardCopy);
+                    motherboard.Model = motherboardCopy.Model;
+                    motherboard.Chipset = motherboardCopy.Chipset;
+                    motherboard.RamType = motherboardCopy.RamType;
+                    motherboard.MaxRamCapacity = motherboardCopy.MaxRamCapacity;
+                    motherboard.Socket = motherboardCopy.Socket;
+                    motherboard.M2Slots = motherboardCopy.M2Slots;
+                    motherboard.Sata3Ports = motherboardCopy.Sata3Ports;
+                    motherboard.PCIex16Slots = motherboardCopy.PCIex16Slots;
                     dbContext.SaveChanges();
                     ViewSource.Refresh();
                 }

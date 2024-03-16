@@ -436,15 +436,53 @@ public partial class App : Application
             Socket = socket1,
             Chipset = chipset1
         };
-        motherboard.M2Slots = [new M2Slot() { M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata, 
-            M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260,
-            SlotNumber = 0},
-            new M2Slot() { M2Interface = Model.Components.M2.M2Interface.Sata,
-            M2Size = Model.Components.M2.M2Size._22110,
-            SlotNumber = 1}];
 
+        ObservableCollection<M2Slot> motherboardSlots =
+        [
+            new M2Slot()
+            {
+                M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
+                M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
+            },
+            new M2Slot()
+            {
+                M2Interface = Model.Components.M2.M2Interface.Sata,
+                M2Size = Model.Components.M2.M2Size._22110
+            },
+        ];
+
+        motherboard.M2Slots = motherboardSlots;
         dbContext.Add(motherboard);
 
+        Motherboard motherboard1 = new Motherboard()
+        {
+            Model = "ASUS PRIME A320M-K",
+            RamSlots = 2,
+            MaxRamCapacity = 64,
+            Sata3Ports = 4,
+            PCIex16Slots = 1,
+            RamType = RamType.DDR4,
+            Socket = socket3,
+            Chipset = chipset2
+        };
+
+        ObservableCollection<M2Slot> motherboard1Slots =
+        [
+            new M2Slot()
+            {
+                M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
+                M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
+            },
+             new M2Slot()
+             {
+                 M2Interface = Model.Components.M2.M2Interface.Sata,
+                 M2Size = Model.Components.M2.M2Size._22110
+             }
+        ];
+
+        motherboard1.M2Slots = motherboard1Slots;
+
+        dbContext.Add(motherboard1);
 
         dbContext.SaveChanges();
     }

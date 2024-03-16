@@ -12,5 +12,5 @@ public class M2Ssd
     public required M2.M2Interface M2Interface { get; set; }
     public required M2.M2Size M2Size { get; set; }
 
-    public virtual List<Configuration> Configurations { get; } = [];
+    public virtual List<ConfigurationM2Ssd> ConfigurationM2Ssds { get; set; } = [];
 }
