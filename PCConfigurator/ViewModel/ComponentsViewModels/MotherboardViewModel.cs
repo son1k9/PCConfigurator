@@ -50,7 +50,6 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
             dbContext.Chipset.Load();
 
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
-            window.comboBoxChipset.ItemsSource = dbContext.Chipset.Local.ToObservableCollection();
 
             if (window.ShowDialog() == true)
             {
@@ -96,13 +95,18 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
                 dbContext.Chipset.Load();
 
                 window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
-                window.comboBoxChipset.ItemsSource = dbContext.Chipset.Local.ToObservableCollection();
 
                 if (window.ShowDialog() == true)
                 {
+                    if (motherboardCopy.Chipset is null)
+                    {
+                        MessageBox.Show("Необходимо указать чипсет.");
+                    }
+
                     motherboard.Model = motherboardCopy.Model;
                     motherboard.Chipset = motherboardCopy.Chipset;
                     motherboard.RamType = motherboardCopy.RamType;
+                    motherboard.RamSlots = motherboardCopy.RamSlots;
                     motherboard.MaxRamCapacity = motherboardCopy.MaxRamCapacity;
                     motherboard.Socket = motherboardCopy.Socket;
                     motherboard.M2Slots = motherboardCopy.M2Slots;

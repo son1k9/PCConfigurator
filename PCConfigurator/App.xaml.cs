@@ -275,7 +275,7 @@ public partial class App : Application
         Chipset chipset5 = new Chipset()
         {
             Name = "980G",
-            Socket = socket5
+            Socket = socket3
         };
 
         dbContext.Chipset.Add(chipset1);
@@ -434,7 +434,7 @@ public partial class App : Application
             PCIex16Slots = 1,
             RamType = RamType.DDR4,
             Socket = socket1,
-            Chipset = chipset1
+            Chipset = chipset3
         };
 
         ObservableCollection<M2Slot> motherboardSlots =
@@ -463,7 +463,7 @@ public partial class App : Application
             PCIex16Slots = 1,
             RamType = RamType.DDR4,
             Socket = socket3,
-            Chipset = chipset2
+            Chipset = chipset5
         };
 
         ObservableCollection<M2Slot> motherboard1Slots =
@@ -490,7 +490,7 @@ public partial class App : Application
     private void Application_Startup(object sender, StartupEventArgs e)
     {
         Fill();
-        NavigationStorage navigationStorage = new NavigationStorage();
+        NavigationStorage navigationStorage = new NavigationStorage(new ConfigurationsViewModel());
         MainViewModel mainViewModel = new MainViewModel(navigationStorage);
         MainWindow = new MainWindow() { DataContext = mainViewModel };
         MainWindow.Show();

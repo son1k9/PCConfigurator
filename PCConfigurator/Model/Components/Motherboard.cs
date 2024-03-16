@@ -21,17 +21,21 @@ namespace PCConfigurator.Model.Components
 
         public RamType RamType { get; set; }
 
-        public int RamSlots { get; set; }
+        public int RamSlots { get; set; } = 2;
 
-        public int MaxRamCapacity { get; set; }
+        public int MaxRamCapacity { get; set; } = 4;
 
         public virtual ICollection<M2Slot> M2Slots { get; set; } = new ObservableCollection<M2Slot>();
 
-        public int Sata3Ports { get; set; }
+        public int Sata3Ports { get; set; } = 1;
 
-        public int PCIex16Slots { get; set; }
+        public int PCIex16Slots { get; set; } = 1;
 
         public virtual List<Configuration> Configurations { get; set; } = [];
+
+        public Motherboard()
+        {
+        }
 
         public Motherboard Clone()
         {

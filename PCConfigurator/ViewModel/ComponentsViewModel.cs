@@ -18,7 +18,7 @@ namespace PCConfigurator.ViewModel
 
         public ComponentsViewModel()
         {
-            _navigationStorage = new NavigationStorage();
+            _navigationStorage = new NavigationStorage(new MotherboardViewModel());
             _navigationStorage.ViewModelChanged += OnViewModelChanged;
             NavigateMotherboardCommand = new NavigateCommand<MotherboardViewModel>(_navigationStorage);
             NavigateCpuCommand = new NavigateCommand<CpuViewModel>(_navigationStorage);

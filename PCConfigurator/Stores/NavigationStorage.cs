@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace PCConfigurator.Stores
 {
-    internal class NavigationStorage
+    internal class NavigationStorage(BaseViewModel viewModel)
     {
-        private BaseViewModel _currentViewModel;
+        private BaseViewModel _currentViewModel = viewModel;
 
         public BaseViewModel CurrentViewModel
         {

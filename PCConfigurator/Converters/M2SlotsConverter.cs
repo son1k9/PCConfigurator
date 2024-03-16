@@ -15,15 +15,13 @@ namespace PCConfigurator.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string result = "";
-            if (value is ICollection<M2Slot> collection)
+            ICollection<M2Slot> collection = (ICollection<M2Slot>)value;
+            List<M2Slot> list = [.. collection];
+            for (int i = 0; i < list.Count; i++)
             {
-                List<M2Slot> list = [.. collection];
-                for (int i = 0; i < list.Count; i++) 
-                {
-                    result += list[i].ToString();
-                    if (i < list.Count - 1)
-                        result += "\n";
-                }
+                result += list[i].ToString();
+                if (i < list.Count - 1)
+                    result += "\n";
             }
             return result;
         }

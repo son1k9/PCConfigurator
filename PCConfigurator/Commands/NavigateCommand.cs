@@ -22,6 +22,8 @@ namespace PCConfigurator.Commands
 
         public void Execute(object? parameter)
         {
+            if (_navigationStorage.CurrentViewModel.GetType() == typeof(T))
+                return;
             _navigationStorage.CurrentViewModel = new T();
         }
     }

@@ -6,7 +6,7 @@
     <Application.Resources>
         <!-- Components list-->
         <Style TargetType="{x:Type DataGrid}" x:Key="componentsList">
-            <Setter Property="Margin" Value="15"/>
+            <Setter Property="Margin" Value="10"/>
             <Setter Property="AutoGenerateColumns" Value="True"/>
             <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="ColumnWidth" Value="*"/>
@@ -27,6 +27,10 @@
             <Setter Property="Margin" Value="0 10 10 10"/>
         </Style>
         <Style TargetType="{x:Type ComboBox}" x:Key="comboBoxNewComponent">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 10 10 10"/>
+        </Style>
+        <Style TargetType="{x:Type Slider}" x:Key="sliderNewComponent">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0 10 10 10"/>
         </Style>
