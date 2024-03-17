@@ -20,7 +20,7 @@ public partial class App : Application
         dbContext.Database.EnsureDeleted();
         dbContext.Database.EnsureCreated();
 
-        //Socket
+        //Socket 
         Socket socket1 = new Socket() { Name = "AM4" };
         Socket socket2 = new Socket() { Name = "AM5" };
         Socket socket3 = new Socket() { Name = "AM3+" };
@@ -33,7 +33,7 @@ public partial class App : Application
             Model = "AMD Ryzen 5 5600",
             Cores = 6,
             ECores = 0,
-            Treads = 12,
+            Smt = true,
             Tdp = 65,
             L2Cache = 8,
             L3Cache = 16,
@@ -50,7 +50,7 @@ public partial class App : Application
             Model = "AMD Ryzen 5 5600x",
             Cores = 6,
             ECores = 0,
-            Treads = 12,
+            Smt = true,
             Tdp = 65,
             L2Cache = 8,
             L3Cache = 16,
@@ -67,7 +67,7 @@ public partial class App : Application
             Model = "AMD Ryzen 3 1200",
             Cores = 4,
             ECores = 0,
-            Treads = 4,
+            Smt = false,
             Tdp = 65,
             L2Cache = 4,
             L3Cache = 8,
@@ -84,7 +84,7 @@ public partial class App : Application
             Model = "AMD Ryzen 5 1600",
             Cores = 6,
             ECores = 0,
-            Treads = 12,
+            Smt = true,
             Tdp = 65,
             L2Cache = 4,
             L3Cache = 12,
@@ -101,7 +101,7 @@ public partial class App : Application
             Model = "AMD FX-6300",
             Cores = 8,
             ECores = 0,
-            Treads = 8,
+            Smt = false,
             Tdp = 220,
             L2Cache = 8,
             L3Cache = 8,
@@ -118,7 +118,7 @@ public partial class App : Application
             Model = "AMD Ryzen 7 7800X3D",
             Cores = 8,
             ECores = 0,
-            Treads = 16,
+            Smt = true,
             Tdp = 120,
             L2Cache = 8,
             L3Cache = 96,
@@ -135,7 +135,7 @@ public partial class App : Application
             Model = "Intel Core i5-10400F",
             Cores = 6,
             ECores = 0,
-            Treads = 12,
+            Smt = true,
             Tdp = 65,
             L2Cache = 1.5f,
             L3Cache = 12,

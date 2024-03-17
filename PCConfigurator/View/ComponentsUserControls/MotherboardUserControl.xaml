@@ -15,13 +15,13 @@
             <MenuItem Header="Удалить" Command="{Binding DataContext.Remove, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
       CommandParameter="{Binding}">
                 <MenuItem.Icon>
-                    <Image Source="/delete.png"/>
+                    <Image Source="/View/ComponentsUserControls/delete.png"/>
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>
 
         <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow">
-            <Setter Property="ContextMenu" Value="{DynamicResource RowMenu}" />
+            <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
         </Style>
         
     </UserControl.Resources>

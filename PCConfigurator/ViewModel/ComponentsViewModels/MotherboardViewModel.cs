@@ -24,7 +24,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
 
         public ICollectionView ViewSource { get => _viewSource.View; }
 
-        public MotherboardViewModel()
+        public  MotherboardViewModel()
         {
             dbContext.Motherboard.Load();
             _viewSource.Source = dbContext.Motherboard.Local.ToObservableCollection();
@@ -33,8 +33,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
 
         private RelayCommand _add;
         public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-
-        private void PerformAdd(object? commandParameter)
+        private async void PerformAdd(object? commandParameter)
         {
             Motherboard motherboard = new Motherboard();
             NewMotherboardViewmodel motherboardViewmodel = new(motherboard);
@@ -46,22 +45,21 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
                 DataContext = motherboardViewmodel
            };
 
-            dbContext.Socket.Load();
-            dbContext.Chipset.Load();
+            await dbContext.Socket.LoadAsync();
+            await dbContext.Chipset.LoadAsync();
 
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
             if (window.ShowDialog() == true)
             {
-                dbContext.Motherboard.Add(motherboard);
-                dbContext.SaveChanges();
+                await dbContext.Motherboard.AddAsync(motherboard);
+                await dbContext.SaveChangesAsync();
             }
         }
 
         private RelayCommand _remove;
         public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-
-        private void PerformRemove(object? commandParameter)
+        private async void PerformRemove(object? commandParameter)
         {
             if (commandParameter is Motherboard motherboard)
             {
@@ -70,15 +68,14 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
                 {
                     motherboard.M2Slots.Clear();
                     dbContext.Motherboard.Remove(motherboard);
-                    dbContext.SaveChanges();
+                    await dbContext.SaveChangesAsync();
                 }
             }
         }
 
         private RelayCommand _edit;
         public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-
-        private void PerformEdit(object? commandParameter)
+        private async void PerformEdit(object? commandParameter)
         {
             if (commandParameter is Motherboard motherboard)
             {
@@ -91,18 +88,13 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
                     DataContext = motherboardViewmodel
                 };
 
-                dbContext.Socket.Load();
-                dbContext.Chipset.Load();
+                await dbContext.Socket.LoadAsync();
+                await dbContext.Chipset.LoadAsync();
 
                 window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
                 if (window.ShowDialog() == true)
                 {
-                    if (motherboardCopy.Chipset is null)
-                    {
-                        MessageBox.Show("Необходимо указать чипсет.");
-                    }
-
                     motherboard.Model = motherboardCopy.Model;
                     motherboard.Chipset = motherboardCopy.Chipset;
                     motherboard.RamType = motherboardCopy.RamType;
@@ -112,7 +104,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
                     motherboard.M2Slots = motherboardCopy.M2Slots;
                     motherboard.Sata3Ports = motherboardCopy.Sata3Ports;
                     motherboard.PCIex16Slots = motherboardCopy.PCIex16Slots;
-                    dbContext.SaveChanges();
+                    await dbContext.SaveChangesAsync();
                     ViewSource.Refresh();
                 }
             }

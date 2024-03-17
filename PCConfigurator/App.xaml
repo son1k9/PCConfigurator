@@ -5,6 +5,17 @@
              Startup="Application_Startup">
     <Application.Resources>
         <!-- Components list-->
+        <Style TargetType="{x:Type DataGridColumnHeader}" x:Key="componentsListHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding}" TextAlignment="Center" LineHeight="16" MaxHeight="32" TextTrimming="CharacterEllipsis"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style TargetType="{x:Type DataGrid}" x:Key="componentsList">
             <Setter Property="Margin" Value="10"/>
             <Setter Property="AutoGenerateColumns" Value="True"/>
@@ -13,6 +24,8 @@
             <Setter Property="CanUserResizeRows" Value="False"/>
             <Setter Property="RowHeaderWidth" Value="0"/>
             <Setter Property="CanUserReorderColumns" Value="False"/>
+            <Setter Property="ColumnHeaderStyle" Value="{StaticResource componentsListHeader}"/>
+            <Setter Property="MinRowHeight" Value="35"/>
         </Style>
 
         <!-- New component-->
@@ -34,6 +47,9 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0 10 10 10"/>
         </Style>
-
+        <Style TargetType="{x:Type CheckBox}" x:Key="checkBoxComponent">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 10 10 10"/>
+        </Style>
     </Application.Resources>
 </Application>

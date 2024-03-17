@@ -9,8 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="delete.png" />
     <None Remove="View\AddComponents\add.png" />
+    <None Remove="View\AddComponents\delete.png" />
+    <None Remove="View\ComponentsUserControls\delete.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,8 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="delete.png" />
     <Resource Include="View\AddComponents\add.png" />
+    <Resource Include="View\AddComponents\delete.png" />
+    <Resource Include="View\ComponentsUserControls\delete.png" />
   </ItemGroup>
 
 </Project>

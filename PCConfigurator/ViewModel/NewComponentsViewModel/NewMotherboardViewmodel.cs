@@ -1,5 +1,6 @@
 ﻿using PCConfigurator.Commands;
 using PCConfigurator.Model.Components;
+using PCConfigurator.Model.Components.M2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,12 +15,8 @@ namespace PCConfigurator.ViewModel.NewComponentsViewModel
     {
         public Motherboard Motherboard { get; } = motherboard;
 
-
         private RelayCommand _removeM2Slot;
-
-        [NotMapped]
         public ICommand RemoveM2Slot => _removeM2Slot ??= new RelayCommand(PerformRemoveM2Slot);
-
         public void PerformRemoveM2Slot(object? commandParametr)
         {
             if (commandParametr is M2Slot m2Slot)
@@ -30,11 +27,10 @@ namespace PCConfigurator.ViewModel.NewComponentsViewModel
 
         private RelayCommand _addM2Slot;
         public ICommand AddM2Slot => _addM2Slot ??= new RelayCommand(PerformAddM2Slot);
-
         private void PerformAddM2Slot(object? commandParameter)
         {
             if (Motherboard.M2Slots.Count <= 8)
-                Motherboard.M2Slots.Add(new M2Slot());
+                Motherboard.M2Slots.Add(new M2Slot() { M2Interface = M2Interface.Nvme, M2Size = M2Size._2260});
         }
     }
 }

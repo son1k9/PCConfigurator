@@ -6,7 +6,8 @@
         xmlns:viewmodels="clr-namespace:PCConfigurator.ViewModel"
         xmlns:views="clr-namespace:PCConfigurator.View" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Title="PC Configurator" Width="1600" Height="900" WindowStartupLocation="CenterScreen">
+        Title="PC Configurator" MinWidth="1280" MinHeight="720" WindowStartupLocation="CenterScreen"
+        Width="1600" Height="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -43,7 +44,7 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <RadioButton Content="Сборки" Command="{Binding NavigateConfigurationsCommand}"/>
+                <RadioButton Content="Сборки" Command="{Binding NavigateConfigurationsCommand}" IsChecked="True"/>
                 <RadioButton Content="Комплектующие" Command="{Binding NavigateComponentsCommand}"/>
             </StackPanel>
         </Border>

@@ -1,4 +1,5 @@
 ﻿using PCConfigurator.Commands;
+using PCConfigurator.Model.Components.M2;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Windows.Input;
 
@@ -63,8 +64,8 @@ public class M2Slot
     {
         if (value)
             M2Interface |= m2Interface;
-        else
-            M2Interface &= ~m2Interface;
+        else if ((M2Interface & ~m2Interface) != 0)
+                M2Interface &= ~m2Interface;
     }
 
 
@@ -108,7 +109,7 @@ public class M2Slot
     {
         if (value)
             M2Size |= size;
-        else
+        else if ((M2Size & ~size) != 0)
             M2Size &= ~size;
     }
 }

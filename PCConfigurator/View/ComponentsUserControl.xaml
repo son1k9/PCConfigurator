@@ -45,7 +45,7 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <RadioButton Content="Материнские платы" Command="{Binding NavigateMotherboardCommand}"/>
+                <RadioButton Content="Материнские платы" Command="{Binding NavigateMotherboardCommand}" IsChecked="True"/>
                 <RadioButton Content="Процессоры" Command="{Binding NavigateCpuCommand}"/>
                 <RadioButton Content="Кулеры" Command="{Binding NavigateCoolerCommand}"/>
                 <RadioButton Content="Оперативная память" Command="{Binding NavigateRamCommand}"/>
