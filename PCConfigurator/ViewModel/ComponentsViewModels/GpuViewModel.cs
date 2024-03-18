@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-namespace PCConfigurator.ViewModel.ComponentsViewModels
+internal class GpuViewModel : BaseViewModel
 {
-    internal class GpuViewModel : BaseViewModel
-    {
-    }
 }

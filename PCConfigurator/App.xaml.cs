@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using PCConfigurator.Model;
+﻿using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
 using PCConfigurator.Stores;
 using PCConfigurator.ViewModel;
@@ -204,40 +203,28 @@ public partial class App : Application
         Cooler cooler1 = new Cooler()
         {
             Model = "DEEPCOOL AG300",
-            Tdp = 150,
-            MinRpm = 500,
-            MaxRpm = 3050,
-            Size = 92
+            Tdp = 150
         };
         cooler1.AddSockets([socket1, socket2, socket5]);
 
         Cooler cooler2 = new Cooler()
         {
             Model = "DEEPCOOL GAMMAXX 400 EX",
-            Tdp = 180,
-            MinRpm = 500,
-            MaxRpm = 1500,
-            Size = 120
+            Tdp = 180
         };
         cooler2.AddSockets([socket1, socket2, socket5]);
 
         Cooler cooler3 = new Cooler()
         {
             Model = "ID-COOLING SE-903-XT",
-            Tdp = 130,
-            MinRpm = 500,
-            MaxRpm = 2200,
-            Size = 92   
+            Tdp = 130
         };
         cooler3.AddSockets([socket1, socket2]);
 
         Cooler cooler4 = new Cooler()
         {
             Model = "IDEEPCOOL AG400",
-            Tdp = 220,
-            MinRpm = 500,
-            MaxRpm = 2000,
-            Size = 120
+            Tdp = 220
         };
         cooler4.AddSockets([socket3]);
 
@@ -473,11 +460,11 @@ public partial class App : Application
                 M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
                 M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
             },
-             new M2Slot()
-             {
-                 M2Interface = Model.Components.M2.M2Interface.Sata,
-                 M2Size = Model.Components.M2.M2Size._22110
-             }
+            new M2Slot()
+            {
+                M2Interface = Model.Components.M2.M2Interface.Sata,
+                M2Size = Model.Components.M2.M2Size._22110
+            }
         ];
 
         motherboard1.M2Slots = motherboard1Slots;

@@ -16,6 +16,14 @@
             </Setter>
         </Style>
 
+        <Style TargetType="DataGridCell" x:Key="componentsListCell">
+            <Style.Resources>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </Style.Resources>
+        </Style>
+
         <Style TargetType="{x:Type DataGrid}" x:Key="componentsList">
             <Setter Property="Margin" Value="10"/>
             <Setter Property="AutoGenerateColumns" Value="True"/>
@@ -26,6 +34,7 @@
             <Setter Property="CanUserReorderColumns" Value="False"/>
             <Setter Property="ColumnHeaderStyle" Value="{StaticResource componentsListHeader}"/>
             <Setter Property="MinRowHeight" Value="35"/>
+            <Setter Property="CellStyle" Value="{StaticResource componentsListCell}"/>
         </Style>
 
         <!-- New component-->

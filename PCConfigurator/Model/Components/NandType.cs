@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace PCConfigurator.Model.Components;
 
-namespace PCConfigurator.Model.Components
+public enum NandType
 {
-    public enum NandType
-    {
-        SLC,
-        MLC,
-        TLC,
-        QLC
-    }
+    SLC,
+    MLC,
+    TLC,
+    QLC
 }

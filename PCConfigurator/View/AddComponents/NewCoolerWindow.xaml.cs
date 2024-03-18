@@ -3,11 +3,11 @@
 namespace PCConfigurator.View.AddComponents;
 
 /// <summary>
-/// Interaction logic for NewMotherboardWindow.xaml
+/// Interaction logic for NewCoolerWindow.xaml
 /// </summary>
-public partial class NewMotherboardWindow : Window
+public partial class NewCoolerWindow : Window
 {
-    public NewMotherboardWindow()
+    public NewCoolerWindow()
     {
         InitializeComponent();
     }
@@ -25,19 +25,9 @@ public partial class NewMotherboardWindow : Window
             AnnounceError("Введите модель.");
             return;
         }
-        if (comboBoxSocket.SelectedItem == null)
+        if (listBoxSocket.Items.Count == 0)
         {
             AnnounceError("Выберите сокет.");
-            return;
-        }
-        if (comboBoxChipset.SelectedItem == null)
-        {
-            AnnounceError("Выберите чипсет.");
-            return;
-        }
-        if (comboBoxRamType.SelectedItem == null)
-        {
-            AnnounceError("Выберите тип памяти.");
             return;
         }
 

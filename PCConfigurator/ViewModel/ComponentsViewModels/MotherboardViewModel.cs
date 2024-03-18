@@ -4,46 +4,83 @@ using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
 using PCConfigurator.View.AddComponents;
 using PCConfigurator.ViewModel.NewComponentsViewModel;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace PCConfigurator.ViewModel.ComponentsViewModels
+namespace PCConfigurator.ViewModel.ComponentsViewModels;
+
+internal class MotherboardViewModel : BaseViewModel
 {
-    internal class MotherboardViewModel : BaseViewModel
+    private readonly ApplicationContext dbContext = new ApplicationContext();
+
+    private readonly CollectionViewSource _viewSource = new CollectionViewSource();
+
+    public ICollectionView ViewSource { get => _viewSource.View; }
+
+    public MotherboardViewModel()
     {
-        private readonly ApplicationContext dbContext = new ApplicationContext();
+        dbContext.Motherboard.Load();
+        _viewSource.Source = dbContext.Motherboard.Local.ToObservableCollection();
+    }
 
-        private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
-        public ICollectionView ViewSource { get => _viewSource.View; }
+    private RelayCommand _add;
+    public ICommand Add => _add ??= new RelayCommand(PerformAdd);
+    private async void PerformAdd(object? commandParameter)
+    {
+        Motherboard motherboard = new Motherboard();
+        NewMotherboardViewmodel motherboardViewmodel = new(motherboard);
 
-        public  MotherboardViewModel()
+        NewMotherboardWindow window = new NewMotherboardWindow
         {
-            dbContext.Motherboard.Load();
-            _viewSource.Source = dbContext.Motherboard.Local.ToObservableCollection();
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow,
+            DataContext = motherboardViewmodel
+        };
+
+        await dbContext.Socket.LoadAsync();
+        await dbContext.Chipset.LoadAsync();
+
+        window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
+
+        if (window.ShowDialog() == true)
+        {
+            await dbContext.Motherboard.AddAsync(motherboard);
+            await dbContext.SaveChangesAsync();
         }
+    }
 
-
-        private RelayCommand _add;
-        public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-        private async void PerformAdd(object? commandParameter)
+    private RelayCommand _remove;
+    public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
+    private async void PerformRemove(object? commandParameter)
+    {
+        if (commandParameter is Motherboard motherboard)
         {
-            Motherboard motherboard = new Motherboard();
-            NewMotherboardViewmodel motherboardViewmodel = new(motherboard);
+            var result = MessageBox.Show($"Удалить данные по {motherboard.Model}", "Предупреждение", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                dbContext.Motherboard.Remove(motherboard);
+                await dbContext.SaveChangesAsync();
+            }
+        }
+    }
 
-           NewMotherboardWindow window = new NewMotherboardWindow
+    private RelayCommand _edit;
+    public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
+    private async void PerformEdit(object? commandParameter)
+    {
+        if (commandParameter is Motherboard motherboard)
+        {
+            Motherboard motherboardCopy = motherboard.Clone();
+            NewMotherboardViewmodel motherboardViewmodel = new(motherboardCopy);
+            NewMotherboardWindow window = new NewMotherboardWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
                 DataContext = motherboardViewmodel
-           };
+            };
 
             await dbContext.Socket.LoadAsync();
             await dbContext.Chipset.LoadAsync();
@@ -52,61 +89,12 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels
 
             if (window.ShowDialog() == true)
             {
-                await dbContext.Motherboard.AddAsync(motherboard);
+                dbContext.Motherboard.Entry(motherboard).CurrentValues.SetValues(motherboardCopy);
+                motherboard.Chipset = motherboardCopy.Chipset;
+                motherboard.Socket = motherboardCopy.Socket;
+                motherboard.M2Slots = motherboardCopy.M2Slots;
                 await dbContext.SaveChangesAsync();
-            }
-        }
-
-        private RelayCommand _remove;
-        public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-        private async void PerformRemove(object? commandParameter)
-        {
-            if (commandParameter is Motherboard motherboard)
-            {
-                var result = MessageBox.Show($"Удалить данные по {motherboard.Model}", "Предупреждение", MessageBoxButton.YesNo);
-                if (result == MessageBoxResult.Yes)
-                {
-                    motherboard.M2Slots.Clear();
-                    dbContext.Motherboard.Remove(motherboard);
-                    await dbContext.SaveChangesAsync();
-                }
-            }
-        }
-
-        private RelayCommand _edit;
-        public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-        private async void PerformEdit(object? commandParameter)
-        {
-            if (commandParameter is Motherboard motherboard)
-            {
-                Motherboard motherboardCopy = motherboard.Clone();
-                NewMotherboardViewmodel motherboardViewmodel = new(motherboardCopy);
-                NewMotherboardWindow window = new NewMotherboardWindow
-                {
-                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                    Owner = Application.Current.MainWindow,
-                    DataContext = motherboardViewmodel
-                };
-
-                await dbContext.Socket.LoadAsync();
-                await dbContext.Chipset.LoadAsync();
-
-                window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
-
-                if (window.ShowDialog() == true)
-                {
-                    motherboard.Model = motherboardCopy.Model;
-                    motherboard.Chipset = motherboardCopy.Chipset;
-                    motherboard.RamType = motherboardCopy.RamType;
-                    motherboard.RamSlots = motherboardCopy.RamSlots;
-                    motherboard.MaxRamCapacity = motherboardCopy.MaxRamCapacity;
-                    motherboard.Socket = motherboardCopy.Socket;
-                    motherboard.M2Slots = motherboardCopy.M2Slots;
-                    motherboard.Sata3Ports = motherboardCopy.Sata3Ports;
-                    motherboard.PCIex16Slots = motherboardCopy.PCIex16Slots;
-                    await dbContext.SaveChangesAsync();
-                    ViewSource.Refresh();
-                }
+                ViewSource.Refresh();
             }
         }
     }

@@ -1,9 +1,4 @@
-﻿using PCConfigurator.Commands;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Windows.Input;
-
-#nullable disable
+﻿using System.Collections.ObjectModel;
 
 namespace PCConfigurator.Model.Components
 {
@@ -56,7 +51,7 @@ namespace PCConfigurator.Model.Components
                 RamType = RamType,
                 RamSlots = RamSlots,
                 MaxRamCapacity = MaxRamCapacity,
-                M2Slots = m2Slots, 
+                M2Slots = m2Slots,
                 Sata3Ports = Sata3Ports,
                 PCIex16Slots = PCIex16Slots,
                 Configurations = Configurations

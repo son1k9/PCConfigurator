@@ -4,19 +4,19 @@ using System.Windows.Data;
 
 namespace PCConfigurator.Converters;
 
-[ValueConversion(typeof(ICollection<M2Slot>), typeof(string))]
-internal class M2SlotsConverter : IValueConverter
+[ValueConversion(typeof(ICollection<Socket>), typeof(string))]
+class SocketsConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
         string result = "";
-        ICollection<M2Slot> collection = (ICollection<M2Slot>)value;
-        List<M2Slot> list = [.. collection];
+        ICollection<Socket> collection = (ICollection<Socket>)value;
+        List<Socket> list = [.. collection];
         for (int i = 0; i < list.Count; i++)
         {
             result += list[i].ToString();
             if (i < list.Count - 1)
-                result += "\n";
+                result += ", ";
         }
         return result;
     }

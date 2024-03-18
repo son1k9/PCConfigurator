@@ -10,13 +10,6 @@ public class Chipset
 
     public virtual List<Motherboard> Motherboards { get; } = [];
 
-    public static Chipset FromString(string s)
-    {
-        ApplicationContext dbContext = new ApplicationContext();
-        Chipset chipset = dbContext.Chipset.First();
-        return chipset;
-    }
-
     public override string ToString()
     {
         return Name;

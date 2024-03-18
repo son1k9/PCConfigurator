@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace PCConfigurator.ViewModel;
 
-namespace PCConfigurator.ViewModel
+internal class ConfigurationsViewModel : BaseViewModel
 {
-    internal class ConfigurationsViewModel : BaseViewModel
-    {
-    }
 }

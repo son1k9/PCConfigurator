@@ -1,6 +1,4 @@
-﻿
-
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PCConfigurator.Model.Components;
 
@@ -86,7 +84,7 @@ public class Cpu
     {
         if (value)
             RamTypes |= type;
-        else if ((RamTypes & ~type) !=0 )
+        else if ((RamTypes & ~type) != 0)
             RamTypes &= ~type;
     }
 }

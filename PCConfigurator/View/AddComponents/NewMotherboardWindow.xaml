@@ -116,12 +116,10 @@
 
                         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
                             <CheckBox Content="Nvme" Margin="0 0 10 0" IsChecked="{Binding IsNvme}" />
-                            <!--Focusable="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsHitTestVisible}" 
-                                      IsHitTestVisible="{Binding M2Interface}"-->
                             <CheckBox Content="Sata" IsChecked="{Binding IsSata}"/>
                         </StackPanel>
                         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalAlignment="Stretch" Grid.RowSpan="2">
-                            <Button Grid.Column="1" Grid.Row="0" Width="20" Height="20" Margin="2" Command="{Binding Path=DataContext.RemoveM2Slot, RelativeSource={RelativeSource AncestorType={x:Type Window} }}" 
+                            <Button Width="20" Height="20" Margin="2" Command="{Binding Path=DataContext.RemoveM2Slot, RelativeSource={RelativeSource AncestorType={x:Type Window} }}" 
                                     CommandParameter="{Binding}" Background="Transparent">
                                 <Button.Content>
                                     <Image Source="/View/AddComponents/delete.png"/>

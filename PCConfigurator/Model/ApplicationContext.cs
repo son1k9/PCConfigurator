@@ -83,6 +83,6 @@ internal class ApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Model\\Database\\components.db");
+        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Model\\Database\\components.db").EnableSensitiveDataLogging(true);
     }
 }

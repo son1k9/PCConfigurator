@@ -1,11 +1,7 @@
-﻿using PCConfigurator.Commands;
-using PCConfigurator.Model.Components.M2;
+﻿using PCConfigurator.Model.Components.M2;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Windows.Input;
 
 namespace PCConfigurator.Model.Components;
-
-#nullable disable
 
 public class M2Slot
 {
@@ -23,7 +19,7 @@ public class M2Slot
         string result = M2Interface.ToString() + " " + M2Size.ToString();
         const string value = "_";
         int index = result.IndexOf(value);
-        while (index != -1) 
+        while (index != -1)
         {
             result = result.Remove(index, 1);
             index = result.IndexOf(value);
@@ -65,7 +61,7 @@ public class M2Slot
         if (value)
             M2Interface |= m2Interface;
         else if ((M2Interface & ~m2Interface) != 0)
-                M2Interface &= ~m2Interface;
+            M2Interface &= ~m2Interface;
     }
 
 
