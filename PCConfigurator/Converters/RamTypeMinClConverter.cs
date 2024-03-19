@@ -6,37 +6,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
-using System.Windows.Media;
 
 namespace PCConfigurator.Converters;
 
-[ValueConversion(typeof(RamType), typeof(DoubleCollection))]
-internal class RamTypeClockStepConverter : IValueConverter
+[ValueConversion(typeof(RamType), typeof(int))]
+class RamTypeMinClConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
         if (value == null)
-            return new DoubleCollection();
+            return 5;
 
         RamType ramType = (RamType)value;
         switch (ramType)
         {
             case RamType.DDR3:
-                return new DoubleCollection() { 800, 1066, 1333, 1600, 1866, 2133};
+                return 5;
 
             case RamType.DDR4:
-                return new DoubleCollection() { 1600, 1866, 2133, 2400, 2666, 2933, 3200};
+                return 10;
 
             case RamType.DDR5:
-                {
-                    DoubleCollection values = [];
-                    for (int i = 0; i <= 13; i++)
-                        values.Add(3600 + 400 * i);
-                    return values;
-                }
+                return 26;
 
             default:
-                return new DoubleCollection();
+                return 5;
         }
     }
 

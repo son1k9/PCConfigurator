@@ -28,7 +28,7 @@ internal class RamViewModel : BaseViewModel
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
     private async void PerformAdd(object? commandParameter)
     {
-        Ram ram = new Ram() { RamType = RamType.DDR4 };
+        Ram ram = new Ram();
 
         NewRamWindow window = new NewRamWindow
         {
@@ -41,6 +41,44 @@ internal class RamViewModel : BaseViewModel
         {
             await dbContext.Ram.AddAsync(ram);
             await dbContext.SaveChangesAsync();
+        }
+    }
+
+    private RelayCommand _remove;
+    public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
+    private async void PerformRemove(object? commandParameter)
+    {
+        if (commandParameter is Ram ram)
+        {
+            var result = MessageBox.Show($"Удалить данные по {ram.Model}", "Предупреждение", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                dbContext.Ram.Remove(ram);
+                await dbContext.SaveChangesAsync();
+            }
+        }
+    }
+
+    private RelayCommand _edit;
+    public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
+    private async void PerformEdit(object? commandParameter)
+    {
+        if (commandParameter is Ram ram)
+        {
+            Ram ramCopy = ram.Clone();
+            NewRamWindow window = new NewRamWindow
+            {
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = Application.Current.MainWindow,
+                DataContext = ramCopy
+            };
+
+            if (window.ShowDialog() == true)
+            {
+                dbContext.Ram.Entry(ram).CurrentValues.SetValues(ramCopy);
+                await dbContext.SaveChangesAsync();
+                ViewSource.Refresh();
+            }
         }
     }
 }
