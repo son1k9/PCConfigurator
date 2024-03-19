@@ -38,7 +38,7 @@ public partial class NewCpuWindow : Window
             AnnounceError("Выберите сокет.");
             return;
         }
-        if (!(checkBoxDDR.IsChecked.GetValueOrDefault() | checkBoxDDR2.IsChecked.GetValueOrDefault() | checkBoxDDR3.IsChecked.GetValueOrDefault()
+        if (!(checkBoxDDR3.IsChecked.GetValueOrDefault()
             | checkBoxDDR4.IsChecked.GetValueOrDefault() | checkBoxDDR5.IsChecked.GetValueOrDefault()))
         {
             AnnounceError("Выберите тип памяти.");

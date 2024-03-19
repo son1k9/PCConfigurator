@@ -46,20 +46,6 @@ public class Cpu
     }
 
     [NotMapped]
-    public bool IsDDR
-    {
-        get => RamTypes.HasFlag(RamType.DDR);
-        set => SetRamType(RamType.DDR, value);
-    }
-
-    [NotMapped]
-    public bool IsDDR2
-    {
-        get => RamTypes.HasFlag(RamType.DDR2);
-        set => SetRamType(RamType.DDR2, value);
-    }
-
-    [NotMapped]
     public bool IsDDR3
     {
         get => RamTypes.HasFlag(RamType.DDR3);
