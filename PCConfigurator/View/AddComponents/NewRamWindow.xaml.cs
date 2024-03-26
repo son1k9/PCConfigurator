@@ -48,7 +48,6 @@ public partial class NewRamWindow : Window
 
     private void comboBoxRamType_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-
         sliderRamClock.Value = sliderRamClock.Value;
         sliderRamCl.Value = sliderRamCl.Value;
     }

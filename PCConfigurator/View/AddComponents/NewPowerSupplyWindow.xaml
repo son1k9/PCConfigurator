@@ -1,0 +1,52 @@
+﻿<Window x:Class="PCConfigurator.View.AddComponents.NewPowerSupplyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCConfigurator.View.AddComponents"
+        xmlns:components="clr-namespace:PCConfigurator.Model.Components"
+        d:DataContext="{d:DesignInstance Type=components:PowerSupply}"
+        mc:Ignorable="d"
+        Title="NewPowerSupplyWindow" Height="260" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель: " Style="{StaticResource textBlockNewComponent}"/>
+        <TextBox Grid.Row="0" Grid.Column="1"  Style="{StaticResource textBoxNewComponent}" Name="textBoxModel">
+            <TextBox.Text>
+                <Binding Path="Model" UpdateSourceTrigger="PropertyChanged">
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Мощность: " Style="{StaticResource textBlockNewComponent}"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Slider Value="{Binding Wattage}" Style="{StaticResource sliderNewComponent}"
+                TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderWattage" Minimum="200" Maximum="2000"
+                TickFrequency="50"/>
+            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Wattage}"/>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
+            <Button Content="Подтвердить" VerticalAlignment="Center" Width="75" Height="30" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+            <Button Content="Отмена" VerticalAlignment="Center" Width="75" Height="30" Margin="10 0 0 0" IsCancel="True"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
+        
+    </Grid>
+</Window>

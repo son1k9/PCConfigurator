@@ -154,7 +154,6 @@ public partial class App : Application
             CoreClock = 2235,
             BoostClock = 2535,
             VramCapacity = 24,
-            VramClock = 21000,
             PowerConsumption = 450
         });
 
@@ -164,7 +163,6 @@ public partial class App : Application
             CoreClock = 1920,
             BoostClock = 2520,
             VramCapacity = 12,
-            VramClock = 21000,
             PowerConsumption = 200
         });
 
@@ -174,7 +172,6 @@ public partial class App : Application
             CoreClock = 1830,
             BoostClock = 2505,
             VramCapacity = 8,
-            VramClock = 17000,
             PowerConsumption = 115
         });
 
@@ -184,7 +181,6 @@ public partial class App : Application
             CoreClock = 1720,
             BoostClock = 2755,
             VramCapacity = 8,
-            VramClock = 18000,
             PowerConsumption = 185
         });
 
@@ -194,7 +190,6 @@ public partial class App : Application
             CoreClock = 1626,
             BoostClock = 2491,
             VramCapacity = 8,
-            VramClock = 14000,
             PowerConsumption = 140
         });
 

@@ -1,0 +1,97 @@
+﻿<Window x:Class="PCConfigurator.View.AddComponents.NewGpuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCConfigurator.View.AddComponents"
+        mc:Ignorable="d"
+        xmlns:components="clr-namespace:PCConfigurator.Model.Components"
+        d:DataContext="{d:DesignInstance Type=components:Gpu}"
+        Title="NewGpuWindow" Height="600" Width="410" ResizeMode="NoResize" SizeToContent="Height">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель: " Style="{StaticResource textBlockNewComponent}"/>
+        <TextBox Grid.Row="0" Grid.Column="1"  Style="{StaticResource textBoxNewComponent}" Name="textBoxModel">
+            <TextBox.Text>
+                <Binding Path="Model" UpdateSourceTrigger="PropertyChanged">
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Частота: " Style="{StaticResource textBlockNewComponent}"/>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Slider Value="{Binding CoreClock}" Style="{StaticResource sliderNewComponent}"
+                    TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderCoreClock" Minimum="400" Maximum="3000"
+                    TickFrequency="5" ValueChanged="sliderCoreClock_ValueChanged"/>
+            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding CoreClock}"/>
+        </Grid>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Турбочастота: " Style="{StaticResource textBlockNewComponent}"/>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Slider Value="{Binding BoostClock}" Style="{StaticResource sliderNewComponent}"
+                    TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderBoostClock" 
+                    Minimum="{Binding ElementName=sliderCoreClock, Path=Value}" Maximum="3000"
+                    TickFrequency="5"/>
+            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding BoostClock}"/>
+        </Grid>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Объем видеопамяти: " Style="{StaticResource textBlockNewComponent}"/>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Slider Value="{Binding VramCapacity}" Style="{StaticResource sliderNewComponent}"
+            TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderVramCapacity" 
+            Minimum="1" Maximum="48"
+            TickFrequency="1"/>
+            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding VramCapacity}"/>
+        </Grid>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Энергопотребление: " Style="{StaticResource textBlockNewComponent}"/>
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Slider Value="{Binding PowerConsumption}" Style="{StaticResource sliderNewComponent}"
+    TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderPowerConsumption" 
+    Minimum="15" Maximum="500"
+    TickFrequency="5"/>
+            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding PowerConsumption}"/>
+        </Grid>
+
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
+            <Button Content="Подтвердить" VerticalAlignment="Center" Width="75" Height="30" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+            <Button Content="Отмена" VerticalAlignment="Center" Width="75" Height="30" Margin="10 0 0 0" IsCancel="True"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
+
+    </Grid>
+</Window>

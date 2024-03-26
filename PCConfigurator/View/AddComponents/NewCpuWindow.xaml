@@ -179,8 +179,8 @@
         <CheckBox Grid.Row="12" Grid.Column="1" Style="{StaticResource checkBoxComponent}" IsChecked="{Binding HaveGraphics}" Name="checkBoxHaveGraphics"/>
 
         <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
-            <Button Content="OK" VerticalAlignment="Center" Width="70" Height="30" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
-            <Button Content="Cancel" VerticalAlignment="Center" Width="70" Height="30" Margin="10 0 0 0" IsCancel="True"/>
+            <Button Content="Подтвердить" VerticalAlignment="Center" Width="75" Height="30" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+            <Button Content="Отмена" VerticalAlignment="Center" Width="75" Height="30" Margin="10 0 0 0" IsCancel="True"/>
         </StackPanel>
         
         <TextBlock Grid.Row="14" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
