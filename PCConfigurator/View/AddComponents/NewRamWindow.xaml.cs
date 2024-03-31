@@ -51,9 +51,4 @@ public partial class NewRamWindow : Window
         sliderRamClock.Value = sliderRamClock.Value;
         sliderRamCl.Value = sliderRamCl.Value;
     }
-
-    private void Window_Loaded(object sender, RoutedEventArgs e)
-    {
-        //sliderRamClock.Value = sliderRamClock.Minimum;
-    }
 }

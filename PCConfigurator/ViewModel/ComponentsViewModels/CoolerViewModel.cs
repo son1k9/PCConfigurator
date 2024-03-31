@@ -27,7 +27,7 @@ internal class CoolerViewModel : BaseViewModel
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private async void PerformAdd(object? commandParameter)
+    private void PerformAdd(object? commandParameter)
     {
         Cooler cooler = new Cooler();
         NewCoolerViewmodel coolerViewmodel = new NewCoolerViewmodel(cooler);
@@ -44,14 +44,14 @@ internal class CoolerViewModel : BaseViewModel
 
         if (window.ShowDialog() == true)
         {
-            await dbContext.Cooler.AddAsync(cooler);
-            await dbContext.SaveChangesAsync();
+            dbContext.Cooler.Add(cooler);
+            dbContext.SaveChanges();
         }
     }
 
     private RelayCommand _remove;
     public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private async void PerformRemove(object? commandParameter)
+    private void PerformRemove(object? commandParameter)
     {
         if (commandParameter is Cooler cooler)
         {
@@ -59,14 +59,14 @@ internal class CoolerViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 dbContext.Cooler.Remove(cooler);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
         }
     }
 
     private RelayCommand _edit;
     public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private async void PerformEdit(object? commandParameter)
+    private void PerformEdit(object? commandParameter)
     {
         if (commandParameter is Cooler cooler)
         {
@@ -79,7 +79,7 @@ internal class CoolerViewModel : BaseViewModel
                 DataContext = coolerViewmodel
             };
 
-            await dbContext.Socket.LoadAsync();
+            dbContext.Socket.Load();
 
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
@@ -87,7 +87,7 @@ internal class CoolerViewModel : BaseViewModel
             {
                 dbContext.Cooler.Entry(cooler).CurrentValues.SetValues(coolerCopy);
                 cooler.Sockets = coolerCopy.Sockets;
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
                 ViewSource.Refresh();
             }
         }

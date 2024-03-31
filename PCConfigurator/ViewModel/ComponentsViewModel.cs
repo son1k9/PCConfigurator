@@ -24,6 +24,7 @@ internal class ComponentsViewModel : BaseViewModel
         NavigateSsdCommand = new NavigateCommand<SsdViewModel>(_navigationStorage);
         NavigateHddCommand = new NavigateCommand<HddViewModel>(_navigationStorage);
         NavigateM2SsdCommand = new NavigateCommand<M2SsdViewModel>(_navigationStorage);
+        NavigateSocketCommand = new NavigateCommand<SocketViewModel>(_navigationStorage);
     }
 
     private void OnViewModelChanged()
@@ -40,4 +41,5 @@ internal class ComponentsViewModel : BaseViewModel
     public ICommand NavigateSsdCommand { get; }
     public ICommand NavigateHddCommand { get; }
     public ICommand NavigateM2SsdCommand { get; }
+    public ICommand NavigateSocketCommand { get; }
 }

@@ -45,18 +45,18 @@ public class M2Slot
     [NotMapped]
     public bool IsNvme
     {
-        get => M2Interface.HasFlag(M2.M2Interface.Nvme);
-        set => SetInterface(M2.M2Interface.Nvme, value);
+        get => M2Interface.HasFlag(M2Interface.Nvme);
+        set => SetInterface(M2Interface.Nvme, value);
     }
 
     [NotMapped]
     public bool IsSata
     {
-        get => M2Interface.HasFlag(M2.M2Interface.Sata);
-        set => SetInterface(M2.M2Interface.Sata, value);
+        get => M2Interface.HasFlag(M2Interface.Sata);
+        set => SetInterface(M2Interface.Sata, value);
     }
 
-    public void SetInterface(M2.M2Interface m2Interface, bool value)
+    public void SetInterface(M2Interface m2Interface, bool value)
     {
         if (value)
             M2Interface |= m2Interface;
@@ -68,40 +68,40 @@ public class M2Slot
     [NotMapped]
     public bool Is2230
     {
-        get => M2Size.HasFlag(M2.M2Size._2230);
-        set => SetSize(M2.M2Size._2230, value);
+        get => M2Size.HasFlag(M2Size._2230);
+        set => SetSize(M2Size._2230, value);
     }
 
     [NotMapped]
     public bool Is2242
     {
-        get => M2Size.HasFlag(M2.M2Size._2242);
-        set => SetSize(M2.M2Size._2242, value);
+        get => M2Size.HasFlag(M2Size._2242);
+        set => SetSize(M2Size._2242, value);
     }
 
     [NotMapped]
     public bool Is2260
     {
-        get => M2Size.HasFlag(M2.M2Size._2260);
-        set => SetSize(M2.M2Size._2260, value);
+        get => M2Size.HasFlag(M2Size._2260);
+        set => SetSize(M2Size._2260, value);
     }
 
     [NotMapped]
     public bool Is2280
     {
-        get => M2Size.HasFlag(M2.M2Size._2280);
-        set => SetSize(M2.M2Size._2280, value);
+        get => M2Size.HasFlag(M2Size._2280);
+        set => SetSize(M2Size._2280, value);
     }
 
     [NotMapped]
     public bool Is22110
     {
-        get => M2Size.HasFlag(M2.M2Size._22110);
-        set => SetSize(M2.M2Size._22110, value);
+        get => M2Size.HasFlag(M2Size._22110);
+        set => SetSize(M2Size._22110, value);
     }
 
 
-    public void SetSize(M2.M2Size size, bool value)
+    public void SetSize(M2Size size, bool value)
     {
         if (value)
             M2Size |= size;

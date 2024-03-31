@@ -3,10 +3,10 @@
 public class Chipset
 {
     public int ChipsetId { get; set; }
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     public int SocketId { get; set; }
-    public virtual required Socket Socket { get; set; }
+    public virtual Socket Socket { get; set; }
 
     public virtual List<Motherboard> Motherboards { get; } = [];
 

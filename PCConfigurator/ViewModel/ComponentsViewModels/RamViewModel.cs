@@ -26,7 +26,7 @@ internal class RamViewModel : BaseViewModel
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private async void PerformAdd(object? commandParameter)
+    private void PerformAdd(object? commandParameter)
     {
         Ram ram = new Ram();
 
@@ -39,14 +39,14 @@ internal class RamViewModel : BaseViewModel
 
         if (window.ShowDialog() == true)
         {
-            await dbContext.Ram.AddAsync(ram);
-            await dbContext.SaveChangesAsync();
+            dbContext.Ram.Add(ram);
+            dbContext.SaveChanges();
         }
     }
 
     private RelayCommand _remove;
     public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private async void PerformRemove(object? commandParameter)
+    private void PerformRemove(object? commandParameter)
     {
         if (commandParameter is Ram ram)
         {
@@ -54,14 +54,14 @@ internal class RamViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 dbContext.Ram.Remove(ram);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
         }
     }
 
     private RelayCommand _edit;
     public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private async void PerformEdit(object? commandParameter)
+    private void PerformEdit(object? commandParameter)
     {
         if (commandParameter is Ram ram)
         {
@@ -76,7 +76,7 @@ internal class RamViewModel : BaseViewModel
             if (window.ShowDialog() == true)
             {
                 dbContext.Ram.Entry(ram).CurrentValues.SetValues(ramCopy);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
                 ViewSource.Refresh();
             }
         }

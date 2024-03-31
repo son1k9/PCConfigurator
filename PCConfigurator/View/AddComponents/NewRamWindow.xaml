@@ -8,11 +8,11 @@
         xmlns:converters="clr-namespace:PCConfigurator.Converters"
         d:DataContext="{d:DesignInstance Type=components:Ram}"
         mc:Ignorable="d"
-        Title="NewRamWindow" Height="400" Width="380" ResizeMode="NoResize" SizeToContent="Height"
-        Loaded="Window_Loaded">
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+        Title="NewRamWindow" Height="400" Width="380" ResizeMode="NoResize" SizeToContent="Height">
     <Window.Resources>
         <ObjectDataProvider x:Key="RamTypeDataSource"
-                    ObjectType="{x:Type components:RamType}"
+                    ObjectType="{x:Type sys:Enum}"
                     MethodName="GetValues">
             <ObjectDataProvider.MethodParameters>
                 <x:Type Type="{x:Type components:RamType}"/>
@@ -97,7 +97,7 @@
             <Button Content="Отмена" VerticalAlignment="Center" Width="75" Height="30" Margin="10 0 0 0" IsCancel="True"/>
         </StackPanel>
         
-        <TextBlock Grid.Row="14" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
+        <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
         
     </Grid>
 </Window>

@@ -26,7 +26,7 @@ internal class GpuViewModel : BaseViewModel
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private async void PerformAdd(object? commandParameter)
+    private void PerformAdd(object? commandParameter)
     {
         Gpu gpu = new Gpu();
 
@@ -39,14 +39,14 @@ internal class GpuViewModel : BaseViewModel
 
         if (window.ShowDialog() == true)
         {
-            await dbContext.Gpu.AddAsync(gpu);
-            await dbContext.SaveChangesAsync();
+            dbContext.Gpu.Add(gpu);
+            dbContext.SaveChanges();
         }
     }
 
     private RelayCommand _remove;
     public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private async void PerformRemove(object? commandParameter)
+    private void PerformRemove(object? commandParameter)
     {
         if (commandParameter is Gpu gpu)
         {
@@ -54,14 +54,14 @@ internal class GpuViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 dbContext.Gpu.Remove(gpu);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
         }
     }
 
     private RelayCommand _edit;
     public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private async void PerformEdit(object? commandParameter)
+    private void PerformEdit(object? commandParameter)
     {
         if (commandParameter is Gpu gpu)
         {
@@ -76,7 +76,7 @@ internal class GpuViewModel : BaseViewModel
             if (window.ShowDialog() == true)
             {
                 dbContext.Gpu.Entry(gpu).CurrentValues.SetValues(gpuCopy);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
                 ViewSource.Refresh();
             }
         }

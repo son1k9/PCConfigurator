@@ -1,19 +1,19 @@
-﻿<UserControl x:Class="PCConfigurator.View.ComponentsUserControls.HddUserControl"
+﻿<UserControl x:Class="PCConfigurator.View.ComponentsUserControls.SocketUserControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PCConfigurator.View.ComponentsUserControls"
              mc:Ignorable="d" 
-             xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" d:DataContext="{d:DesignInstance Type=componentsviewmodels:HddViewModel}"
+              xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" d:DataContext="{d:DesignInstance Type=componentsviewmodels:SocketViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ContextMenu  x:Key="RowMenu">
             <MenuItem Header="Редактировать" Command="{Binding DataContext.Edit, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
-                  CommandParameter="{Binding}">
+CommandParameter="{Binding}">
             </MenuItem>
             <MenuItem Header="Удалить" Command="{Binding DataContext.Remove, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
-                  CommandParameter="{Binding}">
+CommandParameter="{Binding}">
                 <MenuItem.Icon>
                     <Image Source="/View/ComponentsUserControls/delete.png"/>
                 </MenuItem.Icon>
@@ -39,7 +39,7 @@
             <Button Content="Добавить" Width="80" Height="35" VerticalAlignment="Center" Command="{Binding Add}"/>
         </StackPanel>
         <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" Style="{StaticResource componentsList}"
-                  RowStyle="{StaticResource componentsListRow}" Name="dataGrid">
+      RowStyle="{StaticResource componentsListRow}" Name="dataGrid">
             <DataGrid.InputBindings>
                 <KeyBinding Key="Delete" Command="{Binding Remove}" CommandParameter="{Binding Path=ViewSource/}"/>
                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding Edit}" CommandParameter="{Binding Path=ViewSource/}"/>

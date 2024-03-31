@@ -19,7 +19,6 @@
                 <StackPanel.Resources>
                     <!-- Style for menu buttons-->
                     <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
-                        <Setter Property="VerticalAlignment" Value="Center"/>
                         <Setter Property="Background" Value="White"/>
                         <Setter Property="MinHeight" Value="50"/>
                         <Setter Property="MinWidth" Value="100"/>
@@ -28,7 +27,7 @@
                                 <ControlTemplate TargetType="RadioButton">
                                     <Grid Background="{TemplateBinding Background}">
                                         <TextBlock VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
+                                   HorizontalAlignment="Left" Margin="10 0 0 0 "
                                    Text="{TemplateBinding Property=Content}"/>
                                     </Grid>
                                 </ControlTemplate>
@@ -54,6 +53,7 @@
                 <RadioButton Content="SSD" Command="{Binding NavigateSsdCommand}"/>
                 <RadioButton Content="HDD" Command="{Binding NavigateHddCommand}"/>
                 <RadioButton Content="M2 SSD" Command="{Binding NavigateM2SsdCommand}"/>
+                <RadioButton Content="Сокеты" Command="{Binding NavigateSocketCommand}"/>
             </StackPanel>
         </Border>
         <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2 0 0 0">
@@ -85,6 +85,9 @@
                     </DataTemplate>
                     <DataTemplate DataType="{x:Type viewmodels:M2SsdViewModel}">
                         <views:M2SsdUserControl/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type viewmodels:SocketViewModel}">
+                        <views:SocketUserControl/>
                     </DataTemplate>
                 </ContentControl.Resources>
             </ContentControl>

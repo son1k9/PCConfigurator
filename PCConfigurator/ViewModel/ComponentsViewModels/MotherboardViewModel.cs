@@ -28,7 +28,7 @@ internal class MotherboardViewModel : BaseViewModel
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private async void PerformAdd(object? commandParameter)
+    private void PerformAdd(object? commandParameter)
     {
         Motherboard motherboard = new Motherboard();
         NewMotherboardViewmodel motherboardViewmodel = new(motherboard);
@@ -40,21 +40,21 @@ internal class MotherboardViewModel : BaseViewModel
             DataContext = motherboardViewmodel
         };
 
-        await dbContext.Socket.LoadAsync();
-        await dbContext.Chipset.LoadAsync();
+        dbContext.Socket.Load();
+        dbContext.Chipset.Load();
 
         window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
         if (window.ShowDialog() == true)
         {
-            await dbContext.Motherboard.AddAsync(motherboard);
-            await dbContext.SaveChangesAsync();
+            dbContext.Motherboard.Add(motherboard);
+            dbContext.SaveChanges();
         }
     }
 
     private RelayCommand _remove;
     public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private async void PerformRemove(object? commandParameter)
+    private void PerformRemove(object? commandParameter)
     {
         if (commandParameter is Motherboard motherboard)
         {
@@ -62,14 +62,14 @@ internal class MotherboardViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 dbContext.Motherboard.Remove(motherboard);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
         }
     }
 
     private RelayCommand _edit;
     public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private async void PerformEdit(object? commandParameter)
+    private void PerformEdit(object? commandParameter)
     {
         if (commandParameter is Motherboard motherboard)
         {
@@ -82,8 +82,8 @@ internal class MotherboardViewModel : BaseViewModel
                 DataContext = motherboardViewmodel
             };
 
-            await dbContext.Socket.LoadAsync();
-            await dbContext.Chipset.LoadAsync();
+            dbContext.Socket.Load();
+            dbContext.Chipset.Load();
 
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
@@ -93,7 +93,7 @@ internal class MotherboardViewModel : BaseViewModel
                 motherboard.Chipset = motherboardCopy.Chipset;
                 motherboard.Socket = motherboardCopy.Socket;
                 motherboard.M2Slots = motherboardCopy.M2Slots;
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
                 ViewSource.Refresh();
             }
         }

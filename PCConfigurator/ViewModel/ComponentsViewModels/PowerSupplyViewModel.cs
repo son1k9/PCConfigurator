@@ -27,7 +27,7 @@ internal class PowerSupplyViewModel : BaseViewModel
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private async void PerformAdd(object? commandParameter)
+    private void PerformAdd(object? commandParameter)
     {
         PowerSupply powerSupply = new PowerSupply();
 
@@ -40,14 +40,14 @@ internal class PowerSupplyViewModel : BaseViewModel
 
         if (window.ShowDialog() == true)
         {
-            await dbContext.PowerSupply.AddAsync(powerSupply);
-            await dbContext.SaveChangesAsync();
+            dbContext.PowerSupply.Add(powerSupply);
+            dbContext.SaveChanges();
         }
     }
 
     private RelayCommand _remove;
     public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private async void PerformRemove(object? commandParameter)
+    private void PerformRemove(object? commandParameter)
     {
         if (commandParameter is PowerSupply powerSupply)
         {
@@ -55,14 +55,14 @@ internal class PowerSupplyViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 dbContext.PowerSupply.Remove(powerSupply);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
         }
     }
 
     private RelayCommand _edit;
     public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private async void PerformEdit(object? commandParameter)
+    private void PerformEdit(object? commandParameter)
     {
         if (commandParameter is PowerSupply powerSupply)
         {
@@ -78,7 +78,7 @@ internal class PowerSupplyViewModel : BaseViewModel
             if (window.ShowDialog() == true)
             {
                 dbContext.PowerSupply.Entry(powerSupply).CurrentValues.SetValues(powerSupplyCopy);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
                 ViewSource.Refresh();
             }
         }

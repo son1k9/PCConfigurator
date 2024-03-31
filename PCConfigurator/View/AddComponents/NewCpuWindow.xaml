@@ -8,11 +8,12 @@
         xmlns:components="clr-namespace:PCConfigurator.Model.Components"
         d:DataContext="{d:DesignInstance Type=components:Cpu}"
         mc:Ignorable="d"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         Title="NewCpuWindow" Height="740" Width="430" ResizeMode="NoResize" SizeToContent="Height">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="RamTypeDataSource"
-                    ObjectType="{x:Type components:RamType}"
+                    ObjectType="{x:Type sys:Enum}"
                     MethodName="GetValues">
             <ObjectDataProvider.MethodParameters>
                 <x:Type Type="{x:Type components:RamType}"/>

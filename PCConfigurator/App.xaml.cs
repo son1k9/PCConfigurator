@@ -378,8 +378,8 @@ public partial class App : Application
             WriteSpeed = 3100,
             Tbw = 750,
             NandType = NandType.TLC,
-            M2Interface = Model.Components.M2.M2Interface.Nvme,
-            M2Size = Model.Components.M2.M2Size._2280
+            M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
+            M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
         });
 
         dbContext.M2Ssd.Add(new M2Ssd()

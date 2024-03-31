@@ -27,7 +27,7 @@ internal class CpuViewModel : BaseViewModel
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private async void PerformAdd(object? commandParameter)
+    private void PerformAdd(object? commandParameter)
     {
         Cpu cpu = new Cpu();
 
@@ -38,20 +38,20 @@ internal class CpuViewModel : BaseViewModel
             DataContext = cpu
         };
 
-        await dbContext.Socket.LoadAsync();
+        dbContext.Socket.Load();
 
         window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
         if (window.ShowDialog() == true)
         {
-            await dbContext.Cpu.AddAsync(cpu);
-            await dbContext.SaveChangesAsync();
+            dbContext.Cpu.Add(cpu);
+            dbContext.SaveChanges();
         }
     }
 
     private RelayCommand _remove;
     public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private async void PerformRemove(object? commandParameter)
+    private void PerformRemove(object? commandParameter)
     {
         if (commandParameter is Cpu cpu)
         {
@@ -59,14 +59,14 @@ internal class CpuViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 dbContext.Cpu.Remove(cpu);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
         }
     }
 
     private RelayCommand _edit;
     public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private async void PerformEdit(object? commandParameter)
+    private void PerformEdit(object? commandParameter)
     {
         if (commandParameter is Cpu cpu)
         {
@@ -78,7 +78,7 @@ internal class CpuViewModel : BaseViewModel
                 DataContext = cpuCopy
             };
 
-            await dbContext.Socket.LoadAsync();
+            dbContext.Socket.Load();
 
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
@@ -86,7 +86,7 @@ internal class CpuViewModel : BaseViewModel
             {
                 dbContext.Cpu.Entry(cpu).CurrentValues.SetValues(cpuCopy);
                 cpu.Socket = cpuCopy.Socket;
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
                 ViewSource.Refresh();
             }
         }
