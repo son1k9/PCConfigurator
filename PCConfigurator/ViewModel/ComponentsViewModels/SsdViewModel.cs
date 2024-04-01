@@ -3,6 +3,7 @@ using PCConfigurator.Commands;
 using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
 using PCConfigurator.View.AddComponents;
+using PCConfigurator.ViewModel.NewComponentsViewModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
@@ -30,12 +31,13 @@ internal class SsdViewModel : BaseViewModel
     private void PerformAdd(object? commandParameter)
     {
         Ssd ssd = new Ssd();
+        NewSsdViewModel viewModel = new NewSsdViewModel(ssd);
 
         NewSsdWindow window = new NewSsdWindow
         {
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             Owner = Application.Current.MainWindow,
-            DataContext = ssd
+            DataContext = viewModel
         };
 
         if (window.ShowDialog() == true)
@@ -67,11 +69,12 @@ internal class SsdViewModel : BaseViewModel
         if (commandParameter is Ssd ssd)
         {
             Ssd ssdCopy = ssd.Clone();
+            NewSsdViewModel viewModel = new NewSsdViewModel(ssdCopy);
             NewSsdWindow window = new NewSsdWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
-                DataContext = ssdCopy
+                DataContext = viewModel
             };
 
             if (window.ShowDialog() == true)

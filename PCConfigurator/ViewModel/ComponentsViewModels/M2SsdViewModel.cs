@@ -7,6 +7,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows;
 using Microsoft.EntityFrameworkCore;
+using PCConfigurator.ViewModel.NewComponentsViewModel;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
@@ -30,12 +31,13 @@ internal class M2SsdViewModel : BaseViewModel
     private void PerformAdd(object? commandParameter)
     {
         M2Ssd m2ssd = new M2Ssd();
+        NewM2SsdViewModel viewModel = new NewM2SsdViewModel(m2ssd);
 
         NewM2SsdWindow window = new NewM2SsdWindow
         {
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             Owner = Application.Current.MainWindow,
-            DataContext = m2ssd
+            DataContext = viewModel
         };
 
         if (window.ShowDialog() == true)
@@ -67,11 +69,12 @@ internal class M2SsdViewModel : BaseViewModel
         if (commandParameter is M2Ssd m2ssd)
         {
             M2Ssd m2ssdCopy = m2ssd.Clone();
+            NewM2SsdViewModel viewModel = new NewM2SsdViewModel(m2ssdCopy);
             NewM2SsdWindow window = new NewM2SsdWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
-                DataContext = m2ssdCopy
+                DataContext = viewModel
             };
 
             if (window.ShowDialog() == true)

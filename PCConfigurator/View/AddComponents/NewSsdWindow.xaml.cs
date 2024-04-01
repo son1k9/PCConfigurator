@@ -45,5 +45,21 @@ namespace PCConfigurator.View.AddComponents
 
             DialogResult = true;
         }
+
+        private void CheckBoxTb_Checked(object sender, RoutedEventArgs e)
+        {
+            sliderSsdCapacity.Minimum = 1;
+            sliderSsdCapacity.Maximum = 100;
+            sliderSsdCapacity.TickFrequency = 1;
+            sliderSsdCapacity.Value = sliderSsdCapacity.Value;
+        }
+
+        private void CheckBoxTb_Unchecked(object sender, RoutedEventArgs e)
+        {
+            sliderSsdCapacity.Minimum = 60;
+            sliderSsdCapacity.Maximum = 1024;
+            sliderSsdCapacity.TickFrequency = 2;
+            sliderSsdCapacity.Value = 1000;
+        }
     }
 }

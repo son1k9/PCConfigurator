@@ -7,6 +7,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows;
 using Microsoft.EntityFrameworkCore;
+using PCConfigurator.ViewModel.NewComponentsViewModel;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
@@ -29,12 +30,13 @@ internal class HddViewModel : BaseViewModel
     private void PerformAdd(object? commandParameter)
     {
         Hdd hdd = new Hdd();
+        NewHddViewModel viewModel = new NewHddViewModel(hdd);
 
         NewHddWindow window = new NewHddWindow
         {
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             Owner = Application.Current.MainWindow,
-            DataContext = hdd
+            DataContext = viewModel
         };
 
         if (window.ShowDialog() == true)
@@ -66,11 +68,12 @@ internal class HddViewModel : BaseViewModel
         if (commandParameter is Hdd hdd)
         {
             Hdd hddCopy = hdd.Clone();
+            NewHddViewModel viewModel = new NewHddViewModel(hddCopy);
             NewHddWindow window = new NewHddWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
-                DataContext = hddCopy
+                DataContext = viewModel
             };
 
             if (window.ShowDialog() == true)
