@@ -8,16 +8,22 @@ public class Configuration
 
     public int MotherboardId { get; set; }
     public virtual Motherboard Motherboard { get; set; }
+
     public int CpuId { get; set; }
     public virtual Cpu Cpu { get; set; }
+
     public int CoolerId { get; set; }
     public virtual Cooler Cooler { get; set; }
+
     public int PowerSupplyId { get; set; }
     public virtual PowerSupply PowerSupply { get; set; }
 
     public virtual List<Ram> Rams { get; set; } = [];
+
     public virtual List<Gpu> Gpus { get; set; } = [];
+
     public virtual List<Ssd> Ssds { get; set; } = [];
+
     public virtual List<Hdd> Hdds { get; set; } = [];
 
     public virtual List<ConfigurationM2Ssd> ConfigurationM2Ssds { get; set; } = [];

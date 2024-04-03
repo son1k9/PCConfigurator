@@ -28,9 +28,6 @@ namespace PCConfigurator.Model.Components
 
         public virtual List<Configuration> Configurations { get; set; } = [];
 
-        public Motherboard()
-        {
-        }
 
         public Motherboard Clone()
         {

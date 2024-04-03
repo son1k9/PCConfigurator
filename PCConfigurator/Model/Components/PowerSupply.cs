@@ -3,10 +3,13 @@
 public class PowerSupply
 {
     public int PowerSupplyId { get; set; }
+
     public string Model { get; set; }
+
     public int Wattage { get; set; } = 200;
 
     public virtual List<Configuration> Configurations { get; set; } = [];
+
 
     public PowerSupply Clone()
     {

@@ -10,7 +10,7 @@ using System.Windows.Data;
 namespace PCConfigurator.Converters;
 
 [ValueConversion(typeof(M2Size), typeof(string))]
-internal class M2SizeConverter : IValueConverter
+internal class M2SizesConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

@@ -73,7 +73,7 @@ public partial class M2SsdUserControl : UserControl
             Binding binding = new Binding(e.PropertyName);
             column.Binding = binding;
             e.Column = column;
-            column.Width = new DataGridLength(1.0, DataGridLengthUnitType.Auto);
+            column.Width = new DataGridLength(1.0, DataGridLengthUnitType.Star);
         }
 
         else if (e.PropertyName == "M2Size")
@@ -82,10 +82,7 @@ public partial class M2SsdUserControl : UserControl
             {
                 Header = "Размер"
             };
-            Binding binding = new Binding(e.PropertyName)
-            {
-                Converter = new M2SizeConverter()
-            };
+            Binding binding = new Binding(e.PropertyName) { Converter = new M2SizesConverter() };
             column.Binding = binding;
             e.Column = column;
             column.Width = new DataGridLength(1.0, DataGridLengthUnitType.Auto);
