@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.NewComponentsViewModel;
 
-class NewCoolerViewmodel(Cooler cooler)
+internal class NewCoolerViewmodel(Cooler cooler) : BaseViewModel
 {
     public Cooler Cooler { get; } = cooler;
 

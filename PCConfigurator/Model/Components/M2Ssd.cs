@@ -49,14 +49,14 @@ public class M2Ssd
     [NotMapped]
     public bool IsNvme
     {
-        get => M2Interface.HasFlag(M2Interface.Nvme);
+        get => _m2Interface.HasFlag(M2Interface.Nvme);
         set => _m2Interface.SetInterface(M2Interface.Nvme, value);
     }
 
     [NotMapped]
     public bool IsSata
     {
-        get => M2Interface.HasFlag(M2Interface.Sata);
+        get => _m2Interface.HasFlag(M2Interface.Sata);
         set => _m2Interface.SetInterface(M2Interface.Sata, value);
     }
 
@@ -65,35 +65,35 @@ public class M2Ssd
     [NotMapped]
     public bool Is2230
     {
-        get => M2Size.HasFlag(M2Size._2230);
+        get => _m2Size.HasFlag(M2Size._2230);
         set => _m2Size.SetSize(M2Size._2230, value);
     }
 
     [NotMapped]
     public bool Is2242
     {
-        get => M2Size.HasFlag(M2Size._2242);
+        get => _m2Size.HasFlag(M2Size._2242);
         set => _m2Size.SetSize(M2Size._2242, value);
     }
 
     [NotMapped]
     public bool Is2260
     {
-        get => M2Size.HasFlag(M2Size._2260);
+        get => _m2Size.HasFlag(M2Size._2260);
         set => _m2Size.SetSize(M2Size._2260, value);
     }
 
     [NotMapped]
     public bool Is2280
     {
-        get => M2Size.HasFlag(M2Size._2280);
+        get => _m2Size.HasFlag(M2Size._2280);
         set => _m2Size.SetSize(M2Size._2280, value);
     }
 
     [NotMapped]
     public bool Is22110
     {
-        get => M2Size.HasFlag(M2Size._22110);
+        get => _m2Size.HasFlag(M2Size._22110);
         set => _m2Size.SetSize(M2Size._22110, value);
     }
 }

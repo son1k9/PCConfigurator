@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PCConfigurator.View.ComponentsUserControls" xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" d:DataContext="{d:DesignInstance Type=componentsviewmodels:MotherboardViewModel}"
+             xmlns:local="clr-namespace:PCConfigurator.View.ComponentsUserControls" 
+             xmlns:converters="clr-namespace:PCConfigurator.Converters" 
+             xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" 
+             d:DataContext="{d:DesignInstance Type=componentsviewmodels:MotherboardViewModel}"
              mc:Ignorable="d" 
              d:DesignWidth="1400" d:DesignHeight="850" >
     
@@ -23,7 +26,9 @@
         <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow">
             <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
         </Style>
-        
+
+        <converters:M2SlotsConverter x:Key="M2SlotsConverter"/>
+
     </UserControl.Resources>
 
     <Grid>
@@ -38,8 +43,22 @@
         <StackPanel Margin="15 0" Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button Content="Добавить" Width="80" Height="35" VerticalAlignment="Center" Command="{Binding Add}"/>
         </StackPanel>
-        <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" Style="{StaticResource componentsList}"
+        
+        <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" Style="{StaticResource componentsList}"
                   RowStyle="{StaticResource componentsListRow}" Name="dataGrid">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Model}" Header="Модель" SortDirection="Ascending" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Socket.Name}" Header="Сокет"/>
+                <DataGridTextColumn Binding="{Binding Chipset.Name}" Header="Чипсет"/>
+                <DataGridTextColumn Binding="{Binding RamType}" Header="Тип памяти"/>
+                <DataGridTextColumn Binding="{Binding RamSlots}" Header="Количество слотов памяти"/>
+                <DataGridTextColumn Binding="{Binding MaxRamCapacity}" Header="Максимальный объём памяти"/>
+                <DataGridTextColumn Binding="{Binding Path=M2Slots, Converter={StaticResource M2SlotsConverter}}" Header="Разъёмы M.2" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Sata3Ports}" Header="Количество коннекторов SATA"/>
+                <DataGridTextColumn Binding="{Binding PCIex16Slots}" Header="Количество слотов PCIex16"/>
+            </DataGrid.Columns>
+            
             <DataGrid.InputBindings>
                 <KeyBinding Key="Delete" Command="{Binding Remove}" CommandParameter="{Binding Path=ViewSource/}"/>
                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding Edit}" CommandParameter="{Binding Path=ViewSource/}"/>

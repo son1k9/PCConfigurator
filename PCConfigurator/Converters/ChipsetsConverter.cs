@@ -1,10 +1,5 @@
 ﻿using PCConfigurator.Model.Components;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace PCConfigurator.Converters;
@@ -16,8 +11,8 @@ internal class ChipsetsConverter : IValueConverter
     {
         string result = "";
         ICollection<Chipset> collection = (ICollection<Chipset>)value;
-        List<Chipset> list = [..collection];
-        for (int i = 0; i < list.Count; i++) 
+        List<Chipset> list = [.. collection];
+        for (int i = 0; i < list.Count; i++)
         {
             result += list[i].ToString();
             if (i < list.Count - 1)

@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.NewComponentsViewModel;
 
-internal class NewMotherboardViewmodel(Motherboard motherboard)
+internal class NewMotherboardViewmodel(Motherboard motherboard) : BaseViewModel
 {
     public Motherboard Motherboard { get; } = motherboard;
 

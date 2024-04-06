@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace PCConfigurator.View.AddComponents
 {
@@ -32,12 +20,12 @@ namespace PCConfigurator.View.AddComponents
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxName.Text.Length == 0) 
+            if (textBoxName.Text.Length == 0)
             {
                 AnnounceError("Введите сокет.");
                 return;
             }
-            if (listBoxChipsets.Items.Count == 0) 
+            if (listBoxChipsets.Items.Count == 0)
             {
                 AnnounceError("Укажите чипсет.");
                 return;

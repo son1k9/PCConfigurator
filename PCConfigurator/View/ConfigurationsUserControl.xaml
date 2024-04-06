@@ -4,10 +4,81 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PCConfigurator.View"
+             xmlns:components="clr-namespace:PCConfigurator.Model.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:viewmodel="clr-namespace:PCConfigurator.ViewModel" 
+              d:DataContext="{d:DesignInstance Type=viewmodel:ConfigurationsViewModel}"
+             d:DesignWidth="1600" d:DesignHeight="850">
     <Grid>
-        <TextBlock Text="Сборки" VerticalAlignment="Center"
-           HorizontalAlignment="Center" FontSize="24"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="Black" BorderThickness="0 0 2 0">
+            <Grid Grid.Column="0" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+                    <ListBox ItemsSource="{Binding ViewSource}" HorizontalContentAlignment="Stretch">
+                        <ListBox.Template>
+                            <ControlTemplate TargetType="{x:Type ListBox}">
+                                <Border BorderBrush="Transparent" BorderThickness="0">
+                                    <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Border>
+                            </ControlTemplate>
+                        </ListBox.Template>
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListBoxItem">
+                                            <Grid Background="White" MinHeight="40" Name="_grid">
+                                                <ContentPresenter/>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="_grid" Property="Background" Value="#C9E6FF"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="_grid" Property="Background" Value="#C9E6FF"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type components:Configuration}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                               Margin="10 0 0 0" Text="{Binding Name}" Grid.Row="0"/>
+
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Gray" FontSize="10"
+                                               Margin="10 0 0 0" Text="{Binding Cpu.Model}" Grid.Row="1"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+
+                <Button Grid.Row="1" Height="70" BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0">
+                    <Button.Content>
+                        <Image Source="/View/add.png" Height="50"/>
+                    </Button.Content>
+                </Button>
+
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

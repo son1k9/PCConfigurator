@@ -1,5 +1,4 @@
-﻿
-namespace PCConfigurator.Model.Components;
+﻿namespace PCConfigurator.Model.Components;
 
 public class Hdd
 {
@@ -12,7 +11,7 @@ public class Hdd
     public int SpindelSpeed { get; set; } = 4200;
 
     public virtual List<Configuration> Configurations { get; set; } = [];
-
+    public virtual List<ConfigurationHdd> ConfigurationHdds { get; set; } = [];
 
     public Hdd Clone()
     {

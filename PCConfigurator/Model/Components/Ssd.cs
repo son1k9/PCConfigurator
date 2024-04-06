@@ -1,5 +1,4 @@
-﻿
-namespace PCConfigurator.Model.Components;
+﻿namespace PCConfigurator.Model.Components;
 
 public class Ssd
 {
@@ -18,7 +17,7 @@ public class Ssd
     public NandType NandType { get; set; }
 
     public virtual List<Configuration> Configurations { get; set; } = [];
-
+    public virtual List<ConfigurationSsd> ConfigurationSsds { get; set; } = [];
 
     public Ssd Clone()
     {

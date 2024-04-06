@@ -26,12 +26,12 @@
 
         <Style TargetType="{x:Type DataGrid}" x:Key="componentsList">
             <Setter Property="Margin" Value="10"/>
-            <Setter Property="AutoGenerateColumns" Value="True"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
             <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="ColumnWidth" Value="*"/>
             <Setter Property="CanUserResizeRows" Value="False"/>
             <Setter Property="RowHeaderWidth" Value="0"/>
-            <Setter Property="CanUserReorderColumns" Value="False"/>
+            <Setter Property="CanUserReorderColumns" Value="True"/>
             <Setter Property="ColumnHeaderStyle" Value="{StaticResource componentsListHeader}"/>
             <Setter Property="MinRowHeight" Value="35"/>
             <Setter Property="CellStyle" Value="{StaticResource componentsListCell}"/>

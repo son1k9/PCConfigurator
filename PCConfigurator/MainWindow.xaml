@@ -14,7 +14,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0" BorderThickness="0 0 0 2" BorderBrush="Black">
-            <StackPanel Orientation="Horizontal" Margin="0 0 0 2">
+            <StackPanel Orientation="Horizontal">
                 <StackPanel.Resources>
                     <!-- Style for menu buttons-->
                     <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
@@ -35,10 +35,10 @@
                         </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="AliceBlue"/>
+                                <Setter Property="Background" Value="#C9E6FF"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="AliceBlue"/>
+                                <Setter Property="Background" Value="#C9E6FF"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>

@@ -1,18 +1,13 @@
-﻿using PCConfigurator.Commands;
-using PCConfigurator.Model.Components;
+﻿using Microsoft.EntityFrameworkCore;
+using PCConfigurator.Commands;
 using PCConfigurator.Model;
+using PCConfigurator.Model.Components;
 using PCConfigurator.View.AddComponents;
-using System;
-using System.Collections.Generic;
+using PCConfigurator.ViewModel.NewComponentsViewModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows;
-using Microsoft.EntityFrameworkCore;
-using PCConfigurator.ViewModel.NewComponentsViewModel;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
@@ -35,7 +30,7 @@ internal class SocketViewModel : BaseViewModel
     private void PerformAdd(object? commandParameter)
     {
         Socket socket = new Socket();
-        NewSocketViewModel viewModel = new NewSocketViewModel(socket); 
+        NewSocketViewModel viewModel = new NewSocketViewModel(socket);
 
         NewSocketWindow window = new NewSocketWindow
         {
@@ -65,7 +60,7 @@ internal class SocketViewModel : BaseViewModel
                     MessageBox.Show("Нельзя удалить сокет, который используется в других комплектующих.", "Ошибка");
                     return;
                 }
-                    
+
                 dbContext.Socket.Remove(socket);
                 dbContext.SaveChanges();
             }
@@ -92,13 +87,13 @@ internal class SocketViewModel : BaseViewModel
             if (window.ShowDialog() == true)
             {
                 var deletedChipsets = (from n in socket.Chipsets
-                                      where !socketCopy.Chipsets.Contains(n)
-                                      select n).ToList();
-                foreach (var chipset in deletedChipsets) 
+                                       where !socketCopy.Chipsets.Contains(n)
+                                       select n).ToList();
+                foreach (var chipset in deletedChipsets)
                 {
                     if (chipset.Motherboards.Count > 0)
                     {
-                        MessageBox.Show("", "Ошибка");
+                        MessageBox.Show("Нельзя удалить чипсет, который используется в других комплектующих.", "Ошибка");
                         return;
                     }
 

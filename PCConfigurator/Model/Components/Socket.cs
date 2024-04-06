@@ -12,7 +12,7 @@ public class Socket()
 
     public virtual List<Cooler> Coolers { get; set; } = [];
 
-    public virtual List<Cpu> Cpus { get; set;  } = [];
+    public virtual List<Cpu> Cpus { get; set; } = [];
 
     public virtual List<Motherboard> Motherboards { get; set; } = [];
 

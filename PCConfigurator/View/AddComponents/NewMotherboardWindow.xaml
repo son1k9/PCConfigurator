@@ -8,7 +8,6 @@
         xmlns:viewModels="clr-namespace:PCConfigurator.ViewModel.NewComponentsViewModel"
         xmlns:converters="clr-namespace:PCConfigurator.Converters"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
-        xmlns:validations="clr-namespace:PCConfigurator.Validation"
         d:DataContext="{d:DesignInstance Type=viewModels:NewMotherboardViewmodel}"
         mc:Ignorable="d"
         Title="NewMotherboardWindow" Height="600" Width="380" ResizeMode="NoResize" SizeToContent="Height">

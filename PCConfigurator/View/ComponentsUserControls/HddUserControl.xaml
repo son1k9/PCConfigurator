@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PCConfigurator.View.ComponentsUserControls"
+             xmlns:converters="clr-namespace:PCConfigurator.Converters"
              mc:Ignorable="d" 
              xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" d:DataContext="{d:DesignInstance Type=componentsviewmodels:HddViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -24,6 +25,8 @@
             <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
         </Style>
 
+        <converters:MemoryConverter x:Key="MemoryConverter"/>
+
     </UserControl.Resources>
 
     <Grid>
@@ -38,12 +41,21 @@
         <StackPanel Margin="15 0" Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button Content="Добавить" Width="80" Height="35" VerticalAlignment="Center" Command="{Binding Add}"/>
         </StackPanel>
-        <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" Style="{StaticResource componentsList}"
+        
+        <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" Style="{StaticResource componentsList}"
                   RowStyle="{StaticResource componentsListRow}" Name="dataGrid">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Model}" Header="Модель" SortDirection="Ascending" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Path=Capacity, Converter={StaticResource MemoryConverter}}" Header="Объем"/>
+                <DataGridTextColumn Binding="{Binding SpindelSpeed}" Header="Скорость вращения шпинделя"/>
+            </DataGrid.Columns>
+            
             <DataGrid.InputBindings>
                 <KeyBinding Key="Delete" Command="{Binding Remove}" CommandParameter="{Binding Path=ViewSource/}"/>
                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding Edit}" CommandParameter="{Binding Path=ViewSource/}"/>
             </DataGrid.InputBindings>
+            
         </DataGrid>
     </Grid>
 </UserControl>

@@ -44,38 +44,22 @@ internal class ApplicationContext : DbContext
         modelBuilder.Entity<Configuration>()
             .HasMany(e => e.Rams)
             .WithMany(e => e.Configurations)
-            .UsingEntity(j =>
-                {
-                    j.IndexerProperty<int>("ConfigurationRamId");
-                    j.HasKey("ConfigurationRamId");
-                });
+            .UsingEntity<ConfigurationRam>();
 
         modelBuilder.Entity<Configuration>()
             .HasMany(e => e.Gpus)
             .WithMany(e => e.Configurations)
-            .UsingEntity(j =>
-            {
-                j.IndexerProperty<int>("ConfigurationGpuId");
-                j.HasKey("ConfigurationGpuId");
-            });
+            .UsingEntity<ConfigurationGpu>();
 
         modelBuilder.Entity<Configuration>()
             .HasMany(e => e.Ssds)
             .WithMany(e => e.Configurations)
-            .UsingEntity(j =>
-            {
-                j.IndexerProperty<int>("ConfigurationSsdId");
-                j.HasKey("ConfigurationSsdId");
-            });
+            .UsingEntity<ConfigurationSsd>();
 
         modelBuilder.Entity<Configuration>()
             .HasMany(e => e.Hdds)
             .WithMany(e => e.Configurations)
-            .UsingEntity(j =>
-            {
-                j.IndexerProperty<int>("ConfigurationHddId");
-                j.HasKey("ConfigurationHddId");
-            });
+            .UsingEntity<ConfigurationHdd>();
 
         modelBuilder.Entity<ConfigurationM2Ssd>()
             .HasKey(e => new { e.M2SlotId, e.ConfigurationId });
@@ -83,6 +67,6 @@ internal class ApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Model\\Database\\components.db").EnableSensitiveDataLogging(true);
+        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Database\\components.db").EnableSensitiveDataLogging(true);
     }
 }

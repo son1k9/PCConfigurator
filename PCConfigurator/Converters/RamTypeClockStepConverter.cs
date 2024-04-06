@@ -1,10 +1,5 @@
 ﻿using PCConfigurator.Model.Components;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
@@ -22,10 +17,10 @@ internal class RamTypeClockStepConverter : IValueConverter
         switch (ramType)
         {
             case RamType.DDR3:
-                return new DoubleCollection() { 800, 1066, 1333, 1600, 1866, 2133};
+                return new DoubleCollection() { 800, 1066, 1333, 1600, 1866, 2133 };
 
             case RamType.DDR4:
-                return new DoubleCollection() { 1600, 1866, 2133, 2400, 2666, 2933, 3200};
+                return new DoubleCollection() { 1600, 1866, 2133, 2400, 2666, 2933, 3200 };
 
             case RamType.DDR5:
                 {

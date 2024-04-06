@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using System.Windows.Data;
 
 namespace PCConfigurator.Converters
@@ -16,9 +11,9 @@ namespace PCConfigurator.Converters
             int gigabytes = (int)value;
 
             if (gigabytes > 1024)
-                return (gigabytes / 1000).ToString();
+                return (gigabytes / 1000).ToString() + " ТБ";
             else
-                return gigabytes.ToString();
+                return gigabytes.ToString() + " ГБ";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

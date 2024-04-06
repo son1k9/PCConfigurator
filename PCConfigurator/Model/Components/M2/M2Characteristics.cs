@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-namespace PCConfigurator.Model.Components.M2;
+﻿namespace PCConfigurator.Model.Components.M2;
 
 [Flags]
 public enum M2Size

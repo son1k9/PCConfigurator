@@ -1,5 +1,4 @@
-﻿
-namespace PCConfigurator.Model.Components;
+﻿namespace PCConfigurator.Model.Components;
 
 public class Gpu
 {
@@ -16,6 +15,7 @@ public class Gpu
     public int PowerConsumption { get; set; } = 15;
 
     public virtual List<Configuration> Configurations { get; set; } = [];
+    public virtual List<ConfigurationGpu> ConfigurationGpus { get; set; } = [];
 
 
     public Gpu Clone()

@@ -1,9 +1,4 @@
 ﻿using PCConfigurator.Model.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PCConfigurator.ViewModel.NewComponentsViewModel;
 
@@ -24,7 +19,7 @@ internal class NewSsdViewModel(Ssd ssd) : BaseViewModel
         }
     }
 
-    public int Capacity 
+    public int Capacity
     {
         get
         {

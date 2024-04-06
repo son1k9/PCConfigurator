@@ -1,13 +1,13 @@
-﻿using PCConfigurator.Commands;
-using PCConfigurator.Model.Components;
+﻿using Microsoft.EntityFrameworkCore;
+using PCConfigurator.Commands;
 using PCConfigurator.Model;
+using PCConfigurator.Model.Components;
 using PCConfigurator.View.AddComponents;
+using PCConfigurator.ViewModel.NewComponentsViewModel;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows;
-using Microsoft.EntityFrameworkCore;
-using PCConfigurator.ViewModel.NewComponentsViewModel;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 

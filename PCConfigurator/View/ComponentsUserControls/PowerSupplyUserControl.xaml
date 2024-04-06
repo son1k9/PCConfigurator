@@ -39,8 +39,15 @@
         <StackPanel Margin="15 0" Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft">
             <Button Content="Добавить" Width="80" Height="35" VerticalAlignment="Center" Command="{Binding Add}"/>
         </StackPanel>
-        <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" Style="{StaticResource componentsList}"
+        
+        <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" Style="{StaticResource componentsList}"
           RowStyle="{StaticResource componentsListRow}" Name="dataGrid">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Model}" Header="Модель"/>
+                <DataGridTextColumn Binding="{Binding Wattage}" Header="Мощность"/>
+            </DataGrid.Columns>
+            
             <DataGrid.InputBindings>
                 <KeyBinding Key="Delete" Command="{Binding Remove}" CommandParameter="{Binding Path=ViewSource/}"/>
                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding Edit}" CommandParameter="{Binding Path=ViewSource/}"/>

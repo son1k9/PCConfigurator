@@ -3,6 +3,8 @@ using PCConfigurator.Model.Components;
 using PCConfigurator.Stores;
 using PCConfigurator.ViewModel;
 using System.Collections.ObjectModel;
+using System.DirectoryServices.ActiveDirectory;
+using System.Runtime.Intrinsics.Arm;
 using System.Windows;
 
 namespace PCConfigurator;
@@ -25,9 +27,9 @@ public partial class App : Application
         Socket socket3 = new Socket() { Name = "AM3+" };
         Socket socket5 = new Socket() { Name = "LGA 1200" };
 
-
         //CPU
-        dbContext.Cpu.Add(new Cpu()
+
+        Cpu cpu1 = new Cpu()
         {
             Model = "AMD Ryzen 5 5600",
             Cores = 6,
@@ -42,10 +44,11 @@ public partial class App : Application
             HaveGraphics = false,
             Socket = socket1,
             RamTypes = RamType.DDR4 | RamType.DDR5
-        });
+        };
 
-        dbContext.Cpu.Add(new Cpu()
-        {
+        dbContext.Cpu.Add(cpu1);
+
+        Cpu cpu2 = new Cpu() {
             Model = "AMD Ryzen 5 5600x",
             Cores = 6,
             ECores = 0,
@@ -59,7 +62,9 @@ public partial class App : Application
             HaveGraphics = false,
             Socket = socket1,
             RamTypes = RamType.DDR4 | RamType.DDR5
-        });
+        };
+
+    dbContext.Cpu.Add(cpu2);
 
         dbContext.Cpu.Add(new Cpu()
         {
@@ -147,15 +152,18 @@ public partial class App : Application
         });
 
 
-        ///GPU
-        dbContext.Gpu.Add(new Gpu()
+        //GPU
+
+        Gpu gpu1 = new Gpu()
         {
             Model = "GIGABYTE GeForce RTX 4090 AERO OC",
             CoreClock = 2235,
             BoostClock = 2535,
             VramCapacity = 24,
             PowerConsumption = 450
-        });
+        };
+
+        dbContext.Gpu.Add(gpu1);
 
         dbContext.Gpu.Add(new Gpu()
         {
@@ -268,14 +276,17 @@ public partial class App : Application
 
 
         //RAM
-        dbContext.Ram.Add(new Ram()
+
+        Ram ram1 = new Ram()
         {
             Model = "Kingston FURY Beast Black",
             Capacity = 8,
             Clock = 3200,
             Cl = 16,
             RamType = RamType.DDR4
-        });
+        };
+
+        dbContext.Ram.Add(ram1);
         dbContext.Ram.Add(new Ram()
         {
             Model = "ADATA XPG Lancer Blade",
@@ -295,11 +306,14 @@ public partial class App : Application
 
 
         //Power Supply
-        dbContext.PowerSupply.Add(new PowerSupply()
+
+        PowerSupply powerSupply1 = new PowerSupply()
         {
             Model = "DEEPCOOL DQ750",
             Wattage = 750
-        });
+        };
+
+        dbContext.PowerSupply.Add(powerSupply1);
 
         dbContext.PowerSupply.Add(new PowerSupply()
         {
@@ -318,27 +332,28 @@ public partial class App : Application
         dbContext.Hdd.Add(new Hdd()
         {
             Model = "WD Blue",
-            Capacity = 1,
+            Capacity = 1000,
             SpindelSpeed = 7200
         });
 
         dbContext.Hdd.Add(new Hdd()
         {
             Model = "Toshiba P300",
-            Capacity = 1,
+            Capacity = 1000,
             SpindelSpeed = 7200
         });
 
         dbContext.Hdd.Add(new Hdd()
         {
             Model = "Seagate BarraCuda",
-            Capacity = 2,
+            Capacity = 2000,
             SpindelSpeed = 7200
         });
 
 
         //SSD
-        dbContext.Ssd.Add(new Ssd()
+
+        Ssd ssd1 = new Ssd()
         {
             Model = "Kingston A400",
             Capacity = 480,
@@ -346,7 +361,9 @@ public partial class App : Application
             WriteSpeed = 450,
             Tbw = 160,
             NandType = NandType.TLC
-        });
+        };
+
+        dbContext.Ssd.Add(ssd1);
 
         dbContext.Ssd.Add(new Ssd()
         {
@@ -370,7 +387,8 @@ public partial class App : Application
 
 
         //M2 SSD
-        dbContext.M2Ssd.Add(new M2Ssd()
+
+        M2Ssd m2ssd1 = new M2Ssd()
         {
             Model = "ARDOR GAMING Ally AL1288",
             Capacity = 1024,
@@ -380,7 +398,9 @@ public partial class App : Application
             NandType = NandType.TLC,
             M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
             M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
-        });
+        };
+
+        dbContext.M2Ssd.Add(m2ssd1);
 
         dbContext.M2Ssd.Add(new M2Ssd()
         {
@@ -466,7 +486,74 @@ public partial class App : Application
 
         dbContext.Add(motherboard1);
 
+        //Configurations
+        Configuration configuration1 = new Configuration()
+        {
+            Name = "Test Configuration1",
+            Motherboard = motherboard,
+            Cpu = cpu1,
+            Cooler = cooler1,
+            PowerSupply = powerSupply1,
+            Gpus = [gpu1],
+            Ssds = [ssd1]
+        };
+
+        configuration1.ConfigurationRams.Add(new ConfigurationRam()
+        {
+            Configuration = configuration1,
+            Ram = ram1
+        });
+
+        configuration1.ConfigurationRams.Add(new ConfigurationRam()
+        {
+            Configuration = configuration1,
+            Ram = ram1
+        });
+
+        configuration1.ConfigurationM2Ssds.Add(new ConfigurationM2Ssd()
+        {
+            Configuration = configuration1,
+            M2Ssd = m2ssd1,
+            M2Slot = motherboardSlots[1]
+
+        });
+
+        configuration1.ConfigurationM2Ssds.Add(new ConfigurationM2Ssd()
+        {
+            Configuration = configuration1,
+            M2Ssd = m2ssd1,
+            M2Slot = motherboardSlots[0]
+
+        });
+
+        Configuration configuration2 = new Configuration()
+        {
+            Name = "Test Configuration2",
+            Motherboard = motherboard,
+            Cpu = cpu2,
+            Cooler = cooler2,
+            PowerSupply = powerSupply1,
+            Gpus = [gpu1],
+            Ssds = [ssd1]
+        };
+
+        configuration2.ConfigurationRams.Add(new ConfigurationRam()
+        {
+            Configuration = configuration2,
+            Ram = ram1
+        });
+
+        configuration2.ConfigurationRams.Add(new ConfigurationRam()
+        {
+            Configuration = configuration2,
+            Ram = ram1
+        });
+
+        dbContext.Configuration.Add(configuration1);
+        dbContext.Configuration.Add(configuration2);
+
         dbContext.SaveChanges();
+
     }
 
     private void Application_Startup(object sender, StartupEventArgs e)

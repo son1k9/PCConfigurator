@@ -60,7 +60,7 @@ public class M2Slot
         get => M2Interface.HasFlag(M2Interface.Sata);
         set => _m2Interface.SetInterface(M2Interface.Sata, value);
     }
-   
+
 
     [NotMapped]
     public bool Is2230
