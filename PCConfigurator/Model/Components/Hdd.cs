@@ -20,8 +20,7 @@ public class Hdd
             HddId = HddId,
             Model = Model,
             Capacity = Capacity,
-            SpindelSpeed = SpindelSpeed,
-            Configurations = Configurations
+            SpindelSpeed = SpindelSpeed
         };
     }
 }

@@ -430,7 +430,7 @@ public partial class App : Application
         Motherboard motherboard = new Motherboard()
         {
             Model = "ASUS PRIME A320M-K",
-            RamSlots = 2,
+            RamSlots = 4,
             MaxRamCapacity = 64,
             Sata3Ports = 4,
             PCIex16Slots = 1,

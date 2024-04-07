@@ -7,7 +7,8 @@
              xmlns:components="clr-namespace:PCConfigurator.Model.Components"
              mc:Ignorable="d" 
              xmlns:viewmodel="clr-namespace:PCConfigurator.ViewModel" 
-              d:DataContext="{d:DesignInstance Type=viewmodel:ConfigurationsViewModel}"
+             xmlns:views="clr-namespace:PCConfigurator.View" 
+             d:DataContext="{d:DesignInstance Type=viewmodel:ConfigurationsViewModel}"
              d:DesignWidth="1600" d:DesignHeight="850">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -39,6 +40,13 @@
                                         <ControlTemplate TargetType="ListBoxItem">
                                             <Grid Background="White" MinHeight="40" Name="_grid">
                                                 <ContentPresenter/>
+
+                                                <Grid.InputBindings>
+                                                    <MouseBinding Gesture="LeftDoubleClick" 
+                                                      Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.SelectConfiguration}"
+                                                      CommandParameter="{Binding}"/>
+                                                </Grid.InputBindings>
+
                                             </Grid>
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsSelected" Value="True">
@@ -67,12 +75,13 @@
                                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Gray" FontSize="10"
                                                Margin="10 0 0 0" Text="{Binding Cpu.Model}" Grid.Row="1"/>
                                 </Grid>
+
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Border>
 
-                <Button Grid.Row="1" Height="70" BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0">
+                <Button Grid.Row="1" Height="70" BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Command="{Binding AddConfiguration}">
                     <Button.Content>
                         <Image Source="/View/add.png" Height="50"/>
                     </Button.Content>
@@ -80,5 +89,14 @@
 
             </Grid>
         </Border>
+
+        <ContentControl Grid.Column="1" Content="{Binding SelectedConfiguration}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewmodel:ConfigurationViewModel}">
+                    <views:NewConfigurationUserControl/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+
     </Grid>
 </UserControl>

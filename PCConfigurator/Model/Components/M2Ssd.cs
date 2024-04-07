@@ -40,8 +40,7 @@ public class M2Ssd
             Tbw = Tbw,
             NandType = NandType,
             M2Interface = M2Interface,
-            M2Size = M2Size,
-            ConfigurationM2Ssds = ConfigurationM2Ssds
+            M2Size = M2Size
         };
     }
 

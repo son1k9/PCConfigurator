@@ -24,11 +24,7 @@ public class Cooler
 
     public Cooler Clone()
     {
-        ObservableCollection<Socket> sockets = [];
-        foreach (Socket socket in Sockets)
-        {
-            sockets.Add(socket);
-        }
+        ObservableCollection<Socket> sockets = new ObservableCollection<Socket>(Sockets);
 
         return new Cooler()
         {

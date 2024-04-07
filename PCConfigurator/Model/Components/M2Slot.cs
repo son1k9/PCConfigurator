@@ -38,9 +38,7 @@ public class M2Slot
             M2SlotId = M2SlotId,
             M2Interface = M2Interface,
             M2Size = M2Size,
-            MotherboardId = MotherboardId,
-            Motherboard = Motherboard,
-            ConfigurationM2Ssds = ConfigurationM2Ssds
+            Motherboard = Motherboard
         };
         return m2Slot;
     }
