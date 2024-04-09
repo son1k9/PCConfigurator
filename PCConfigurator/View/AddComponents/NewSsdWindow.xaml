@@ -10,7 +10,8 @@
         mc:Ignorable="d"
         xmlns:converters="clr-namespace:PCConfigurator.Converters"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
-        Title="SSD" Height="400" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        Title="SSD" Height="400" Width="424" ResizeMode="NoResize" SizeToContent="Height"
+        Background="#F9F9F9">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="NandTypeDataSource"
@@ -20,95 +21,94 @@
                 <x:Type Type="{x:Type components:NandType}"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+
+        <Style TargetType="TextBlock" BasedOn="{StaticResource textBlockNewComponent}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource textBoxNewComponent}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource comboBoxNewComponent}"/>
+        <Style TargetType="Slider" BasedOn="{StaticResource sliderNewComponent}"/>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource checkBoxComponent}"/>
+        <Style TargetType="StackPanel" BasedOn="{StaticResource inputStackPanel}"/>
+        <Style TargetType="ListBox" BasedOn="{StaticResource listBoxNewComponent}"/>
     </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <StackPanel Margin="10">
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель: " Style="{StaticResource textBlockNewComponent}"/>
-        <TextBox Grid.Row="0" Grid.Column="1"  Style="{StaticResource textBoxNewComponent}" Name="textBoxModel">
-            <TextBox.Text>
-                <Binding Path="Ssd.Model" UpdateSourceTrigger="PropertyChanged">
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Объем: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            
-            <Slider Style="{StaticResource sliderNewComponent}"
-                    TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderSsdCapacity" Minimum="60" Maximum="1024"
-                    TickFrequency="2" Value="{Binding Capacity}">
-            </Slider>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Capacity}"/>
-            <CheckBox Content="TB" Grid.Column="2" Style="{StaticResource checkBoxComponent}" Name="CheckBoxTb" Checked="CheckBoxTb_Checked" Unchecked="CheckBoxTb_Unchecked"
-                      IsChecked="{Binding Tb}"/>
-            
-        </Grid>
-
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Скорость чтения: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="2" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Slider Value="{Binding Path=Ssd.ReadSpeed}" Style="{StaticResource sliderNewComponent}"
-                    TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderSsdReadSpeed" Minimum="350" Maximum="600"
-                    TickFrequency="10"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Ssd.ReadSpeed}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Скорость записи: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="3" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Slider Value="{Binding Path=Ssd.WriteSpeed}" Style="{StaticResource sliderNewComponent}"
-                    TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderSsdWriteSpeed" Minimum="350" Maximum="600"
-                    TickFrequency="10"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Ssd.WriteSpeed}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Максимальный ресурс записи: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="4" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Slider Value="{Binding Path=Ssd.Tbw}" Style="{StaticResource sliderNewComponent}"
-            TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderSsdTbw" Minimum="30" Maximum="3000"
-            TickFrequency="10"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Ssd.Tbw}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Тип памяти: " Style="{StaticResource textBlockNewComponent}"/>
-        <ComboBox Grid.Row="5" Grid.Column="1" SelectedItem="{Binding Ssd.NandType}" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxNandType"
-                  ItemsSource="{Binding Source={StaticResource NandTypeDataSource}}"/>
-
-        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
-            <Button Content="Подтвердить" VerticalAlignment="Center" Width="75" Height="30" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
-            <Button Content="Отмена" VerticalAlignment="Center" Width="75" Height="30" Margin="10 0 0 0" IsCancel="True"/>
+        <StackPanel>
+            <TextBlock Text="Модель"/>
+            <TextBox Name="textBoxModel">
+                <TextBox.Text>
+                    <Binding Path="Ssd.Model" UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
         </StackPanel>
 
-        <TextBlock Grid.Row="7" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
-        
-    </Grid>
+        <StackPanel>
+            <TextBlock Text="Объем"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Grid.Column="0" Name="sliderSsdCapacity" Minimum="60" Maximum="1024" TickFrequency="2" Value="{Binding Capacity}"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Capacity}"/>
+                <CheckBox Content="TB" Grid.Column="2" Name="CheckBoxTb" Checked="CheckBoxTb_Checked" Unchecked="CheckBoxTb_Unchecked" IsChecked="{Binding Tb}"/>
+
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Скорость чтения"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Slider Value="{Binding Path=Ssd.ReadSpeed}" Grid.Column="0" Name="sliderSsdReadSpeed" Minimum="350" Maximum="600" TickFrequency="10"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Ssd.ReadSpeed}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Скорость записи"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Slider Value="{Binding Path=Ssd.WriteSpeed}" Grid.Column="0" Name="sliderSsdWriteSpeed" Minimum="350" Maximum="600" TickFrequency="10"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Ssd.WriteSpeed}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Максимальный ресурс записи" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Slider Value="{Binding Path=Ssd.Tbw}" Grid.Column="0" Name="sliderSsdTbw" Minimum="30" Maximum="3000" TickFrequency="10"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Ssd.Tbw}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Тип памяти"/>
+            <Border BorderBrush="#212121" BorderThickness="1">
+                <ComboBox SelectedItem="{Binding Ssd.NandType}" Name="comboBoxNandType" ItemsSource="{Binding Source={StaticResource NandTypeDataSource}}"/>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
+            <Button Content="Подтвердить" VerticalAlignment="Center" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+            <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Right" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
+        </StackPanel>
+
+    </StackPanel>
 </Window>

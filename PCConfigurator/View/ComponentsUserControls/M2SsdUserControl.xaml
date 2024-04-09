@@ -8,7 +8,9 @@
              mc:Ignorable="d" 
              xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" d:DataContext="{d:DesignInstance Type=componentsviewmodels:M2SsdViewModel}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="Transparent">
+    
     <UserControl.Resources>
         <ContextMenu  x:Key="RowMenu">
             <MenuItem Header="Редактировать" Command="{Binding DataContext.Edit, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
@@ -25,7 +27,7 @@
             </MenuItem>
         </ContextMenu>
 
-        <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow">
+        <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
             <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
         </Style>
 
@@ -39,13 +41,11 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="15 0" Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Content="Добавить" Width="80" Height="35" VerticalAlignment="Center" Command="{Binding Add}"/>
-        </StackPanel>
+        <Button Grid.Row="0" Content="Добавить" VerticalAlignment="Center" HorizontalAlignment="Right" Command="{Binding Add}" Margin="0 0 0 20"/>
         
         <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" Style="{StaticResource componentsList}"
                   RowStyle="{StaticResource componentsListRow}" Name="dataGrid">
@@ -58,7 +58,7 @@
                 <DataGridTextColumn Binding="{Binding Tbw}" Header="Максимальный ресурс записи"/>
                 <DataGridTextColumn Binding="{Binding NandType}" Header="Тип памяти"/>
                 <DataGridTextColumn Binding="{Binding M2Interface}" Header="Интерфейс"/>
-                <DataGridTextColumn Binding="{Binding Path=M2Size, Converter={StaticResource M2SizesConverter}}" Header="Размер" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Path=M2Size, Converter={StaticResource M2SizesConverter}}" Header="Размер"/>
             </DataGrid.Columns>
             
             <DataGrid.InputBindings>

@@ -7,7 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="330"
              x:Name="UserControl"
-             Loaded="UserControl_Loaded"
              xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              >
     <Grid>
@@ -19,27 +18,17 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-            <CheckBox Content="Nvme" Margin="0 0 10 0" IsChecked="{Binding IsNvme}" Click="CheckBox_Click" x:Name="CheckBoxNvme"
-                      VerticalAlignment="Center"/>
-            <CheckBox Content="Sata" IsChecked="{Binding IsSata}" Click="CheckBox_Click" x:Name="CheckBoxSata"
-                      VerticalAlignment="Center"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalAlignment="Stretch" Grid.RowSpan="2">
-            <Button Margin="2" Command="{Binding Path=Command, ElementName=UserControl}" Style="{StaticResource ButtonIcon}"
-                CommandParameter="{Binding}" Background="Transparent" BorderBrush="Transparent">
-                <Button.Content>
-                    <materialIcons:MaterialIcon Kind="TrashCan"/>
-                </Button.Content>
-            </Button>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" x:Name="StackPanelSize">
-            <CheckBox Content="2230" Margin="0 0 10 0" IsChecked="{Binding Is2230}" VerticalAlignment="Center" Click="CheckBoxSize_Click"/>
-            <CheckBox Content="2242" Margin="0 0 10 0" IsChecked="{Binding Is2242}" VerticalAlignment="Center" Click="CheckBoxSize_Click"/>
-            <CheckBox Content="2260" Margin="0 0 10 0" IsChecked="{Binding Is2260}" VerticalAlignment="Center" Click="CheckBoxSize_Click"/>
-            <CheckBox Content="2280" Margin="0 0 10 0" IsChecked="{Binding Is2280}" VerticalAlignment="Center" Click="CheckBoxSize_Click"/>
-            <CheckBox Content="22110" IsChecked="{Binding Is22110}" VerticalAlignment="Center" Click="CheckBoxSize_Click"/>
-        </StackPanel>
+        
+        <local:M2InterfaceUserControl Grid.Row="0" Grid.Column="0"/>
+        
+        <Button Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Command="{Binding Path=Command, ElementName=UserControl}" Style="{StaticResource ButtonIcon}"
+                CommandParameter="{Binding}">
+            <Button.Content>
+                <materialIcons:MaterialIcon Kind="TrashCan"/>
+            </Button.Content>
+        </Button>
+        
+        <local:M2SizeUserControl Grid.Row="1" Grid.Column="0"/>
+        
     </Grid>
 </UserControl>

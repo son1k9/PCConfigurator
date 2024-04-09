@@ -26,7 +26,7 @@ CommandParameter="{Binding}">
             </MenuItem>
         </ContextMenu>
 
-        <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow">
+        <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
             <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
         </Style>
 
@@ -38,21 +38,19 @@ CommandParameter="{Binding}">
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="15 0" Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Content="Добавить" Width="80" Height="35" VerticalAlignment="Center" Command="{Binding Add}"/>
-        </StackPanel>
+        <Button Grid.Row="0" Content="Добавить" VerticalAlignment="Center" HorizontalAlignment="Right" Command="{Binding Add}" Margin="0 0 0 20"/>
+        
         <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" Style="{StaticResource componentsList}" 
                   RowStyle="{StaticResource componentsListRow}" Name="dataGrid">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Model}" Header="Модель" SortDirection="Ascending" Width="Auto"/>
                 <DataGridTextColumn Binding="{Binding Tdp}" Header="Рассеиваемая мощность"/>
-                <DataGridTextColumn Binding="{Binding Path=Sockets, Converter={StaticResource SocketsConverter}}" Header="Сокет" 
-                                    SortMemberPath="{Binding}"/>
+                <DataGridTextColumn Binding="{Binding Path=Sockets, Converter={StaticResource SocketsConverter}}" Header="Сокет"/>
             </DataGrid.Columns>
             
             <DataGrid.InputBindings>

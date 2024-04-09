@@ -43,8 +43,6 @@ public class M2Slot
         return m2Slot;
     }
 
-
-
     [NotMapped]
     public bool IsNvme
     {

@@ -9,7 +9,7 @@
              d:DataContext="{d:DesignInstance Type=componentsviewmodels:MotherboardViewModel}"
              mc:Ignorable="d" 
              xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
-             d:DesignWidth="1400" d:DesignHeight="850" >
+             d:DesignWidth="1400" d:DesignHeight="850" Background="Transparent">
     
     <UserControl.Resources>
         <ContextMenu  x:Key="RowMenu">
@@ -40,14 +40,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="15 0" Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Content="Добавить" VerticalAlignment="Center" Command="{Binding Add}"/>
-        </StackPanel>
-        
+        <Button Grid.Row="0" Content="Добавить" VerticalAlignment="Center" HorizontalAlignment="Right" Command="{Binding Add}" Margin="0 0 0 20"/>
+
         <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" Style="{StaticResource componentsList}"
                   RowStyle="{StaticResource componentsListRow}" Name="dataGrid">
 
