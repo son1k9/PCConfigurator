@@ -6,16 +6,20 @@
              xmlns:local="clr-namespace:PCConfigurator.View.ComponentsUserControls"
              xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" d:DataContext="{d:DesignInstance Type=componentsviewmodels:PowerSupplyViewModel}"
              mc:Ignorable="d" 
+             xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ContextMenu  x:Key="RowMenu">
             <MenuItem Header="Редактировать" Command="{Binding DataContext.Edit, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
   CommandParameter="{Binding}">
+                <MenuItem.Icon>
+                    <materialIcons:MaterialIcon Kind="Edit"/>
+                </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Удалить" Command="{Binding DataContext.Remove, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
   CommandParameter="{Binding}">
                 <MenuItem.Icon>
-                    <Image Source="/View/ComponentsUserControls/delete.png"/>
+                    <materialIcons:MaterialIcon Kind="Delete"/>
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>

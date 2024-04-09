@@ -8,7 +8,7 @@
         xmlns:viewModels="clr-namespace:PCConfigurator.ViewModel.NewComponentsViewModel"
         d:DataContext="{d:DesignInstance Type=viewModels:NewSocketViewModel }"
         mc:Ignorable="d"
-        Title="NewSocketWindow" Height="300" Width="300" ResizeMode="NoResize" SizeToContent="Height">
+        Title="Сокет" Height="300" Width="300" ResizeMode="NoResize" SizeToContent="Height">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>

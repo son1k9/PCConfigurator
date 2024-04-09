@@ -9,7 +9,7 @@
         d:DataContext="{d:DesignInstance Type=viewModels:NewHddViewModel}"
         xmlns:converters="clr-namespace:PCConfigurator.Converters"
         xmlns:components="clr-namespace:PCConfigurator.Model.Components"
-        Title="NewHddWindow" Height="300" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        Title="HDD" Height="300" Width="380" ResizeMode="NoResize" SizeToContent="Height">
     <Window.Resources>
         <converters:HddSpindelSpeedConverter x:Key="spindelSpeedConverter"/>
     </Window.Resources>

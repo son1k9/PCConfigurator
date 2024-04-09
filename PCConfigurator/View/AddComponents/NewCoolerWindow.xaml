@@ -8,8 +8,8 @@
         xmlns:viewModels="clr-namespace:PCConfigurator.ViewModel.NewComponentsViewModel"
         d:DataContext="{d:DesignInstance Type=viewModels:NewCoolerViewmodel}"
         mc:Ignorable="d"
-
-        Title="NewCoolerWindow" Height="340" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
+        Title="Кулер" Height="340" Width="380" ResizeMode="NoResize" SizeToContent="Height">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -65,10 +65,10 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" FlowDirection="RightToLeft">
-                            <Button Width="20" Height="20" Margin="2" Command="{Binding Path=DataContext.RemoveSocket, RelativeSource={RelativeSource AncestorType={x:Type Window} }}" 
+                            <Button Width="30" Height="30" Margin="2" Command="{Binding Path=DataContext.RemoveSocket, RelativeSource={RelativeSource AncestorType={x:Type Window} }}" 
                                 CommandParameter="{Binding}" Background="Transparent">
                                 <Button.Content>
-                                    <Image Source="/View/AddComponents/delete.png"/>
+                                    <materialIcons:MaterialIcon Kind="Delete"/>
                                 </Button.Content>
                             </Button>
                         </StackPanel>
@@ -83,9 +83,9 @@
 
         <ComboBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="10 0 10 10" Name="comboBoxSocket"/>
 
-        <Button Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="20" Height="20"
-        Margin="0 0 18 0" Command="{Binding Path=AddSocket}" Background="Transparent" CommandParameter="{Binding ElementName=comboBoxSocket, Path=SelectedItem}">
-            <Image Source="/View/AddComponents/add.png"/>
+        <Button Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="30" Height="30"
+        Margin="0 0 20 0" Command="{Binding Path=AddSocket}" Background="Transparent" CommandParameter="{Binding ElementName=comboBoxSocket, Path=SelectedItem}">
+            <materialIcons:MaterialIcon Kind="Plus"/>
         </Button>
 
         <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">

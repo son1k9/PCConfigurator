@@ -8,6 +8,7 @@
              mc:Ignorable="d" 
              xmlns:viewmodel="clr-namespace:PCConfigurator.ViewModel" 
              xmlns:views="clr-namespace:PCConfigurator.View" 
+             xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              d:DataContext="{d:DesignInstance Type=viewmodel:ConfigurationsViewModel}"
              d:DesignWidth="1600" d:DesignHeight="850">
     <Grid>
@@ -49,11 +50,11 @@
 
                                             </Grid>
                                             <ControlTemplate.Triggers>
-                                                <Trigger Property="IsSelected" Value="True">
-                                                    <Setter TargetName="_grid" Property="Background" Value="#C9E6FF"/>
-                                                </Trigger>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter TargetName="_grid" Property="Background" Value="#C9E6FF"/>
+                                                    <Setter TargetName="_grid" Property="Background" Value="#e5f3ff"/>
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="_grid" Property="Background" Value="#cde8ff"/>
                                                 </Trigger>
                                             </ControlTemplate.Triggers>
                                         </ControlTemplate>
@@ -83,7 +84,7 @@
 
                 <Button Grid.Row="1" Height="70" BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Command="{Binding AddConfiguration}">
                     <Button.Content>
-                        <Image Source="/View/add.png" Height="50"/>
+                        <materialIcons:MaterialIcon Kind="Plus"/>
                     </Button.Content>
                 </Button>
 

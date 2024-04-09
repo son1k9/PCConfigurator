@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         xmlns:converters="clr-namespace:PCConfigurator.Converters"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
-        Title="NewSsdWindow" Height="400" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        Title="SSD" Height="400" Width="380" ResizeMode="NoResize" SizeToContent="Height">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="NandTypeDataSource"

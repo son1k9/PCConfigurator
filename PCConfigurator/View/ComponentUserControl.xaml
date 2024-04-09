@@ -6,31 +6,24 @@
              xmlns:local="clr-namespace:PCConfigurator.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              x:Name="Component">
-    <Border Width="300" Height="50" BorderThickness="1" BorderBrush="Black">
+    <Border Width="250" Height="50" BorderThickness="1" BorderBrush="Black">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.16*"/>
-                <ColumnDefinition Width="0.84*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.8*"/>
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Margin="3" BorderBrush="Black" Command="{Binding ElementName=Component, Path=Command}"
                     CommandParameter="{Binding ElementName=Component, Path=CommandParameter}" Background="White">
                 <Button.Content>
-                    <Image Source="/View/add2.png" Margin="3"/>
+                    <materialIcons:MaterialIcon Kind="Plus" Foreground="Black"/>
                 </Button.Content>
             </Button>
 
-            <Grid Grid.Column="1" Margin="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                
-                <Border Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="1">
-                    <TextBlock Text="{Binding Model}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"/>
-                </Border>
-            </Grid>
+            <TextBlock Text="{Binding Model}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5 5 0 0" 
+                       TextWrapping="Wrap" Grid.Column="1"/>
 
         </Grid>
     </Border>

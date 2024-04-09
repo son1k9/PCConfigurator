@@ -7,7 +7,7 @@
         xmlns:components="clr-namespace:PCConfigurator.Model.Components"
         d:DataContext="{d:DesignInstance Type=components:PowerSupply}"
         mc:Ignorable="d"
-        Title="NewPowerSupplyWindow" Height="260" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        Title="Блок питания" Height="260" Width="380" ResizeMode="NoResize" SizeToContent="Height">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>

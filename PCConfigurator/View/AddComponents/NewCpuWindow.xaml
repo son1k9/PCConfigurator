@@ -9,7 +9,7 @@
         d:DataContext="{d:DesignInstance Type=components:Cpu}"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
-        Title="NewCpuWindow" Height="740" Width="430" ResizeMode="NoResize" SizeToContent="Height">
+        Title="Процессор" Height="740" Width="430" ResizeMode="NoResize" SizeToContent="Height">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="RamTypeDataSource"

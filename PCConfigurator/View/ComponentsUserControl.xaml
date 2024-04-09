@@ -28,17 +28,17 @@
                                     <Grid Background="{TemplateBinding Background}">
                                         <TextBlock VerticalAlignment="Center"
                                    HorizontalAlignment="Left" Margin="10 0 0 0 "
-                                   Text="{TemplateBinding Property=Content}"/>
+                                   Text="{TemplateBinding Property=Content}" FontSize="16"/>
                                     </Grid>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                         <Style.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="#C9E6FF"/>
-                            </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#C9E6FF"/>
+                                <Setter Property="Background" Value="#e5f3ff"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="#cde8ff"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>

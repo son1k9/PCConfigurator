@@ -9,7 +9,7 @@
         d:DataContext="{d:DesignInstance Type=components:Ram}"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
-        Title="NewRamWindow" Height="400" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        Title="Оперативная память" Height="400" Width="380" ResizeMode="NoResize" SizeToContent="Height">
     <Window.Resources>
         <ObjectDataProvider x:Key="RamTypeDataSource"
                     ObjectType="{x:Type sys:Enum}"

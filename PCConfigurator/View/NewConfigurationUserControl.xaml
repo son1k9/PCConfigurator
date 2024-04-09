@@ -44,7 +44,6 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 
                 <ItemsControl ItemsSource="{Binding Rams}" x:Name="RamItemsControl" Grid.Column="0">
@@ -92,22 +91,7 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
 
-                <ItemsControl ItemsSource="{Binding M2Slots}" x:Name="M2SlotItemsControl" Grid.Column="3">
-                    <ItemsControl.ItemContainerStyle>
-                        <Style>
-                            <Setter Property="FrameworkElement.Margin" Value="5"/>
-                        </Style>
-                    </ItemsControl.ItemContainerStyle>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="{x:Type components:M2Slot}">
-                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
-                                CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
-                                Converter={StaticResource GetIndexCovnerter}}"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-
-                <ItemsControl ItemsSource="{Binding SsdAndHdds}" x:Name="SataItemsControl" Grid.Column="4">
+                <ItemsControl ItemsSource="{Binding SsdAndHdds}" x:Name="SataItemsControl" Grid.Column="3">
                     <ItemsControl.ItemContainerStyle>
                         <Style>
                             <Setter Property="FrameworkElement.Margin" Value="5"/>

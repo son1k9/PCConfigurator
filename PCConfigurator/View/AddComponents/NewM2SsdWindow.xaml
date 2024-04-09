@@ -9,7 +9,7 @@
         d:DataContext="{d:DesignInstance Type=viewModels:NewM2SsdViewModel}"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
-        Title="NewM2SsdWindow" Height="600" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        Title="M2 SSD" Height="600" Width="380" ResizeMode="NoResize" SizeToContent="Height">
     <Window.Resources>
         <ObjectDataProvider x:Key="NandTypeDataSource"
             ObjectType="{x:Type sys:Enum}"
