@@ -11,7 +11,9 @@
              xmlns:converters="clr-namespace:PCConfigurator.Converters" 
              d:DataContext="{d:DesignInstance Type=viewmodel:ConfigurationViewModel}"
              d:DesignHeight="450" d:DesignWidth="800"
-             x:Name="configuration">
+             x:Name="configuration"
+             Loaded="configuration_Loaded"
+             DataContextChanged="configuration_DataContextChanged">
     
     <UserControl.Resources>
         <converters:GetIndexConverter x:Key="GetIndexCovnerter"/>
@@ -30,28 +32,96 @@
 
         <Grid Grid.Row="1" Margin="10">
             <Grid.ColumnDefinitions>
-                
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <ItemsControl ItemsSource="{Binding Rams}" x:Name="RamItemsControl">
-                <ItemsControl.ItemContainerStyle>
-                    <Style>
-                        <Setter Property="FrameworkElement.Margin" Value="5"/>
-                    </Style>
-                </ItemsControl.ItemContainerStyle>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate DataType="{x:Type components:Ram}">
-                        <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <ItemsControl ItemsSource="{Binding Rams}" x:Name="RamItemsControl" Grid.Column="0">
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="5"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type components:Ram}">
+                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
                                                     CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
                                                     Converter={StaticResource GetIndexCovnerter}}"/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl ItemsSource="{Binding Gpus}" x:Name="GpuItemsControl" Grid.Column="1">
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="5"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type components:Gpu}">
+                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
+                                    CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
+                                    Converter={StaticResource GetIndexCovnerter}}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl ItemsSource="{Binding M2Ssds}" x:Name="M2SsdItemsControl" Grid.Column="2">
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="5"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type components:M2Ssd}">
+                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
+                    CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
+                    Converter={StaticResource GetIndexCovnerter}}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl ItemsSource="{Binding M2Slots}" x:Name="M2SlotItemsControl" Grid.Column="3">
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="5"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type components:M2Slot}">
+                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
+                                CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
+                                Converter={StaticResource GetIndexCovnerter}}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <ItemsControl ItemsSource="{Binding SsdAndHdds}" x:Name="SataItemsControl" Grid.Column="4">
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="FrameworkElement.Margin" Value="5"/>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type components:Component}">
+                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
+                                CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
+                                Converter={StaticResource GetIndexCovnerter}}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
             <Button Content="Save" Command="{Binding Save}" Grid.Row="1"/>
             
         </Grid>

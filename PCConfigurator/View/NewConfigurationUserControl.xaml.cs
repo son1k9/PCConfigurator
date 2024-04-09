@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCConfigurator.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,35 @@ namespace PCConfigurator.View
     /// </summary>
     public partial class NewConfigurationUserControl : UserControl
     {
+        private ConfigurationViewModel _viewModel;
+
         public NewConfigurationUserControl()
         {
             InitializeComponent();
+        }
+
+        private void Refresh(object sender, object collection)
+        {
+            var view = CollectionViewSource.GetDefaultView(RamItemsControl.ItemsSource);
+            view.Refresh();
+        }
+
+        private void configuration_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is ConfigurationViewModel viewModel)
+            {
+                _viewModel = viewModel;
+                viewModel.ComponentChanged += Refresh;
+            }
+        }
+
+        private void configuration_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (DataContext is ConfigurationViewModel viewModel)
+            {
+                _viewModel = viewModel;
+                viewModel.ComponentChanged += Refresh;
+            }
         }
     }
 }

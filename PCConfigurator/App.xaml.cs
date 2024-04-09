@@ -432,8 +432,8 @@ public partial class App : Application
             Model = "ASUS PRIME A320M-K",
             RamSlots = 4,
             MaxRamCapacity = 64,
-            Sata3Ports = 4,
-            PCIex16Slots = 1,
+            Sata3Ports = 8,
+            PCIex16Slots = 2,
             RamType = RamType.DDR4,
             Socket = socket1,
             Chipset = chipset3
@@ -529,7 +529,7 @@ public partial class App : Application
         Configuration configuration2 = new Configuration()
         {
             Name = "Test Configuration2",
-            Motherboard = motherboard,
+            Motherboard = motherboard1,
             Cpu = cpu2,
             Cooler = cooler2,
             PowerSupply = powerSupply1,
