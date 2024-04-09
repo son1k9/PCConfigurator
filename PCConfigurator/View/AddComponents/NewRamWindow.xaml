@@ -50,7 +50,7 @@
 
         <StackPanel>
             <TextBlock Text="Тип памяти"/>
-            <Border BorderBrush="#212121" BorderThickness="1">
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
                 <ComboBox SelectedItem="{Binding RamType}" Name="comboBoxRamType" ItemsSource="{Binding Source={StaticResource RamTypeDataSource}}" 
                           SelectionChanged="comboBoxRamType_SelectionChanged"/>
             </Border>

@@ -40,7 +40,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Background" Value="#EAEAEA"/>
                             <Setter Property="BorderThickness" Value="2 0 0 0"/>
-                            <Setter Property="BorderBrush" Value="#212121"/>
+                            <Setter Property="BorderBrush" Value="#606060"/>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
@@ -57,8 +57,8 @@
             <RadioButton Content="M2 SSD" Command="{Binding NavigateM2SsdCommand}"/>
             <RadioButton Content="Сокеты" Command="{Binding NavigateSocketCommand}"/>
         </StackPanel>
-        
-        <Border Grid.Column="1" Background="#F9F9F9" CornerRadius="30 0 0 0" Padding="20">
+
+        <Border Grid.Column="1" Background="#F9F9F9" CornerRadius="15 0 0 0" Padding="20" BorderThickness="1" BorderBrush="#DBDBDB">
         <ContentControl Content="{Binding CurrentViewModel}">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type viewmodels:MotherboardViewModel}">

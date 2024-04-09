@@ -82,7 +82,7 @@
                     </ListBox>
                 </Border>
 
-                <Button Grid.Row="1" Height="70" BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Command="{Binding AddConfiguration}">
+                <Button Grid.Row="1" Height="70" Margin="0 10 0 0" Command="{Binding AddConfiguration}">
                     <Button.Content>
                         <materialIcons:MaterialIcon Kind="Plus"/>
                     </Button.Content>

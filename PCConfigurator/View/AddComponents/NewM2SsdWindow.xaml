@@ -103,7 +103,7 @@
 
         <StackPanel>
             <TextBlock Text="Тип памяти"/>
-            <Border BorderBrush="#212121" BorderThickness="1">
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
                 <ComboBox SelectedItem="{Binding M2Ssd.NandType}" Name="comboBoxNandType" ItemsSource="{Binding Source={StaticResource NandTypeDataSource}}"/>
             </Border>
         </StackPanel>

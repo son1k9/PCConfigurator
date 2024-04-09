@@ -50,7 +50,7 @@
 
         <StackPanel>
             <TextBlock Text="Сокет"/>
-            <Border BorderBrush="#212121" BorderThickness="1">
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
                 <ComboBox Name="comboBoxSocket">
                     <ComboBox.SelectedItem>
                         <Binding Path="Motherboard.Socket">
@@ -62,7 +62,7 @@
 
         <StackPanel>
             <TextBlock Text="Чипсет"/>
-            <Border BorderBrush="#212121" BorderThickness="1">
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
                 <ComboBox SelectedItem="{Binding Motherboard.Chipset}" Name="comboBoxChipset" 
                       ItemsSource="{Binding ElementName=comboBoxSocket, Path=SelectedItem.Chipsets}" BorderThickness="0">
                 </ComboBox>
@@ -71,7 +71,7 @@
 
         <StackPanel>
             <TextBlock Text="Тип памяти"/>
-            <Border BorderBrush="#212121" BorderThickness="1">
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
                 <ComboBox SelectedItem="{Binding Motherboard.RamType}" Name="comboBoxRamType"
                       ItemsSource="{Binding Source={StaticResource RamTypeDataSource}}"/>
             </Border>

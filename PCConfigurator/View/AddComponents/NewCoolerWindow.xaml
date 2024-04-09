@@ -80,7 +80,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Border BorderBrush="#212121" BorderThickness="1" Grid.Column="0">
+                <Border BorderBrush="#DBDBDB" BorderThickness="1" Grid.Column="0" VerticalAlignment="Center">
                     <ComboBox Name="comboBoxSocket"/>
                 </Border>
                 <Button HorizontalAlignment="Right" Command="{Binding Path=AddSocket}" CommandParameter="{Binding ElementName=comboBoxSocket, Path=SelectedItem}"

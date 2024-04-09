@@ -57,20 +57,23 @@
             <Setter Property="ColumnHeaderStyle" Value="{StaticResource componentsListHeader}"/>
             <Setter Property="MinRowHeight" Value="35"/>
             <Setter Property="CellStyle" Value="{StaticResource componentsListCell}"/>
-            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderBrush" Value="#DBDBDB"/>
             <Setter Property="BorderThickness" Value="1"/>
+            
         </Style>
 
         <!--Buttons-->
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#212121"/>
-            <Setter Property="Foreground" Value="#F9F9F9"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="#DBDBDB"/>
+            <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" 
-                                CornerRadius="4" Padding="10">
+                                CornerRadius="4" Padding="10" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" 
                                               SnapsToDevicePixels="False"/>
                         </Border>
@@ -79,7 +82,11 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#444444"/>
+                    <Setter Property="Background" Value="#EFEFEF"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#F4F4F4"/>
+                    <Setter Property="Foreground" Value="#474747"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -102,6 +109,9 @@
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="#444444"/>
                 </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="#666666"/>
+                </Trigger>
             </Style.Triggers>
         </Style>
             
@@ -113,7 +123,7 @@
         </Style>
 
         <Style TargetType="{x:Type TextBox}" x:Key="textBoxNewComponent">
-            <Setter Property="BorderBrush" Value="#212121"/>
+            <Setter Property="BorderBrush" Value="#DBDBDB"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
@@ -124,12 +134,12 @@
         </Style>
 
         <Style TargetType="{x:Type ListBox}" x:Key="listBoxNewComponent">
-            <Setter Property="BorderBrush" Value="#212121"/>
+            <Setter Property="BorderBrush" Value="#DBDBDB"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
 
         <Style TargetType="{x:Type Slider}" x:Key="sliderNewComponent">
-            <Setter Property="Foreground" Value="#212121"/>
+            <Setter Property="Foreground" Value="#DBDBDB"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="TickPlacement" Value="None"/>
             <Setter Property="IsSnapToTickEnabled" Value="True"/>
