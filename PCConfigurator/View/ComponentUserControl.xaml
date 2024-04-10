@@ -8,23 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              x:Name="Component">
-    <Border Width="250" Height="50" BorderThickness="1" BorderBrush="Black">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*"/>
-                <ColumnDefinition Width="0.8*"/>
-            </Grid.ColumnDefinitions>
-
-            <Button Grid.Column="0" Margin="3" BorderBrush="Black" Command="{Binding ElementName=Component, Path=Command}"
-                    CommandParameter="{Binding ElementName=Component, Path=CommandParameter}" Background="White">
-                <Button.Content>
-                    <materialIcons:MaterialIcon Kind="Plus" Foreground="Black"/>
-                </Button.Content>
-            </Button>
-
-            <TextBlock Text="{Binding Model}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5 5 0 0" 
-                       TextWrapping="Wrap" Grid.Column="1"/>
-
-        </Grid>
+    <Border BorderThickness="1" BorderBrush="#DBDBDB" Background="White"
+            CornerRadius="20" Width="200" Height="70">
     </Border>
 </UserControl>

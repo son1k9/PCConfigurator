@@ -107,14 +107,21 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="#444444"/>
+                    <Setter Property="Foreground" Value="#666666"/>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Foreground" Value="#666666"/>
+                    <Setter Property="Foreground" Value="#888888"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
             
+        <!-- Context menu-->
+        <Style TargetType="ContextMenu">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#F1F1F1"/>
+            <Setter Property="BorderBrush" Value="#DBDBDB"/>
+        </Style>
+        
         <!-- New component-->
 
         <Style TargetType="{x:Type TextBlock}" x:Key="textBlockNewComponent">

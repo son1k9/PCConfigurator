@@ -121,7 +121,7 @@
             </ListBox>
             <Button VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 7 0"
                     Command="{Binding AddM2Slot}" Style="{StaticResource ButtonIcon}">
-                <materialIcons:MaterialIcon Kind="PlusBox"/>
+                <materialIcons:MaterialIcon Kind="Plus"/>
             </Button>
         </StackPanel>
 

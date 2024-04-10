@@ -16,7 +16,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Background="#FCFCFC">
                 <StackPanel.Resources>
                     <!-- Style for menu buttons-->
                     <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
@@ -24,7 +24,7 @@
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="MinHeight" Value="50"/>
                         <Setter Property="MinWidth" Value="100"/>
-                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="FontSize" Value="18"/>
                         <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="Template">
                             <Setter.Value>
