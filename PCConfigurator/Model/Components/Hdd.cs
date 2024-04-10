@@ -1,10 +1,10 @@
 ﻿namespace PCConfigurator.Model.Components;
 
-public class Hdd
+public class Hdd : Component
 {
     public int HddId { get; set; }
 
-    public string Model { get; set; }
+    public override string Model { get; set; }
 
     public int Capacity { get; set; } = 80;
 
@@ -20,8 +20,7 @@ public class Hdd
             HddId = HddId,
             Model = Model,
             Capacity = Capacity,
-            SpindelSpeed = SpindelSpeed,
-            Configurations = Configurations
+            SpindelSpeed = SpindelSpeed
         };
     }
 }

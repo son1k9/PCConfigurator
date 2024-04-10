@@ -6,39 +6,45 @@
         xmlns:viewmodels="clr-namespace:PCConfigurator.ViewModel"
         xmlns:views="clr-namespace:PCConfigurator.View" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Title="PC Configurator" MinWidth="1280" MinHeight="720" WindowStartupLocation="CenterScreen"
-        Width="1280" Height="720">
+        Title="PC Configurator" MinWidth="277" MinHeight="570" WindowStartupLocation="CenterScreen"
+        Width="1305" Height="960"
+        Background="#F2F2F2"
+        WindowStyle="ThreeDBorderWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" BorderThickness="0 0 0 2" BorderBrush="Black">
-            <StackPanel Orientation="Horizontal">
+        <Border Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Background="#FCFCFC">
                 <StackPanel.Resources>
                     <!-- Style for menu buttons-->
                     <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
                         <Setter Property="VerticalAlignment" Value="Center"/>
-                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="MinHeight" Value="50"/>
                         <Setter Property="MinWidth" Value="100"/>
+                        <Setter Property="FontSize" Value="18"/>
+                        <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="RadioButton">
-                                    <Grid Background="{TemplateBinding Background}">
+                                    <Border Background="{TemplateBinding Background}" Padding="10" BorderThickness="{TemplateBinding BorderThickness}"
+                                            BorderBrush="{TemplateBinding BorderBrush}">
                                         <TextBlock VerticalAlignment="Center"
                                                    HorizontalAlignment="Center"
                                                    Text="{TemplateBinding Property=Content}"/>
-                                    </Grid>
+                                    </Border>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                         <Style.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="#C9E6FF"/>
-                            </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#C9E6FF"/>
+                                <Setter Property="Background" Value="#EAEAEA"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="BorderThickness" Value="0 0 0 2"/>
+                                <Setter Property="BorderBrush" Value="#212121"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>

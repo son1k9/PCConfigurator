@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCConfigurator.View.AddComponents" 
         xmlns:components="clr-namespace:PCConfigurator.Model.Components"
+        xmlns:views="clr-namespace:PCConfigurator.View.AddComponents"
         xmlns:viewModels="clr-namespace:PCConfigurator.ViewModel.NewComponentsViewModel"
         xmlns:converters="clr-namespace:PCConfigurator.Converters"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         d:DataContext="{d:DesignInstance Type=viewModels:NewMotherboardViewmodel}"
         mc:Ignorable="d"
-        Title="NewMotherboardWindow" Height="600" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        Title="Материнская плата" Height="600" Width="424" ResizeMode="NoResize" SizeToContent="Height"
+        xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
+        x:Name="Window"
+        Background="#F9F9F9">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="RamTypeDataSource"
@@ -22,161 +26,139 @@
         </ObjectDataProvider>
 
         <converters:MaxRamCapacityConverter x:Key="maxRamCapacityConverter"/>
+
+        <Style TargetType="TextBlock" BasedOn="{StaticResource textBlockNewComponent}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource textBoxNewComponent}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource comboBoxNewComponent}"/>
+        <Style TargetType="Slider" BasedOn="{StaticResource sliderNewComponent}"/>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource checkBoxComponent}"/>
+        <Style TargetType="StackPanel" BasedOn="{StaticResource inputStackPanel}"/>
+        <Style TargetType="ListBox" BasedOn="{StaticResource listBoxNewComponent}"/>
     </Window.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <StackPanel Margin="10">
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель: " Style="{StaticResource textBlockNewComponent}"/>
-        <TextBox Grid.Row="0" Grid.Column="1"  Style="{StaticResource textBoxNewComponent}" Name="textBoxModel">
-            <TextBox.Text>
-                <Binding Path="Motherboard.Model" UpdateSourceTrigger="PropertyChanged">
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Сокет: " Style="{StaticResource textBlockNewComponent}"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxSocket">
-            <ComboBox.SelectedItem>
-                <Binding Path="Motherboard.Socket">
-                </Binding>
-            </ComboBox.SelectedItem>
-        </ComboBox>
-
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Чипсет: " Style="{StaticResource textBlockNewComponent}"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxChipset"
-                  ItemsSource="{Binding ElementName=comboBoxSocket, Path=SelectedItem.Chipsets}">
-            <ComboBox.SelectedItem>
-                <Binding Path="Motherboard.Chipset">
-                </Binding>
-            </ComboBox.SelectedItem>
-        </ComboBox>
-
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Тип памяти: " Style="{StaticResource textBlockNewComponent}"/>
-        <ComboBox Grid.Row="3" Grid.Column="1" SelectedItem="{Binding Motherboard.RamType}" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxRamType"
-                  ItemsSource="{Binding Source={StaticResource RamTypeDataSource}}"/>
-
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Количествово слотов памяти: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="4" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            
-            <Slider Value="{Binding Motherboard.RamSlots}" Maximum="8" Style="{StaticResource sliderNewComponent}"
-            TickPlacement="BottomRight" IsSnapToTickEnabled="True" TickFrequency="2" Minimum="2" Grid.Column="0" Name="sliderRam"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding ElementName=sliderRam, Path=Value}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Максимальный объем памяти: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="5" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding Motherboard.MaxRamCapacity, Converter={StaticResource maxRamCapacityConverter}}" Style="{StaticResource sliderNewComponent}"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderMaxRamCapacity" Minimum="2" Maximum="11"
-                Ticks="2, 3, 4, 5, 6, 7, 8, 9, 10, 11"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Motherboard.MaxRamCapacity}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="6" Text="Разъёмы M.2:" Style="{StaticResource textBlockNewComponent}" Margin="10 5 0 0"/>
-
-        <ListBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" ItemsSource="{Binding Motherboard.M2Slots}" MinHeight="50"
-                 IsSynchronizedWithCurrentItem="True" Name="listBoxM2Slots">
-            <ListBox.Resources>
-                <DataTemplate DataType="{x:Type components:M2Slot}">
-                    <Grid Width="330">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-                            <CheckBox Content="Nvme" Margin="0 0 10 0" IsChecked="{Binding IsNvme}" />
-                            <CheckBox Content="Sata" IsChecked="{Binding IsSata}"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalAlignment="Stretch" Grid.RowSpan="2">
-                            <Button Width="20" Height="20" Margin="2" Command="{Binding Path=DataContext.RemoveM2Slot, RelativeSource={RelativeSource AncestorType={x:Type Window} }}" 
-                                    CommandParameter="{Binding}" Background="Transparent">
-                                <Button.Content>
-                                    <Image Source="/View/AddComponents/delete.png"/>
-                                </Button.Content>
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Grid.Row="1" Orientation="Horizontal">
-                            <CheckBox Content="2230" Margin="0 0 10 0" IsChecked="{Binding Is2230}"/>
-                            <CheckBox Content="2242" Margin="0 0 10 0" IsChecked="{Binding Is2242}"/>
-                            <CheckBox Content="2260" Margin="0 0 10 0" IsChecked="{Binding Is2260}"/>
-                            <CheckBox Content="2280" Margin="0 0 10 0" IsChecked="{Binding Is2280}"/>
-                            <CheckBox Content="22110" IsChecked="{Binding Is22110}"/>
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.Resources>
-            <ListBox.InputBindings>
-                <KeyBinding Key="Delete" Command="{Binding RemoveM2Slot}" CommandParameter="{Binding Path=Motherboard.M2Slots/}"/>
-            </ListBox.InputBindings>
-        </ListBox>
-
-        <Button Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="20" Height="20"
-                Margin="0 0 18 0" Command="{Binding AddM2Slot}" Background="Transparent">
-            <Image Source="/View/AddComponents/add.png"/>
-        </Button>
-
-        <TextBlock Grid.Row="9" Grid.Column="0" Text="Количество коннекторов SATA: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="9" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding Motherboard.Sata3Ports}" Maximum="8" Style="{StaticResource sliderNewComponent}"
-    TickPlacement="BottomRight" IsSnapToTickEnabled="True" TickFrequency="1" Minimum="1" Grid.Column="0" Name="sliderSata"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding ElementName=sliderSata, Path=Value}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="10" Grid.Column="0" Text="Количество слотов PCIex16: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="10" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding Motherboard.PCIex16Slots}" Maximum="8" Style="{StaticResource sliderNewComponent}"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" TickFrequency="1" Minimum="1" Grid.Column="0" Name="sliderPci"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding ElementName=sliderPci, Path=Value}"/>
-        </Grid>
-
-        <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
-            <Button Content="Подтвердить" VerticalAlignment="Center" Width="75" Height="30" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
-            <Button Content="Отмена" VerticalAlignment="Center" Width="75" Height="30" Margin="10 0 0 0" IsCancel="True"/>
+        <StackPanel>
+            <TextBlock Text="Модель"/>
+            <TextBox Name="textBoxModel">
+                <TextBox.Text>
+                    <Binding Path="Motherboard.Model" UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
         </StackPanel>
 
-        <TextBlock Grid.Row="12" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
+        <StackPanel>
+            <TextBlock Text="Сокет"/>
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
+                <ComboBox Name="comboBoxSocket">
+                    <ComboBox.SelectedItem>
+                        <Binding Path="Motherboard.Socket">
+                        </Binding>
+                    </ComboBox.SelectedItem>
+                </ComboBox>
+            </Border>
+        </StackPanel>
 
-    </Grid>
+        <StackPanel>
+            <TextBlock Text="Чипсет"/>
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
+                <ComboBox SelectedItem="{Binding Motherboard.Chipset}" Name="comboBoxChipset" 
+                      ItemsSource="{Binding ElementName=comboBoxSocket, Path=SelectedItem.Chipsets}" BorderThickness="0">
+                </ComboBox>
+            </Border>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Тип памяти"/>
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
+                <ComboBox SelectedItem="{Binding Motherboard.RamType}" Name="comboBoxRamType"
+                      ItemsSource="{Binding Source={StaticResource RamTypeDataSource}}"/>
+            </Border>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Количествово слотов памяти" Style="{StaticResource textBlockNewComponent}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding Motherboard.RamSlots}" Maximum="8" Style="{StaticResource sliderNewComponent}"
+                        TickFrequency="2" Minimum="2" Grid.Column="0" Name="sliderRam"/>
+                <TextBlock Grid.Column="1" Text="{Binding ElementName=sliderRam, Path=Value}" Width="40" TextAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Максимальный объем памяти"/>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding Motherboard.MaxRamCapacity, Converter={StaticResource maxRamCapacityConverter}}"
+                        Grid.Column="0" Name="sliderMaxRamCapacity" Minimum="2" Maximum="11"
+                        Ticks="2, 3, 4, 5, 6, 7, 8, 9, 10, 11"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Motherboard.MaxRamCapacity}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Разъёмы M.2"/>
+            <ListBox ItemsSource="{Binding Motherboard.M2Slots}" MinHeight="30" IsSynchronizedWithCurrentItem="True" 
+                     Name="listBoxM2Slots" HorizontalContentAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type components:M2Slot}">
+                        <views:M2SlotUserControl Command="{Binding ElementName=Window, Path=DataContext.RemoveM2Slot}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.InputBindings>
+                    <KeyBinding Key="Delete" Command="{Binding RemoveM2Slot}" CommandParameter="{Binding Path=Motherboard.M2Slots/}"/>
+                </ListBox.InputBindings>
+            </ListBox>
+            <Button VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 7 0"
+                    Command="{Binding AddM2Slot}" Style="{StaticResource ButtonIcon}">
+                <materialIcons:MaterialIcon Kind="Plus"/>
+            </Button>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Количество коннекторов SATA"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding Motherboard.Sata3Ports}" Maximum="8" TickFrequency="1" Minimum="1" Grid.Column="0" Name="sliderSata"/>
+                <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Text="{Binding ElementName=sliderSata, Path=Value}" TextAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Количество слотов PCIex16:"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding Motherboard.PCIex16Slots}" Maximum="8"  TickFrequency="1" Minimum="1" Grid.Column="0" Name="sliderPci"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding ElementName=sliderPci, Path=Value}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
+            <Button Content="Подтвердить" VerticalAlignment="Center" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+            <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Right"  Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
+        </StackPanel>
+        
+    </StackPanel>
 </Window>

@@ -27,8 +27,7 @@ public class Gpu
             CoreClock = CoreClock,
             BoostClock = BoostClock,
             VramCapacity = VramCapacity,
-            PowerConsumption = PowerConsumption,
-            Configurations = Configurations
+            PowerConsumption = PowerConsumption
         };
     }
 }

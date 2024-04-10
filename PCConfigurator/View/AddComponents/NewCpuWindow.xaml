@@ -9,7 +9,8 @@
         d:DataContext="{d:DesignInstance Type=components:Cpu}"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
-        Title="NewCpuWindow" Height="740" Width="430" ResizeMode="NoResize" SizeToContent="Height">
+        Title="Процессор" Height="700" Width="424" ResizeMode="NoResize" SizeToContent="Height"
+        Background="#F9F9F9">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="RamTypeDataSource"
@@ -21,170 +22,167 @@
         </ObjectDataProvider>
 
         <converters:MaxRamCapacityConverter x:Key="maxRamCapacityConverter"/>
+
+        <Style TargetType="TextBlock" BasedOn="{StaticResource textBlockNewComponent}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource textBoxNewComponent}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource comboBoxNewComponent}"/>
+        <Style TargetType="Slider" BasedOn="{StaticResource sliderNewComponent}"/>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource checkBoxComponent}"/>
+        <Style TargetType="ListBox" BasedOn="{StaticResource listBoxNewComponent}"/>
+        <Style TargetType="StackPanel" BasedOn="{StaticResource inputStackPanel}"/>
     </Window.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель: " Style="{StaticResource textBlockNewComponent}"/>
-        <TextBox Grid.Row="0" Grid.Column="1"  Style="{StaticResource textBoxNewComponent}" Name="textBoxModel">
-            <TextBox.Text>
-                <Binding Path="Model" UpdateSourceTrigger="PropertyChanged">
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Сокет: " Style="{StaticResource textBlockNewComponent}"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxSocket">
-            <ComboBox.SelectedItem>
-                <Binding Path="Socket">
-                </Binding>
-            </ComboBox.SelectedItem>
-        </ComboBox>
-
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Ядра: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="2" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding Cores}" Style="{StaticResource sliderNewComponent}"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderCores" Minimum="2" Maximum="96"
-                TickFrequency="2"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Cores}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Энергоэффективные ядра: " Style="{StaticResource textBlockNewComponent}" Margin="10 10 0 10"/>
-        <Grid Grid.Row="3" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding ECores}" Style="{StaticResource sliderNewComponent}"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderECores" Minimum="0" Maximum="32"
-                TickFrequency="2"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding ECores}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="SMT: " Style="{StaticResource textBlockNewComponent}"/>
-        <CheckBox Grid.Row="4" Grid.Column="1" Style="{StaticResource checkBoxComponent}" IsChecked="{Binding Smt}" Name="checkBoxSmt"/>
-
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Частота: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="5" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding CoreClock}" Style="{StaticResource sliderNewComponent}"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderCoreClock" Minimum="1.0" Maximum="6.0"
-                TickFrequency="0.1" ValueChanged="sliderCoreClock_ValueChanged"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding CoreClock}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="6" Grid.Column="0" Text="Частота в турбо режиме: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="6" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding BoostClock}" Style="{StaticResource sliderNewComponent}"
-        TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderBoostClock" Minimum="{Binding ElementName=sliderCoreClock, Path=Value}" Maximum="6.0"
-        TickFrequency="0.1"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding BoostClock}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="7" Grid.Column="0" Text="L2 кэш: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="7" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding L2Cache}" Style="{StaticResource sliderNewComponent}"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderL2Cache" Minimum="2" Maximum="48"
-                TickFrequency="2"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding L2Cache}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="8" Grid.Column="0" Text="L3 кэш: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="8" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding L3Cache}" Style="{StaticResource sliderNewComponent}"
-        TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderL3Cache" Minimum="2" Maximum="256"
-        TickFrequency="2"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding L3Cache}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="9" Grid.Column="0" Text="TDP: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="9" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Slider Value="{Binding Tdp}" Style="{StaticResource sliderNewComponent}"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderTdp" Minimum="35" Maximum="300"
-                TickFrequency="5"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Tdp}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="10" Grid.Column="0" Text="Тип памяти: " Style="{StaticResource textBlockNewComponent}"/>
-        <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0 10 10 10">
-            <CheckBox IsChecked="{Binding IsDDR3}" Content="DDR3" Margin="0 0 5 0" Name="checkBoxDDR3"/>
-            <CheckBox IsChecked="{Binding IsDDR4}" Content="DDR4" Margin="0 0 5 0" Name="checkBoxDDR4"/>
-            <CheckBox IsChecked="{Binding IsDDR5}" Content="DDR5" Name="checkBoxDDR5"/>
+    <StackPanel Margin="10">
+        
+        <StackPanel>
+            <TextBlock Text="Модель"/>
+            <TextBox Name="textBoxModel" Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
-        <TextBlock Grid.Row="11" Grid.Column="0" Text="Максимальный объем памяти: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="11" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+        <StackPanel>
+            <TextBlock Text="Сокет"/>
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
+                <ComboBox Name="comboBoxSocket">
+                    <ComboBox.SelectedItem>
+                        <Binding Path="Socket">
+                        </Binding>
+                    </ComboBox.SelectedItem>
+                </ComboBox>
+            </Border>
+        </StackPanel>
 
-            <Slider Value="{Binding MaxRamCapacity, Converter={StaticResource maxRamCapacityConverter}}" Style="{StaticResource sliderNewComponent}"
-        TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderMaxRamCapacity" Minimum="2" Maximum="11"
-        TickFrequency="1"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding MaxRamCapacity}"/>
-        </Grid>
+        <StackPanel>
+            <TextBlock Text="Ядра"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="12" Grid.Column="0" Text="Графическое ядро: " Style="{StaticResource textBlockNewComponent}"/>
-        <CheckBox Grid.Row="12" Grid.Column="1" Style="{StaticResource checkBoxComponent}" IsChecked="{Binding HaveGraphics}" Name="checkBoxHaveGraphics"/>
+                <Slider Value="{Binding Cores}" Grid.Column="0" Name="sliderCores" Minimum="2" Maximum="96" TickFrequency="2"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Cores}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Энергоэффективные ядра"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding ECores}" Grid.Column="0" Name="sliderECores" Minimum="0" Maximum="32" TickFrequency="2"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding ECores}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <CheckBox IsChecked="{Binding Smt}" Name="checkBoxSmt" Content="SMT"/>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Частота"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding CoreClock}" Grid.Column="0" Name="sliderCoreClock" Minimum="1.0" Maximum="6.0" 
+                        TickFrequency="0.1" ValueChanged="sliderCoreClock_ValueChanged"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding CoreClock}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Частота в турбо режиме"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding BoostClock}" Grid.Column="0" Name="sliderBoostClock" 
+                        Minimum="{Binding ElementName=sliderCoreClock, Path=Value}" Maximum="6.0" TickFrequency="0.1"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding BoostClock}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="L2 кэш"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding L2Cache}" Grid.Column="0" Name="sliderL2Cache" Minimum="2" Maximum="48" TickFrequency="2"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding L2Cache}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="L3 кэш"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding L3Cache}" Grid.Column="0" Name="sliderL3Cache" Minimum="2" Maximum="256" TickFrequency="2"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding L3Cache}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="TDP"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding Tdp}" Grid.Column="0" Name="sliderTdp" Minimum="35" Maximum="300" TickFrequency="5"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Tdp}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Тип памяти"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0">
+                <CheckBox IsChecked="{Binding IsDDR3}" Content="DDR3" Margin="0 0 20 0" Name="checkBoxDDR3"/>
+                <CheckBox IsChecked="{Binding IsDDR4}" Content="DDR4" Margin="0 0 20 0" Name="checkBoxDDR4"/>
+                <CheckBox IsChecked="{Binding IsDDR5}" Content="DDR5" Name="checkBoxDDR5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Максимальный объем памяти"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Value="{Binding MaxRamCapacity, Converter={StaticResource maxRamCapacityConverter}}" Grid.Column="0" Name="sliderMaxRamCapacity" 
+                        Minimum="2" Maximum="11" TickFrequency="1"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding MaxRamCapacity}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <CheckBox IsChecked="{Binding HaveGraphics}" Name="checkBoxHaveGraphics" Content="Графическое ядро"/>
+        </StackPanel>
 
         <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
-            <Button Content="Подтвердить" VerticalAlignment="Center" Width="75" Height="30" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
-            <Button Content="Отмена" VerticalAlignment="Center" Width="75" Height="30" Margin="10 0 0 0" IsCancel="True"/>
+            <Button Content="Подтвердить" VerticalAlignment="Center" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+            <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Right" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
         </StackPanel>
         
-        <TextBlock Grid.Row="14" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
-        
-    </Grid>
+    </StackPanel>
 </Window>

@@ -11,37 +11,41 @@
              d:DesignWidth="1600" d:DesignHeight="850" >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="256"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Column="0" Margin="10" BorderBrush="Black" BorderThickness="1">
-            <StackPanel>
+        <Border BorderBrush="#DBDBDB" BorderThickness="0 1 0 0">
+            <StackPanel Grid.Column="0">
                 <StackPanel.Resources>
                     <!-- Style for menu buttons-->
-                    <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
-                        <Setter Property="Background" Value="White"/>
-                        <Setter Property="MinHeight" Value="50"/>
-                        <Setter Property="MinWidth" Value="100"/>
+                    <Style TargetType="RadioButton">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="RadioButton">
-                                    <Grid Background="{TemplateBinding Background}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="0 7 7 0" Margin="0 3 5 0" Padding="0 10">
                                         <TextBlock VerticalAlignment="Center"
-                                   HorizontalAlignment="Left" Margin="10 0 0 0 "
-                                   Text="{TemplateBinding Property=Content}"/>
-                                    </Grid>
+                                               HorizontalAlignment="Left" Margin="10 0 0 0 "
+                                               Text="{TemplateBinding Property=Content}" FontSize="18"/>
+                                    </Border>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                         <Style.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="#C9E6FF"/>
-                            </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#C9E6FF"/>
+                                <Setter Property="Background" Value="#EAEAEA"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="#EAEAEA"/>
+                                <Setter Property="BorderThickness" Value="2 0 0 0"/>
+                                <Setter Property="BorderBrush" Value="#606060"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
+                    
                 </StackPanel.Resources>
 
                 <RadioButton Content="Материнские платы" Command="{Binding NavigateMotherboardCommand}" IsChecked="True"/>
@@ -56,41 +60,42 @@
                 <RadioButton Content="Сокеты" Command="{Binding NavigateSocketCommand}"/>
             </StackPanel>
         </Border>
-        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2 0 0 0">
-            <ContentControl Content="{Binding CurrentViewModel}">
-                <ContentControl.Resources>
-                    <DataTemplate DataType="{x:Type viewmodels:MotherboardViewModel}">
-                        <views:MotherboardUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:CpuViewModel}">
-                        <views:CpuUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:CoolerViewModel}">
-                        <views:CoolerUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:RamViewModel}">
-                        <views:RamUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:PowerSupplyViewModel}">
-                        <views:PowerSupplyUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:GpuViewModel}">
-                        <views:GpuUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:SsdViewModel}">
-                        <views:SsdUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:HddViewModel}">
-                        <views:HddUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:M2SsdViewModel}">
-                        <views:M2SsdUserControl/>
-                    </DataTemplate>
-                    <DataTemplate DataType="{x:Type viewmodels:SocketViewModel}">
-                        <views:SocketUserControl/>
-                    </DataTemplate>
-                </ContentControl.Resources>
-            </ContentControl>
+        
+        <Border Grid.Column="1" Background="#F9F9F9" CornerRadius="0 0 0 0" Padding="20" BorderThickness="1" BorderBrush="#DBDBDB">
+        <ContentControl Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewmodels:MotherboardViewModel}">
+                    <views:MotherboardUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:CpuViewModel}">
+                    <views:CpuUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:CoolerViewModel}">
+                    <views:CoolerUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:RamViewModel}">
+                    <views:RamUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:PowerSupplyViewModel}">
+                    <views:PowerSupplyUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:GpuViewModel}">
+                    <views:GpuUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:SsdViewModel}">
+                    <views:SsdUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:HddViewModel}">
+                    <views:HddUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:M2SsdViewModel}">
+                    <views:M2SsdUserControl/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:SocketViewModel}">
+                    <views:SocketUserControl/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
         </Border>
     </Grid>
 </UserControl>

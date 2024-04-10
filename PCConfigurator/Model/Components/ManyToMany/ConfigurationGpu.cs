@@ -8,5 +8,5 @@ public class ConfigurationGpu
     public virtual Configuration Configuration { get; set; }
 
     public int GpuId { get; set; }
-    public virtual Gpu gpu { get; set; }
+    public virtual Gpu Gpu { get; set; }
 }

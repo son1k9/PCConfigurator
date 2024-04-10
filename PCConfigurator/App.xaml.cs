@@ -43,7 +43,7 @@ public partial class App : Application
             BoostClock = 4.5f,
             HaveGraphics = false,
             Socket = socket1,
-            RamTypes = RamType.DDR4 | RamType.DDR5
+            RamTypes = RamType.DDR4
         };
 
         dbContext.Cpu.Add(cpu1);
@@ -61,7 +61,7 @@ public partial class App : Application
             BoostClock = 4.7f,
             HaveGraphics = false,
             Socket = socket1,
-            RamTypes = RamType.DDR4 | RamType.DDR5
+            RamTypes = RamType.DDR4
         };
 
     dbContext.Cpu.Add(cpu2);
@@ -100,7 +100,7 @@ public partial class App : Application
             RamTypes = RamType.DDR4
         });
 
-        dbContext.Cpu.Add(new Cpu()
+        Cpu cpu3 = new Cpu()
         {
             Model = "AMD FX-6300",
             Cores = 8,
@@ -115,7 +115,9 @@ public partial class App : Application
             HaveGraphics = false,
             Socket = socket3,
             RamTypes = RamType.DDR3
-        });
+        };
+
+        dbContext.Cpu.Add(cpu3);
 
         dbContext.Cpu.Add(new Cpu()
         {
@@ -264,7 +266,7 @@ public partial class App : Application
 
         Chipset chipset5 = new Chipset()
         {
-            Name = "980G",
+            Name = "760G",
             Socket = socket3
         };
 
@@ -295,14 +297,16 @@ public partial class App : Application
             Cl = 46,
             RamType = RamType.DDR5
         });
-        dbContext.Ram.Add(new Ram()
+
+        Ram ram3 = new Ram()
         {
             Model = "Patriot Viper 3",
             Capacity = 8,
             Clock = 1600,
             Cl = 9,
             RamType = RamType.DDR3
-        });
+        };
+        dbContext.Ram.Add(ram3);
 
 
         //Power Supply
@@ -432,8 +436,8 @@ public partial class App : Application
             Model = "ASUS PRIME A320M-K",
             RamSlots = 2,
             MaxRamCapacity = 64,
-            Sata3Ports = 4,
-            PCIex16Slots = 1,
+            Sata3Ports = 6,
+            PCIex16Slots = 2,
             RamType = RamType.DDR4,
             Socket = socket1,
             Chipset = chipset3
@@ -458,31 +462,15 @@ public partial class App : Application
 
         Motherboard motherboard1 = new Motherboard()
         {
-            Model = "ASUS PRIME A320M-K",
+            Model = "ASRock 760GM-HDV",
             RamSlots = 2,
             MaxRamCapacity = 64,
             Sata3Ports = 4,
             PCIex16Slots = 1,
-            RamType = RamType.DDR4,
+            RamType = RamType.DDR3,
             Socket = socket3,
             Chipset = chipset5
         };
-
-        ObservableCollection<M2Slot> motherboard1Slots =
-        [
-            new M2Slot()
-            {
-                M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
-                M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
-            },
-            new M2Slot()
-            {
-                M2Interface = Model.Components.M2.M2Interface.Sata,
-                M2Size = Model.Components.M2.M2Size._22110
-            }
-        ];
-
-        motherboard1.M2Slots = motherboard1Slots;
 
         dbContext.Add(motherboard1);
 
@@ -494,8 +482,7 @@ public partial class App : Application
             Cpu = cpu1,
             Cooler = cooler1,
             PowerSupply = powerSupply1,
-            Gpus = [gpu1],
-            Ssds = [ssd1]
+            Gpus = [gpu1]
         };
 
         configuration1.ConfigurationRams.Add(new ConfigurationRam()
@@ -529,9 +516,9 @@ public partial class App : Application
         Configuration configuration2 = new Configuration()
         {
             Name = "Test Configuration2",
-            Motherboard = motherboard,
-            Cpu = cpu2,
-            Cooler = cooler2,
+            Motherboard = motherboard1,
+            Cpu = cpu3,
+            Cooler = cooler4,
             PowerSupply = powerSupply1,
             Gpus = [gpu1],
             Ssds = [ssd1]
@@ -540,13 +527,13 @@ public partial class App : Application
         configuration2.ConfigurationRams.Add(new ConfigurationRam()
         {
             Configuration = configuration2,
-            Ram = ram1
+            Ram = ram3
         });
 
         configuration2.ConfigurationRams.Add(new ConfigurationRam()
         {
             Configuration = configuration2,
-            Ram = ram1
+            Ram = ram3
         });
 
         dbContext.Configuration.Add(configuration1);

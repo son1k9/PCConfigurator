@@ -1,10 +1,10 @@
 ﻿namespace PCConfigurator.Model.Components;
 
-public class Ssd
+public class Ssd : Component
 {
     public int SsdId { get; set; }
 
-    public string Model { get; set; }
+    public override string Model { get; set; }
 
     public int Capacity { get; set; } = 60;
 

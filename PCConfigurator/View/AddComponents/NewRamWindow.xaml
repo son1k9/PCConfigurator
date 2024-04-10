@@ -9,7 +9,9 @@
         d:DataContext="{d:DesignInstance Type=components:Ram}"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
-        Title="NewRamWindow" Height="400" Width="380" ResizeMode="NoResize" SizeToContent="Height">
+        Title="Оперативная память" Height="360" Width="424" ResizeMode="NoResize" SizeToContent="Height"
+        Background="#F9F9F9">
+    
     <Window.Resources>
         <ObjectDataProvider x:Key="RamTypeDataSource"
                     ObjectType="{x:Type sys:Enum}"
@@ -24,80 +26,84 @@
         <converters:RamTypeMinClockConverter x:Key="ramMinClockConverter"/>
         <converters:RamTypeClockStepConverter x:Key="ramTickConverter"/>
         <converters:RamTypeMinClConverter x:Key="ramMinClConverter"/>
+
+        <Style TargetType="TextBlock" BasedOn="{StaticResource textBlockNewComponent}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource textBoxNewComponent}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource comboBoxNewComponent}"/>
+        <Style TargetType="Slider" BasedOn="{StaticResource sliderNewComponent}"/>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource checkBoxComponent}"/>
+        <Style TargetType="StackPanel" BasedOn="{StaticResource inputStackPanel}"/>
+        <Style TargetType="ListBox" BasedOn="{StaticResource listBoxNewComponent}"/>
     </Window.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <StackPanel Margin="10">
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель: " Style="{StaticResource textBlockNewComponent}"/>
-        <TextBox Grid.Row="0" Grid.Column="1"  Style="{StaticResource textBoxNewComponent}" Name="textBoxModel">
-            <TextBox.Text>
-                <Binding Path="Model" UpdateSourceTrigger="PropertyChanged">
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Тип памяти: " Style="{StaticResource textBlockNewComponent}"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" SelectedItem="{Binding RamType}" Style="{StaticResource comboBoxNewComponent}" Name="comboBoxRamType"
-          ItemsSource="{Binding Source={StaticResource RamTypeDataSource}}" SelectionChanged="comboBoxRamType_SelectionChanged"/>
-
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Объем: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="2" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Slider Value="{Binding Capacity, Converter={StaticResource ramCapacityConverter}}" Style="{StaticResource sliderNewComponent}"
-        TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderRamCapacity" Minimum="0" Maximum="11"
-        TickFrequency="1"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Capacity}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Частота: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="3" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Slider Style="{StaticResource sliderNewComponent}" Value="{Binding Clock}"
-                    TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderRamClock" 
-                    Minimum="{Binding ElementName=comboBoxRamType, Converter={StaticResource ramMinClockConverter}, Path=SelectedItem}" 
-                    Maximum="{Binding ElementName=comboBoxRamType, Converter={StaticResource ramMaxClockConverter}, Path=SelectedItem}"
-                    Ticks="{Binding ElementName=comboBoxRamType, Converter={StaticResource ramTickConverter}, Path=SelectedItem}"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Clock}"/>
-        </Grid>
-
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="CL: " Style="{StaticResource textBlockNewComponent}"/>
-        <Grid Grid.Row="4" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Slider Value="{Binding Cl}" Style="{StaticResource sliderNewComponent}"
-                TickPlacement="BottomRight" IsSnapToTickEnabled="True" Grid.Column="0" Name="sliderRamCl" TickFrequency="1"
-                Minimum="{Binding ElementName=comboBoxRamType, Converter={StaticResource ramMinClConverter}, Path=SelectedItem}" 
-                Maximum="50"/>
-            <TextBlock Grid.Column="1" Width="40" VerticalAlignment="Center" Margin="0 0 10 0" Text="{Binding Cl}"/>
-        </Grid>
-
-        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
-            <Button Content="Подтвердить" VerticalAlignment="Center" Width="75" Height="30" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
-            <Button Content="Отмена" VerticalAlignment="Center" Width="75" Height="30" Margin="10 0 0 0" IsCancel="True"/>
+        <StackPanel>
+            <TextBlock Text="Модель"/>
+            <TextBox Name="textBoxModel">
+                <TextBox.Text>
+                    <Binding Path="Model" UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
         </StackPanel>
-        
-        <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
-        
-    </Grid>
+
+        <StackPanel>
+            <TextBlock Text="Тип памяти"/>
+            <Border BorderBrush="#DBDBDB" BorderThickness="1">
+                <ComboBox SelectedItem="{Binding RamType}" Name="comboBoxRamType" ItemsSource="{Binding Source={StaticResource RamTypeDataSource}}" 
+                          SelectionChanged="comboBoxRamType_SelectionChanged"/>
+            </Border>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Объем"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Slider Value="{Binding Capacity, Converter={StaticResource ramCapacityConverter}}" Grid.Column="0" 
+                        Name="sliderRamCapacity" Minimum="0" Maximum="11" TickFrequency="1"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Capacity}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="Частота"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Slider Value="{Binding Clock}" Grid.Column="0" Name="sliderRamClock" Minimum="{Binding ElementName=comboBoxRamType, Converter={StaticResource ramMinClockConverter}, Path=SelectedItem}" 
+                        Maximum="{Binding ElementName=comboBoxRamType, Converter={StaticResource ramMaxClockConverter}, Path=SelectedItem}"
+                        Ticks="{Binding ElementName=comboBoxRamType, Converter={StaticResource ramTickConverter}, Path=SelectedItem}"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Clock}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Text="CL"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Slider Value="{Binding Cl}" Grid.Column="0" Name="sliderRamCl" TickFrequency="1"
+                        Minimum="{Binding ElementName=comboBoxRamType, Converter={StaticResource ramMinClConverter}, Path=SelectedItem}" Maximum="50"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding Cl}"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
+            <Button Content="Подтвердить" VerticalAlignment="Center" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+            <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Right" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
+        </StackPanel>
+
+    </StackPanel>
 </Window>

@@ -5,22 +5,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PCConfigurator.View.ComponentsUserControls"
              mc:Ignorable="d" 
+             xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              xmlns:componentsviewmodels="clr-namespace:PCConfigurator.ViewModel.ComponentsViewModels" d:DataContext="{d:DesignInstance Type=componentsviewmodels:GpuViewModel}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="Transparent">
     <UserControl.Resources>
         <ContextMenu x:Key="RowMenu">
             <MenuItem Header="Редактировать" Command="{Binding DataContext.Edit, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
                       CommandParameter="{Binding}">
+                <MenuItem.Icon>
+                    <materialIcons:MaterialIcon Kind="Edit"/>
+                </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Удалить" Command="{Binding DataContext.Remove, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
                       CommandParameter="{Binding}">
                 <MenuItem.Icon>
-                    <Image Source="/View/ComponentsUserControls/delete.png"/>
+                    <materialIcons:MaterialIcon Kind="Delete"/>
                 </MenuItem.Icon>
             </MenuItem>
         </ContextMenu>
 
-        <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow">
+        <Style TargetType="{x:Type DataGridRow}" x:Key="componentsListRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
             <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
         </Style>
     </UserControl.Resources>
@@ -30,13 +35,11 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="15 0" Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft">
-            <Button Content="Добавить" Width="80" Height="35" VerticalAlignment="Center" Command="{Binding Add}"/>
-        </StackPanel>
+        <Button Grid.Row="0" Content="Добавить" VerticalAlignment="Center" HorizontalAlignment="Right" Command="{Binding Add}" Margin="0 0 0 20"/>
         
         <DataGrid Grid.Row="1" ItemsSource="{Binding ViewSource}" Style="{StaticResource componentsList}"
                   RowStyle="{StaticResource componentsListRow}" Name="dataGrid">

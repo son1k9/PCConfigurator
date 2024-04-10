@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using PCConfigurator.Model.Components;
+using System.Windows;
 
 namespace PCConfigurator.View.AddComponents
 {
@@ -30,6 +31,16 @@ namespace PCConfigurator.View.AddComponents
                 AnnounceError("Укажите чипсет.");
                 return;
             }
+            foreach(var item in listBoxChipsets.ItemsSource)
+            {
+                if (item is Chipset chipset)
+                    if (string.IsNullOrEmpty(chipset.Name))
+                    {
+                        AnnounceError("Введите чипсет.");
+                        return;
+                    }
+            }
+
 
             DialogResult = true;
         }
