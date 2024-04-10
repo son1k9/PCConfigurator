@@ -59,7 +59,8 @@
             <Setter Property="CellStyle" Value="{StaticResource componentsListCell}"/>
             <Setter Property="BorderBrush" Value="#DBDBDB"/>
             <Setter Property="BorderThickness" Value="1"/>
-            
+            <Setter Property="SelectionMode" Value="Single"/>
+
         </Style>
 
         <!--Buttons-->
@@ -75,7 +76,14 @@
                         <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" 
                                 CornerRadius="4" Padding="10" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                              SnapsToDevicePixels="False"/>
+                                              SnapsToDevicePixels="True">
+                                <ContentPresenter.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="TextWrapping" Value="Wrap"/>
+                                        <Setter Property="TextAlignment" Value="Center"/>
+                                    </Style>
+                                </ContentPresenter.Resources>
+                            </ContentPresenter>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

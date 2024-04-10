@@ -30,8 +30,8 @@ namespace PCConfigurator.View
 
         private void Refresh(object sender, object collection)
         {
-            var view = CollectionViewSource.GetDefaultView(RamItemsControl.ItemsSource);
-            view.Refresh();
+            //var view = CollectionViewSource.GetDefaultView(RamItemsControl.ItemsSource);
+            //view.Refresh();
         }
 
         private void configuration_Loaded(object sender, RoutedEventArgs e)

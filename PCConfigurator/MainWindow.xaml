@@ -6,8 +6,8 @@
         xmlns:viewmodels="clr-namespace:PCConfigurator.ViewModel"
         xmlns:views="clr-namespace:PCConfigurator.View" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Title="PC Configurator" MinWidth="1280" MinHeight="720" WindowStartupLocation="CenterScreen"
-        Width="1280" Height="720"
+        Title="PC Configurator" MinWidth="277" MinHeight="570" WindowStartupLocation="CenterScreen"
+        Width="1305" Height="960"
         Background="#F2F2F2"
         WindowStyle="ThreeDBorderWindow">
     <Grid>

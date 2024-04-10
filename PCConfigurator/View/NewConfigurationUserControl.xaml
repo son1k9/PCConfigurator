@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:PCConfigurator.View"
              xmlns:components="clr-namespace:PCConfigurator.Model.Components"
              xmlns:views="clr-namespace:PCConfigurator.View"
+             xmlns:helper="clr-namespace:PCConfigurator.Helper"
              mc:Ignorable="d" 
              xmlns:viewmodel="clr-namespace:PCConfigurator.ViewModel" 
              xmlns:converters="clr-namespace:PCConfigurator.Converters" 
@@ -14,39 +15,131 @@
              x:Name="configuration"
              Loaded="configuration_Loaded"
              DataContextChanged="configuration_DataContextChanged">
-    
+
     <UserControl.Resources>
         <converters:GetIndexConverter x:Key="GetIndexCovnerter"/>
     </UserControl.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.74*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="0.26*"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" BorderThickness="0 0 0 1" BorderBrush="Black" Margin="10">
-            <TextBox Text="{Binding Name}" FontSize="16" Margin="5" BorderThickness="0">
-            </TextBox>
-        </Border>
+        <GridSplitter Height="5" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                      Background="#F2F2F2" ShowsPreview="True" ResizeDirection="Rows"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Border BorderBrush="#DBDBDB" Background="#F9F9F9" BorderThickness="1 0 0 1" Grid.Row="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1" Margin="10">
+                    <Border Grid.Row="0" BorderThickness="0 0 0 1" BorderBrush="Black" Margin="10">
+                        <TextBox Text="{Binding Name}" FontSize="18" Margin="5" BorderThickness="0" Background="Transparent" VerticalAlignment="Bottom"/>
+
+                    </Border>
+
+                    <StackPanel Grid.Row="1" Margin="10 0 10 10">
+                        <WrapPanel helper:MarginSetter.Margin="5">
+                            <local:ComponentUserControl ImageSource="/View/motherboard-icon.png" DataContext="{Binding Motherboard}" Header="Материнская плата" ShowHeader="True"/>
+                            <local:ComponentUserControl ImageSource="/View/cpu-icon.png" DataContext="{Binding Cpu}" Header="Процессор" ShowHeader="True"/>
+                            <local:ComponentUserControl ImageSource="/View/cooler-icon.png" DataContext="{Binding Cooler}" Header="Кулер" ShowHeader="True"/>
+                            <local:ComponentUserControl ImageSource="/View/powersupply-icon.png" DataContext="{Binding PowerSupply}" Header="Блок питания" ShowHeader="True"/>
+                        </WrapPanel>
+
+                        <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="Оперативная память"/>
+                        <ItemsControl ItemsSource="{Binding Rams}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="components:Ram">
+                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/ram-icon.png"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="Видеокарта"/>
+                        <ItemsControl ItemsSource="{Binding Gpus}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="components:Gpu">
+                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/gpu-icon.png"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="M2 SSD"/>
+                        <ItemsControl ItemsSource="{Binding M2Ssds}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="components:M2Ssd">
+                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/m2ssd-icon.png"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="SATA коннекторы"/>
+                        <ItemsControl ItemsSource="{Binding SsdAndHdds}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type components:Component}">
+                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/sata-icon.png"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </ScrollViewer>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="0.2*"/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                
-                <ItemsControl ItemsSource="{Binding Rams}" x:Name="RamItemsControl" Grid.Column="0">
+            <Border BorderBrush="#DBDBDB" Background="#F9F9F9" BorderThickness="1 1 1 0" Grid.Column="0">
+                <StackPanel>
+
+                </StackPanel>
+            </Border>
+
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#F2F2F2"
+              ShowsPreview="True" Width="6" BorderBrush="#DBDBDB" BorderThickness="0 0 0 0"/>
+
+            <Border Background="#F9F9F9" BorderBrush="#DBDBDB" BorderThickness="1 1 0 0" Grid.Column="2">
+                <Grid Grid.Column="2" Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <Button Content="Проверить совместимость" Grid.Row="0" VerticalAlignment="Bottom" Margin="0 0 0 10"/>
+                    <Button Content="Сохранить" Grid.Row="1" VerticalAlignment="Top" Margin="0 10 0 0"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+    <!--<ItemsControl ItemsSource="{Binding Rams}" x:Name="RamItemsControl" Grid.Column="0">
                     <ItemsControl.ItemContainerStyle>
                         <Style>
                             <Setter Property="FrameworkElement.Margin" Value="5"/>
@@ -56,58 +149,8 @@
                         <DataTemplate DataType="{x:Type components:Ram}">
                             <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
                                                     CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
-                                                    Converter={StaticResource GetIndexCovnerter}}"/>
+                                                    Converter={StaticResource GetIndexCovnerter}}" ImageSource="/View/cpu-icon.png"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
-                </ItemsControl>
-
-                <ItemsControl ItemsSource="{Binding Gpus}" x:Name="GpuItemsControl" Grid.Column="1">
-                    <ItemsControl.ItemContainerStyle>
-                        <Style>
-                            <Setter Property="FrameworkElement.Margin" Value="5"/>
-                        </Style>
-                    </ItemsControl.ItemContainerStyle>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="{x:Type components:Gpu}">
-                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
-                                    CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
-                                    Converter={StaticResource GetIndexCovnerter}}"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-
-                <ItemsControl ItemsSource="{Binding M2Ssds}" x:Name="M2SsdItemsControl" Grid.Column="2">
-                    <ItemsControl.ItemContainerStyle>
-                        <Style>
-                            <Setter Property="FrameworkElement.Margin" Value="5"/>
-                        </Style>
-                    </ItemsControl.ItemContainerStyle>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="{x:Type components:M2Ssd}">
-                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
-                    CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
-                    Converter={StaticResource GetIndexCovnerter}}"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-
-                <ItemsControl ItemsSource="{Binding SsdAndHdds}" x:Name="SataItemsControl" Grid.Column="3">
-                    <ItemsControl.ItemContainerStyle>
-                        <Style>
-                            <Setter Property="FrameworkElement.Margin" Value="5"/>
-                        </Style>
-                    </ItemsControl.ItemContainerStyle>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="{x:Type components:Component}">
-                            <views:ComponentUserControl Command="{Binding ElementName=configuration, Path=DataContext.Test}"
-                                CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
-                                Converter={StaticResource GetIndexCovnerter}}"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </Grid>
-            <Button Content="Save" Command="{Binding Save}" Grid.Row="1"/>
-            
-        </Grid>
-    </Grid>
+                </ItemsControl>-->
 </UserControl>

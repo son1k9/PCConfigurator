@@ -4,11 +4,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PCConfigurator.View"
+             xmlns:converters="clr-namespace:PCConfigurator.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
              x:Name="Component">
-    <Border BorderThickness="1" BorderBrush="#DBDBDB" Background="White"
-            CornerRadius="20" Width="200" Height="70">
-    </Border>
+
+    <UserControl.Resources>
+        <converters:UriConverter x:Key="UriConverter"/>
+        <converters:VisibilityConverter x:Key="VisibilityConverter"/>
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="0 0 0 10" Text="{Binding ElementName=Component, Path=Header}"
+                   Visibility="{Binding ElementName=Component, Path=ShowHeader, Converter={StaticResource VisibilityConverter}}"/>
+        <Button Command="{Binding ElementName=Component, Path=Command}" CommandParameter="{Binding ElementName=Component, Path=CommandParameter}" HorizontalAlignment="Left">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="250" Height="70" BorderBrush="#DBDBDB" BorderThickness="1"
+                                    CornerRadius="20" Background="{TemplateBinding Background}" x:Name="ButtonBorder">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.28*"/>
+                                            <ColumnDefinition Width="0.72*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Source="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ImageSource, 
+                                           Converter={StaticResource UriConverter}}" Grid.Column="0" Margin="10"/>
+
+                                        <TextBlock FontSize="15" VerticalAlignment="Top" TextWrapping="Wrap" Grid.Column="1"
+                                               Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.Model}"
+                                               Margin="0 7 10 7"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#EFEFEF"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#F4F4F4"/>
+                            <Setter Property="Foreground" Value="#474747"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </StackPanel>
 </UserControl>

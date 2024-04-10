@@ -36,7 +36,7 @@ internal class ConfigurationViewModel : BaseViewModel
         foreach (ConfigurationRam configurationRam in configuration.ConfigurationRams) 
             _rams[i++] = configurationRam.Ram;
         for (; i < _rams.Length; i++)
-            _rams[i] = new Ram() { Model = "None"};
+            _rams[i] = new Ram();
 
 
         _gpus = new Gpu[configuration.Motherboard.PCIex16Slots];
@@ -44,7 +44,7 @@ internal class ConfigurationViewModel : BaseViewModel
         foreach (ConfigurationGpu configurationGpu in configuration.ConfigurationGpus)
             _gpus[i++] = configurationGpu.Gpu;
         for (; i < _gpus.Length; i++)
-            _gpus[i] = new Gpu() { Model = "None" };
+            _gpus[i] = new Gpu();
 
 
         _m2Slots = new M2Slot[configuration.Motherboard.M2Slots.Count];
@@ -61,7 +61,7 @@ internal class ConfigurationViewModel : BaseViewModel
                     select n;
         foreach (M2Slot m2Slot in query)
         {
-            _m2Ssds[i] = new M2Ssd { Model = "None" };
+            _m2Ssds[i] = new M2Ssd();
             _m2Slots[i] = m2Slot;
             i++;
         }
@@ -74,7 +74,7 @@ internal class ConfigurationViewModel : BaseViewModel
         foreach(ConfigurationHdd configurationHdd in configuration.ConfigurationHdds)
             _ssdsAndHdds[i++] = configurationHdd.Hdd;
         for (; i < _ssdsAndHdds.Length; i++)
-            _ssdsAndHdds[i] = new Hdd { Model = "None" };
+            _ssdsAndHdds[i] = new Hdd();
     }
 
     public string Name { get; set; }
@@ -150,17 +150,5 @@ internal class ConfigurationViewModel : BaseViewModel
     {
         _configuration.Name = Name;
         _saveChanges.Invoke();
-    }
-
-    private RelayCommand _test;
-    public ICommand Test => _test ??= new RelayCommand(PerformTest);
-
-    private void PerformTest(object? commandParameter)
-    {
-        if (commandParameter is int index) 
-        {
-            _rams[index] = new Ram() { Model = "Test"};
-            OnComponentChange(_rams);
-        }
     }
 }

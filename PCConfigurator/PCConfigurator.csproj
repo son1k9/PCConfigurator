@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="View\add.png" />
-    <None Remove="View\add2.png" />
-    <None Remove="View\AddComponents\add.png" />
-    <None Remove="View\AddComponents\delete.png" />
     <None Remove="View\ComponentsUserControls\delete.png" />
+    <None Remove="View\cooler-icon.png" />
+    <None Remove="View\cpu-icon.png" />
+    <None Remove="View\gpu-icon.png" />
+    <None Remove="View\m2ssd-icon.png" />
+    <None Remove="View\motherboard-icon.png" />
+    <None Remove="View\powersupply-icon.png" />
+    <None Remove="View\ram-icon.png" />
+    <None Remove="View\sata-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,15 +31,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="View\add.png" />
-    <Resource Include="View\add2.png" />
-    <Resource Include="View\AddComponents\add.png" />
-    <Resource Include="View\AddComponents\delete.png" />
     <Resource Include="View\ComponentsUserControls\delete.png" />
+    <Resource Include="View\cooler-icon.png" />
+    <Resource Include="View\cpu-icon.png" />
+    <Resource Include="View\gpu-icon.png" />
+    <Resource Include="View\m2ssd-icon.png" />
+    <Resource Include="View\motherboard-icon.png" />
+    <Resource Include="View\powersupply-icon.png" />
+    <Resource Include="View\ram-icon.png" />
+    <Resource Include="View\sata-icon.png" />
   </ItemGroup>
 
 </Project>
