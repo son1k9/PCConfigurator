@@ -16,6 +16,8 @@ namespace PCConfigurator.Converters
         {
             ContentPresenter item = (ContentPresenter)value;
             ItemsControl view = ItemsControl.ItemsControlFromItemContainer(item);
+            if (view is null)
+                return -1;
             int itemIndex = view.ItemContainerGenerator.IndexFromContainer(item);
 
             return itemIndex;

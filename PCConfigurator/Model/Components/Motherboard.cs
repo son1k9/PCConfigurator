@@ -2,11 +2,11 @@
 
 namespace PCConfigurator.Model.Components;
 
-public class Motherboard
+public class Motherboard : Component
 {
     public int MotherboardId { get; set; }
 
-    public string Model { get; set; }
+    public override string Model { get; set; }
 
     public int SocketId { get; set; }
     public virtual Socket Socket { get; set; }

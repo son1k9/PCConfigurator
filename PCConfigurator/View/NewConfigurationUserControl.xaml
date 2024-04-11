@@ -45,10 +45,27 @@
 
                     <StackPanel Grid.Row="1" Margin="10 0 10 10">
                         <WrapPanel helper:MarginSetter.Margin="5">
-                            <local:ComponentUserControl ImageSource="/View/motherboard-icon.png" DataContext="{Binding Motherboard}" Header="Материнская плата" ShowHeader="True"/>
-                            <local:ComponentUserControl ImageSource="/View/cpu-icon.png" DataContext="{Binding Cpu}" Header="Процессор" ShowHeader="True"/>
-                            <local:ComponentUserControl ImageSource="/View/cooler-icon.png" DataContext="{Binding Cooler}" Header="Кулер" ShowHeader="True"/>
-                            <local:ComponentUserControl ImageSource="/View/powersupply-icon.png" DataContext="{Binding PowerSupply}" Header="Блок питания" ShowHeader="True"/>
+                            <local:ComponentUserControl ImageSource="/View/motherboard-icon.png" DataContext="{Binding Motherboard}" 
+                                                        Header="Материнская плата" ShowHeader="True">
+                                <local:ComponentUserControl.InputBindings>
+                                    <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetMotherboard}"/>
+                                </local:ComponentUserControl.InputBindings>
+                            </local:ComponentUserControl>
+                            <local:ComponentUserControl ImageSource="/View/cpu-icon.png" DataContext="{Binding Cpu}" Header="Процессор" ShowHeader="True">
+                                <local:ComponentUserControl.InputBindings>
+                                    <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetCpu}"/>
+                                </local:ComponentUserControl.InputBindings>
+                            </local:ComponentUserControl>
+                            <local:ComponentUserControl ImageSource="/View/cooler-icon.png" DataContext="{Binding Cooler}" Header="Кулер" ShowHeader="True">
+                                <local:ComponentUserControl.InputBindings>
+                                    <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetCooler}"/>
+                                </local:ComponentUserControl.InputBindings>
+                            </local:ComponentUserControl>
+                            <local:ComponentUserControl ImageSource="/View/powersupply-icon.png" DataContext="{Binding PowerSupply}" Header="Блок питания" ShowHeader="True">
+                                <local:ComponentUserControl.InputBindings>
+                                    <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetPowerSupply}"/>
+                                </local:ComponentUserControl.InputBindings>
+                            </local:ComponentUserControl>
                         </WrapPanel>
 
                         <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="Оперативная память"/>
@@ -60,7 +77,13 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate DataType="components:Ram">
-                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/ram-icon.png"/>
+                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/ram-icon.png">
+                                        <local:ComponentUserControl.InputBindings>
+                                            <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetRam}"
+                                                          CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
+                                                          Converter={StaticResource GetIndexCovnerter}}"/>
+                                        </local:ComponentUserControl.InputBindings>
+                                    </local:ComponentUserControl>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
@@ -74,7 +97,13 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate DataType="components:Gpu">
-                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/gpu-icon.png"/>
+                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/gpu-icon.png">
+                                        <local:ComponentUserControl.InputBindings>
+                                            <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetGpu}"
+                                                          CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
+                                                          Converter={StaticResource GetIndexCovnerter}}"/>
+                                        </local:ComponentUserControl.InputBindings>
+                                    </local:ComponentUserControl>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
@@ -88,7 +117,13 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate DataType="components:M2Ssd">
-                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/m2ssd-icon.png"/>
+                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/m2ssd-icon.png">
+                                        <local:ComponentUserControl.InputBindings>
+                                            <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetM2Ssd}"
+                                                          CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
+                                                          Converter={StaticResource GetIndexCovnerter}}"/>
+                                        </local:ComponentUserControl.InputBindings>
+                                    </local:ComponentUserControl>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
@@ -102,7 +137,13 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate DataType="{x:Type components:Component}">
-                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/sata-icon.png"/>
+                                    <local:ComponentUserControl ShowHeader="False" Margin="5" ImageSource="/View/sata-icon.png">
+                                        <local:ComponentUserControl.InputBindings>
+                                            <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetSata}"
+                                                          CommandParameter="{Binding Path=., RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, 
+                                                          Converter={StaticResource GetIndexCovnerter}}"/>
+                                        </local:ComponentUserControl.InputBindings>
+                                    </local:ComponentUserControl>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
@@ -126,18 +167,19 @@
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#F2F2F2"
               ShowsPreview="True" Width="6" BorderBrush="#DBDBDB" BorderThickness="0 0 0 0"/>
-
-            <Border Background="#F9F9F9" BorderBrush="#DBDBDB" BorderThickness="1 1 0 0" Grid.Column="2">
+            <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Border Background="#F9F9F9" BorderBrush="#DBDBDB" BorderThickness="1 1 0 0">
                 <Grid Grid.Column="2" Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    
+
                     <Button Content="Проверить совместимость" Grid.Row="0" Margin="0 0 0 7" VerticalAlignment="Bottom"/>
-                    <Button Content="Сохранить" Grid.Row="1" Margin="0 7 0 0" Command="{Binding Save}"/>
+                    <Button Content="Сохранить" Grid.Row="1" Margin="0 7 0 0" Command="{Binding Save}" VerticalAlignment="Center"/>
                 </Grid>
             </Border>
+            </ScrollViewer>
         </Grid>
     </Grid>
     <!--<ItemsControl ItemsSource="{Binding Rams}" x:Name="RamItemsControl" Grid.Column="0">

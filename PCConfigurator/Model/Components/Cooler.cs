@@ -2,11 +2,11 @@
 
 namespace PCConfigurator.Model.Components;
 
-public class Cooler
+public class Cooler : Component
 {
     public int CoolerId { get; set; }
 
-    public string Model { get; set; }
+    public override string Model { get; set; }
 
     public int Tdp { get; set; } = 35;
 
