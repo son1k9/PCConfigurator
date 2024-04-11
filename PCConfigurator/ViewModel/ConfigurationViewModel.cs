@@ -7,18 +7,10 @@ namespace PCConfigurator.ViewModel;
 
 internal class ConfigurationViewModel : BaseViewModel
 {
-    public event EventHandler<object> ComponentChanged;
-
-    private void OnComponentChange(object collection)
-    {
-        ComponentChanged?.Invoke(this, collection);
-    }
-
-    Configuration _configuration;
-
+    private Configuration _configuration;
     public Configuration Configuration { get => _configuration; }
 
-    Action _saveChanges;
+    private Action _saveChanges;
 
     public ConfigurationViewModel(Configuration configuration, Action saveChanges)
     {
@@ -77,11 +69,38 @@ internal class ConfigurationViewModel : BaseViewModel
             _ssdsAndHdds[i] = new Hdd();
     }
 
-    public string Name { get; set; }
+    private string name;
+    public string Name
+    {
+        get => name;
+        set
+        {
+            name = value;
+            OnPropertyChanged(nameof(Name));
+        }
+    }
 
-    public Motherboard Motherboard { get; set; }
+    private Motherboard motherboard;
+    public Motherboard Motherboard
+    {
+        get => motherboard;
+        set
+        {
+            motherboard = value;
+            OnPropertyChanged(nameof(Motherboard));
+        }
+    }
 
-    public Cpu Cpu { get; set; }
+    private Cpu cpu;
+    public Cpu Cpu 
+    { 
+        get => cpu;
+        set 
+        { 
+            cpu = value;
+            OnPropertyChanged(nameof(Cpu));
+        }
+    }
 
     public Cooler Cooler { get; set; }
 
@@ -144,8 +163,8 @@ internal class ConfigurationViewModel : BaseViewModel
     }
 
     private RelayCommand _save;
-    public ICommand Save => _save ??= new RelayCommand(PerformSave);
 
+    public ICommand Save => _save ??= new RelayCommand(PerformSave);
     private void PerformSave(object? commandParameter)
     {
         _configuration.Name = Name;

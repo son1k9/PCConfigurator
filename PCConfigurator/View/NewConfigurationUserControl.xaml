@@ -28,7 +28,8 @@
         </Grid.RowDefinitions>
 
         <GridSplitter Height="5" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"
-                      Background="#F2F2F2" ShowsPreview="True" ResizeDirection="Rows"/>
+                      Background="#F2F2F2" ShowsPreview="True" ResizeDirection="Rows" BorderThickness="0 1 0 0"
+                      BorderBrush="#DBDBDB"/>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Border BorderBrush="#DBDBDB" Background="#F9F9F9" BorderThickness="1 0 0 1" Grid.Row="0">
                 <Grid>
@@ -51,7 +52,7 @@
                         </WrapPanel>
 
                         <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="Оперативная память"/>
-                        <ItemsControl ItemsSource="{Binding Rams}">
+                        <ItemsControl ItemsSource="{Binding Rams}" x:Name="RamsItemControl">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel/>
@@ -65,7 +66,7 @@
                         </ItemsControl>
 
                         <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="Видеокарта"/>
-                        <ItemsControl ItemsSource="{Binding Gpus}">
+                        <ItemsControl ItemsSource="{Binding Gpus}" x:Name="GpusItemControl">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel/>
@@ -79,7 +80,7 @@
                         </ItemsControl>
 
                         <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="M2 SSD"/>
-                        <ItemsControl ItemsSource="{Binding M2Ssds}">
+                        <ItemsControl ItemsSource="{Binding M2Ssds}" x:Name="M2SsdsItemControl">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel/>
@@ -93,7 +94,7 @@
                         </ItemsControl>
 
                         <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="SATA коннекторы"/>
-                        <ItemsControl ItemsSource="{Binding SsdAndHdds}">
+                        <ItemsControl ItemsSource="{Binding SsdAndHdds}" x:Name="SataItemControl">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel/>
@@ -127,14 +128,14 @@
               ShowsPreview="True" Width="6" BorderBrush="#DBDBDB" BorderThickness="0 0 0 0"/>
 
             <Border Background="#F9F9F9" BorderBrush="#DBDBDB" BorderThickness="1 1 0 0" Grid.Column="2">
-                <Grid Grid.Column="2" Margin="20">
+                <Grid Grid.Column="2" Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     
-                    <Button Content="Проверить совместимость" Grid.Row="0" VerticalAlignment="Bottom" Margin="0 0 0 10"/>
-                    <Button Content="Сохранить" Grid.Row="1" VerticalAlignment="Top" Margin="0 10 0 0"/>
+                    <Button Content="Проверить совместимость" Grid.Row="0" Margin="0 0 0 7" VerticalAlignment="Bottom"/>
+                    <Button Content="Сохранить" Grid.Row="1" Margin="0 7 0 0" Command="{Binding Save}"/>
                 </Grid>
             </Border>
         </Grid>

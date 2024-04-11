@@ -28,18 +28,32 @@ namespace PCConfigurator.View
             InitializeComponent();
         }
 
-        private void Refresh(object sender, object collection)
-        {
-            //var view = CollectionViewSource.GetDefaultView(RamItemsControl.ItemsSource);
-            //view.Refresh();
-        }
+        //private void Refresh(object sender, object collection)
+        //{
+        //    if (collection == null)            
+        //        RefreshAll();
+        //    else 
+        //        RefreshView(collection);
+        //}
+
+        //private void RefreshView(object collection)
+        //{
+        //    CollectionViewSource.GetDefaultView(collection).Refresh();
+        //}
+
+        //private void RefreshAll()
+        //{
+        //    RefreshView(CollectionViewSource.GetDefaultView(RamsItemControl.ItemsSource));
+        //    RefreshView(CollectionViewSource.GetDefaultView(GpusItemControl.ItemsSource));
+        //    RefreshView(CollectionViewSource.GetDefaultView(M2SsdsItemControl.ItemsSource));
+        //    RefreshView(CollectionViewSource.GetDefaultView(SataItemControl.ItemsSource));
+        //}
 
         private void configuration_Loaded(object sender, RoutedEventArgs e)
         {
             if (DataContext is ConfigurationViewModel viewModel)
             {
                 _viewModel = viewModel;
-                viewModel.ComponentChanged += Refresh;
             }
         }
 
