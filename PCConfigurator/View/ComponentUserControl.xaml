@@ -24,12 +24,12 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
-                                <Border Width="250" Height="70" BorderBrush="#DBDBDB" BorderThickness="1"
+                                <Border Width="260" Height="80" BorderBrush="#DBDBDB" BorderThickness="1"
                                     CornerRadius="20" Background="{TemplateBinding Background}" x:Name="ButtonBorder">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="0.28*"/>
-                                            <ColumnDefinition Width="0.72*"/>
+                                            <ColumnDefinition Width="0.308*"/>
+                                            <ColumnDefinition Width="0.692*"/>
                                         </Grid.ColumnDefinitions>
 
                                         <Image Source="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ImageSource, 

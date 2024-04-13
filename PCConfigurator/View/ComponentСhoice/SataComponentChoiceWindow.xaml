@@ -1,0 +1,29 @@
+﻿<Window x:Class="PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCConfigurator.View.ComponentСhoice"
+        mc:Ignorable="d"
+        Title="SataComponentChoiceWindow" Height="450" Width="800"
+        WindowStyle="None" Background="Transparent" SizeToContent="WidthAndHeight"
+        AllowsTransparency="True" ResizeMode="NoResize">
+    <Border Background="#F9F9F9" BorderThickness="1" BorderBrush="#DBDBDB" Padding="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Выберите тип комлпектующего" Grid.Row="0" FontSize="24"/>
+
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10" HorizontalAlignment="Center">
+                    <Button Content="SSD" VerticalAlignment="Center" Click="ButtonSsd_Click" IsDefault="True" Name="buttonHdd"/>
+                    <Button Content="HDD" VerticalAlignment="Center" Click="ButtonHdd_Click" IsDefault="True" Name="buttonSdd"  Margin="10 0 0 0"/>
+                    <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

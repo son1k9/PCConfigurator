@@ -49,7 +49,7 @@ internal class ConfigurationsViewModel : BaseViewModel
     private void PerformSelectConfiguration(object? commandParameter)
     {
         if (commandParameter is Configuration configuration)
-            SelectedConfiguration = new ConfigurationViewModel(configuration, SaveChanges);
+            SelectedConfiguration = new ConfigurationViewModel(configuration, dbContext);
     }
 
     private RelayCommand _addConfiguration;

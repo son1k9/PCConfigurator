@@ -1,5 +1,9 @@
-﻿using PCConfigurator.Commands;
+﻿using Microsoft.EntityFrameworkCore;
+using PCConfigurator.Commands;
+using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
+using PCConfigurator.View.ComponentsUserControls;
+using PCConfigurator.View.ComponentСhoice;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
@@ -18,12 +22,12 @@ internal class ConfigurationViewModel : BaseViewModel
         ArrayChanged?.Invoke(this, array);
     }
 
-    private Action _saveChanges;
+    private readonly ApplicationContext dbContext;
 
-    public ConfigurationViewModel(Configuration configuration, Action saveChanges)
+    public ConfigurationViewModel(Configuration configuration, ApplicationContext context)
     {
         _configuration = configuration;
-        _saveChanges = saveChanges;
+        dbContext = context;
         name = _configuration.Name;
         motherboard = _configuration.Motherboard;
         cpu = _configuration.Cpu;
@@ -43,23 +47,24 @@ internal class ConfigurationViewModel : BaseViewModel
             _gpus[i++] = configurationGpu.Gpu;
 
 
-        _m2Slots = new M2Slot[configuration.Motherboard.M2Slots.Count];
-        _m2Ssds = new M2Ssd[configuration.Motherboard.M2Slots.Count];
+        M2Slot[] _m2Slots = new M2Slot[configuration.Motherboard.M2Slots.Count];
+        _m2Ssds = new M2SlotWithSsd[configuration.Motherboard.M2Slots.Count];
         i = 0;
+
         foreach (ConfigurationM2Ssd configurationM2Ssd in configuration.ConfigurationM2Ssds) 
         {
-            _m2Ssds[i] = configurationM2Ssd.M2Ssd;
+            _m2Ssds[i] = new M2SlotWithSsd(configurationM2Ssd.M2Slot, configurationM2Ssd.M2Ssd);
             _m2Slots[i] = configurationM2Ssd.M2Slot;
             i++;
         }
+
         var query = from n in configuration.Motherboard.M2Slots
                     where !_m2Slots.Contains(n)
                     select n;
+
         foreach (M2Slot m2Slot in query)
         {
-            _m2Ssds[i] = null;
-            _m2Slots[i] = m2Slot;
-            i++;
+            _m2Ssds[i++] = new M2SlotWithSsd(m2Slot, null);
         }
 
 
@@ -70,7 +75,7 @@ internal class ConfigurationViewModel : BaseViewModel
         foreach(ConfigurationHdd configurationHdd in configuration.ConfigurationHdds)
             _ssdsAndHdds[i++] = configurationHdd.Hdd;
 
-        PropertyChanged += AfterMotherboardReset;
+        PropertyChanged += AfterMotherboardChange;
     }
 
     private string name;
@@ -168,34 +173,32 @@ internal class ConfigurationViewModel : BaseViewModel
         }
     }
 
-    private M2Ssd?[] _m2Ssds;
-    public M2Ssd?[] M2Ssds
+    private void SetM2Ssd(int index, M2Ssd? m2Ssd)
+    {
+        if (index >= 0 && index < M2Ssds.Length)
+        {
+            if (M2Ssds[index] is not null)
+            {
+                M2Ssds[index].M2Ssd = m2Ssd;
+                OnArrayChanged(M2Ssds);
+            }
+        }
+    }
+
+    public class M2SlotWithSsd(M2Slot m2slot, M2Ssd? m2ssd)
+    {
+        public M2Slot M2Slot { get; set; } = m2slot;
+        public M2Ssd? M2Ssd { get; set; } = m2ssd;
+    }
+
+    private M2SlotWithSsd?[] _m2Ssds;
+    public M2SlotWithSsd?[] M2Ssds
     {
         get => _m2Ssds;
         set
         {
             _m2Ssds = value;
             OnPropertyChanged(nameof(M2Ssds));
-        }
-    }
-
-    private void SetM2Ssd(int index, M2Ssd? m2Ssd)
-    {
-        if (index >= 0 && index < M2Ssds.Length)
-        {
-            M2Ssds[index] = m2Ssd;
-            OnArrayChanged(M2Ssds);
-        }
-    }
-
-    private M2Slot?[] _m2Slots;
-    public M2Slot?[] M2Slots
-    {
-        get => _m2Slots;
-        set
-        {
-            _m2Slots = value;
-            OnPropertyChanged(nameof(M2Slots));
         }
     }
 
@@ -224,7 +227,7 @@ internal class ConfigurationViewModel : BaseViewModel
     private void PerformSave(object? commandParameter)
     {
         _configuration.Name = Name;
-        _saveChanges.Invoke();
+        dbContext.SaveChanges();
     }
 
     private RelayCommand? _resetMotherboard;
@@ -295,23 +298,210 @@ internal class ConfigurationViewModel : BaseViewModel
         }
     }
 
-    private void AfterMotherboardReset(object? sender, PropertyChangedEventArgs args)
+    private void AfterMotherboardChange(object? sender, PropertyChangedEventArgs args)
     {
         if (args.PropertyName == "Motherboard")
         {
             Rams = new Ram[(Motherboard?.RamSlots).GetValueOrDefault()];
             Gpus = new Gpu[(Motherboard?.PCIex16Slots).GetValueOrDefault()];
-            M2Slots = new M2Slot[(Motherboard?.M2Slots.Count).GetValueOrDefault()];
-            M2Ssds = new M2Ssd[(Motherboard?.M2Slots.Count).GetValueOrDefault()];
 
+            M2SlotWithSsd[] m2Ssds = new M2SlotWithSsd[(Motherboard?.M2Slots.Count).GetValueOrDefault()];
             int i = 0;
             if (Motherboard is not null)
             {
                 foreach (var M2Slot in Motherboard.M2Slots)
-                    M2Slots[i++] = M2Slot;
+                    m2Ssds[i++] = new M2SlotWithSsd(M2Slot, null);
             }
-
+            M2Ssds = m2Ssds;
             SsdAndHdds = new Model.Components.Component[(Motherboard?.Sata3Ports).GetValueOrDefault()];
+        }
+    }
+
+    private RelayCommand? _changeMotherboard;
+    public ICommand ChangeMotherboard => _changeMotherboard ??= new RelayCommand(PerformChangeMotherboard);
+    private void PerformChangeMotherboard(object? commandParameter)
+    {
+        MotherboardsListUserControl list = new MotherboardsListUserControl();
+        dbContext.Motherboard.Load();
+        list.dataGrid.ItemsSource = dbContext.Motherboard.Local.ToList();
+        ComponentChoiceWindow window = new ComponentChoiceWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow
+        };
+        window.ComponentsList.Content = list;
+        if (window.ShowDialog() == true)
+        {
+            if (list.dataGrid.SelectedItem is Motherboard motherboard)
+                Motherboard = motherboard;
+        }
+    }
+
+    private RelayCommand? _changeCpu;
+    public ICommand ChangeCpu => _changeCpu ??= new RelayCommand(PerformChangeCpu);
+    private void PerformChangeCpu(object? commandParameter)
+    {
+        CpuListUserControl list = new CpuListUserControl();
+        dbContext.Cpu.Load();
+        list.dataGrid.ItemsSource = dbContext.Cpu.Local.ToList();
+        ComponentChoiceWindow window = new ComponentChoiceWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow
+        };
+        window.ComponentsList.Content = list;
+        if (window.ShowDialog() == true)
+        {
+            if (list.dataGrid.SelectedItem is Cpu cpu)
+                Cpu = cpu;
+        }
+    }
+
+    private RelayCommand? _changeCooler;
+    public ICommand ChangeCooler => _changeCooler ??= new RelayCommand(PerformChangeCooler);
+    private void PerformChangeCooler(object? commandParameter)
+    {
+        CoolerListUserControl list = new CoolerListUserControl();
+        dbContext.Cooler.Load();
+        list.dataGrid.ItemsSource = dbContext.Cooler.Local.ToList();
+        ComponentChoiceWindow window = new ComponentChoiceWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow
+        };
+        window.ComponentsList.Content = list;
+        if (window.ShowDialog() == true)
+        {
+            if (list.dataGrid.SelectedItem is Cooler cooler)
+                Cooler = cooler;
+        }
+    }
+
+    private RelayCommand? _changePowerSupply;
+    public ICommand ChangePowerSupply => _changePowerSupply ??= new RelayCommand(PerformChangePowerSupply);
+    private void PerformChangePowerSupply(object? commandParameter)
+    {
+        PowerSupplyListUserControl list = new PowerSupplyListUserControl();
+        dbContext.PowerSupply.Load();
+        list.dataGrid.ItemsSource = dbContext.PowerSupply.Local.ToList();
+        ComponentChoiceWindow window = new ComponentChoiceWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow
+        };
+        window.ComponentsList.Content = list;
+        if (window.ShowDialog() == true)
+        {
+            if (list.dataGrid.SelectedItem is PowerSupply powerSupply)
+                PowerSupply = powerSupply;
+        }
+    }
+
+    private RelayCommand? _changeRam;
+    public ICommand ChangeRam => _changeRam ??= new RelayCommand(PerformChangeRam);
+    private void PerformChangeRam(object? commandParameter)
+    {
+        RamListUserControl list = new RamListUserControl();
+        dbContext.Ram.Load();
+        list.dataGrid.ItemsSource = dbContext.Ram.Local.ToList();
+        ComponentChoiceWindow window = new ComponentChoiceWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow
+        };
+        window.ComponentsList.Content = list;
+        if (window.ShowDialog() == true)
+        {
+            if (list.dataGrid.SelectedItem is Ram ram && commandParameter is int index)
+                SetRam(index, ram);
+        }
+    }
+
+    private RelayCommand? _changeGpu;
+    public ICommand ChangeGpu => _changeGpu ??= new RelayCommand(PerformChangeGpu);
+    private void PerformChangeGpu(object? commandParameter)
+    {
+        GpuListUserControl list = new GpuListUserControl();
+        dbContext.Gpu.Load();
+        list.dataGrid.ItemsSource = dbContext.Gpu.Local.ToList();
+        ComponentChoiceWindow window = new ComponentChoiceWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow
+        };
+        window.ComponentsList.Content = list;
+        if (window.ShowDialog() == true)
+        {
+            if (list.dataGrid.SelectedItem is Gpu gpu && commandParameter is int index)
+                SetGpu(index, gpu);
+        }
+    }
+
+    private RelayCommand? _changeM2Ssd;
+    public ICommand ChangeM2Ssd => _changeM2Ssd ??= new RelayCommand(PerformChangeM2Ssd);
+    private void PerformChangeM2Ssd(object? commandParameter)
+    {
+        M2SsdListUserControl list = new M2SsdListUserControl();
+        dbContext.M2Ssd.Load();
+        list.dataGrid.ItemsSource = dbContext.M2Ssd.Local.ToList();
+        ComponentChoiceWindow window = new ComponentChoiceWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow
+        };
+        window.ComponentsList.Content = list;
+        if (window.ShowDialog() == true)
+        {
+            if (list.dataGrid.SelectedItem is M2Ssd m2ssd && commandParameter is int index)
+                SetM2Ssd(index, m2ssd);
+        }
+    }
+
+    private RelayCommand? _changeSata;
+    public ICommand ChangeSata => _changeSata ??= new RelayCommand(PerformChangeSata);
+    private void PerformChangeSata(object? commandParameter)
+    {
+        SataComponentChoiceWindow window = new SataComponentChoiceWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow
+        };
+        if (window.ShowDialog() == true) 
+        {
+            if (window.Clicked == SataComponentChoiceWindow.Storage.HDD)
+            {
+                HddListUserControl list = new HddListUserControl();
+                dbContext.Hdd.Load();
+                list.dataGrid.ItemsSource = dbContext.Hdd.Local.ToList();
+                ComponentChoiceWindow hddWindow = new ComponentChoiceWindow()
+                {
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    Owner = Application.Current.MainWindow
+                };
+                hddWindow.ComponentsList.Content = list;
+                if (hddWindow.ShowDialog() == true)
+                {
+                    if (list.dataGrid.SelectedItem is Hdd hdd && commandParameter is int index)
+                        SetSata(index, hdd);
+                }
+            }
+            else 
+            {
+                SsdListUserControl list = new SsdListUserControl();
+                dbContext.Ssd.Load();
+                list.dataGrid.ItemsSource = dbContext.Ssd.Local.ToList();
+                ComponentChoiceWindow ssdWindow = new ComponentChoiceWindow()
+                {
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    Owner = Application.Current.MainWindow
+                };
+                ssdWindow.ComponentsList.Content = list;
+                if (ssdWindow.ShowDialog() == true)
+                {
+                    if (list.dataGrid.SelectedItem is Ssd ssd && commandParameter is int index)
+                        SetSata(index, ssd);
+                }
+            }
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="PCConfigurator.View.ComponentСhoice.CpuListUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PCConfigurator.View.ComponentСhoice"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid Style="{StaticResource componentsList}" Name="dataGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Model}" Header="Модель" SortDirection="Ascending" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Socket.Name}" Header="Сокет"/>
+                <DataGridTextColumn Binding="{Binding Cores}" Header="Количество ядер"/>
+                <DataGridTextColumn Binding="{Binding ECores}" Header="Количество энергоэффективных ядер"/>
+                <DataGridCheckBoxColumn Binding="{Binding Smt}" Header="SMT"/>
+                <DataGridTextColumn Binding="{Binding CoreClock}" Header="Базовая частота"/>
+                <DataGridTextColumn Binding="{Binding BoostClock}" Header="Частота в режиме турбо режиме"/>
+                <DataGridTextColumn Binding="{Binding L2Cache}" Header="Объем кэша L2"/>
+                <DataGridTextColumn Binding="{Binding L3Cache}" Header="Объем кэша L3"/>
+                <DataGridTextColumn Binding="{Binding Tdp}" Header="TDP"/>
+                <DataGridTextColumn Binding="{Binding RamTypes}" Header="Тип памяти"/>
+                <DataGridTextColumn Binding="{Binding MaxRamCapacity}" Header="Максимальный объем памяти"/>
+                <DataGridCheckBoxColumn Binding="{Binding HaveGraphics}" Header="Графическое ядро"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

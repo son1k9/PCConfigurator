@@ -32,14 +32,14 @@
 
   <ItemGroup>
     <Resource Include="View\ComponentsUserControls\delete.png" />
-    <Resource Include="View\cooler-icon.png" />
-    <Resource Include="View\cpu-icon.png" />
-    <Resource Include="View\gpu-icon.png" />
-    <Resource Include="View\m2ssd-icon.png" />
-    <Resource Include="View\motherboard-icon.png" />
-    <Resource Include="View\powersupply-icon.png" />
-    <Resource Include="View\ram-icon.png" />
-    <Resource Include="View\sata-icon.png" />
+    <Resource Include="Images\cooler-icon.png" />
+    <Resource Include="Images\cpu-icon.png" />
+    <Resource Include="Images\gpu-icon.png" />
+    <Resource Include="Images\m2ssd-icon.png" />
+    <Resource Include="Images\motherboard-icon.png" />
+    <Resource Include="Images\powersupply-icon.png" />
+    <Resource Include="Images\ram-icon.png" />
+    <Resource Include="Images\sata-icon.png" />
   </ItemGroup>
 
 </Project>

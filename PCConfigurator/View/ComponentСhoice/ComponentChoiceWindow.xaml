@@ -1,0 +1,32 @@
+﻿<Window x:Class="PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCConfigurator.View.ComponentСhoice"
+        xmlns:converters="clr-namespace:PCConfigurator.Converters" 
+        mc:Ignorable="d"
+        Title="Выбор комплектующего" Height="450" Width="800"
+        Background="#F9F9F9">
+    <Window.Resources>
+        <converters:M2SlotsConverter x:Key="M2SlotsConverter"/>
+    </Window.Resources>
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ContentControl x:Name="ComponentsList"/>
+
+
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
+                <Button Content="Подтвердить" VerticalAlignment="Center" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+                <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
