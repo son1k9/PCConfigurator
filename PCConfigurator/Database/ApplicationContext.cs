@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PCConfigurator.Model.Components;
+using System.Diagnostics;
 
 namespace PCConfigurator.Model;
 
@@ -20,6 +21,12 @@ internal class ApplicationContext : DbContext
     public DbSet<Hdd> Hdd { get; set; }
     public DbSet<M2Ssd> M2Ssd { get; set; }
     public DbSet<Ssd> Ssd { get; set; }
+
+    public DbSet<ConfigurationGpu> ConfigurationGpu { get; set; }
+    public DbSet<ConfigurationHdd> ConfigurationHdd { get; set; }
+    public DbSet<ConfigurationM2Ssd> ConfigurationM2Ssd { get; set; }
+    public DbSet<ConfigurationRam> ConfigurationRam { get; set; }
+    public DbSet<ConfigurationSsd> ConfigurationSsd { get; set; }
 
 
     public ApplicationContext()
@@ -67,6 +74,6 @@ internal class ApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Database\\components.db").EnableSensitiveDataLogging(true);
+        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Database\\components.db").EnableSensitiveDataLogging(true).LogTo(message => Debug.WriteLine(message));
     }
 }

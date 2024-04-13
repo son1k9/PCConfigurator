@@ -21,8 +21,6 @@ namespace PCConfigurator.View
     /// </summary>
     public partial class NewConfigurationUserControl : UserControl
     {
-        private ConfigurationViewModel _viewModel;
-
         public NewConfigurationUserControl()
         {
             InitializeComponent();
@@ -49,17 +47,10 @@ namespace PCConfigurator.View
             RefreshView(CollectionViewSource.GetDefaultView(SataItemControl.ItemsSource));
         }
 
-        private void configuration_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is ConfigurationViewModel viewModel)
-                _viewModel = viewModel;
-        }
-
         private void configuration_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (DataContext is ConfigurationViewModel viewModel)
             {
-                _viewModel = viewModel;
                 viewModel.ArrayChanged += Refresh;
             }
         }

@@ -8,6 +8,8 @@ internal class NewSocketViewModel(Socket socket) : BaseViewModel
 {
     public Socket Socket { get; } = socket;
 
+    public List<Chipset> RemovedChipsets { get; } = [];
+
     private RelayCommand _removeChipset;
     public ICommand RemoveChipset => _removeChipset ??= new RelayCommand(PerformRemoveChipset);
     public void PerformRemoveChipset(object? commandParametr)
@@ -15,6 +17,7 @@ internal class NewSocketViewModel(Socket socket) : BaseViewModel
         if (commandParametr is Chipset chipset)
         {
             Socket.Chipsets.Remove(chipset);
+            RemovedChipsets.Add(chipset);
         }
     }
 

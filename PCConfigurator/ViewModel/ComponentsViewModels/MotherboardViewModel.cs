@@ -13,7 +13,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class MotherboardViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -25,6 +25,14 @@ internal class MotherboardViewModel : BaseViewModel
         _viewSource.Source = dbContext.Motherboard.Local.ToObservableCollection();
     }
 
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.Motherboard.Load();
+        _viewSource.Source = dbContext.Motherboard.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
+    }
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
@@ -61,8 +69,13 @@ internal class MotherboardViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {motherboard.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.Motherboard.Remove(motherboard);
-                dbContext.SaveChanges();
+                if (motherboard.Configurations.Count > 0)
+                    MessageBox.Show("Нельзя удалить материнскую плату, так как она используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.Motherboard.Remove(motherboard);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -73,8 +86,7 @@ internal class MotherboardViewModel : BaseViewModel
     {
         if (commandParameter is Motherboard motherboard)
         {
-            Motherboard motherboardCopy = motherboard.Clone();
-            NewMotherboardViewmodel motherboardViewmodel = new(motherboardCopy);
+            NewMotherboardViewmodel motherboardViewmodel = new(motherboard);
             NewMotherboardWindow window = new NewMotherboardWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
@@ -89,13 +101,13 @@ internal class MotherboardViewModel : BaseViewModel
 
             if (window.ShowDialog() == true)
             {
-                dbContext.Motherboard.Entry(motherboard).CurrentValues.SetValues(motherboardCopy);
-                motherboard.Chipset = motherboardCopy.Chipset;
-                motherboard.Socket = motherboardCopy.Socket;
-                motherboard.M2Slots = motherboardCopy.M2Slots;
-                dbContext.SaveChanges();
-                ViewSource.Refresh();
+                if (motherboardViewmodel.RemovedM2Slots.Any(slot => slot.ConfigurationM2Ssds.Count > 0))
+                    MessageBox.Show(Application.Current.MainWindow, "Неудалось обновить информацию о материнской плате, " +
+                        "так как при этом нарушалась бы целостность конфигураций.", "Ошибка");
+                else
+                    dbContext.SaveChanges();
             }
+            ResetContext();
         }
     }
 }

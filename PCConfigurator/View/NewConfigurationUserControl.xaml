@@ -11,9 +11,8 @@
              xmlns:viewmodel="clr-namespace:PCConfigurator.ViewModel" 
              xmlns:converters="clr-namespace:PCConfigurator.Converters" 
              d:DataContext="{d:DesignInstance Type=viewmodel:ConfigurationViewModel}"
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="700" d:DesignWidth="800"
              x:Name="configuration"
-             Loaded="configuration_Loaded"
              DataContextChanged="configuration_DataContextChanged">
 
     <UserControl.Resources>
@@ -189,10 +188,11 @@
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <Button Content="Проверить совместимость" Grid.Row="0" Margin="0 0 0 7" VerticalAlignment="Bottom"/>
-                        <Button Content="Сохранить" Grid.Row="1" Margin="0 7 0 0" Command="{Binding Save}" VerticalAlignment="Center"/>
+                        <Button Content="Сохранить" Grid.Row="2" Margin="0 7 0 0" Command="{Binding Save}" VerticalAlignment="Center"/>
                     </Grid>
                 </Border>
             </ScrollViewer>

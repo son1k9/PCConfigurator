@@ -12,7 +12,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class CpuViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -24,6 +24,14 @@ internal class CpuViewModel : BaseViewModel
         _viewSource.Source = dbContext.Cpu.Local.ToObservableCollection();
     }
 
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.Cpu.Load();
+        _viewSource.Source = dbContext.Cpu.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
+    }
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
@@ -58,8 +66,13 @@ internal class CpuViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {cpu.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.Cpu.Remove(cpu);
-                dbContext.SaveChanges();
+                if (cpu.Configurations.Count > 0)
+                    MessageBox.Show("Нельзя удалить процессор, так как он используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.Cpu.Remove(cpu);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -70,12 +83,11 @@ internal class CpuViewModel : BaseViewModel
     {
         if (commandParameter is Cpu cpu)
         {
-            Cpu cpuCopy = cpu.Clone();
             NewCpuWindow window = new NewCpuWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
-                DataContext = cpuCopy
+                DataContext = cpu
             };
 
             dbContext.Socket.Load();
@@ -83,12 +95,9 @@ internal class CpuViewModel : BaseViewModel
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
             if (window.ShowDialog() == true)
-            {
-                dbContext.Cpu.Entry(cpu).CurrentValues.SetValues(cpuCopy);
-                cpu.Socket = cpuCopy.Socket;
                 dbContext.SaveChanges();
-                ViewSource.Refresh();
-            }
+
+            ResetContext();
         }
     }
 }

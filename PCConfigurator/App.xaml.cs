@@ -524,17 +524,17 @@ public partial class App : Application
             Ssds = [ssd1]
         };
 
-        configuration2.ConfigurationRams.Add(new ConfigurationRam()
+        configuration2.ConfigurationRams = [new ConfigurationRam()
         {
             Configuration = configuration2,
             Ram = ram3
-        });
+        },
 
-        configuration2.ConfigurationRams.Add(new ConfigurationRam()
+        new ConfigurationRam()
         {
             Configuration = configuration2,
             Ram = ram3
-        });
+        }];
 
         dbContext.Configuration.Add(configuration1);
         dbContext.Configuration.Add(configuration2);

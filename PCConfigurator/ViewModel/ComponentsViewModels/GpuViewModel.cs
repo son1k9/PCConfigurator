@@ -12,7 +12,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class GpuViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -22,6 +22,15 @@ internal class GpuViewModel : BaseViewModel
     {
         dbContext.Gpu.Load();
         _viewSource.Source = dbContext.Gpu.Local.ToObservableCollection();
+    }
+
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.Gpu.Load();
+        _viewSource.Source = dbContext.Gpu.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
     }
 
     private RelayCommand _add;
@@ -53,8 +62,13 @@ internal class GpuViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {gpu.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.Gpu.Remove(gpu);
-                dbContext.SaveChanges();
+                if (gpu.Configurations.Count > 0)
+                    MessageBox.Show("Нельзя удалить видеокарту, так как она используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.Gpu.Remove(gpu);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -65,20 +79,17 @@ internal class GpuViewModel : BaseViewModel
     {
         if (commandParameter is Gpu gpu)
         {
-            Gpu gpuCopy = gpu.Clone();
             NewGpuWindow window = new NewGpuWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
-                DataContext = gpuCopy
+                DataContext = gpu
             };
 
             if (window.ShowDialog() == true)
-            {
-                dbContext.Gpu.Entry(gpu).CurrentValues.SetValues(gpuCopy);
                 dbContext.SaveChanges();
-                ViewSource.Refresh();
-            }
+
+            ResetContext();
         }
     }
 }

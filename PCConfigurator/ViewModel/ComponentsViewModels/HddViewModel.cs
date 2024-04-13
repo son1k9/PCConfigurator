@@ -13,7 +13,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class HddViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -23,6 +23,15 @@ internal class HddViewModel : BaseViewModel
     {
         dbContext.Hdd.Load();
         _viewSource.Source = dbContext.Hdd.Local.ToObservableCollection();
+    }
+
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.Hdd.Load();
+        _viewSource.Source = dbContext.Hdd.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
     }
 
     private RelayCommand _add;
@@ -55,8 +64,13 @@ internal class HddViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {hdd.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.Hdd.Remove(hdd);
-                dbContext.SaveChanges();
+                if (hdd.Configurations.Count > 0)
+                    MessageBox.Show("Нельзя удалить жесткий диск, так как он используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.Hdd.Remove(hdd);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -67,8 +81,7 @@ internal class HddViewModel : BaseViewModel
     {
         if (commandParameter is Hdd hdd)
         {
-            Hdd hddCopy = hdd.Clone();
-            NewHddViewModel viewModel = new NewHddViewModel(hddCopy);
+            NewHddViewModel viewModel = new NewHddViewModel(hdd);
             NewHddWindow window = new NewHddWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
@@ -77,11 +90,9 @@ internal class HddViewModel : BaseViewModel
             };
 
             if (window.ShowDialog() == true)
-            {
-                dbContext.Hdd.Entry(hdd).CurrentValues.SetValues(hddCopy);
                 dbContext.SaveChanges();
-                ViewSource.Refresh();
-            }
+
+            ResetContext();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class SsdViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -25,6 +25,14 @@ internal class SsdViewModel : BaseViewModel
         _viewSource.Source = dbContext.Ssd.Local.ToObservableCollection();
     }
 
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.Ssd.Load();
+        _viewSource.Source = dbContext.Ssd.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
+    }
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
@@ -56,8 +64,13 @@ internal class SsdViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {ssd.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.Ssd.Remove(ssd);
-                dbContext.SaveChanges();
+                if (ssd.Configurations.Count > 0)
+                    MessageBox.Show("Нельзя удалить SSD, так как он используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.Ssd.Remove(ssd);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -68,8 +81,7 @@ internal class SsdViewModel : BaseViewModel
     {
         if (commandParameter is Ssd ssd)
         {
-            Ssd ssdCopy = ssd.Clone();
-            NewSsdViewModel viewModel = new NewSsdViewModel(ssdCopy);
+            NewSsdViewModel viewModel = new NewSsdViewModel(ssd);
             NewSsdWindow window = new NewSsdWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
@@ -78,11 +90,9 @@ internal class SsdViewModel : BaseViewModel
             };
 
             if (window.ShowDialog() == true)
-            {
-                dbContext.Ssd.Entry(ssd).CurrentValues.SetValues(ssdCopy);
                 dbContext.SaveChanges();
-                ViewSource.Refresh();
-            }
+
+            ResetContext();
         }
     }
 }

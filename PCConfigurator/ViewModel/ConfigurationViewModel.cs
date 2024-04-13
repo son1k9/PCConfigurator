@@ -2,7 +2,6 @@
 using PCConfigurator.Commands;
 using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
-using PCConfigurator.View.ComponentsUserControls;
 using PCConfigurator.View.ComponentСhoice;
 using System.ComponentModel;
 using System.Windows;
@@ -12,10 +11,28 @@ namespace PCConfigurator.ViewModel;
 
 internal class ConfigurationViewModel : BaseViewModel
 {
-    private Configuration _configuration;
+    private readonly Configuration _configuration;
     public Configuration Configuration { get => _configuration; }
 
+    public event EventHandler? ConfigurationSaved;
+
+    private void OnSave()
+    {
+        ConfigurationSaved?.Invoke(this, EventArgs.Empty);
+    }
+
     public event EventHandler<object>? ArrayChanged;
+
+    private bool _changes = false;
+    public bool Changes
+    {
+        get => _changes;
+        set
+        {
+            _changes = value;
+            OnPropertyChanged(nameof(Changes));
+        }
+    }
 
     private void OnArrayChanged(object array)
     {
@@ -34,46 +51,48 @@ internal class ConfigurationViewModel : BaseViewModel
         cooler = _configuration.Cooler;
         powerSupply = _configuration.PowerSupply;
 
-
-        _rams = new Ram[configuration.Motherboard.RamSlots];
-        int i = 0;
-        foreach (ConfigurationRam configurationRam in configuration.ConfigurationRams) 
-            _rams[i++] = configurationRam.Ram;
-
-
-        _gpus = new Gpu[configuration.Motherboard.PCIex16Slots];
-        i = 0;
-        foreach (ConfigurationGpu configurationGpu in configuration.ConfigurationGpus)
-            _gpus[i++] = configurationGpu.Gpu;
-
-
-        M2Slot[] _m2Slots = new M2Slot[configuration.Motherboard.M2Slots.Count];
-        _m2Ssds = new M2SlotWithSsd[configuration.Motherboard.M2Slots.Count];
-        i = 0;
-
-        foreach (ConfigurationM2Ssd configurationM2Ssd in configuration.ConfigurationM2Ssds) 
+        if (configuration.Motherboard != null)
         {
-            _m2Ssds[i] = new M2SlotWithSsd(configurationM2Ssd.M2Slot, configurationM2Ssd.M2Ssd);
-            _m2Slots[i] = configurationM2Ssd.M2Slot;
-            i++;
+            _rams = new Ram[configuration.Motherboard.RamSlots];
+            int i = 0;
+            foreach (ConfigurationRam configurationRam in configuration.ConfigurationRams)
+                _rams[i++] = configurationRam.Ram;
+
+
+            _gpus = new Gpu[configuration.Motherboard.PCIex16Slots];
+            i = 0;
+            foreach (ConfigurationGpu configurationGpu in configuration.ConfigurationGpus)
+                _gpus[i++] = configurationGpu.Gpu;
+
+
+            M2Slot[] _m2Slots = new M2Slot[configuration.Motherboard.M2Slots.Count];
+            _m2Ssds = new M2SlotWithSsd[configuration.Motherboard.M2Slots.Count];
+            i = 0;
+
+            foreach (ConfigurationM2Ssd configurationM2Ssd in configuration.ConfigurationM2Ssds)
+            {
+                _m2Ssds[i] = new M2SlotWithSsd(configurationM2Ssd.M2Slot, configurationM2Ssd.M2Ssd);
+                _m2Slots[i] = configurationM2Ssd.M2Slot;
+                i++;
+            }
+
+            var query = from n in configuration.Motherboard.M2Slots
+                        where !_m2Slots.Contains(n)
+                        select n;
+
+            foreach (M2Slot m2Slot in query)
+            {
+                _m2Ssds[i++] = new M2SlotWithSsd(m2Slot, null);
+            }
+
+
+            _ssdsAndHdds = new Model.Components.Component[configuration.Motherboard.Sata3Ports];
+            i = 0;
+            foreach (ConfigurationSsd configurationSsd in configuration.ConfigurationSsds)
+                _ssdsAndHdds[i++] = configurationSsd.Ssd;
+            foreach (ConfigurationHdd configurationHdd in configuration.ConfigurationHdds)
+                _ssdsAndHdds[i++] = configurationHdd.Hdd;
         }
-
-        var query = from n in configuration.Motherboard.M2Slots
-                    where !_m2Slots.Contains(n)
-                    select n;
-
-        foreach (M2Slot m2Slot in query)
-        {
-            _m2Ssds[i++] = new M2SlotWithSsd(m2Slot, null);
-        }
-
-
-        _ssdsAndHdds = new Model.Components.Component[configuration.Motherboard.Sata3Ports];
-        i = 0;
-        foreach(ConfigurationSsd configurationSsd in configuration.ConfigurationSsds)
-            _ssdsAndHdds[i++] = configurationSsd.Ssd;
-        foreach(ConfigurationHdd configurationHdd in configuration.ConfigurationHdds)
-            _ssdsAndHdds[i++] = configurationHdd.Hdd;
 
         PropertyChanged += AfterMotherboardChange;
     }
@@ -85,6 +104,7 @@ internal class ConfigurationViewModel : BaseViewModel
         set
         {
             name = value;
+            Changes = true;
             OnPropertyChanged(nameof(Name));
         }
     }
@@ -96,6 +116,7 @@ internal class ConfigurationViewModel : BaseViewModel
         set
         {
             motherboard = value;
+            Changes = true;
             OnPropertyChanged(nameof(Motherboard));
         }
     }
@@ -107,6 +128,7 @@ internal class ConfigurationViewModel : BaseViewModel
         set 
         { 
             cpu = value;
+            Changes = true;
             OnPropertyChanged(nameof(Cpu));
         }
     }
@@ -118,6 +140,7 @@ internal class ConfigurationViewModel : BaseViewModel
         set 
         {
             cooler = value;
+            Changes = true;
             OnPropertyChanged(nameof(Cooler));
         }
     }
@@ -129,57 +152,63 @@ internal class ConfigurationViewModel : BaseViewModel
         set 
         { 
             powerSupply = value;
+            Changes = true;
             OnPropertyChanged(nameof(PowerSupply));
         }
     }
 
-    private Ram?[] _rams;
-    public Ram?[] Rams 
+    private Ram?[]? _rams;
+    public Ram?[]? Rams
     { 
         get => _rams;
         set
         {
             _rams = value;
+            Changes = true;
             OnPropertyChanged(nameof(Rams));
         }
     }
 
     private void SetRam(int index, Ram? ram)
     {
-        if (index >= 0 && index < Rams.Length)
+        if (index >= 0 && index < Rams?.Length)
         {
             Rams[index] = ram;
+            Changes = true;
             OnArrayChanged(Rams);
         }
     }
 
-    private Gpu?[] _gpus;
-    public Gpu?[] Gpus
+    private Gpu?[]? _gpus;
+    public Gpu?[]? Gpus
     {
         get => _gpus;
         set
         {
             _gpus = value;
+            Changes = true;
             OnPropertyChanged(nameof(Gpus));
         }
     }
 
     private void SetGpu(int index, Gpu? gpu)
     {
-        if (index >= 0 && index < Gpus.Length)
+        if (index >= 0 && index < Gpus?.Length)
         {
             Gpus[index] = gpu;
+            Changes = true;
             OnArrayChanged(Gpus);
         }
     }
 
     private void SetM2Ssd(int index, M2Ssd? m2Ssd)
     {
-        if (index >= 0 && index < M2Ssds.Length)
+        if (index >= 0 && index < M2Ssds?.Length)
         {
             if (M2Ssds[index] is not null)
             {
                 M2Ssds[index].M2Ssd = m2Ssd;
+                Changes = true;
                 OnArrayChanged(M2Ssds);
             }
         }
@@ -191,42 +220,92 @@ internal class ConfigurationViewModel : BaseViewModel
         public M2Ssd? M2Ssd { get; set; } = m2ssd;
     }
 
-    private M2SlotWithSsd?[] _m2Ssds;
-    public M2SlotWithSsd?[] M2Ssds
+    private M2SlotWithSsd[]? _m2Ssds;
+    public M2SlotWithSsd[]? M2Ssds
     {
         get => _m2Ssds;
         set
         {
             _m2Ssds = value;
+            Changes = true;
             OnPropertyChanged(nameof(M2Ssds));
         }
     }
 
-    private Model.Components.Component?[] _ssdsAndHdds;
-    public Model.Components.Component?[] SsdAndHdds
+    private Model.Components.Component?[]? _ssdsAndHdds;
+    public Model.Components.Component?[]? SsdAndHdds
     {
         get => _ssdsAndHdds;
         set
         {
             _ssdsAndHdds = value;
+            Changes = true;
             OnPropertyChanged(nameof(SsdAndHdds));
         }
     }
 
     private void SetSata(int index, Model.Components.Component? component)
     {
-        if (index >= 0 && index < SsdAndHdds.Length)
+        if (index >= 0 && index < SsdAndHdds?.Length)
         {
             SsdAndHdds[index] = component;
+            Changes = true;
             OnArrayChanged(SsdAndHdds);
         }
     }
 
     private RelayCommand? _save;
-    public ICommand Save => _save ??= new RelayCommand(PerformSave);
+    public ICommand Save => _save ??= new RelayCommand(PerformSave, (obj) => Changes);
     private void PerformSave(object? commandParameter)
     {
         _configuration.Name = Name;
+        _configuration.Motherboard = Motherboard;
+        _configuration.Cpu = Cpu;
+        _configuration.Cooler = Cooler;
+        _configuration.PowerSupply = PowerSupply;
+
+        //RAM
+        List<ConfigurationRam> rams = [];
+        for(int i = 0; i < Rams?.Length; i++) 
+        {
+            if (Rams[i] is Ram ram)
+                rams.Add(new ConfigurationRam { Configuration = _configuration, Ram = ram});
+        }
+        _configuration.ConfigurationRams = rams;
+
+        //GPU
+        List<ConfigurationGpu> gpus = [];
+        for (int i = 0; i < Gpus?.Length; i++)
+        {
+            if (Gpus[i] is Gpu gpu)
+                gpus.Add(new ConfigurationGpu { Configuration = _configuration, Gpu = gpu });
+        }
+        _configuration.ConfigurationGpus = gpus;
+
+        //M2SSD
+        List<ConfigurationM2Ssd> m2ssds = [];
+        for (int i = 0; i < M2Ssds?.Length; i++)
+        {
+            if (M2Ssds[i].M2Ssd is M2Ssd m2ssd)
+                m2ssds.Add(new ConfigurationM2Ssd { Configuration = _configuration, M2Slot = M2Ssds[i].M2Slot, M2Ssd = m2ssd });
+        }
+        _configuration.ConfigurationM2Ssds = m2ssds;
+
+        //Sata
+        List<ConfigurationHdd> hdds = [];
+        List<ConfigurationSsd> ssds = [];
+        for (int i = 0; i < SsdAndHdds?.Length; i++)
+        {
+            if (SsdAndHdds[i] is Hdd hdd)
+                hdds.Add(new ConfigurationHdd { Configuration = _configuration, Hdd = hdd});
+            else if (SsdAndHdds[i] is Ssd ssd)
+                ssds.Add(new ConfigurationSsd { Configuration = _configuration, Ssd = ssd });
+        }
+        _configuration.ConfigurationHdds = hdds;
+        _configuration.ConfigurationSsds = ssds;
+
+        OnSave();
+        Changes = false;
         dbContext.SaveChanges();
     }
 
@@ -332,7 +411,7 @@ internal class ConfigurationViewModel : BaseViewModel
         window.ComponentsList.Content = list;
         if (window.ShowDialog() == true)
         {
-            if (list.dataGrid.SelectedItem is Motherboard motherboard)
+            if (list.dataGrid.SelectedItem is Motherboard motherboard && Motherboard != motherboard)
                 Motherboard = motherboard;
         }
     }

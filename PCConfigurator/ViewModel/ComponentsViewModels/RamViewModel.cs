@@ -12,7 +12,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class RamViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -22,6 +22,15 @@ internal class RamViewModel : BaseViewModel
     {
         dbContext.Ram.Load();
         _viewSource.Source = dbContext.Ram.Local.ToObservableCollection();
+    }
+
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.Ram.Load();
+        _viewSource.Source = dbContext.Ram.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
     }
 
     private RelayCommand _add;
@@ -53,8 +62,13 @@ internal class RamViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {ram.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.Ram.Remove(ram);
-                dbContext.SaveChanges();
+                if (ram.Configurations.Count > 0)
+                    MessageBox.Show("Нельзя удалить оперативную память, так как она используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.Ram.Remove(ram);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -65,20 +79,17 @@ internal class RamViewModel : BaseViewModel
     {
         if (commandParameter is Ram ram)
         {
-            Ram ramCopy = ram.Clone();
             NewRamWindow window = new NewRamWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
-                DataContext = ramCopy
+                DataContext = ram
             };
 
             if (window.ShowDialog() == true)
-            {
-                dbContext.Ram.Entry(ram).CurrentValues.SetValues(ramCopy);
                 dbContext.SaveChanges();
-                ViewSource.Refresh();
-            }
+
+            ResetContext();
         }
     }
 }

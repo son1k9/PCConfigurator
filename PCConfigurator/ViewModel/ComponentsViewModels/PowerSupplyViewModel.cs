@@ -12,7 +12,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class PowerSupplyViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -22,6 +22,15 @@ internal class PowerSupplyViewModel : BaseViewModel
     {
         dbContext.PowerSupply.Load();
         _viewSource.Source = dbContext.PowerSupply.Local.ToObservableCollection();
+    }
+
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.PowerSupply.Load();
+        _viewSource.Source = dbContext.PowerSupply.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
     }
 
     private RelayCommand _add;
@@ -53,8 +62,13 @@ internal class PowerSupplyViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {powerSupply.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.PowerSupply.Remove(powerSupply);
-                dbContext.SaveChanges();
+                if (powerSupply.Configurations.Count > 0)
+                    MessageBox.Show("Нельзя удалить блок питания, так как он используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.PowerSupply.Remove(powerSupply);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -65,21 +79,17 @@ internal class PowerSupplyViewModel : BaseViewModel
     {
         if (commandParameter is PowerSupply powerSupply)
         {
-            PowerSupply powerSupplyCopy = powerSupply.Clone();
-
             NewPowerSupplyWindow window = new NewPowerSupplyWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = Application.Current.MainWindow,
-                DataContext = powerSupplyCopy
+                DataContext = powerSupply
             };
 
             if (window.ShowDialog() == true)
-            {
-                dbContext.PowerSupply.Entry(powerSupply).CurrentValues.SetValues(powerSupplyCopy);
                 dbContext.SaveChanges();
-                ViewSource.Refresh();
-            }
+
+            ResetContext();
         }
     }
 }

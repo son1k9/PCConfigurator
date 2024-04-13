@@ -15,14 +15,12 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Выберите тип комлпектующего" Grid.Row="0" FontSize="24"/>
+            <TextBlock Text="Выберите тип комплектующего" Grid.Row="0" FontSize="18"/>
 
-            <StackPanel Grid.Row="1">
-                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10" HorizontalAlignment="Center">
-                    <Button Content="SSD" VerticalAlignment="Center" Click="ButtonSsd_Click" IsDefault="True" Name="buttonHdd"/>
-                    <Button Content="HDD" VerticalAlignment="Center" Click="ButtonHdd_Click" IsDefault="True" Name="buttonSdd"  Margin="10 0 0 0"/>
-                    <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
-                </StackPanel>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10" HorizontalAlignment="Right" Grid.Row="1">
+                <Button Content="SSD" VerticalAlignment="Center" Click="ButtonSsd_Click" IsDefault="True" Name="buttonHdd"/>
+                <Button Content="HDD" VerticalAlignment="Center" Click="ButtonHdd_Click" IsDefault="True" Name="buttonSdd"  Margin="10 0 0 0"/>
+                <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
             </StackPanel>
         </Grid>
     </Border>

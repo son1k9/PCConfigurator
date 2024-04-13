@@ -1,6 +1,4 @@
-﻿#nullable disable
-
-namespace PCConfigurator.Model.Components;
+﻿namespace PCConfigurator.Model.Components;
 
 public class Configuration
 {
@@ -8,17 +6,17 @@ public class Configuration
 
     public string Name { get; set; }
 
-    public int MotherboardId { get; set; }
-    public virtual Motherboard Motherboard { get; set; }
+    public int? MotherboardId { get; set; }
+    public virtual Motherboard? Motherboard { get; set; }
 
-    public int CpuId { get; set; }
-    public virtual Cpu Cpu { get; set; }
+    public int? CpuId { get; set; }
+    public virtual Cpu? Cpu { get; set; }
 
-    public int CoolerId { get; set; }
-    public virtual Cooler Cooler { get; set; }
+    public int? CoolerId { get; set; }
+    public virtual Cooler? Cooler { get; set; }
 
-    public int PowerSupplyId { get; set; }
-    public virtual PowerSupply PowerSupply { get; set; }
+    public int? PowerSupplyId { get; set; }
+    public virtual PowerSupply? PowerSupply { get; set; }
 
     public virtual List<Ram> Rams { get; set; } = [];
     public virtual List<ConfigurationRam> ConfigurationRams { get; set; } = [];

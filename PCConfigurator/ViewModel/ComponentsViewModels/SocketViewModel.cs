@@ -13,7 +13,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class SocketViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -23,6 +23,15 @@ internal class SocketViewModel : BaseViewModel
     {
         dbContext.Socket.Load();
         _viewSource.Source = dbContext.Socket.Local.ToObservableCollection();
+    }
+
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.Socket.Load();
+        _viewSource.Source = dbContext.Socket.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
     }
 
     private RelayCommand _add;
@@ -57,7 +66,7 @@ internal class SocketViewModel : BaseViewModel
             {
                 if (socket.Cpus.Count > 0 || socket.Coolers.Count > 0 || socket.Motherboards.Count > 0)
                 {
-                    MessageBox.Show("Нельзя удалить сокет, который используется в других комплектующих.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить сокет, так как он используется в комплектующих.", "Ошибка");
                     return;
                 }
 
@@ -73,8 +82,7 @@ internal class SocketViewModel : BaseViewModel
     {
         if (commandParameter is Socket socket)
         {
-            Socket socketCopy = socket.Clone();
-            NewSocketViewModel viewModel = new NewSocketViewModel(socketCopy);
+            NewSocketViewModel viewModel = new NewSocketViewModel(socket);
             NewSocketWindow window = new NewSocketWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
@@ -86,24 +94,12 @@ internal class SocketViewModel : BaseViewModel
 
             if (window.ShowDialog() == true)
             {
-                var deletedChipsets = (from n in socket.Chipsets
-                                       where !socketCopy.Chipsets.Contains(n)
-                                       select n).ToList();
-                foreach (var chipset in deletedChipsets)
-                {
-                    if (chipset.Motherboards.Count > 0)
-                    {
-                        MessageBox.Show("Нельзя удалить чипсет, который используется в других комплектующих.", "Ошибка");
-                        return;
-                    }
-
-                }
-
-                dbContext.Socket.Entry(socket).CurrentValues.SetValues(socketCopy);
-                socket.Chipsets = socketCopy.Chipsets;
-                dbContext.SaveChanges();
-                ViewSource.Refresh();
+                if (viewModel.RemovedChipsets.Any(slot => slot.Motherboards.Count > 0))
+                        MessageBox.Show("Нельзя удалить чипсет, который используется в материнской плате.", "Ошибка");
+                else
+                    dbContext.SaveChanges();
             }
+            ResetContext();
         }
     }
 }

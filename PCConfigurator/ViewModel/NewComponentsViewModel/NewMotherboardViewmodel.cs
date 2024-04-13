@@ -9,6 +9,8 @@ internal class NewMotherboardViewmodel(Motherboard motherboard) : BaseViewModel
 {
     public Motherboard Motherboard { get; } = motherboard;
 
+    public List<M2Slot> RemovedM2Slots { get; } = [];
+
     private RelayCommand _removeM2Slot;
     public ICommand RemoveM2Slot => _removeM2Slot ??= new RelayCommand(PerformRemoveM2Slot);
     public void PerformRemoveM2Slot(object? commandParametr)
@@ -16,6 +18,7 @@ internal class NewMotherboardViewmodel(Motherboard motherboard) : BaseViewModel
         if (commandParametr is M2Slot m2Slot)
         {
             Motherboard.M2Slots.Remove(m2Slot);
+            RemovedM2Slots.Add(m2Slot);
         }
     }
 

@@ -3,6 +3,7 @@ using PCConfigurator.Commands;
 using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -24,7 +25,17 @@ internal class ConfigurationsViewModel : BaseViewModel
         {
             if (_selectedConfiguration?.Configuration != value.Configuration)
             {
+                if (_selectedConfiguration?.Changes == true)
+                {
+                    var result = MessageBox.Show("Сохранить изменения?", "Смена конфигурации", MessageBoxButton.YesNoCancel);
+                    if (result == MessageBoxResult.Yes)
+                        _selectedConfiguration.Save.Execute(null);
+                    else if (result == MessageBoxResult.Cancel)
+                        return;
+                }
+
                 _selectedConfiguration = value;
+                _selectedConfiguration.ConfigurationSaved += (sender, e) => ViewSource.Refresh();
                 OnPropertyChanged(nameof(SelectedConfiguration));
             }
         }
@@ -36,14 +47,7 @@ internal class ConfigurationsViewModel : BaseViewModel
         _viewSource.Source = dbContext.Configuration.Local.ToObservableCollection();
     }
 
-    private void SaveChanges()
-    {
-        dbContext.SaveChanges();
-        ViewSource.Refresh();
-    }
-
-
-    private RelayCommand _selectConfiguration;
+    private RelayCommand? _selectConfiguration;
     public ICommand SelectConfiguration => _selectConfiguration ??= new RelayCommand(PerformSelectConfiguration);
 
     private void PerformSelectConfiguration(object? commandParameter)
@@ -52,7 +56,7 @@ internal class ConfigurationsViewModel : BaseViewModel
             SelectedConfiguration = new ConfigurationViewModel(configuration, dbContext);
     }
 
-    private RelayCommand _addConfiguration;
+    private RelayCommand? _addConfiguration;
     public ICommand AddConfiguration => _addConfiguration ??= new RelayCommand(PerformAddConfiguration);
 
     private void PerformAddConfiguration(object? commandParameter)

@@ -13,7 +13,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class CoolerViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -23,6 +23,15 @@ internal class CoolerViewModel : BaseViewModel
     {
         dbContext.Cooler.Load();
         _viewSource.Source = dbContext.Cooler.Local.ToObservableCollection();
+    }
+
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.Cooler.Load();
+        _viewSource.Source = dbContext.Cooler.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
     }
 
     private RelayCommand _add;
@@ -58,8 +67,13 @@ internal class CoolerViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {cooler.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.Cooler.Remove(cooler);
-                dbContext.SaveChanges();
+                if (cooler.Configurations.Count > 0)
+                    MessageBox.Show("Нельзя удалить кулер, так как он используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.Cooler.Remove(cooler);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -70,8 +84,7 @@ internal class CoolerViewModel : BaseViewModel
     {
         if (commandParameter is Cooler cooler)
         {
-            Cooler coolerCopy = cooler.Clone();
-            NewCoolerViewmodel coolerViewmodel = new(coolerCopy);
+            NewCoolerViewmodel coolerViewmodel = new(cooler);
             NewCoolerWindow window = new NewCoolerWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
@@ -84,12 +97,9 @@ internal class CoolerViewModel : BaseViewModel
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
             if (window.ShowDialog() == true)
-            {
-                dbContext.Cooler.Entry(cooler).CurrentValues.SetValues(coolerCopy);
-                cooler.Sockets = coolerCopy.Sockets;
                 dbContext.SaveChanges();
-                ViewSource.Refresh();
-            }
+
+            ResetContext();
         }
     }
 }

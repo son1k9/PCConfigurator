@@ -13,7 +13,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
 internal class M2SsdViewModel : BaseViewModel
 {
-    private readonly ApplicationContext dbContext = new ApplicationContext();
+    private ApplicationContext dbContext = new ApplicationContext();
 
     private readonly CollectionViewSource _viewSource = new CollectionViewSource();
 
@@ -25,6 +25,14 @@ internal class M2SsdViewModel : BaseViewModel
         _viewSource.Source = dbContext.M2Ssd.Local.ToObservableCollection();
     }
 
+    private void ResetContext()
+    {
+        dbContext.Dispose();
+        dbContext = new ApplicationContext();
+        dbContext.M2Ssd.Load();
+        _viewSource.Source = dbContext.M2Ssd.Local.ToObservableCollection();
+        OnPropertyChanged(nameof(ViewSource));
+    }
 
     private RelayCommand _add;
     public ICommand Add => _add ??= new RelayCommand(PerformAdd);
@@ -56,8 +64,13 @@ internal class M2SsdViewModel : BaseViewModel
             var result = MessageBox.Show($"Удалить данные по {m2ssd.Model}", "Предупреждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                dbContext.M2Ssd.Remove(m2ssd);
-                dbContext.SaveChanges();
+                if (m2ssd.ConfigurationM2Ssds.Count > 0)
+                    MessageBox.Show("Нельзя удалить M2 SSD, так как он используется в конфигурациях.", "Ошибка");
+                else
+                {
+                    dbContext.M2Ssd.Remove(m2ssd);
+                    dbContext.SaveChanges();
+                }
             }
         }
     }
@@ -68,8 +81,7 @@ internal class M2SsdViewModel : BaseViewModel
     {
         if (commandParameter is M2Ssd m2ssd)
         {
-            M2Ssd m2ssdCopy = m2ssd.Clone();
-            NewM2SsdViewModel viewModel = new NewM2SsdViewModel(m2ssdCopy);
+            NewM2SsdViewModel viewModel = new NewM2SsdViewModel(m2ssd);
             NewM2SsdWindow window = new NewM2SsdWindow
             {
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
@@ -78,11 +90,9 @@ internal class M2SsdViewModel : BaseViewModel
             };
 
             if (window.ShowDialog() == true)
-            {
-                dbContext.M2Ssd.Entry(m2ssd).CurrentValues.SetValues(m2ssdCopy);
                 dbContext.SaveChanges();
-                ViewSource.Refresh();
-            }
+
+            ResetContext();
         }
     }
 }
