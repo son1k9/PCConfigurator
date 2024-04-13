@@ -67,7 +67,7 @@ internal class CpuViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (cpu.Configurations.Count > 0)
-                    MessageBox.Show("Нельзя удалить процессор, так как он используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.Cpu.Remove(cpu);

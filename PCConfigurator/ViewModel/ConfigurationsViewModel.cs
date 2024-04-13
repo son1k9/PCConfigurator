@@ -17,6 +17,8 @@ internal class ConfigurationsViewModel : BaseViewModel
 
     public ICollectionView ViewSource { get => _viewSource.View; }
 
+
+
     private ConfigurationViewModel _selectedConfiguration;
     public ConfigurationViewModel SelectedConfiguration
     {

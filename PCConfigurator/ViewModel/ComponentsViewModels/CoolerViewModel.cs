@@ -68,7 +68,7 @@ internal class CoolerViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (cooler.Configurations.Count > 0)
-                    MessageBox.Show("Нельзя удалить кулер, так как он используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.Cooler.Remove(cooler);

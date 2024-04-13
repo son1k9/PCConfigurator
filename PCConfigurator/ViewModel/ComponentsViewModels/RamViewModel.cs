@@ -63,7 +63,7 @@ internal class RamViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (ram.Configurations.Count > 0)
-                    MessageBox.Show("Нельзя удалить оперативную память, так как она используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.Ram.Remove(ram);

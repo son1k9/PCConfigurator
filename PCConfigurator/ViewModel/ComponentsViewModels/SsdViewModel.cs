@@ -65,7 +65,7 @@ internal class SsdViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (ssd.Configurations.Count > 0)
-                    MessageBox.Show("Нельзя удалить SSD, так как он используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.Ssd.Remove(ssd);

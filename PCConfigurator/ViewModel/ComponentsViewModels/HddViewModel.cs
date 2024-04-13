@@ -65,7 +65,7 @@ internal class HddViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (hdd.Configurations.Count > 0)
-                    MessageBox.Show("Нельзя удалить жесткий диск, так как он используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.Hdd.Remove(hdd);

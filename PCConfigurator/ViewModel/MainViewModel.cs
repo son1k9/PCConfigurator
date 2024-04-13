@@ -1,28 +1,68 @@
 ﻿using PCConfigurator.Commands;
 using PCConfigurator.Stores;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel;
 
 internal class MainViewModel : BaseViewModel
 {
-    private readonly NavigationStorage _navigationStorage;
+    private BaseViewModel _currentViewModel = new ConfigurationsViewModel();
+    public BaseViewModel CurrentViewModel
+    {
+        get => _currentViewModel;
+        set
+        {
+            _currentViewModel = value;
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
+    }
 
-    public BaseViewModel CurrentViewModel => _navigationStorage.CurrentViewModel;
+    public event EventHandler? NavigationCanceled;
+    private void OnNavigationCanceled()
+    {
+        NavigationCanceled?.Invoke(this, EventArgs.Empty);
+    }
+    
+
 
     public MainViewModel(NavigationStorage navigationStorage)
     {
-        _navigationStorage = navigationStorage;
-        navigationStorage.ViewModelChanged += OnViewModelChanged;
-        NavigateConfigurationsCommand = new NavigateCommand<ConfigurationsViewModel>(navigationStorage);
-        NavigateComponentsCommand = new NavigateCommand<ComponentsViewModel>(navigationStorage);
+
     }
 
-    private void OnViewModelChanged()
+    private RelayCommand? _navigateConfigurations;
+    public ICommand NavigateConfigurations => _navigateConfigurations ?? new RelayCommand(PerformNavigateConfigurations);
+    private void PerformNavigateConfigurations(object? commandParameter)
     {
-        OnPropertyChanged(nameof(CurrentViewModel));
+        if (CurrentViewModel is ConfigurationsViewModel)
+            return;
+
+        CurrentViewModel = new ConfigurationsViewModel();
     }
 
-    public ICommand NavigateConfigurationsCommand { get; }
-    public ICommand NavigateComponentsCommand { get; }
+    private RelayCommand? _navigateComponents;
+    public ICommand NavigateComponents => _navigateComponents ?? new RelayCommand(PerformNavigateComponents);
+    private void PerformNavigateComponents(object? commandParameter)
+    {
+        if (CurrentViewModel is ComponentsViewModel)
+            return;
+
+        if (CurrentViewModel is ConfigurationsViewModel configurationsViewModel)
+        {
+            if (configurationsViewModel.SelectedConfiguration?.Changes == true)
+            {
+                var result = MessageBox.Show("Сохранить изменения?", "", MessageBoxButton.YesNoCancel);
+                if (result == MessageBoxResult.Yes)
+                    configurationsViewModel.SelectedConfiguration.Save.Execute(null);
+                else if (result == MessageBoxResult.Cancel)
+                {
+                    OnNavigationCanceled();
+                    return;
+                }
+            }
+        }
+
+        CurrentViewModel = new ComponentsViewModel();
+    }
 }

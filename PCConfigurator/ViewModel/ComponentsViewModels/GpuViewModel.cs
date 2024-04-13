@@ -63,7 +63,7 @@ internal class GpuViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (gpu.Configurations.Count > 0)
-                    MessageBox.Show("Нельзя удалить видеокарту, так как она используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.Gpu.Remove(gpu);

@@ -9,7 +9,9 @@
         Title="PC Configurator" MinWidth="277" MinHeight="570" WindowStartupLocation="CenterScreen"
         Width="1305" Height="720"
         Background="#F2F2F2"
-        WindowStyle="ThreeDBorderWindow">
+        WindowStyle="ThreeDBorderWindow"
+        Loaded="Window_Loaded">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -50,8 +52,8 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <RadioButton Content="Сборки" Command="{Binding NavigateConfigurationsCommand}" IsChecked="True"/>
-                <RadioButton Content="Комплектующие" Command="{Binding NavigateComponentsCommand}"/>
+                <RadioButton Content="Сборки" Command="{Binding NavigateConfigurations}" x:Name="RadioButtonConfigurations" IsChecked="True"/>
+                <RadioButton Content="Комплектующие" Command="{Binding NavigateComponents}" x:Name="RadioButtonComponents"/>
             </StackPanel>
         </Border>
         <ContentControl Grid.Row="1" Content="{Binding Path=CurrentViewModel}">

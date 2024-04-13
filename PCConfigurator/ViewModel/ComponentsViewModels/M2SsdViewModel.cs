@@ -65,7 +65,7 @@ internal class M2SsdViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (m2ssd.ConfigurationM2Ssds.Count > 0)
-                    MessageBox.Show("Нельзя удалить M2 SSD, так как он используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.M2Ssd.Remove(m2ssd);

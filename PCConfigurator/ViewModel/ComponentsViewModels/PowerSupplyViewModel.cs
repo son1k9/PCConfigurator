@@ -63,7 +63,7 @@ internal class PowerSupplyViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (powerSupply.Configurations.Count > 0)
-                    MessageBox.Show("Нельзя удалить блок питания, так как он используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.PowerSupply.Remove(powerSupply);

@@ -70,7 +70,7 @@ internal class MotherboardViewModel : BaseViewModel
             if (result == MessageBoxResult.Yes)
             {
                 if (motherboard.Configurations.Count > 0)
-                    MessageBox.Show("Нельзя удалить материнскую плату, так как она используется в конфигурациях.", "Ошибка");
+                    MessageBox.Show("Нельзя удалить комплектующее, так как оно используется в конфигурациях.", "Ошибка");
                 else
                 {
                     dbContext.Motherboard.Remove(motherboard);
@@ -102,7 +102,7 @@ internal class MotherboardViewModel : BaseViewModel
             if (window.ShowDialog() == true)
             {
                 if (motherboardViewmodel.RemovedM2Slots.Any(slot => slot.ConfigurationM2Ssds.Count > 0))
-                    MessageBox.Show(Application.Current.MainWindow, "Неудалось обновить информацию о материнской плате, " +
+                    MessageBox.Show(Application.Current.MainWindow, "Неудалось обновить информацию о комплектующем, " +
                         "так как при этом нарушалась бы целостность конфигураций.", "Ошибка");
                 else
                     dbContext.SaveChanges();
