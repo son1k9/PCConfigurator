@@ -1,5 +1,4 @@
 ﻿using PCConfigurator.Commands;
-using PCConfigurator.Stores;
 using System.Windows;
 using System.Windows.Input;
 
@@ -7,6 +6,8 @@ namespace PCConfigurator.ViewModel;
 
 internal class MainViewModel : BaseViewModel
 {
+    private int lastConfigurationid = 0;
+
     private BaseViewModel _currentViewModel = new ConfigurationsViewModel();
     public BaseViewModel CurrentViewModel
     {
@@ -31,7 +32,7 @@ internal class MainViewModel : BaseViewModel
         if (CurrentViewModel is ConfigurationsViewModel)
             return;
 
-        CurrentViewModel = new ConfigurationsViewModel();
+        CurrentViewModel = new ConfigurationsViewModel(lastConfigurationid);
     }
 
     private RelayCommand? _navigateComponents;
@@ -43,23 +44,31 @@ internal class MainViewModel : BaseViewModel
 
         if (CurrentViewModel is ConfigurationsViewModel configurationsViewModel)
         {
-            if (configurationsViewModel.SelectedConfiguration?.Changes == true)
+            if (configurationsViewModel.SelectedConfiguration != null)
             {
-                var result = MessageBox.Show("Сохранить изменения?", "Закрытие конфигурации", MessageBoxButton.YesNoCancel);
-                if (result == MessageBoxResult.Yes)
+                if (configurationsViewModel.SelectedConfiguration.Changes)
                 {
-                    configurationsViewModel.SelectedConfiguration.Save.Execute(null);
-                    if (configurationsViewModel.SelectedConfiguration.Changes)
+                    var result = MessageBox.Show("Сохранить изменения?", "Закрытие конфигурации", MessageBoxButton.YesNoCancel);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        configurationsViewModel.SelectedConfiguration.Save.Execute(null);
+                        if (configurationsViewModel.SelectedConfiguration.Changes)
+                        {
+                            OnNavigationCanceled();
+                            return;
+                        }
+                    }
+                    else if (result == MessageBoxResult.Cancel)
                     {
                         OnNavigationCanceled();
                         return;
                     }
                 }
-                else if (result == MessageBoxResult.Cancel)
-                {
-                    OnNavigationCanceled();
-                    return;
-                }
+                lastConfigurationid = configurationsViewModel.SelectedConfiguration.Configuration.ConfigurationId;
+            }
+            else
+            {
+                lastConfigurationid = 0;
             }
         }
 

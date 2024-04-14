@@ -174,10 +174,18 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Border BorderBrush="#DBDBDB" Background="#F9F9F9" BorderThickness="1 1 1 0" Grid.Column="0">
-                <StackPanel>
-
-                </StackPanel>
+            <Border BorderBrush="{Binding ElementName=configuration, Path=Color}" Background="#F9F9F9" BorderThickness="1 1 1 0" Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="0 0 0 1" BorderBrush="#DBDBDB" Grid.Row="0">
+                        <TextBlock FontSize="14" Foreground="{Binding ElementName=configuration, Path=Color}" Text="{Binding ElementName=configuration, Path=ErrorsListHeader}" Margin="10 0 0 0"/>
+                    </Border>
+                    <ListBox VerticalAlignment="Stretch" ItemsSource="{Binding Errors}" Background="Transparent"
+         BorderThickness="0" FontSize="14" x:Name="ListBoxErrors" Grid.Row="1"/>
+                </Grid>
             </Border>
 
             <GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#F2F2F2"
@@ -191,7 +199,7 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <Button Content="Проверить совместимость" Grid.Row="0" Margin="0 0 0 7" VerticalAlignment="Bottom"/>
+                        <Button Content="Проверить совместимость" Grid.Row="0" Margin="0 0 0 7" VerticalAlignment="Bottom" Command="{Binding CheckCompatibility}"/>
                         <Button Content="Сохранить" Grid.Row="2" Margin="0 7 0 0" Command="{Binding Save}" VerticalAlignment="Center"/>
                     </Grid>
                 </Border>

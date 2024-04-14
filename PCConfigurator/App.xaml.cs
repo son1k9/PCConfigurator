@@ -401,7 +401,7 @@ public partial class App : Application
             Tbw = 750,
             NandType = NandType.TLC,
             M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
-            M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
+            M2Size = Model.Components.M2.M2Size._2280
         };
 
         dbContext.M2Ssd.Add(m2ssd1);

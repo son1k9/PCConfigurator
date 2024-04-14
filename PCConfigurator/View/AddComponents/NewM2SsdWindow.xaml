@@ -115,23 +115,14 @@
 
         <StackPanel>
             <TextBlock Text="Размер"/>
-            <local:M2SizeUserControl DataContext="{Binding M2Ssd}"/>
+            <StackPanel Margin="0" Orientation="Horizontal">
+                <RadioButton Content="2230" Margin="0 0 10 0" IsChecked="{Binding M2Ssd.Is2230}"/>
+                <RadioButton Content="2242" Margin="0 0 10 0" IsChecked="{Binding M2Ssd.Is2242}"/>
+                <RadioButton Content="2260" Margin="0 0 10 0" IsChecked="{Binding M2Ssd.Is2260}"/>
+                <RadioButton Content="2280" Margin="0 0 10 0" IsChecked="{Binding M2Ssd.Is2280}"/>
+                <RadioButton Content="22110" IsChecked="{Binding M2Ssd.Is22110}"/>
+            </StackPanel>
         </StackPanel>
-        
-        <!--<TextBlock Grid.Row="6" Grid.Column="0" Text="Интерфейс:" Style="{StaticResource textBlockNewComponent}"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
-            <CheckBox IsChecked="{Binding M2Ssd.IsNvme}" Content="Nvme" Style="{StaticResource checkBoxComponent}"/>
-            <CheckBox IsChecked="{Binding M2Ssd.IsSata}" Content="Sata" Style="{StaticResource checkBoxComponent}"/>
-        </StackPanel>-->
-
-        <!--<TextBlock Grid.Row="7" Grid.Column="0" Text="Размер:" Style="{StaticResource textBlockNewComponent}" Margin="10 0 0 0"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="10 0 10 0">
-            <CheckBox IsChecked="{Binding M2Ssd.Is2230}" Content="2230" Style="{StaticResource checkBoxComponent}"/>
-            <CheckBox IsChecked="{Binding M2Ssd.Is2242}" Content="2242" Style="{StaticResource checkBoxComponent}"/>
-            <CheckBox IsChecked="{Binding M2Ssd.Is2260}" Content="2260" Style="{StaticResource checkBoxComponent}"/>
-            <CheckBox IsChecked="{Binding M2Ssd.Is2280}" Content="2280" Style="{StaticResource checkBoxComponent}"/>
-            <CheckBox IsChecked="{Binding M2Ssd.Is22110}" Content="22110" Style="{StaticResource checkBoxComponent}"/>
-        </StackPanel>-->
 
         <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
             <Button Content="Подтвердить" VerticalAlignment="Center" Click="Button_Click" IsDefault="True" Name="buttonOk"/>

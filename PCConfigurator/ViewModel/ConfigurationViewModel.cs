@@ -21,6 +21,17 @@ internal class ConfigurationViewModel : BaseViewModel
         ConfigurationSaved?.Invoke(this, EventArgs.Empty);
     }
 
+    private string[] errors;
+    public string[] Errors 
+    { 
+        get => errors;
+        set
+        {
+            errors = value;
+            OnPropertyChanged(nameof(Errors));
+        }
+    }
+
     public event EventHandler<object>? ArrayChanged;
 
     private bool _changes = false;
@@ -55,6 +66,7 @@ internal class ConfigurationViewModel : BaseViewModel
         cpu = _configuration.Cpu;
         cooler = _configuration.Cooler;
         powerSupply = _configuration.PowerSupply;
+        errors = configuration.CheckCompatibility();
 
         if (configuration.Motherboard != null)
         {
@@ -551,6 +563,7 @@ internal class ConfigurationViewModel : BaseViewModel
     }
 
     private RelayCommand? _changeSata;
+
     public ICommand ChangeSata => _changeSata ??= new RelayCommand(PerformChangeSata);
     private void PerformChangeSata(object? commandParameter)
     {
@@ -596,5 +609,60 @@ internal class ConfigurationViewModel : BaseViewModel
                 }
             }
         }
+    }
+
+    private RelayCommand? checkCompatibility;
+    public ICommand CheckCompatibility => checkCompatibility ??= new RelayCommand(PerformCheckCompatibility);
+    private void PerformCheckCompatibility(object? commandParameter)
+    {
+        Configuration configuration = new Configuration
+        {
+            Motherboard = Motherboard,
+            Cpu = Cpu,
+            Cooler = Cooler,
+            PowerSupply = PowerSupply
+        };
+
+        //RAM
+        List<ConfigurationRam> rams = [];
+        for (int i = 0; i < Rams?.Length; i++)
+        {
+            if (Rams[i] is Ram ram)
+                rams.Add(new ConfigurationRam { Configuration = configuration, Ram = ram });
+        }
+        configuration.ConfigurationRams = rams;
+
+        //GPU
+        List<ConfigurationGpu> gpus = [];
+        for (int i = 0; i < Gpus?.Length; i++)
+        {
+            if (Gpus[i] is Gpu gpu)
+                gpus.Add(new ConfigurationGpu { Configuration = configuration, Gpu = gpu });
+        }
+        configuration.ConfigurationGpus = gpus;
+
+        //M2SSD
+        List<ConfigurationM2Ssd> m2ssds = [];
+        for (int i = 0; i < M2Ssds?.Length; i++)
+        {
+            if (M2Ssds[i].M2Ssd is M2Ssd m2ssd)
+                m2ssds.Add(new ConfigurationM2Ssd { Configuration = configuration, M2Slot = M2Ssds[i].M2Slot, M2Ssd = m2ssd });
+        }
+        configuration.ConfigurationM2Ssds = m2ssds;
+
+        //Sata
+        List<ConfigurationHdd> hdds = [];
+        List<ConfigurationSsd> ssds = [];
+        for (int i = 0; i < SsdAndHdds?.Length; i++)
+        {
+            if (SsdAndHdds[i] is Hdd hdd)
+                hdds.Add(new ConfigurationHdd { Configuration = configuration, Hdd = hdd });
+            else if (SsdAndHdds[i] is Ssd ssd)
+                ssds.Add(new ConfigurationSsd { Configuration = configuration, Ssd = ssd });
+        }
+        configuration.ConfigurationHdds = hdds;
+        configuration.ConfigurationSsds = ssds;
+
+        Errors = configuration.CheckCompatibility();
     }
 }

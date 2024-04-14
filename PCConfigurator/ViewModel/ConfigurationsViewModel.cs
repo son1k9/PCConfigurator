@@ -46,10 +46,16 @@ internal class ConfigurationsViewModel : BaseViewModel
         }
     }
 
-    public ConfigurationsViewModel()
+    public ConfigurationsViewModel(int id = 0)
     {
         dbContext.Configuration.Load();
         _viewSource.Source = dbContext.Configuration.Local.ToObservableCollection();
+        if (id != 0)
+        {
+            Configuration? configuration = dbContext.Configuration.Find(id);
+            if (configuration != null)
+                SelectedConfiguration = new ConfigurationViewModel(configuration, dbContext);
+        }
     }
 
     private RelayCommand? _selectConfiguration;
