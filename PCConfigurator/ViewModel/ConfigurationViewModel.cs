@@ -34,6 +34,8 @@ internal class ConfigurationViewModel : BaseViewModel
         }
     }
 
+    private bool _add;
+
     private void OnArrayChanged(object array)
     {
         ArrayChanged?.Invoke(this, array);
@@ -41,8 +43,11 @@ internal class ConfigurationViewModel : BaseViewModel
 
     private readonly ApplicationContext dbContext;
 
-    public ConfigurationViewModel(Configuration configuration, ApplicationContext context)
+    public ConfigurationViewModel(Configuration configuration, ApplicationContext context, bool add = false)
     {
+        _add = add;
+        if (_add)
+            Changes = true;
         _configuration = configuration;
         dbContext = context;
         name = _configuration.Name;
@@ -258,6 +263,12 @@ internal class ConfigurationViewModel : BaseViewModel
     public ICommand Save => _save ??= new RelayCommand(PerformSave, (obj) => Changes);
     private void PerformSave(object? commandParameter)
     {
+        if (Name.Length == 0)
+        {
+            MessageBox.Show("Неудалось сохранить конфигурацию, так как не было указано название.", "Ошибка");
+            return;
+        }
+
         _configuration.Name = Name;
         _configuration.Motherboard = Motherboard;
         _configuration.Cpu = Cpu;
@@ -304,9 +315,12 @@ internal class ConfigurationViewModel : BaseViewModel
         _configuration.ConfigurationHdds = hdds;
         _configuration.ConfigurationSsds = ssds;
 
-        OnSave();
-        Changes = false;
+        if (_add)
+            dbContext.Configuration.Add(_configuration);
+
         dbContext.SaveChanges();
+        Changes = false;
+        OnSave();
     }
 
     private RelayCommand? _resetMotherboard;

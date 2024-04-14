@@ -2,6 +2,7 @@
 using PCConfigurator.Commands;
 using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
+using PCConfigurator.View;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Data;
@@ -17,10 +18,8 @@ internal class ConfigurationsViewModel : BaseViewModel
 
     public ICollectionView ViewSource { get => _viewSource.View; }
 
-
-
-    private ConfigurationViewModel _selectedConfiguration;
-    public ConfigurationViewModel SelectedConfiguration
+    private ConfigurationViewModel? _selectedConfiguration;
+    public ConfigurationViewModel? SelectedConfiguration
     {
         get => _selectedConfiguration;
         set
@@ -29,9 +28,13 @@ internal class ConfigurationsViewModel : BaseViewModel
             {
                 if (_selectedConfiguration?.Changes == true)
                 {
-                    var result = MessageBox.Show("Сохранить изменения?", "Смена конфигурации", MessageBoxButton.YesNoCancel);
+                    var result = MessageBox.Show("Сохранить изменения?", "Закрытие конфигурации", MessageBoxButton.YesNoCancel);
                     if (result == MessageBoxResult.Yes)
+                    {
                         _selectedConfiguration.Save.Execute(null);
+                        if (_selectedConfiguration.Changes)
+                            return;
+                    }
                     else if (result == MessageBoxResult.Cancel)
                         return;
                 }
@@ -60,9 +63,47 @@ internal class ConfigurationsViewModel : BaseViewModel
 
     private RelayCommand? _addConfiguration;
     public ICommand AddConfiguration => _addConfiguration ??= new RelayCommand(PerformAddConfiguration);
-
     private void PerformAddConfiguration(object? commandParameter)
-    { 
+    {
+        Configuration configuration = new Configuration();
+        ConfigurationNameInputWindow window = new ConfigurationNameInputWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow,
+            DataContext = configuration
+        };
+        if (window.ShowDialog() == true)
+        {
+            SelectedConfiguration = new ConfigurationViewModel(configuration, dbContext, true);
+        }
+    }
+
+    private RelayCommand? _removeConfiguration;
+    public ICommand RemoveConfiguration => _removeConfiguration ??= new RelayCommand(PerformRemoveConfiguration);
+    private void PerformRemoveConfiguration(object? commandParameter)
+    {
+        if (commandParameter is Configuration configuration)
+        {
+            var result = MessageBox.Show($"Удалить конфигурацию {configuration.Name}?", "Предупреждение", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes) 
+            {
+                if (SelectedConfiguration?.Configuration == configuration)
+                {
+                    _selectedConfiguration = null;
+                    OnPropertyChanged(nameof(SelectedConfiguration));
+                }
+
+                dbContext.Configuration.Remove(configuration);
+                dbContext.SaveChanges();
+            }
+        }
+    }
+
+    private RelayCommand? _exportConfiguration;
+    public ICommand ExportConfiguration => _exportConfiguration ??= new RelayCommand(PerformExportConfiguration);
+    private void PerformExportConfiguration(object? commandParameter)
+    {
 
     }
 }
+

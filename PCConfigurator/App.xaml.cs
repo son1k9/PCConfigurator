@@ -546,8 +546,7 @@ public partial class App : Application
     private void Application_Startup(object sender, StartupEventArgs e)
     {
         Fill();
-        NavigationStorage navigationStorage = new NavigationStorage(new ConfigurationsViewModel());
-        MainViewModel mainViewModel = new MainViewModel(navigationStorage);
+        MainViewModel mainViewModel = new MainViewModel();
         MainWindow = new MainWindow() { DataContext = mainViewModel };
         MainWindow.Show();
     }

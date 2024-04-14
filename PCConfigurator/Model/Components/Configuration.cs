@@ -4,7 +4,7 @@ public class Configuration
 {
     public int ConfigurationId { get; set; }
 
-    public string Name { get; set; }
+    public string Name { get; set; } = "";
 
     public int? MotherboardId { get; set; }
     public virtual Motherboard? Motherboard { get; set; }

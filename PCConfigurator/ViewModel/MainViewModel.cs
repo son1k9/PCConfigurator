@@ -23,13 +23,6 @@ internal class MainViewModel : BaseViewModel
     {
         NavigationCanceled?.Invoke(this, EventArgs.Empty);
     }
-    
-
-
-    public MainViewModel(NavigationStorage navigationStorage)
-    {
-
-    }
 
     private RelayCommand? _navigateConfigurations;
     public ICommand NavigateConfigurations => _navigateConfigurations ?? new RelayCommand(PerformNavigateConfigurations);
@@ -52,9 +45,16 @@ internal class MainViewModel : BaseViewModel
         {
             if (configurationsViewModel.SelectedConfiguration?.Changes == true)
             {
-                var result = MessageBox.Show("Сохранить изменения?", "", MessageBoxButton.YesNoCancel);
+                var result = MessageBox.Show("Сохранить изменения?", "Закрытие конфигурации", MessageBoxButton.YesNoCancel);
                 if (result == MessageBoxResult.Yes)
+                {
                     configurationsViewModel.SelectedConfiguration.Save.Execute(null);
+                    if (configurationsViewModel.SelectedConfiguration.Changes)
+                    {
+                        OnNavigationCanceled();
+                        return;
+                    }
+                }
                 else if (result == MessageBoxResult.Cancel)
                 {
                     OnNavigationCanceled();

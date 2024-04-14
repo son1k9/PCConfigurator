@@ -1,0 +1,42 @@
+﻿<Window x:Class="PCConfigurator.View.ConfigurationNameInputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCConfigurator.View"
+        mc:Ignorable="d"
+        Title="Конфигурация" Height="150" Width="424" SizeToContent="Height">
+    
+    <Window.Resources>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource textBlockNewComponent}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource textBoxNewComponent}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource comboBoxNewComponent}"/>
+        <Style TargetType="Slider" BasedOn="{StaticResource sliderNewComponent}"/>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource checkBoxComponent}"/>
+        <Style TargetType="ListBox" BasedOn="{StaticResource listBoxNewComponent}"/>
+        <Style TargetType="StackPanel" BasedOn="{StaticResource inputStackPanel}"/>
+    </Window.Resources>
+
+    <StackPanel>
+        <StackPanel>
+            <TextBlock Text="Название конфигурции"/>
+            <TextBox Name="textBoxName">
+                <TextBox.Text>
+                    <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="10">
+                <Button Content="Подтвердить" VerticalAlignment="Center" Click="Button_Click" IsDefault="True" Name="buttonOk"/>
+                <Button Content="Отмена" VerticalAlignment="Center" Margin="10 0 0 0" IsCancel="True"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Right" Name="textBoxError" Visibility="Collapsed" Foreground="Red"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
