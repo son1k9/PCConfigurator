@@ -400,7 +400,7 @@ public partial class App : Application
             Tbw = 750,
             NandType = NandType.TLC,
             M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
-            M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
+            M2Size = Model.Components.M2.M2Size._2260
         };
 
         dbContext.M2Ssd.Add(m2ssd1);
@@ -545,8 +545,7 @@ public partial class App : Application
     private void Application_Startup(object sender, StartupEventArgs e)
     {
         Fill();
-        NavigationStorage navigationStorage = new NavigationStorage(new ConfigurationsViewModel());
-        MainViewModel mainViewModel = new MainViewModel(navigationStorage);
+        MainViewModel mainViewModel = new MainViewModel();
         MainWindow = new MainWindow() { DataContext = mainViewModel };
         MainWindow.Show();
     }
