@@ -96,6 +96,10 @@
                     <Setter Property="Background" Value="#F4F4F4"/>
                     <Setter Property="Foreground" Value="#474747"/>
                 </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#E0E0E0"/>
+                    <Setter Property="Foreground" Value="#878787"/>
+                </Trigger>
             </Style.Triggers>
         </Style>
 

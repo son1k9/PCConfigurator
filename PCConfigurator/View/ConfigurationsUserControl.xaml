@@ -13,9 +13,9 @@
              d:DesignWidth="1600" d:DesignHeight="850">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="0.2*" MinWidth="20"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition MinWidth="20"/>
         </Grid.ColumnDefinitions>
 
         <GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#F2F2F2"

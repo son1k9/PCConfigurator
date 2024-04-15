@@ -133,14 +133,14 @@ public class Configuration
             }
         }
 
-        powerConsumption = (int)(powerConsumption * 1.35);
-
         foreach (ConfigurationGpu gpu in ConfigurationGpus)
             powerConsumption += gpu.Gpu.PowerConsumption;
         foreach (ConfigurationHdd hdd in ConfigurationHdds)
             powerConsumption += 12;
         foreach (ConfigurationSsd ssd in ConfigurationSsds)
             powerConsumption += 3;
+
+        powerConsumption = (int)(powerConsumption * 1.35);
 
         if (PowerSupply?.Wattage < powerConsumption)
             result.Add($"Мощность блока питания ({PowerSupply.Wattage}W) меньше, чем энергопотребление конфигурации ({powerConsumption}W).");

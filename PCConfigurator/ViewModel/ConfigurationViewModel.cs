@@ -332,6 +332,7 @@ internal class ConfigurationViewModel : BaseViewModel
 
         dbContext.SaveChanges();
         Changes = false;
+        PerformCheckCompatibility(null);
         OnSave();
     }
 
