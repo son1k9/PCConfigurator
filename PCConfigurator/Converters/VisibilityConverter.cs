@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
@@ -16,7 +11,7 @@ namespace PCConfigurator.Converters
             bool show = (bool)value;
             if (show)
                 return Visibility.Visible;
-            else 
+            else
                 return Visibility.Collapsed;
         }
 

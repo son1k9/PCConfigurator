@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCConfigurator.View"
         mc:Ignorable="d"
-        Title="Конфигурация" Height="150" Width="424" SizeToContent="Height">
+        Title="Новая конфигурация" Height="150" Width="424" SizeToContent="Height">
     
     <Window.Resources>
         <Style TargetType="TextBlock" BasedOn="{StaticResource textBlockNewComponent}"/>
@@ -19,7 +19,7 @@
 
     <StackPanel>
         <StackPanel>
-            <TextBlock Text="Название конфигурции"/>
+            <TextBlock Text="Название конфигурации"/>
             <TextBox Name="textBoxName">
                 <TextBox.Text>
                     <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">

@@ -1,19 +1,9 @@
 ﻿using PCConfigurator.ViewModel;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PCConfigurator.View
 {
@@ -36,15 +26,15 @@ namespace PCConfigurator.View
         }
 
 
-        public SolidColorBrush Color 
+        public SolidColorBrush Color
         {
-            get 
+            get
             {
                 if (_viewmodel?.Errors.Length > 0)
                     return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F55762"));
                 else
                     return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#76E276"));
-            } 
+            }
         }
 
         public string ErrorsListHeader
@@ -96,7 +86,7 @@ namespace PCConfigurator.View
             {
                 _viewmodel = viewModel;
                 _viewmodel.ArrayChanged += Refresh;
-                _viewmodel.PropertyChanged += (sender, e) => 
+                _viewmodel.PropertyChanged += (sender, e) =>
                 {
                     if (e.PropertyName == "Errors")
                     {

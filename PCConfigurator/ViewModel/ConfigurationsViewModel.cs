@@ -91,7 +91,7 @@ internal class ConfigurationsViewModel : BaseViewModel
         if (commandParameter is Configuration configuration)
         {
             var result = MessageBox.Show($"Удалить конфигурацию {configuration.Name}?", "Предупреждение", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes) 
+            if (result == MessageBoxResult.Yes)
             {
                 if (SelectedConfiguration?.Configuration == configuration)
                 {

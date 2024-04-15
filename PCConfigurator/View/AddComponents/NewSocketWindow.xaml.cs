@@ -31,7 +31,7 @@ namespace PCConfigurator.View.AddComponents
                 AnnounceError("Укажите чипсет.");
                 return;
             }
-            foreach(var item in listBoxChipsets.ItemsSource)
+            foreach (var item in listBoxChipsets.ItemsSource)
             {
                 if (item is Chipset chipset)
                     if (string.IsNullOrEmpty(chipset.Name))

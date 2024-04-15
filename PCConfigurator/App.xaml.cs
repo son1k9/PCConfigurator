@@ -3,8 +3,6 @@ using PCConfigurator.Model.Components;
 using PCConfigurator.Stores;
 using PCConfigurator.ViewModel;
 using System.Collections.ObjectModel;
-using System.DirectoryServices.ActiveDirectory;
-using System.Runtime.Intrinsics.Arm;
 using System.Windows;
 
 namespace PCConfigurator;
@@ -48,7 +46,8 @@ public partial class App : Application
 
         dbContext.Cpu.Add(cpu1);
 
-        Cpu cpu2 = new Cpu() {
+        Cpu cpu2 = new Cpu()
+        {
             Model = "AMD Ryzen 5 5600x",
             Cores = 6,
             ECores = 0,
@@ -64,7 +63,7 @@ public partial class App : Application
             RamTypes = RamType.DDR4
         };
 
-    dbContext.Cpu.Add(cpu2);
+        dbContext.Cpu.Add(cpu2);
 
         dbContext.Cpu.Add(new Cpu()
         {
@@ -401,7 +400,7 @@ public partial class App : Application
             Tbw = 750,
             NandType = NandType.TLC,
             M2Interface = Model.Components.M2.M2Interface.Nvme | Model.Components.M2.M2Interface.Sata,
-            M2Size = Model.Components.M2.M2Size._2280
+            M2Size = Model.Components.M2.M2Size._2280 | Model.Components.M2.M2Size._2260
         };
 
         dbContext.M2Ssd.Add(m2ssd1);
@@ -524,17 +523,17 @@ public partial class App : Application
             Ssds = [ssd1]
         };
 
-        configuration2.ConfigurationRams = [new ConfigurationRam()
+        configuration2.ConfigurationRams.Add(new ConfigurationRam()
         {
             Configuration = configuration2,
             Ram = ram3
-        },
+        });
 
-        new ConfigurationRam()
+        configuration2.ConfigurationRams.Add(new ConfigurationRam()
         {
             Configuration = configuration2,
             Ram = ram3
-        }];
+        });
 
         dbContext.Configuration.Add(configuration1);
         dbContext.Configuration.Add(configuration2);
@@ -546,7 +545,8 @@ public partial class App : Application
     private void Application_Startup(object sender, StartupEventArgs e)
     {
         Fill();
-        MainViewModel mainViewModel = new MainViewModel();
+        NavigationStorage navigationStorage = new NavigationStorage(new ConfigurationsViewModel());
+        MainViewModel mainViewModel = new MainViewModel(navigationStorage);
         MainWindow = new MainWindow() { DataContext = mainViewModel };
         MainWindow.Show();
     }

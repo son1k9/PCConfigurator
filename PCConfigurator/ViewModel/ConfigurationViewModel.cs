@@ -22,8 +22,8 @@ internal class ConfigurationViewModel : BaseViewModel
     }
 
     private string[] errors;
-    public string[] Errors 
-    { 
+    public string[] Errors
+    {
         get => errors;
         set
         {
@@ -139,11 +139,11 @@ internal class ConfigurationViewModel : BaseViewModel
     }
 
     private Cpu? cpu;
-    public Cpu? Cpu 
-    { 
+    public Cpu? Cpu
+    {
         get => cpu;
-        set 
-        { 
+        set
+        {
             cpu = value;
             Changes = true;
             OnPropertyChanged(nameof(Cpu));
@@ -151,10 +151,10 @@ internal class ConfigurationViewModel : BaseViewModel
     }
 
     private Cooler? cooler;
-    public Cooler? Cooler 
-    { 
+    public Cooler? Cooler
+    {
         get => cooler;
-        set 
+        set
         {
             cooler = value;
             Changes = true;
@@ -163,11 +163,11 @@ internal class ConfigurationViewModel : BaseViewModel
     }
 
     private PowerSupply? powerSupply;
-    public PowerSupply? PowerSupply 
+    public PowerSupply? PowerSupply
     {
         get => powerSupply;
-        set 
-        { 
+        set
+        {
             powerSupply = value;
             Changes = true;
             OnPropertyChanged(nameof(PowerSupply));
@@ -176,7 +176,7 @@ internal class ConfigurationViewModel : BaseViewModel
 
     private Ram?[]? _rams;
     public Ram?[]? Rams
-    { 
+    {
         get => _rams;
         set
         {
@@ -289,10 +289,10 @@ internal class ConfigurationViewModel : BaseViewModel
 
         //RAM
         List<ConfigurationRam> rams = [];
-        for(int i = 0; i < Rams?.Length; i++) 
+        for (int i = 0; i < Rams?.Length; i++)
         {
             if (Rams[i] is Ram ram)
-                rams.Add(new ConfigurationRam { Configuration = _configuration, Ram = ram});
+                rams.Add(new ConfigurationRam { Configuration = _configuration, Ram = ram });
         }
         _configuration.ConfigurationRams = rams;
 
@@ -320,7 +320,7 @@ internal class ConfigurationViewModel : BaseViewModel
         for (int i = 0; i < SsdAndHdds?.Length; i++)
         {
             if (SsdAndHdds[i] is Hdd hdd)
-                hdds.Add(new ConfigurationHdd { Configuration = _configuration, Hdd = hdd});
+                hdds.Add(new ConfigurationHdd { Configuration = _configuration, Hdd = hdd });
             else if (SsdAndHdds[i] is Ssd ssd)
                 ssds.Add(new ConfigurationSsd { Configuration = _configuration, Ssd = ssd });
         }
@@ -572,7 +572,7 @@ internal class ConfigurationViewModel : BaseViewModel
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             Owner = Application.Current.MainWindow
         };
-        if (window.ShowDialog() == true) 
+        if (window.ShowDialog() == true)
         {
             if (window.Clicked == SataComponentChoiceWindow.Storage.HDD)
             {
@@ -591,7 +591,7 @@ internal class ConfigurationViewModel : BaseViewModel
                         SetSata(index, hdd);
                 }
             }
-            else 
+            else
             {
                 SsdListUserControl list = new SsdListUserControl();
                 dbContext.Ssd.Load();

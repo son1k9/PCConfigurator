@@ -1,10 +1,4 @@
-﻿using PCConfigurator.Model.Components;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -16,8 +10,6 @@ namespace PCConfigurator.Converters
         {
             ContentPresenter item = (ContentPresenter)value;
             ItemsControl view = ItemsControl.ItemsControlFromItemContainer(item);
-            if (view is null)
-                return -1;
             int itemIndex = view.ItemContainerGenerator.IndexFromContainer(item);
 
             return itemIndex;
