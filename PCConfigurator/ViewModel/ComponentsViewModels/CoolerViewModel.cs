@@ -96,8 +96,43 @@ internal class CoolerViewModel : BaseViewModel
 
             window.comboBoxSocket.ItemsSource = dbContext.Socket.Local.ToObservableCollection();
 
+            int i = 0;
+            bool[] beforeChanges = new bool[cooler.Configurations.Count];
+            foreach(var configuration in cooler.Configurations)
+            {
+                if (configuration.CheckCompatibility().Length > 0)
+                    beforeChanges[i++] = true;
+                else
+                    beforeChanges[i++] = false;
+            }
+
             if (window.ShowDialog() == true)
-                dbContext.SaveChanges();
+            {
+                bool[] afterChanges = new bool[cooler.Configurations.Count];
+                i = 0;
+                foreach (var configuration in cooler.Configurations)
+                {
+                    if (configuration.CheckCompatibility().Length > 0)
+                        afterChanges[i++] = true;
+                    else
+                        afterChanges[i++] = false;
+                }
+
+                bool error = false;
+                for(int j = 0; j < beforeChanges.Length; j++) 
+                {
+                    if (beforeChanges[j] == false && afterChanges[j] == true)
+                    {
+                        error = true;
+                        break;
+                    }
+                }
+
+                if (error)
+                    MessageBox.Show("Неудалось редактировать данные о комплектующем, так как некоторые конфигурации стали бы не совместимыми.", "Ошибка");
+                else
+                    dbContext.SaveChanges();
+            }
 
             ResetContext();
         }

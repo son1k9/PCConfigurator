@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="View\ComponentsUserControls\delete.png" />
     <None Remove="View\cooler-icon.png" />
     <None Remove="View\cpu-icon.png" />
     <None Remove="View\gpu-icon.png" />
@@ -32,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="View\ComponentsUserControls\delete.png" />
     <Resource Include="Images\cooler-icon.png" />
     <Resource Include="Images\cpu-icon.png" />
     <Resource Include="Images\gpu-icon.png" />

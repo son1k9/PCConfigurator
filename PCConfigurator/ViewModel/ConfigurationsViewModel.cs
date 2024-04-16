@@ -7,7 +7,6 @@ using PCConfigurator.View;
 using System.ComponentModel;
 using System.IO;
 using System.Windows;
-using Newtonsoft.Json.Serialization;
 using System.Windows.Data;
 using System.Windows.Input;
 using Newtonsoft.Json;
@@ -100,141 +99,148 @@ internal class ConfigurationsViewModel : BaseViewModel
                     {
                         Configuration configuration1 = new Configuration() { Name = configuration.Name, };
 
-                        Socket? socket = dbContext.Socket.FirstOrDefault(s => s.Name == configuration.Motherboard.Socket.Name);
-                        if (socket == null)
-                            socket = configuration.Motherboard.Socket;
-
-                        Chipset? chipset = dbContext.Chipset.FirstOrDefault(c => c.Name == configuration.Motherboard.Chipset.Name);
-                        if (chipset == null)
+                        try
                         {
-                            chipset = configuration.Motherboard.Chipset;
-                            chipset.Socket = socket;
-                        }
+                            Socket? socket = dbContext.Socket.FirstOrDefault(s => s.Name == configuration.Motherboard.Socket.Name);
+                            if (socket == null)
+                                socket = configuration.Motherboard.Socket;
 
-                        Cpu? cpu = dbContext.Cpu.FirstOrDefault(c => c.Model == configuration.Cpu.Model);
-                        if (cpu == null)
-                        {
-                            cpu = configuration.Cpu;
-                            cpu.Socket = socket;
-                        }
-
-                        PowerSupply? powerSupply = dbContext.PowerSupply.FirstOrDefault(p => p.Model == configuration.PowerSupply.Model);
-                        if (powerSupply == null)
-                            powerSupply = configuration.PowerSupply;
-
-                        Cooler? cooler = dbContext.Cooler.FirstOrDefault(c => c.Model == configuration.Cooler.Model);
-                        if (cooler == null)
-                        {
-                            cooler = configuration.Cooler;
-                            cooler.Sockets = [socket];
-                        }
-
-                        List<ConfigurationRam> rams = [];
-                        foreach (var ram in configuration.Rams)
-                        {
-                            Ram? ramFromDb = dbContext.Ram.FirstOrDefault(r => r.Model == ram.Model);
-                            if (ramFromDb == null)
+                            Chipset? chipset = dbContext.Chipset.FirstOrDefault(c => c.Name == configuration.Motherboard.Chipset.Name);
+                            if (chipset == null)
                             {
-                                var ram1 = rams.FirstOrDefault(r=>r.Ram.Model == ram.Model);
-                                if (ram1 == null)
-                                    ramFromDb = ram;
-                                else
-                                    ramFromDb = ram1.Ram;
-                            }
-                            rams.Add(new ConfigurationRam() { Configuration = configuration1, Ram = ramFromDb});
-                        }
-
-                        List<ConfigurationGpu> gpus = [];
-                        foreach (var gpu in configuration.Gpus)
-                        {
-                            Gpu? gpuFromDb = dbContext.Gpu.FirstOrDefault(g => g.Model == gpu.Model);
-                            if (gpuFromDb == null)
-                                gpuFromDb = gpu;
-                            gpus.Add(new ConfigurationGpu() { Configuration = configuration1, Gpu = gpuFromDb });
-                        }
-
-                        List<ConfigurationHdd> hdds = [];
-                        foreach (var hdd in configuration.Hdds)
-                        {
-                            Hdd? hddFromDb = dbContext.Hdd.FirstOrDefault(h => h.Model == hdd.Model);
-                            if (hddFromDb == null)
-                                hddFromDb = hdd;
-                            hdds.Add(new ConfigurationHdd() { Configuration = configuration1, Hdd = hddFromDb });
-                        }
-
-                        List<ConfigurationSsd> ssds = [];
-                        foreach (var ssd in configuration.Ssds)
-                        {
-                            Ssd? ssdFromDb = dbContext.Ssd.FirstOrDefault(s => s.Model == ssd.Model);
-                            if (ssdFromDb == null)
-                                ssdFromDb = ssd;
-                            ssds.Add(new ConfigurationSsd() { Configuration = configuration1, Ssd = ssdFromDb });
-                        }
-
-                        List<ConfigurationM2Ssd> m2Ssds = [];
-                        Motherboard? motherboard = dbContext.Motherboard.FirstOrDefault(m => m.Model == configuration.Motherboard.Model);
-                        if (motherboard == null)
-                        {
-                            motherboard = configuration.Motherboard;
-                            motherboard.Chipset = chipset;
-                            motherboard.Socket = socket;
-
-                            List<M2Slot> m2Slots = [];
-                            foreach (var m2Ssd in configuration.ConfigurationM2Ssds)
-                            {
-                                m2Slots.Add(m2Ssd.M2Slot);
-                                if (m2Ssd.M2Ssd is null)
-                                    continue;
-
-                                M2Ssd? m2SsdFromDb = dbContext.M2Ssd.FirstOrDefault(m => m.Model == m2Ssd.M2Ssd.Model);
-                                if (m2SsdFromDb == null)
-                                    m2SsdFromDb = m2Ssd.M2Ssd;
-
-                                m2Ssds.Add(new ConfigurationM2Ssd() { Configuration = configuration1, M2Slot = m2Ssd.M2Slot, M2Ssd = m2SsdFromDb });
+                                chipset = configuration.Motherboard.Chipset;
+                                chipset.Socket = socket;
                             }
 
-                            motherboard.M2Slots = m2Slots;
-                        }
-                        else
-                        {
-                            foreach (var m2Ssd in configuration.ConfigurationM2Ssds)
+                            Cpu? cpu = dbContext.Cpu.FirstOrDefault(c => c.Model == configuration.Cpu.Model);
+                            if (cpu == null)
                             {
-                                if (m2Ssd.M2Ssd is null)
-                                    continue;
+                                cpu = configuration.Cpu;
+                                cpu.Socket = socket;
+                            }
 
-                                M2Ssd? m2SsdFromDb = dbContext.M2Ssd.FirstOrDefault(m => m.Model == m2Ssd.M2Ssd.Model);
-                                if (m2SsdFromDb == null)
-                                    m2SsdFromDb = m2Ssd.M2Ssd;
-                                M2Slot m2Slot = motherboard.M2Slots.FirstOrDefault(m => m.M2Interface == m2Ssd.M2Slot.M2Interface && m.M2Size == m2Ssd.M2Slot.M2Size);
-                                if (m2Slot == null || m2Ssds.Any(m => m.M2Slot.M2SlotId == m2Slot.M2SlotId))
+                            PowerSupply? powerSupply = dbContext.PowerSupply.FirstOrDefault(p => p.Model == configuration.PowerSupply.Model);
+                            if (powerSupply == null)
+                                powerSupply = configuration.PowerSupply;
+
+                            Cooler? cooler = dbContext.Cooler.FirstOrDefault(c => c.Model == configuration.Cooler.Model);
+                            if (cooler == null)
+                            {
+                                cooler = configuration.Cooler;
+                                cooler.Sockets = [socket];
+                            }
+
+                            List<ConfigurationRam> rams = [];
+                            foreach (var ram in configuration.Rams)
+                            {
+                                Ram? ramFromDb = dbContext.Ram.FirstOrDefault(r => r.Model == ram.Model);
+                                if (ramFromDb == null)
                                 {
-                                    break;
+                                    var ram1 = rams.FirstOrDefault(r => r.Ram.Model == ram.Model);
+                                    if (ram1 == null)
+                                        ramFromDb = ram;
+                                    else
+                                        ramFromDb = ram1.Ram;
                                 }
-                                m2Ssds.Add(new ConfigurationM2Ssd() { Configuration = configuration1, M2Slot = m2Slot, M2Ssd = m2SsdFromDb });
+                                rams.Add(new ConfigurationRam() { Configuration = configuration1, Ram = ramFromDb });
                             }
+
+                            List<ConfigurationGpu> gpus = [];
+                            foreach (var gpu in configuration.Gpus)
+                            {
+                                Gpu? gpuFromDb = dbContext.Gpu.FirstOrDefault(g => g.Model == gpu.Model);
+                                if (gpuFromDb == null)
+                                    gpuFromDb = gpu;
+                                gpus.Add(new ConfigurationGpu() { Configuration = configuration1, Gpu = gpuFromDb });
+                            }
+
+                            List<ConfigurationHdd> hdds = [];
+                            foreach (var hdd in configuration.Hdds)
+                            {
+                                Hdd? hddFromDb = dbContext.Hdd.FirstOrDefault(h => h.Model == hdd.Model);
+                                if (hddFromDb == null)
+                                    hddFromDb = hdd;
+                                hdds.Add(new ConfigurationHdd() { Configuration = configuration1, Hdd = hddFromDb });
+                            }
+
+                            List<ConfigurationSsd> ssds = [];
+                            foreach (var ssd in configuration.Ssds)
+                            {
+                                Ssd? ssdFromDb = dbContext.Ssd.FirstOrDefault(s => s.Model == ssd.Model);
+                                if (ssdFromDb == null)
+                                    ssdFromDb = ssd;
+                                ssds.Add(new ConfigurationSsd() { Configuration = configuration1, Ssd = ssdFromDb });
+                            }
+
+                            List<ConfigurationM2Ssd> m2Ssds = [];
+                            Motherboard? motherboard = dbContext.Motherboard.FirstOrDefault(m => m.Model == configuration.Motherboard.Model);
+                            if (motherboard == null)
+                            {
+                                motherboard = configuration.Motherboard;
+                                motherboard.Chipset = chipset;
+                                motherboard.Socket = socket;
+
+                                List<M2Slot> m2Slots = [];
+                                foreach (var m2Ssd in configuration.ConfigurationM2Ssds)
+                                {
+                                    m2Slots.Add(m2Ssd.M2Slot);
+                                    if (m2Ssd.M2Ssd is null)
+                                        continue;
+
+                                    M2Ssd? m2SsdFromDb = dbContext.M2Ssd.FirstOrDefault(m => m.Model == m2Ssd.M2Ssd.Model);
+                                    if (m2SsdFromDb == null)
+                                        m2SsdFromDb = m2Ssd.M2Ssd;
+
+                                    m2Ssds.Add(new ConfigurationM2Ssd() { Configuration = configuration1, M2Slot = m2Ssd.M2Slot, M2Ssd = m2SsdFromDb });
+                                }
+
+                                motherboard.M2Slots = m2Slots;
+                            }
+                            else
+                            {
+                                foreach (var m2Ssd in configuration.ConfigurationM2Ssds)
+                                {
+                                    if (m2Ssd.M2Ssd is null)
+                                        continue;
+
+                                    M2Ssd? m2SsdFromDb = dbContext.M2Ssd.FirstOrDefault(m => m.Model == m2Ssd.M2Ssd.Model);
+                                    if (m2SsdFromDb == null)
+                                        m2SsdFromDb = m2Ssd.M2Ssd;
+                                    M2Slot m2Slot = motherboard.M2Slots.FirstOrDefault(m => m.M2Interface == m2Ssd.M2Slot.M2Interface && m.M2Size == m2Ssd.M2Slot.M2Size);
+                                    if (m2Slot == null || m2Ssds.Any(m => m.M2Slot.M2SlotId == m2Slot.M2SlotId))
+                                    {
+                                        break;
+                                    }
+                                    m2Ssds.Add(new ConfigurationM2Ssd() { Configuration = configuration1, M2Slot = m2Slot, M2Ssd = m2SsdFromDb });
+                                }
+                            }
+
+                            configuration1.Cpu = cpu;
+                            configuration1.Cooler = cooler;
+                            configuration1.Motherboard = motherboard;
+                            configuration1.PowerSupply = powerSupply;
+                            configuration1.ConfigurationRams = rams;
+                            configuration1.ConfigurationGpus = gpus;
+                            configuration1.ConfigurationSsds = ssds;
+                            configuration1.ConfigurationHdds = hdds;
+                            configuration1.ConfigurationM2Ssds = m2Ssds;
+
+
+                            var errors = configuration1.CheckCompatibility();
+                            if (errors.Length > 0)
+                            {
+                                MessageBox.Show("Нельзя импортировать несовместимую сборку.", "Ошибка");
+                                return;
+                            }
+
+                            SelectedConfiguration = new ConfigurationViewModel(configuration1, dbContext, true);
+
+                            dbContext.SaveChanges();
                         }
-
-                        configuration1.Cpu = cpu;
-                        configuration1.Cooler = cooler;
-                        configuration1.Motherboard = motherboard;
-                        configuration1.PowerSupply = powerSupply;
-                        configuration1.ConfigurationRams = rams;
-                        configuration1.ConfigurationGpus = gpus;
-                        configuration1.ConfigurationSsds = ssds;
-                        configuration1.ConfigurationHdds = hdds;
-                        configuration1.ConfigurationM2Ssds = m2Ssds;
-
-
-                        var errors = configuration1.CheckCompatibility();
-                        if ( errors.Length > 0)
+                        catch
                         {
-                            MessageBox.Show("Нельзя импортировать несовместимую сборку.", "Ошибка");
-                            return;
+                            MessageBox.Show("Ошибка при импорте сборки.", "Ошибка");
                         }
-
-                        SelectedConfiguration = new ConfigurationViewModel(configuration1, dbContext, true);
-
-                        dbContext.SaveChanges();
                     }
                     else
                     {

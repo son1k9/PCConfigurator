@@ -91,7 +91,7 @@
 
                 <Slider Value="{Binding CoreClock}" Grid.Column="0" Name="sliderCoreClock" Minimum="1.0" Maximum="6.0" 
                         TickFrequency="0.1" ValueChanged="sliderCoreClock_ValueChanged"/>
-                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding CoreClock}"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding CoreClock, StringFormat={}{0:f1}}"/>
             </Grid>
         </StackPanel>
 
@@ -105,7 +105,7 @@
 
                 <Slider Value="{Binding BoostClock}" Grid.Column="0" Name="sliderBoostClock" 
                         Minimum="{Binding ElementName=sliderCoreClock, Path=Value}" Maximum="6.0" TickFrequency="0.1"/>
-                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding BoostClock}"/>
+                <TextBlock Grid.Column="1" Width="40" TextAlignment="Center" Text="{Binding BoostClock, StringFormat={}{0:f1}}"/>
             </Grid>
         </StackPanel>
 

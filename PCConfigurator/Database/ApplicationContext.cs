@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace PCConfigurator.Model;
 
-internal class ApplicationContext : DbContext
+public class ApplicationContext : DbContext
 {
     private readonly string _dbPath;
 
