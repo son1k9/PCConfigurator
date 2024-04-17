@@ -1,0 +1,77 @@
+@startuml Class diagram
+
+enum NandType
+
+enum RamType
+
+enum M2Size
+
+enum M2Interface
+
+Motherboard --> RamType
+Motherboard "*" -- "1" Socket
+Motherboard "*" -- "1" Chipset
+Motherboard "1" -- "*" M2Slot
+Motherboard "1" -- "*" Configuration
+class Motherboard
+
+M2Slot --> M2Interface
+M2Slot --> M2Size
+M2Slot "1" -- "*" ConfigurationM2Ssd
+class M2Slot
+
+Socket "1" -- "*" Chipset
+class Socket
+
+class Chipset
+
+Cpu --> RamType
+Cpu "*" -- "1" Socket
+Cpu "1" -- "*" Configuration
+class Cpu
+
+Cooler "*" -- "*" Socket
+Cooler "1" -- "*" Configuration
+class Cooler
+
+Ram --> RamType
+Ram "1" -- "*" ConfigurationRam
+class Ram
+
+Gpu "1" -- "*" ConfigurationGpu
+class Gpu
+
+Ssd "1" -- "*" ConfigurationSsd
+Ssd --> NandType
+class Ssd
+
+Hdd "1" -- "*" ConfigurationHdd
+class Hdd
+
+M2Ssd "1" -- "*" ConfigurationM2Ssd
+M2Ssd --> NandType
+M2Ssd --> M2Interface
+M2Ssd --> M2Size
+class M2Ssd
+
+PowerSupply "1" -- "*" Configuration
+class PowerSupply
+
+Configuration "1" -- "*" ConfigurationRam
+Configuration "1" -- "*" ConfigurationGpu
+Configuration "1" -- "*" ConfigurationSsd
+Configuration "1" -- "*" ConfigurationHdd
+Configuration "1" -- "*" ConfigurationM2Ssd
+class Configuration
+
+class ConfigurationRam
+
+class ConfigurationGpu
+
+class ConfigurationSsd
+
+class ConfigurationHdd
+
+class ConfigurationM2Ssd
+
+@enduml

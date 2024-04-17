@@ -6,8 +6,6 @@ public class Cpu : Component
 {
     public int CpuId { get; set; }
 
-    public override string Model { get; set; }
-
     public int SocketId { get; set; }
     public virtual Socket Socket { get; set; }
 
@@ -21,9 +19,9 @@ public class Cpu : Component
 
     public float BoostClock { get; set; } = 1.0f;
 
-    public float L2Cache { get; set; } = 2;
-
-    public float L3Cache { get; set; } = 2;
+    public int L2Cache { get; set; } = 2;
+           
+    public int L3Cache { get; set; } = 2;
 
     public int Tdp { get; set; } = 35;
 
@@ -35,30 +33,6 @@ public class Cpu : Component
     public bool HaveGraphics { get; set; }
 
     public virtual List<Configuration> Configurations { get; set; } = [];
-
-
-    public Cpu Clone()
-    {
-        return new Cpu()
-        {
-            CpuId = CpuId,
-            Model = Model,
-            Socket = Socket,
-            Cores = Cores,
-            ECores = ECores,
-            Smt = Smt,
-            CoreClock = CoreClock,
-            BoostClock = BoostClock,
-            L2Cache = L2Cache,
-            L3Cache = L3Cache,
-            Tdp = Tdp,
-            RamTypes = RamTypes,
-            MaxRamCapacity = MaxRamCapacity,
-            HaveGraphics = HaveGraphics,
-            SocketId = SocketId,
-            Configurations = Configurations
-        };
-    }
 
     [NotMapped]
     public bool IsDDR3

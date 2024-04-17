@@ -2,7 +2,7 @@
 
 namespace PCConfigurator.ViewModel;
 
-internal class BaseViewModel : INotifyPropertyChanged
+internal abstract class BaseViewModel : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
 

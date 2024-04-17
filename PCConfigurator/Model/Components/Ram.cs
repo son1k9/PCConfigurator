@@ -1,10 +1,8 @@
 ﻿namespace PCConfigurator.Model.Components;
 
-public class Ram
+public class Ram : Component
 {
     public int RamID { get; set; }
-
-    public string Model { get; set; }
 
     public RamType RamType { get; set; }
 
@@ -16,19 +14,4 @@ public class Ram
 
     public virtual List<Configuration> Configurations { get; set; } = [];
     public virtual List<ConfigurationRam> ConfigurationRams { get; set; } = [];
-
-
-
-    public Ram Clone()
-    {
-        return new Ram()
-        {
-            RamID = RamID,
-            Model = Model,
-            RamType = RamType,
-            Capacity = Capacity,
-            Clock = Clock,
-            Cl = Cl
-        };
-    }
 }

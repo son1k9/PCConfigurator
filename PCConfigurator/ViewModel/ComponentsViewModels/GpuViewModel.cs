@@ -10,21 +10,15 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class GpuViewModel : BaseViewModel
+internal class GpuViewModel : ComponentViewModel
 {
-    private ApplicationContext dbContext = new ApplicationContext();
-
-    private readonly CollectionViewSource _viewSource = new CollectionViewSource();
-
-    public ICollectionView ViewSource { get => _viewSource.View; }
-
     public GpuViewModel()
     {
         dbContext.Gpu.Load();
         _viewSource.Source = dbContext.Gpu.Local.ToObservableCollection();
     }
 
-    private void ResetContext()
+    protected override void ResetContext()
     {
         dbContext.Dispose();
         dbContext = new ApplicationContext();
@@ -33,9 +27,7 @@ internal class GpuViewModel : BaseViewModel
         OnPropertyChanged(nameof(ViewSource));
     }
 
-    private RelayCommand _add;
-    public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private void PerformAdd(object? commandParameter)
+    protected override void PerformAdd(object? commandParameter)
     {
         Gpu gpu = new Gpu();
 
@@ -53,9 +45,7 @@ internal class GpuViewModel : BaseViewModel
         }
     }
 
-    private RelayCommand _remove;
-    public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private void PerformRemove(object? commandParameter)
+    protected override void PerformRemove(object? commandParameter)
     {
         if (commandParameter is Gpu gpu)
         {
@@ -73,9 +63,7 @@ internal class GpuViewModel : BaseViewModel
         }
     }
 
-    private RelayCommand _edit;
-    public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private void PerformEdit(object? commandParameter)
+    protected override void PerformEdit(object? commandParameter)
     {
         if (commandParameter is Gpu gpu)
         {

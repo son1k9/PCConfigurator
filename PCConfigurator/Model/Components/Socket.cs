@@ -21,23 +21,4 @@ public class Socket()
     {
         return Name;
     }
-
-    public Socket Clone()
-    {
-        ObservableCollection<Chipset> collection = [];
-        foreach (Chipset chipset in Chipsets)
-        {
-            collection.Add(chipset);
-        }
-
-        return new Socket()
-        {
-            SocketId = SocketId,
-            Name = Name,
-            Coolers = Coolers,
-            Cpus = Cpus,
-            Motherboards = Motherboards,
-            Chipsets = collection
-        };
-    }
 }

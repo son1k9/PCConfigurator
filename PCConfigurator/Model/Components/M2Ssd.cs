@@ -3,11 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PCConfigurator.Model.Components;
 
-public class M2Ssd
+public class M2Ssd : Component
 {
     public int M2SsdId { get; set; }
-
-    public string Model { get; set; }
 
     public int Capacity { get; set; } = 60;
 
@@ -26,23 +24,6 @@ public class M2Ssd
     public M2Size M2Size { get => _m2Size; set => _m2Size = value; }
 
     public virtual List<ConfigurationM2Ssd> ConfigurationM2Ssds { get; set; } = [];
-
-
-    public M2Ssd Clone()
-    {
-        return new M2Ssd()
-        {
-            M2SsdId = M2SsdId,
-            Model = Model,
-            Capacity = Capacity,
-            ReadSpeed = ReadSpeed,
-            WriteSpeed = WriteSpeed,
-            Tbw = Tbw,
-            NandType = NandType,
-            M2Interface = M2Interface,
-            M2Size = M2Size
-        };
-    }
 
 
     [NotMapped]

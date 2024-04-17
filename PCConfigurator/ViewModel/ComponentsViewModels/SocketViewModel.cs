@@ -11,21 +11,15 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class SocketViewModel : BaseViewModel
+internal class SocketViewModel : ComponentViewModel
 {
-    private ApplicationContext dbContext = new ApplicationContext();
-
-    private readonly CollectionViewSource _viewSource = new CollectionViewSource();
-
-    public ICollectionView ViewSource { get => _viewSource.View; }
-
     public SocketViewModel()
     {
         dbContext.Socket.Load();
         _viewSource.Source = dbContext.Socket.Local.ToObservableCollection();
     }
 
-    private void ResetContext()
+    protected override void ResetContext()
     {
         dbContext.Dispose();
         dbContext = new ApplicationContext();
@@ -34,9 +28,7 @@ internal class SocketViewModel : BaseViewModel
         OnPropertyChanged(nameof(ViewSource));
     }
 
-    private RelayCommand _add;
-    public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private void PerformAdd(object? commandParameter)
+    protected override void PerformAdd(object? commandParameter)
     {
         Socket socket = new Socket();
         NewSocketViewModel viewModel = new NewSocketViewModel(socket);
@@ -55,9 +47,7 @@ internal class SocketViewModel : BaseViewModel
         }
     }
 
-    private RelayCommand _remove;
-    public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private void PerformRemove(object? commandParameter)
+    protected override void PerformRemove(object? commandParameter)
     {
         if (commandParameter is Socket socket)
         {
@@ -76,9 +66,7 @@ internal class SocketViewModel : BaseViewModel
         }
     }
 
-    private RelayCommand _edit;
-    public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private void PerformEdit(object? commandParameter)
+    protected override void PerformEdit(object? commandParameter)
     {
         if (commandParameter is Socket socket)
         {

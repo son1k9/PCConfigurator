@@ -1,0 +1,12 @@
+@startuml Class diagram ViewModel
+
+interface INotifyPropertyChanged
+
+BaseViewModel ..|> INotifyPropertyChanged
+abstract class BaseViewModel{
+    + PropertyChanged : PropertyChangedEventHandler?
+
+    # OnPropertyChanged(propertyName:string)
+}
+
+@enduml

@@ -2,6 +2,6 @@
 {
     public abstract class Component
     {
-        public abstract string Model { get; set; }
+        public string Model { get; set; }
     }
 }

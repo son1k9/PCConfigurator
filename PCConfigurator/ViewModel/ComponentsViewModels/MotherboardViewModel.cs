@@ -11,21 +11,15 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class MotherboardViewModel : BaseViewModel
+internal class MotherboardViewModel : ComponentViewModel
 {
-    private ApplicationContext dbContext = new ApplicationContext();
-
-    private readonly CollectionViewSource _viewSource = new CollectionViewSource();
-
-    public ICollectionView ViewSource { get => _viewSource.View; }
-
     public MotherboardViewModel()
     {
         dbContext.Motherboard.Load();
         _viewSource.Source = dbContext.Motherboard.Local.ToObservableCollection();
     }
 
-    private void ResetContext()
+    protected override void ResetContext()
     {
         dbContext.Dispose();
         dbContext = new ApplicationContext();
@@ -34,9 +28,7 @@ internal class MotherboardViewModel : BaseViewModel
         OnPropertyChanged(nameof(ViewSource));
     }
 
-    private RelayCommand _add;
-    public ICommand Add => _add ??= new RelayCommand(PerformAdd);
-    private void PerformAdd(object? commandParameter)
+    protected override void PerformAdd(object? commandParameter)
     {
         Motherboard motherboard = new Motherboard();
         NewMotherboardViewmodel motherboardViewmodel = new(motherboard);
@@ -60,9 +52,7 @@ internal class MotherboardViewModel : BaseViewModel
         }
     }
 
-    private RelayCommand _remove;
-    public ICommand Remove => _remove ??= new RelayCommand(PerformRemove);
-    private void PerformRemove(object? commandParameter)
+    protected override void PerformRemove(object? commandParameter)
     {
         if (commandParameter is Motherboard motherboard)
         {
@@ -80,9 +70,7 @@ internal class MotherboardViewModel : BaseViewModel
         }
     }
 
-    private RelayCommand _edit;
-    public ICommand Edit => _edit ??= new RelayCommand(PerformEdit);
-    private void PerformEdit(object? commandParameter)
+    protected override void PerformEdit(object? commandParameter)
     {
         if (commandParameter is Motherboard motherboard)
         {

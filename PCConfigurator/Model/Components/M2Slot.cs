@@ -31,19 +31,6 @@ public class M2Slot
         return result;
     }
 
-    public M2Slot Clone()
-    {
-        M2Slot m2Slot = new M2Slot()
-        {
-            M2SlotId = M2SlotId,
-            M2Interface = M2Interface,
-            M2Size = M2Size,
-            Motherboard = Motherboard,
-            ConfigurationM2Ssds = ConfigurationM2Ssds
-        };
-        return m2Slot;
-    }
-
     [NotMapped]
     public bool IsNvme
     {

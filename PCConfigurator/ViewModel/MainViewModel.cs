@@ -26,7 +26,7 @@ internal class MainViewModel : BaseViewModel
     }
 
     private RelayCommand? _navigateConfigurations;
-    public ICommand NavigateConfigurations => _navigateConfigurations ?? new RelayCommand(PerformNavigateConfigurations);
+    public ICommand NavigateConfigurations => _navigateConfigurations ??= new RelayCommand(PerformNavigateConfigurations);
     private void PerformNavigateConfigurations(object? commandParameter)
     {
         if (CurrentViewModel is ConfigurationsViewModel)
@@ -36,12 +36,9 @@ internal class MainViewModel : BaseViewModel
     }
 
     private RelayCommand? _navigateComponents;
-    public ICommand NavigateComponents => _navigateComponents ?? new RelayCommand(PerformNavigateComponents);
+    public ICommand NavigateComponents => _navigateComponents ??= new RelayCommand(PerformNavigateComponents);
     private void PerformNavigateComponents(object? commandParameter)
     {
-        if (CurrentViewModel is ComponentsViewModel)
-            return;
-
         if (CurrentViewModel is ConfigurationsViewModel configurationsViewModel)
         {
             if (configurationsViewModel.SelectedConfiguration != null)
@@ -67,11 +64,9 @@ internal class MainViewModel : BaseViewModel
                 lastConfigurationid = configurationsViewModel.SelectedConfiguration.Configuration.ConfigurationId;
             }
             else
-            {
                 lastConfigurationid = 0;
-            }
-        }
 
-        CurrentViewModel = new ComponentsViewModel();
+            CurrentViewModel = new ComponentsViewModel();
+        }
     }
 }
