@@ -25,7 +25,7 @@ namespace PCConfigurator.Helper
 
             Socket socket = new Socket()
             {
-                Name = configuration.Motherboard!.Socket.Name,
+                Name = configuration.Motherboard!.Chipset.Socket.Name,
             };
 
             Cpu cpu = new Cpu()
@@ -47,13 +47,13 @@ namespace PCConfigurator.Helper
 
             Chipset chipset = new Chipset()
             {
-                Name = configuration.Motherboard.Chipset.Name
+                Name = configuration.Motherboard.Chipset.Name,
+                Socket = socket
             };
 
             Motherboard motherboard = new Motherboard()
             {
                 Model = configuration.Motherboard.Model,
-                Socket = socket,
                 Chipset = chipset,
                 RamType = configuration.Motherboard.RamType,
                 RamSlots = configuration.Motherboard.RamSlots,
@@ -181,9 +181,9 @@ namespace PCConfigurator.Helper
         private static Configuration? ConstructConfigurationFromImport(Configuration configuration, ApplicationContext dbContext)
         {
             Configuration configuration1 = new Configuration() { Name = configuration.Name, };
-            Socket? socket = dbContext.Socket.FirstOrDefault(s => s.Name == configuration.Motherboard.Socket.Name);
+            Socket? socket = dbContext.Socket.FirstOrDefault(s => s.Name == configuration.Motherboard.Chipset.Socket.Name);
             if (socket == null)
-                socket = configuration.Motherboard.Socket;
+                socket = configuration.Motherboard.Chipset.Socket;
 
             Chipset? chipset = dbContext.Chipset.FirstOrDefault(c => c.Name == configuration.Motherboard.Chipset.Name);
             if (chipset == null)
@@ -258,7 +258,6 @@ namespace PCConfigurator.Helper
             {
                 motherboard = configuration.Motherboard;
                 motherboard.Chipset = chipset;
-                motherboard.Socket = socket;
 
                 List<M2Slot> m2Slots = [];
                 foreach (var m2Ssd in configuration.ConfigurationM2Ssds)

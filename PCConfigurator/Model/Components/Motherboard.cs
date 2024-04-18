@@ -6,9 +6,6 @@ public class Motherboard : Component
 {
     public int MotherboardId { get; set; }
 
-    public int SocketId { get; set; }
-    public virtual Socket Socket { get; set; }
-
     public int ChipsetId { get; set; }
     public virtual Chipset Chipset { get; set; }
 

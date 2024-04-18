@@ -110,7 +110,7 @@ public class Configuration
             {
                 powerConsumption += Cpu.Tdp;
 
-                if (Motherboard.Socket != Cpu.Socket)
+                if (Motherboard.Chipset.Socket != Cpu.Socket)
                     result.Add("Сокет процессора отличается от сокета материнской платы.");
 
                 if (!Cpu.RamTypes.HasFlag(Motherboard.RamType))
@@ -126,7 +126,7 @@ public class Configuration
 
             if (Cooler is not null)
             {
-                if (!(Cooler?.Sockets.Any(socket => socket == Motherboard?.Socket) == true))
+                if (!(Cooler?.Sockets.Any(socket => socket == Motherboard?.Chipset.Socket) == true))
                     result.Add("Сокет кулера отличается от сокета материнской платы.");
 
                 powerConsumption += 5;

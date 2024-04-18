@@ -51,12 +51,8 @@
         <StackPanel>
             <TextBlock Text="Сокет"/>
             <Border BorderBrush="#DBDBDB" BorderThickness="1">
-                <ComboBox Name="comboBoxSocket">
-                    <ComboBox.SelectedItem>
-                        <Binding Path="Motherboard.Socket">
-                        </Binding>
-                    </ComboBox.SelectedItem>
-                </ComboBox>
+                <ComboBox Name="comboBoxSocket" SelectedItem="{Binding Motherboard.Chipset.Socket, Mode=OneWay}"
+                          IsSynchronizedWithCurrentItem="True"/>
             </Border>
         </StackPanel>
 
@@ -64,7 +60,8 @@
             <TextBlock Text="Чипсет"/>
             <Border BorderBrush="#DBDBDB" BorderThickness="1">
                 <ComboBox SelectedItem="{Binding Motherboard.Chipset}" Name="comboBoxChipset" 
-                      ItemsSource="{Binding ElementName=comboBoxSocket, Path=SelectedItem.Chipsets}" BorderThickness="0">
+                      ItemsSource="{Binding ElementName=comboBoxSocket, Path=SelectedItem.Chipsets}" BorderThickness="0"
+                      IsSynchronizedWithCurrentItem="True">
                 </ComboBox>
             </Border>
         </StackPanel>

@@ -15,7 +15,7 @@
         <DataGrid Style="{StaticResource componentsList}" Name="dataGrid">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Model}" Header="Модель" SortDirection="Ascending" Width="Auto"/>
-                <DataGridTextColumn Binding="{Binding Socket.Name}" Header="Сокет"/>
+                <DataGridTextColumn Binding="{Binding Chipset.Socket.Name}" Header="Сокет"/>
                 <DataGridTextColumn Binding="{Binding Chipset.Name}" Header="Чипсет"/>
                 <DataGridTextColumn Binding="{Binding RamType}" Header="Тип памяти"/>
                 <DataGridTextColumn Binding="{Binding RamSlots}" Header="Количество слотов памяти"/>
