@@ -1,0 +1,238 @@
+@startuml Class diagram
+
+remove Component
+
+abstract class Component{
+    + Model : string
+}
+
+enum NandType
+{
+    SLC,
+    MLC,
+    TLC,
+    QLC
+}
+
+enum RamType{
+    DDR3
+    DDR4
+    DDR5
+}
+
+enum M2Size
+{
+    2230
+    2242
+    2260
+    2280
+    22110
+}
+
+enum M2Interface
+{
+    Nvme
+    Sata
+}
+
+Motherboard --> RamType
+Motherboard --|> Component
+Motherboard "*" -- "1" Socket
+Motherboard "*" -- "1" Chipset
+Motherboard "1" -- "*" M2Slot
+Motherboard "1" -- "*" Configuration
+class Motherboard{
+    + MotherboardId : int
+    + Socket : Socket
+    + Chipset : Chipset
+    + RamType : RamType
+    + RamSlots : int
+    + MaxRamCapacity : int
+    + M2Slots : M2Slot[]
+    + Sata3Ports : int
+    + PCIex16Slots : int
+    + Configurations : Configuration[]
+}
+
+
+M2Slot --> M2Interface
+M2Slot --> M2Size
+M2Slot "1" -- "*" ConfigurationM2Ssd
+class M2Slot{
+    + M2SlotId : int
+    + M2Interface : M2Interface
+    + M2Size : M2Size
+    + Motherboard : Motherboard
+    + ConfigurationM2Ssds : ConfigurationM2Ssd[]
+}
+
+Socket "1" -- "*" Chipset
+class Socket{
+    + SocketId : int
+    + Name : string
+    + Chipsets : Chipset[]
+    + Coolers : Cooler[]
+    + Cpus : Cpu[]
+    + Motherboards : Motherboard[]
+}
+
+class Chipset{
+    + ChipsetId : int
+    + Name : string
+    + Socket : Socket
+    + Motherboards : Motherboard[]
+}
+
+Cpu --|> Component
+Cpu --> RamType
+Cpu "*" -- "1" Socket
+Cpu "1" -- "*" Configuration
+class Cpu{
+    + CpuId : int
+    + Socket : Socket
+    + Cores : int
+    + ECores : int
+    + Smt : bool
+    + CoreClock : float
+    + BoostClock : float
+    + L2Cache : int
+    + L3Cache : int
+    + Tdp : int
+    + RamType : RamType
+    + MaxRamCapacity : int
+    + HaveGraphics : bool
+    + Configurations : Configuration[]
+}
+
+Cooler --|> Component
+Cooler "*" -- "*" Socket
+Cooler "1" -- "*" Configuration
+class Cooler{
+    + CoolerId : int
+    + Tdp : int
+    + Sockets : Socket[]
+    + Configurations : Configuration[]
+}
+
+Ram --|> Component
+Ram --> RamType
+Ram "1" -- "*" ConfigurationRam
+class Ram{
+    + RamId : int
+    + RamType : RamType
+    + Capacity : int
+    + Clock : int
+    + Cl : int
+    + ConfigurationRams : ConfigurationRam[]
+}
+
+Gpu --|> Component
+Gpu "1" -- "*" ConfigurationGpu
+class Gpu{
+    + GpuId : int
+    + CoreClock : int
+    + BoostClock : int
+    + VramCapacity : int
+    + PowerConsumption : int
+    + ConfigurationGpus : ConfigurationGpu[]
+}
+
+Ssd --|> Component
+Ssd "1" -- "*" ConfigurationSsd
+Ssd --> NandType
+class Ssd{
+    + SsdId : int
+    + Capacity : int
+    + ReadSpee : int
+    + WriteSpeed : int
+    + Tbw : int
+    + NandType : NandType
+    + ConfigurationSsds : ConfigurationSsds[]
+}
+
+Hdd --|> Component
+Hdd "1" -- "*" ConfigurationHdd
+class Hdd{
+    + HddId : int
+    + Capacity : int
+    + SpindleSpeed : int
+    + ConfigurationHdds : ConfigurationHdd[]
+}
+
+M2Ssd --|> Component
+M2Ssd "1" -- "*" ConfigurationM2Ssd
+M2Ssd --> NandType
+M2Ssd --> M2Interface
+M2Ssd --> M2Size
+class M2Ssd{
+    + M2SsdId : int
+    + Capacity : int
+    + ReadSpeed : int
+    + WriteSpeed : int
+    + Tbw : int
+    + NandType : NandType
+    + M2Interface : M2Interface
+    + M2Size : M2Size
+    + ConfigurationM2Ssds : ConfigurationM2Ssd[]
+}
+
+PowerSupply "1" -- "*" Configuration
+class PowerSupply{
+    + PowerSupplyId : int
+    + Wattage : int
+    + Configurations : Configuration[]
+}
+
+Configuration "1" -- "*" ConfigurationRam
+Configuration "1" -- "*" ConfigurationGpu
+Configuration "1" -- "*" ConfigurationSsd
+Configuration "1" -- "*" ConfigurationHdd
+Configuration "1" -- "*" ConfigurationM2Ssd
+class Configuration{
+    + ConfigurationId : int
+    + Name : string
+    + Motherboard : Motherboard?
+    + Cpu : Cpu?
+    + Cooler : Cooler?
+    + PowerSupply : PowerSupply?
+    + ConfigurationRams : ConfigurationRam
+    + ConfigurationGpus : ConfigurationGpu
+    + ConfigurationSsds : ConfigurationSsd
+    + ConfigurationHdds : ConfigurationHdd
+    + ConfigurationM2Ssds : ConfigurationM2Ssd
+
+    + CheckCompatibility() : string[]
+}
+
+class ConfigurationRam{
+    + ConfigurationRamId : int
+    + Configuration : Configuration
+    + Ram : Ram
+}
+
+class ConfigurationGpu{
+    + ConfigurationGpuId : int
+    + Configuration : Configuration
+    + Gpu : Gpu
+}
+
+class ConfigurationSsd{
+    + ConfigurationSsdId : int
+    + Configuration : Configuration
+    + Ssd : Ssd
+}
+
+class ConfigurationHdd{
+    + ConfigurationHddId : int
+    + Configuration : Configuration
+    + Hdd : Hdd
+}
+
+class ConfigurationM2Ssd{
+    + ConfigurationM2SsdId : int
+    + Configuration : Configuration
+    + M2Slot : M2Slot
+    + M2Ssd : M2Ssd
+}
+
+@enduml

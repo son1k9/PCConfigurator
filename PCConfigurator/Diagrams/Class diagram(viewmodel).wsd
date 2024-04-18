@@ -88,10 +88,23 @@ class ConfigurationViewModel{
     - OnArrayChange(array:object)
     + ConfigurationViewModel(configuration:Configuration, 
     context:ApplicationContext, add : bool)
+    + Save()
+    + CreateConfiguration(configuration:Configuration)
     + GetConfiguration() : Configuration
-    
-
+    + CheckCompatibility()
+    + ChangeMotherboard()
+    + ChangeCpu()
+    + ChangeColor()
+    + ChangePowerSupply()
+    + ChangeRam(commandParameter:object)
+    + ChangeGpu(commandParameter:object)
+    + ChangeSata(commandParameter:object)
+    + ChangeSsd(commandParameter:object)
+    + ChangeHdd(commandParameter:object)
+    + ChangeM2Ssd(commandParameter:object)
+    + AfterMotherboardChange()
 }
+
 
 class M2SlotWithSsd{
     + M2Slot : M2Slot
