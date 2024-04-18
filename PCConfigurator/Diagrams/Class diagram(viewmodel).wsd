@@ -34,14 +34,12 @@ class MotherboardViewModel{
 MainViewModel --|> BaseViewModel
 MainViewModel *-- BaseViewModel
 class MainViewModel{
-    - _currentViewModel : BaseViewModel
+    + CurrentViewModel : BaseViewModel
 
     + <<event>> NavigationCanceled : EventHandler
 
     - OnNavigationCancel()
 
-    + GetCurrentViewModel() : BaseViewModel
-    + SetCurrentViewModel(value:BaseViewModel)
     + NavigateConfigurations()
     + NavigateComponents()
 
@@ -51,11 +49,11 @@ ConfigurationsViewModel --|> BaseViewModel
 class ConfigurationsViewModel{
     - dbContext : ApplicationContext
     - _viewSource : CollectionViewSource
-    - _selectedConfiguration : ConfigurationViewModel
+
+    + SelectedConfiguration : ConfigurationViewModel
 
     + ConfigurationsViewModel(id:int)
-    + GetSelectedConfiguration() : ConfigurationViewModel
-    + SetSelectedConfiguration(value:ConfigurationViewModel)
+    + GetViewSource() : ICollectionView
     + SelectConfiguration(commandParameter:object)
     + RemoveConfiguration(commandParameter:object)
     + ExportConfiguration(commandParameter:object)
@@ -69,20 +67,20 @@ ConfigurationViewModel --|> BaseViewModel
 ConfigurationViewModel *-- M2SlotWithSsd
 class ConfigurationViewModel{
     - _configuration : Configuration
-    - _errors : string[]
-    - _changes : bool
     - add : bool
     - dbContext : ApplicationContext
-    - _name : string
-    - _motherboard : Motherboard
-    - _cpu : Cpu
-    - _cooler : Cooler
-    - _powerSupply : PowerSupply
-    - _rams : Ram[]
-    - _gpus : Gpu[]
-    - _m2Ssds : M2SlotWithSsd[]
-    - _ssdsAndHdds : Component[]
 
+    + Errors : string[]
+    + Changes : bool
+    + Name : string
+    + Motherboard : Motherboard
+    + Cpu : Cpu
+    + Cooler : Cooler
+    + PowerSupply : PowerSupply
+    + Rams : Ram[]
+    + Gpus : Gpu[]
+    + M2Ssds : M2SlotWithSsd[]
+    + SsdsAndHdds : Component[]
     + <<event>> ConfigurationSaved : EventHandler
     + <<event>> ConfigurationSaved : EventHandler<object>
 
@@ -91,20 +89,7 @@ class ConfigurationViewModel{
     + ConfigurationViewModel(configuration:Configuration, 
     context:ApplicationContext, add : bool)
     + GetConfiguration() : Configuration
-    + GetErrors() : string[]
-    + SetErrors(value:string[])
-    + GetChanges() : bool
-    + SetChanges(value:bool)
-    + GetName() : string
-    + SetName(value:string)
-    + GetMotherboard() : Motherboard
-    + SetMotherboard(value:Motherboard)
-    + GetCpu() : Cpu
-    + SetCpu(value:Cpu)
-    + GetCooler() : Cooler
-    + SetCooler(value:Cooler)
-    + GetPowerSupply() : PowerSupply
-    + SetPowerSupply(value:PowerSupply)
+    
 
 }
 
@@ -116,10 +101,8 @@ class M2SlotWithSsd{
 ComponentsViewModel *-- ComponentViewModel
 ComponentsViewModel --|> BaseViewModel
 class ComponentsViewModel{
-    - _currentViewModel : ComponentViewModel
+    - CurrentViewModel : ComponentViewModel
 
-    + GetCurrentViewModel() : ComponentViewModel
-    + SetCurrentViewModel(value:ComponentViewModel)
     + NavigateMotherboard()
     + NavigateCpu()
     + NavigateCooler()
