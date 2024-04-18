@@ -1,12 +1,14 @@
-﻿using PCConfigurator.Stores;
+﻿
+using PCConfigurator.ViewModel;
+using PCConfigurator.ViewModel.ComponentsViewModels;
 using System.Windows.Input;
 
 namespace PCConfigurator.Commands;
 
-internal class NavigateCommand<T>(NavigationStorage navigationStorage) : ICommand
-    where T : ViewModel.BaseViewModel, new()
+internal class NavigateCommand<T>(ComponentsViewModel viewModel) : ICommand
+    where T : ComponentViewModel, new()
 {
-    private readonly NavigationStorage _navigationStorage = navigationStorage;
+    private ComponentsViewModel _viewModel = viewModel;
 
     public event EventHandler? CanExecuteChanged;
 
@@ -17,8 +19,8 @@ internal class NavigateCommand<T>(NavigationStorage navigationStorage) : IComman
 
     public void Execute(object? parameter)
     {
-        if (_navigationStorage.CurrentViewModel.GetType() == typeof(T))
+        if (_viewModel.GetType() == typeof(T))
             return;
-        _navigationStorage.CurrentViewModel = new T();
+        _viewModel.CurrentViewModel = new T();
     }
 }

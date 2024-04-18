@@ -1,6 +1,5 @@
 ﻿using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
-using PCConfigurator.Stores;
 using PCConfigurator.ViewModel;
 using System.Collections.ObjectModel;
 using System.Windows;

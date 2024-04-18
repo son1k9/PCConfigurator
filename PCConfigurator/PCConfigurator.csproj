@@ -41,4 +41,8 @@
     <Resource Include="Images\sata-icon.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Stores\" />
+  </ItemGroup>
+
 </Project>

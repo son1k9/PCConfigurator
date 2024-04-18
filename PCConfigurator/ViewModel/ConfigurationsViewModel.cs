@@ -84,50 +84,52 @@ internal class ConfigurationsViewModel : BaseViewModel
         if (windowChoice.ShowDialog() == true) 
         { 
             if (windowChoice.FromFile)
-            {
-                OpenFileDialog fileDialog = new OpenFileDialog()
-                {
-                    DefaultExt = ".json",
-                    Filter = "Json files (*.json)|*.json"
-                };
-
-                if (fileDialog.ShowDialog() == true)
-                {
-                    string filename = fileDialog.FileName;
-                    try
-                    {
-                        Configuration? configuration = ConfigurationIE.Import(filename, dbContext);
-                        if (configuration != null)
-                        {
-                            SelectedConfiguration = new ConfigurationViewModel(configuration, dbContext, true);
-                            dbContext.SaveChanges();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Не удалось импортировать сборку из файла.", "Ошибка");
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Не удалось открыть файл.", "Ошибка");
-                    }
-                }
-            }
+                PerfromImportConfiguration();
             else
+                PerfromCreateConfiguration();
+        }
+    }
+
+    private void PerfromImportConfiguration()
+    {
+        OpenFileDialog fileDialog = new OpenFileDialog()
+        {
+            DefaultExt = ".json",
+            Filter = "Json files (*.json)|*.json"
+        };
+
+        if (fileDialog.ShowDialog() == true)
+        {
+            string filename = fileDialog.FileName;
+            try
             {
-                Configuration configuration = new Configuration();
-                ConfigurationNameInputWindow windowConfiguartion = new ConfigurationNameInputWindow()
-                {
-                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                    Owner = Application.Current.MainWindow,
-                    DataContext = configuration
-                };
-                if (windowConfiguartion.ShowDialog() == true)
+                Configuration? configuration = ConfigurationIE.Import(filename, dbContext);
+                if (configuration != null)
                 {
                     SelectedConfiguration = new ConfigurationViewModel(configuration, dbContext, true);
+                    dbContext.SaveChanges();
                 }
+                else
+                    MessageBox.Show("Не удалось импортировать сборку из файла.", "Ошибка");
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось открыть файл.", "Ошибка");
             }
         }
+    }
+
+    private void PerfromCreateConfiguration()
+    {
+        Configuration configuration = new Configuration();
+        ConfigurationNameInputWindow windowConfiguartion = new ConfigurationNameInputWindow()
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Owner = Application.Current.MainWindow,
+            DataContext = configuration
+        };
+        if (windowConfiguartion.ShowDialog() == true)
+            SelectedConfiguration = new ConfigurationViewModel(configuration, dbContext, true);
     }
 
     private RelayCommand? _removeConfiguration;

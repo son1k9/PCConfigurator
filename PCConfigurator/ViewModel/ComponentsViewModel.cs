@@ -1,5 +1,4 @@
 ﻿using PCConfigurator.Commands;
-using PCConfigurator.Stores;
 using PCConfigurator.ViewModel.ComponentsViewModels;
 using System.Windows.Input;
 
@@ -7,30 +6,31 @@ namespace PCConfigurator.ViewModel;
 
 internal class ComponentsViewModel : BaseViewModel
 {
-    private readonly NavigationStorage _navigationStorage;
+    private ComponentViewModel _currentViewModel = new MotherboardViewModel();
 
-    public BaseViewModel CurrentViewModel => _navigationStorage.CurrentViewModel;
+    public ComponentViewModel CurrentViewModel 
+    { 
+        get => _currentViewModel; 
+        set
+        {
+            _currentViewModel = value;
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
+    }
 
     public ComponentsViewModel()
     {
-        _navigationStorage = new NavigationStorage(new MotherboardViewModel());
-        _navigationStorage.ViewModelChanged += OnViewModelChanged;
-        NavigateMotherboardCommand = new NavigateCommand<MotherboardViewModel>(_navigationStorage);
-        NavigateCpuCommand = new NavigateCommand<CpuViewModel>(_navigationStorage);
-        NavigateCoolerCommand = new NavigateCommand<CoolerViewModel>(_navigationStorage);
-        NavigateRamCommand = new NavigateCommand<RamViewModel>(_navigationStorage);
-        NavigatePowerSupplyCommand = new NavigateCommand<PowerSupplyViewModel>(_navigationStorage);
-        NavigateGpuCommand = new NavigateCommand<GpuViewModel>(_navigationStorage);
-        NavigateSsdCommand = new NavigateCommand<SsdViewModel>(_navigationStorage);
-        NavigateHddCommand = new NavigateCommand<HddViewModel>(_navigationStorage);
-        NavigateM2SsdCommand = new NavigateCommand<M2SsdViewModel>(_navigationStorage);
-        NavigateSocketCommand = new NavigateCommand<SocketViewModel>(_navigationStorage);
-    }
-
-    private void OnViewModelChanged()
-    {
-        OnPropertyChanged(nameof(CurrentViewModel));
-    }
+        NavigateMotherboardCommand = new NavigateCommand<MotherboardViewModel>(this);
+        NavigateCpuCommand = new NavigateCommand<CpuViewModel>(this);
+        NavigateCoolerCommand = new NavigateCommand<CoolerViewModel>(this);
+        NavigateRamCommand = new NavigateCommand<RamViewModel>(this);
+        NavigatePowerSupplyCommand = new NavigateCommand<PowerSupplyViewModel>(this);
+        NavigateGpuCommand = new NavigateCommand<GpuViewModel>(this);
+        NavigateSsdCommand = new NavigateCommand<SsdViewModel>(this);
+        NavigateHddCommand = new NavigateCommand<HddViewModel>(this);
+        NavigateM2SsdCommand = new NavigateCommand<M2SsdViewModel>(this);
+        NavigateSocketCommand = new NavigateCommand<SocketViewModel>(this);
+    }   
 
     public ICommand NavigateMotherboardCommand { get; }
     public ICommand NavigateCpuCommand { get; }

@@ -20,7 +20,7 @@ internal class MainViewModel : BaseViewModel
     }
 
     public event EventHandler? NavigationCanceled;
-    private void OnNavigationCanceled()
+    private void OnNavigationCancel()
     {
         NavigationCanceled?.Invoke(this, EventArgs.Empty);
     }
@@ -51,13 +51,13 @@ internal class MainViewModel : BaseViewModel
                         configurationsViewModel.SelectedConfiguration.Save.Execute(null);
                         if (configurationsViewModel.SelectedConfiguration.Changes)
                         {
-                            OnNavigationCanceled();
+                            OnNavigationCancel();
                             return;
                         }
                     }
                     else if (result == MessageBoxResult.Cancel)
                     {
-                        OnNavigationCanceled();
+                        OnNavigationCancel();
                         return;
                     }
                 }

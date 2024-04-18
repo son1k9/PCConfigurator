@@ -20,13 +20,13 @@ internal class ConfigurationViewModel : BaseViewModel
         ConfigurationSaved?.Invoke(this, EventArgs.Empty);
     }
 
-    private string[] errors;
+    private string[] _errors;
     public string[] Errors
     {
-        get => errors;
+        get => _errors;
         set
         {
-            errors = value;
+            _errors = value;
             OnPropertyChanged(nameof(Errors));
         }
     }
@@ -42,10 +42,10 @@ internal class ConfigurationViewModel : BaseViewModel
         }
     }
 
-    private bool _add;
+    private bool add;
 
     public event EventHandler<object>? ArrayChanged;
-    private void OnArrayChanged(object array)
+    private void OnArrayChange(object array)
     {
         ArrayChanged?.Invoke(this, array);
     }
@@ -54,17 +54,17 @@ internal class ConfigurationViewModel : BaseViewModel
 
     public ConfigurationViewModel(Configuration configuration, ApplicationContext context, bool add = false)
     {
-        _add = add;
-        if (_add)
+        this.add = add;
+        if (this.add)
             Changes = true;
         _configuration = configuration;
         dbContext = context;
-        name = _configuration.Name;
-        motherboard = _configuration.Motherboard;
-        cpu = _configuration.Cpu;
-        cooler = _configuration.Cooler;
-        powerSupply = _configuration.PowerSupply;
-        errors = configuration.CheckCompatibility();
+        _name = _configuration.Name;
+        _motherboard = _configuration.Motherboard;
+        _cpu = _configuration.Cpu;
+        _cooler = _configuration.Cooler;
+        _powerSupply = _configuration.PowerSupply;
+        _errors = configuration.CheckCompatibility();
 
         if (configuration.Motherboard != null)
         {
@@ -112,61 +112,61 @@ internal class ConfigurationViewModel : BaseViewModel
         PropertyChanged += AfterMotherboardChange;
     }
 
-    private string name;
+    private string _name;
     public string Name
     {
-        get => name;
+        get => _name;
         set
         {
-            name = value;
+            _name = value;
             Changes = true;
             OnPropertyChanged(nameof(Name));
         }
     }
 
-    private Motherboard? motherboard;
+    private Motherboard? _motherboard;
     public Motherboard? Motherboard
     {
-        get => motherboard;
+        get => _motherboard;
         set
         {
-            motherboard = value;
+            _motherboard = value;
             Changes = true;
             OnPropertyChanged(nameof(Motherboard));
         }
     }
 
-    private Cpu? cpu;
+    private Cpu? _cpu;
     public Cpu? Cpu
     {
-        get => cpu;
+        get => _cpu;
         set
         {
-            cpu = value;
+            _cpu = value;
             Changes = true;
             OnPropertyChanged(nameof(Cpu));
         }
     }
 
-    private Cooler? cooler;
+    private Cooler? _cooler;
     public Cooler? Cooler
     {
-        get => cooler;
+        get => _cooler;
         set
         {
-            cooler = value;
+            _cooler = value;
             Changes = true;
             OnPropertyChanged(nameof(Cooler));
         }
     }
 
-    private PowerSupply? powerSupply;
+    private PowerSupply? _powerSupply;
     public PowerSupply? PowerSupply
     {
-        get => powerSupply;
+        get => _powerSupply;
         set
         {
-            powerSupply = value;
+            _powerSupply = value;
             Changes = true;
             OnPropertyChanged(nameof(PowerSupply));
         }
@@ -190,7 +190,7 @@ internal class ConfigurationViewModel : BaseViewModel
         {
             Rams[index] = ram;
             Changes = true;
-            OnArrayChanged(Rams);
+            OnArrayChange(Rams);
         }
     }
 
@@ -212,7 +212,7 @@ internal class ConfigurationViewModel : BaseViewModel
         {
             Gpus[index] = gpu;
             Changes = true;
-            OnArrayChanged(Gpus);
+            OnArrayChange(Gpus);
         }
     }
 
@@ -224,7 +224,7 @@ internal class ConfigurationViewModel : BaseViewModel
             {
                 M2Ssds[index].M2Ssd = m2Ssd;
                 Changes = true;
-                OnArrayChanged(M2Ssds);
+                OnArrayChange(M2Ssds);
             }
         }
     }
@@ -265,7 +265,7 @@ internal class ConfigurationViewModel : BaseViewModel
         {
             SsdAndHdds[index] = component;
             Changes = true;
-            OnArrayChanged(SsdAndHdds);
+            OnArrayChange(SsdAndHdds);
         }
     }
 
@@ -331,7 +331,7 @@ internal class ConfigurationViewModel : BaseViewModel
 
         CreateConfiguration(_configuration);
 
-        if (_add)
+        if (add)
             dbContext.Configuration.Add(_configuration);
 
         dbContext.SaveChanges();

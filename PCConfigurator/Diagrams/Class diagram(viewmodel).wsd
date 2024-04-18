@@ -4,9 +4,132 @@ interface INotifyPropertyChanged
 
 BaseViewModel ..|> INotifyPropertyChanged
 abstract class BaseViewModel{
-    + PropertyChanged : PropertyChangedEventHandler?
+    + <<event>> PropertyChanged : PropertyChangedEventHandler
 
     # OnPropertyChanged(propertyName:string)
+}
+
+ComponentViewModel --|> BaseViewModel
+abstract class ComponentViewModel{
+    # dbContext : ApplicationContext
+    # _viewSource : CollectionViewSource
+    
+    + GetViewSource() : ICollectionView
+
+    {abstract} # ResetContext()
+    {abstract} + Add()
+    {abstract} + Edit(commandParameter:object)
+    {abstract} + Remove(commandParameter:object)
+}
+
+MotherboardViewModel --|> ComponentViewModel
+class MotherboardViewModel{
+    + MotherboardViewModel()
+    # ResetContext()
+    + Add()
+    + Edit(commandParameter:object)
+    + Remove(commandParameter:object)
+}
+
+MainViewModel --|> BaseViewModel
+MainViewModel *-- BaseViewModel
+class MainViewModel{
+    - _currentViewModel : BaseViewModel
+
+    + <<event>> NavigationCanceled : EventHandler
+
+    - OnNavigationCancel()
+
+    + GetCurrentViewModel() : BaseViewModel
+    + SetCurrentViewModel(value:BaseViewModel)
+    + NavigateConfigurations()
+    + NavigateComponents()
+
+}
+
+ConfigurationsViewModel --|> BaseViewModel
+class ConfigurationsViewModel{
+    - dbContext : ApplicationContext
+    - _viewSource : CollectionViewSource
+    - _selectedConfiguration : ConfigurationViewModel
+
+    + ConfigurationsViewModel(id:int)
+    + GetSelectedConfiguration() : ConfigurationViewModel
+    + SetSelectedConfiguration(value:ConfigurationViewModel)
+    + SelectConfiguration(commandParameter:object)
+    + RemoveConfiguration(commandParameter:object)
+    + ExportConfiguration(commandParameter:object)
+    + AddConfiguration()
+    + ImportConfiguration()
+    + CreateConfiguration()
+}
+
+ConfigurationViewModel --* ConfigurationsViewModel
+ConfigurationViewModel --|> BaseViewModel
+ConfigurationViewModel *-- M2SlotWithSsd
+class ConfigurationViewModel{
+    - _configuration : Configuration
+    - _errors : string[]
+    - _changes : bool
+    - add : bool
+    - dbContext : ApplicationContext
+    - _name : string
+    - _motherboard : Motherboard
+    - _cpu : Cpu
+    - _cooler : Cooler
+    - _powerSupply : PowerSupply
+    - _rams : Ram[]
+    - _gpus : Gpu[]
+    - _m2Ssds : M2SlotWithSsd[]
+    - _ssdsAndHdds : Component[]
+
+    + <<event>> ConfigurationSaved : EventHandler
+    + <<event>> ConfigurationSaved : EventHandler<object>
+
+    - OnSave()
+    - OnArrayChange(array:object)
+    + ConfigurationViewModel(configuration:Configuration, 
+    context:ApplicationContext, add : bool)
+    + GetConfiguration() : Configuration
+    + GetErrors() : string[]
+    + SetErrors(value:string[])
+    + GetChanges() : bool
+    + SetChanges(value:bool)
+    + GetName() : string
+    + SetName(value:string)
+    + GetMotherboard() : Motherboard
+    + SetMotherboard(value:Motherboard)
+    + GetCpu() : Cpu
+    + SetCpu(value:Cpu)
+    + GetCooler() : Cooler
+    + SetCooler(value:Cooler)
+    + GetPowerSupply() : PowerSupply
+    + SetPowerSupply(value:PowerSupply)
+
+}
+
+class M2SlotWithSsd{
+    + M2Slot : M2Slot
+    + M2Ssd : M2Ssd
+}
+
+ComponentsViewModel *-- ComponentViewModel
+ComponentsViewModel --|> BaseViewModel
+class ComponentsViewModel{
+    - _currentViewModel : ComponentViewModel
+
+    + GetCurrentViewModel() : ComponentViewModel
+    + SetCurrentViewModel(value:ComponentViewModel)
+    + NavigateMotherboard()
+    + NavigateCpu()
+    + NavigateCooler()
+    + NavigateRam()
+    + NavigatePowerSupply()
+    + NavigateGpu()
+    + NavigateSsd()
+    + NavigateHdd()
+    + NavigateM2Ssd()
+    + NavigateSocket()
 }
 
 @enduml
