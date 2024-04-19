@@ -35,13 +35,11 @@ enum M2Interface
 
 Motherboard --> RamType
 Motherboard --|> Component
-Motherboard "*" -- "1" Socket
 Motherboard "*" -- "1" Chipset
 Motherboard "1" -- "*" M2Slot
 Motherboard "1" -- "*" Configuration
 class Motherboard{
     + MotherboardId : int
-    + Socket : Socket
     + Chipset : Chipset
     + RamType : RamType
     + RamSlots : int
