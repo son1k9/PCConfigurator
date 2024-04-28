@@ -123,7 +123,7 @@
         </StackPanel>
 
         <StackPanel>
-            <TextBlock Text="Количество коннекторов SATA"/>
+            <TextBlock Text="Количество портов SATA"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

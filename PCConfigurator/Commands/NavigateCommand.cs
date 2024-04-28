@@ -1,5 +1,4 @@
-﻿
-using PCConfigurator.ViewModel;
+﻿using PCConfigurator.ViewModel;
 using PCConfigurator.ViewModel.ComponentsViewModels;
 using System.Windows.Input;
 

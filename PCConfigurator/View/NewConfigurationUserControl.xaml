@@ -140,7 +140,7 @@
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
 
-                        <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="SATA коннекторы"/>
+                        <TextBlock Margin="0 5 0 10" FontSize="16" HorizontalAlignment="Left" Text="SATA порты"/>
                         <ItemsControl ItemsSource="{Binding SsdAndHdds}" x:Name="SataItemControl">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>

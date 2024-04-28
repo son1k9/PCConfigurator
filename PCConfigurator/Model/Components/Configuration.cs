@@ -133,17 +133,20 @@ public class Configuration
             }
         }
 
-        foreach (ConfigurationGpu gpu in ConfigurationGpus)
-            powerConsumption += gpu.Gpu.PowerConsumption;
-        foreach (ConfigurationHdd hdd in ConfigurationHdds)
-            powerConsumption += 12;
-        foreach (ConfigurationSsd ssd in ConfigurationSsds)
-            powerConsumption += 3;
+        if (PowerSupply != null)
+        {
+            foreach (ConfigurationGpu gpu in ConfigurationGpus)
+                powerConsumption += gpu.Gpu.PowerConsumption;
+            foreach (ConfigurationHdd hdd in ConfigurationHdds)
+                powerConsumption += 12;
+            foreach (ConfigurationSsd ssd in ConfigurationSsds)
+                powerConsumption += 3;
 
-        powerConsumption = (int)(powerConsumption * 1.35);
+            powerConsumption = (int)(powerConsumption * 1.35);
 
-        if (PowerSupply?.Wattage < powerConsumption)
-            result.Add($"Мощность блока питания ({PowerSupply.Wattage}W) меньше, чем энергопотребление конфигурации ({powerConsumption}W).");
+            if (PowerSupply.Wattage < powerConsumption)
+                result.Add($"Мощность блока питания ({PowerSupply.Wattage}W) меньше, чем энергопотребление конфигурации ({powerConsumption}W).");
+        }
 
         return [.. result];
     }
