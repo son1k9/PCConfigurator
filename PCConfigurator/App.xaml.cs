@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
+using PCConfigurator.Model.Components.M2;
 using PCConfigurator.ViewModel;
 using System.Collections.ObjectModel;
 using System.Windows;

@@ -29,14 +29,21 @@ public class ApplicationContext : DbContext
     public DbSet<ConfigurationSsd> ConfigurationSsd { get; set; }
 
 
-    public ApplicationContext()
+    public ApplicationContext(string? path = null)
     {
-        _dbPath = AppDomain.CurrentDomain.BaseDirectory;
-
-        if (_dbPath.Contains("bin"))
+        if (path is null)
         {
-            int index = _dbPath.IndexOf("bin");
-            _dbPath = _dbPath[..index];
+            _dbPath = AppDomain.CurrentDomain.BaseDirectory;
+
+            if (_dbPath.Contains("bin"))
+            {
+                int index = _dbPath.IndexOf("bin");
+                _dbPath = _dbPath[..index];
+            }
+        }
+        else
+        {
+            _dbPath = path;
         }
     }
 
@@ -74,6 +81,6 @@ public class ApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Database\\components.db");
+        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Database\\components.db").EnableDetailedErrors().LogTo(message => Debug.WriteLine(message));
     }
 }

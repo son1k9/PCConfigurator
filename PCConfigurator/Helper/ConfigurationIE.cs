@@ -5,6 +5,7 @@ using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -327,6 +328,7 @@ namespace PCConfigurator.Helper
                 }
                 catch 
                 {
+                    Console.WriteLine(1);
                     return null;
                 }
             }
