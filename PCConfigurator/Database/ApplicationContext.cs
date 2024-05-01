@@ -81,6 +81,6 @@ public class ApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Database\\components.db").EnableDetailedErrors().LogTo(message => Debug.WriteLine(message));
+        optionsBuilder.UseLazyLoadingProxies().UseSqlite($"Filename={_dbPath}Database\\components.db");
     }
 }
