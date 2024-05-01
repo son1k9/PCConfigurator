@@ -50,7 +50,7 @@
 
                 <RadioButton Content="Материнские платы" Command="{Binding NavigateMotherboardCommand}" IsChecked="True"/>
                 <RadioButton Content="Процессоры" Command="{Binding NavigateCpuCommand}"/>
-                <RadioButton Content="Кулеры" Command="{Binding NavigateCoolerCommand}"/>
+                <RadioButton Content="Кулеры/СЖО" Command="{Binding NavigateCoolerCommand}"/>
                 <RadioButton Content="Оперативная память" Command="{Binding NavigateRamCommand}"/>
                 <RadioButton Content="Блоки питания" Command="{Binding NavigatePowerSupplyCommand}"/>
                 <RadioButton Content="Видеокарты" Command="{Binding NavigateGpuCommand}"/>

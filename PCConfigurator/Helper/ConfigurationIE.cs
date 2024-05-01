@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace PCConfigurator.Helper
 {
-    internal static class ConfigurationIE
+    public static class ConfigurationIE
     {
         private static Configuration PrepareConfigurationForExport(Configuration configuration)
         {

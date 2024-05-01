@@ -9,7 +9,7 @@
         d:DataContext="{d:DesignInstance Type=viewModels:NewCoolerViewmodel}"
         mc:Ignorable="d"
         xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
-        Title="Кулер" Height="300" Width="424" ResizeMode="NoResize" SizeToContent="Height"
+        Title="Кулер/СЖО" Height="300" Width="424" ResizeMode="NoResize" SizeToContent="Height"
         Background="#F9F9F9">
 
     <Window.Resources>

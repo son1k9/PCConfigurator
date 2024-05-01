@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-04-29T15:48:05.805Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.0 Chrome/114.0.5735.289 Electron/25.8.3 Safari/537.36" etag="wDxMGXHSW8fkQqBlS2TG" version="22.0.0" type="device">
+<mxfile host="Electron" modified="2024-03-02T11:34:46.244Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.0 Chrome/114.0.5735.289 Electron/25.8.3 Safari/537.36" etag="7TAqcPeKYTpL1jueG2hz" version="22.0.0" type="device">
   <diagram name="Страница — 1" id="gGU0pYqspVu6Y8VHLPDK">
-    <mxGraphModel dx="2534" dy="1694" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="2518" dy="1678" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -11,6 +11,13 @@
           <mxGeometry x="-0.0653" y="16" width="160" relative="1" as="geometry">
             <mxPoint x="755.4197049186607" y="459.0589543508281" as="sourcePoint" />
             <mxPoint x="564" y="144" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r_Gkihgk-6NHchpr0huC-21" value="include" style="endArrow=open;dashed=1;endFill=0;endSize=12;html=1;rounded=0;" parent="r_Gkihgk-6NHchpr0huC-2" source="r_Gkihgk-6NHchpr0huC-33" target="r_Gkihgk-6NHchpr0huC-32" edge="1">
+          <mxGeometry x="-0.0653" y="16" width="160" relative="1" as="geometry">
+            <mxPoint x="623.736616996154" y="547.7935817868058" as="sourcePoint" />
+            <mxPoint x="696.3343685400055" y="572.1114561800016" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -28,13 +35,13 @@
           <mxGeometry x="220" y="70" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="r_Gkihgk-6NHchpr0huC-25" value="Удалять сборку" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
-          <mxGeometry x="10" y="500" width="140" height="70" as="geometry" />
+          <mxGeometry x="60" y="500" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="r_Gkihgk-6NHchpr0huC-26" value="Удалять комплектующее" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
           <mxGeometry x="150" y="150" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="r_Gkihgk-6NHchpr0huC-27" value="Проверять сборку на совместимосту" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
-          <mxGeometry x="170" y="500" width="140" height="70" as="geometry" />
+        <mxCell id="r_Gkihgk-6NHchpr0huC-27" value="Проверять сборку на совместимость" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
+          <mxGeometry x="240" y="480" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="r_Gkihgk-6NHchpr0huC-28" value="Экспортировать сборку" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
           <mxGeometry x="390" y="70" width="140" height="70" as="geometry" />
@@ -42,8 +49,8 @@
         <mxCell id="r_Gkihgk-6NHchpr0huC-29" value="Указывать путь к файлу" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
           <mxGeometry x="550" y="126" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="r_Gkihgk-6NHchpr0huC-32" value="Выбирать компоненты" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
-          <mxGeometry x="460" y="410" width="140" height="70" as="geometry" />
+        <mxCell id="r_Gkihgk-6NHchpr0huC-32" value="Выбирать комплектующие" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
+          <mxGeometry x="420" y="450" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="r_Gkihgk-6NHchpr0huC-33" value="Создавать сборку" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
           <mxGeometry x="390" y="330" width="140" height="70" as="geometry" />
@@ -76,7 +83,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="r_Gkihgk-6NHchpr0huC-58" value="Система" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
-          <mxGeometry x="315" width="70" height="30" as="geometry" />
+          <mxGeometry x="300" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="r_Gkihgk-6NHchpr0huC-59" value="Работать со сборками" style="ellipse;whiteSpace=wrap;html=1;" parent="r_Gkihgk-6NHchpr0huC-2" vertex="1">
           <mxGeometry x="10" y="340" width="140" height="70" as="geometry" />
@@ -143,16 +150,6 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ATN2jM_aMCxloPRLh_fd-2" value="Сохранять сборку" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="r_Gkihgk-6NHchpr0huC-2">
-          <mxGeometry x="350" y="490" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="ATN2jM_aMCxloPRLh_fd-4" value="include" style="endArrow=open;dashed=1;endFill=0;endSize=12;html=1;rounded=0;" edge="1" parent="r_Gkihgk-6NHchpr0huC-2" source="r_Gkihgk-6NHchpr0huC-34" target="ATN2jM_aMCxloPRLh_fd-2">
-          <mxGeometry x="-0.0653" y="16" width="160" relative="1" as="geometry">
-            <mxPoint x="388" y="434" as="sourcePoint" />
-            <mxPoint x="472" y="446" as="targetPoint" />
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="r_Gkihgk-6NHchpr0huC-68" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;" parent="1" source="r_Gkihgk-6NHchpr0huC-3" target="r_Gkihgk-6NHchpr0huC-52" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -161,9 +158,6 @@
         </mxCell>
         <mxCell id="r_Gkihgk-6NHchpr0huC-3" value="Пользователь" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="10" y="10" width="30" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ATN2jM_aMCxloPRLh_fd-1" value="Конфигруратор ПК" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="375" y="-250" width="130" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -57,7 +57,7 @@
                                     <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetCpu}"/>
                                 </local:ComponentUserControl.InputBindings>
                             </local:ComponentUserControl>
-                            <local:ComponentUserControl ImageSource="/Images/cooler-icon.png" DataContext="{Binding Cooler}" Header="Кулер" ShowHeader="True"
+                            <local:ComponentUserControl ImageSource="/Images/cooler-icon.png" DataContext="{Binding Cooler}" Header="Кулер/СЖО" ShowHeader="True"
                                                         Command="{Binding ElementName=configuration, Path=DataContext.ChangeCooler}">
                                 <local:ComponentUserControl.InputBindings>
                                     <MouseBinding Gesture="RightClick" Command="{Binding ElementName=configuration, Path=DataContext.ResetCooler}"/>

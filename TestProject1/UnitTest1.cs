@@ -1,13 +1,15 @@
 using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
 using PCConfigurator.Model.Components.M2;
+using PCConfigurator.Helper;
 
 namespace TestProject1
 {
+
     public class ConfigurationTests
     {
-        [Fact]
-        public void CheckCompatibilityTest1()
+
+        public Configuration CreateCorrectConfiguration()
         {
             var socket = new Socket() { Name = "AM4" };
 
@@ -192,6 +194,14 @@ namespace TestProject1
                 }
             ];
 
+            return configuration;
+        }
+
+        [Fact]
+        public void CheckCompatibilityTest1()
+        {
+            var configuration = CreateCorrectConfiguration();
+
             Assert.Empty(configuration.CheckCompatibility());
         }
 
@@ -217,14 +227,14 @@ namespace TestProject1
                 Cores = 4,
                 ECores = 0,
                 Smt = false,
-                Tdp = 65,
+                Tdp = 200,
                 L2Cache = 4,
                 L3Cache = 8,
                 MaxRamCapacity = 32,
                 CoreClock = 3.0f,
                 BoostClock = 3.4f,
                 HaveGraphics = false,
-                Socket = socket,
+                Socket = new Socket() { Name = "AM3"},
                 RamTypes = RamType.DDR3
             };
 
@@ -241,7 +251,7 @@ namespace TestProject1
             {
                 Model = "DEEPCOOL AG300",
                 Tdp = 150,
-                Sockets = [socket]
+                Sockets = [new Socket { Name = "Test" }]
             };
 
             var chipset = new Chipset()
@@ -253,16 +263,16 @@ namespace TestProject1
             var ram = new Ram()
             {
                 Model = "Kingston FURY Beast Black",
-                Capacity = 8,
+                Capacity = 128,
                 Clock = 3200,
                 Cl = 16,
-                RamType = RamType.DDR4
+                RamType = RamType.DDR3
             };
 
             var powerSupply = new PowerSupply()
             {
                 Model = "DEEPCOOL DQ750",
-                Wattage = 1000
+                Wattage = 200
             };
 
             var hdd = new Hdd()
@@ -290,7 +300,7 @@ namespace TestProject1
                 WriteSpeed = 3100,
                 Tbw = 750,
                 NandType = NandType.TLC,
-                M2Interface = M2Interface.Nvme | M2Interface.Sata,
+                M2Interface = M2Interface.Sata,
                 M2Size = M2Size._2260
             };
 
@@ -327,7 +337,7 @@ namespace TestProject1
                 new M2Slot()
                 {
                     M2Interface = M2Interface.Nvme | M2Interface.Sata,
-                    M2Size = M2Size._22110 | M2Size._2280
+                    M2Size = M2Size._22110 | M2Size._2260
                 }
             ];
 
@@ -391,6 +401,35 @@ namespace TestProject1
                     M2Slot = motherboardSlots[1]
                 }
             ];
+
+
+            Assert.Equal(10, configuration.CheckCompatibility().Length);
+        }
+
+        [Fact]
+        public void ExportTest1()
+        {
+            var configuration = CreateCorrectConfiguration();
+            Directory.CreateDirectory("Test");
+            Assert.True(ConfigurationIE.Export("Test/v.json", configuration));
+            Assert.True(File.Exists("Test/v.json"));
+            File.Delete("Test/v.json");
+            Directory.Delete("Test");
+        }
+
+        [Fact]
+        public void ExportTest2()
+        {
+            var configuration = new Configuration() { Name = "Test" };
+            Directory.CreateDirectory("Test");
+            Assert.False(ConfigurationIE.Export("Test/v.json", configuration));
+            var fileExists = File.Exists("Test/v.json");
+            Assert.False(fileExists);
+            if (fileExists)
+            {
+                File.Delete("Test/v.json");
+            }
+            Directory.Delete("Test");
         }
     }
 }

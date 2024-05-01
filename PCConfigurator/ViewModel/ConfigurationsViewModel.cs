@@ -84,13 +84,13 @@ internal class ConfigurationsViewModel : BaseViewModel
         if (windowChoice.ShowDialog() == true) 
         { 
             if (windowChoice.FromFile)
-                PerfromImportConfiguration();
+                ImportConfiguration();
             else
                 PerfromCreateConfiguration();
         }
     }
 
-    private void PerfromImportConfiguration()
+    private void ImportConfiguration()
     {
         OpenFileDialog fileDialog = new OpenFileDialog()
         {

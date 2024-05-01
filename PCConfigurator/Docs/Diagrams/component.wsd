@@ -1,0 +1,24 @@
+class ApplicationContext{
+    - _dbPath : string
+    + Socket : Socket[]
+    + Chipset : Chipset[]
+    + Ram : Ram[]
+    + M2Slot : M2Slot[]
+    + Motherboard : Motherboard[]
+    + Configuration : Configuration[]
+    + Cpu : Cpu[]
+    + PowerSupply : PowerSupply[]
+    + Cooler : Cooler[]
+    + Gpu : Gpu[]
+    + Hdd : Hdd[]
+    + M2Ssd : M2Ssd[]
+    + Ssd : Ssd[]
+    + ConfigurationGpu : ConfigurationGpu[]
+    + ConfigurationHdd : ConfigurationHdd[]
+    + ConfigurationM2Ssd : ConfigurationM2Ssd[]
+    + ConfigurationRam : ConfigurationRam[]
+    + ConfigurationSsd : ConfigurationSsd[]
+    + ApplicationContext()
+    # OnModelCreating(modelBuilder:ModelBuilder)
+    # OnConfiguring(optionsBuilder:DbContextOptionsBuilder)
+}

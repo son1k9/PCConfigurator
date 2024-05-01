@@ -1,4 +1,5 @@
-﻿using PCConfigurator.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using PCConfigurator.Model;
 using PCConfigurator.Model.Components;
 using PCConfigurator.ViewModel;
 using System.Collections.ObjectModel;
@@ -13,6 +14,8 @@ public partial class App : Application
 {
     private void Application_Startup(object sender, StartupEventArgs e)
     {
+        ApplicationContext applicationContext = new ApplicationContext();
+        applicationContext.Database.Migrate();
         MainViewModel mainViewModel = new MainViewModel();
         MainWindow = new MainWindow() { DataContext = mainViewModel };
         MainWindow.Show();

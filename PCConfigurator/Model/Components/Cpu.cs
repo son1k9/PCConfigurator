@@ -31,7 +31,7 @@ public class Cpu : Component
     public int MaxRamCapacity { get; set; } = 4;
 
     public bool HaveGraphics { get; set; }
-
+    
     public virtual List<Configuration> Configurations { get; set; } = [];
 
     [NotMapped]

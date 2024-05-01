@@ -136,7 +136,7 @@
         </StackPanel>
 
         <StackPanel>
-            <TextBlock Text="Количество слотов PCIex16:"/>
+            <TextBlock Text="Количество слотов PCIe x16:"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

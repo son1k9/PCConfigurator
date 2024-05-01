@@ -43,7 +43,7 @@ public class Configuration
             result.Add("Отсутствует процессор.");
 
         if (Cooler is null)
-            result.Add("Отсутствует кулер.");
+            result.Add("Отсутствует кулер/СЖО.");
 
         if (PowerSupply is null)
             result.Add("Отсутствует блок питания.");
@@ -93,17 +93,17 @@ public class Configuration
                 ramCapacitySum += ram.Ram.Capacity;
 
             if (ramCapacitySum > Motherboard.MaxRamCapacity)
-                result.Add("Максимальный объем оперативной памяти материнской платы меньше, чем сумарный объём всех ОЗУ конфигурации.");
+                result.Add("Максимальный объем оперативной памяти материнской платы меньше, чем суммарный объём всех ОЗУ конфигурации.");
 
             foreach(ConfigurationM2Ssd m2Ssd in ConfigurationM2Ssds)
             {
                 powerConsumption += 20;
 
                 if (!m2Ssd.M2Slot.M2Size.HasFlag(m2Ssd.M2Ssd.M2Size))
-                    result.Add($"Размер M2 SSD {m2Ssd.M2Ssd.Model}, неподдерживается слотом, в который он установлен.");
+                    result.Add($"Размер M2 SSD {m2Ssd.M2Ssd.Model}, не поддерживается слотом, в который он установлен.");
 
                 if ((m2Ssd.M2Slot.M2Interface & m2Ssd.M2Ssd.M2Interface) == 0)
-                    result.Add($"Интерфейс работы M2 SSD {m2Ssd.M2Ssd.Model}, неподдерживается слотом, в который он установлен.");
+                    result.Add($"Интерфейс работы M2 SSD {m2Ssd.M2Ssd.Model}, не поддерживается слотом, в который он установлен.");
             }
 
             if (Cpu is not null)
@@ -114,14 +114,14 @@ public class Configuration
                     result.Add("Сокет процессора отличается от сокета материнской платы.");
 
                 if (!Cpu.RamTypes.HasFlag(Motherboard.RamType))
-                    result.Add("Тип оперативной памяти процесора отличается от типа оперативной памяти материнской платы.");
+                    result.Add("Тип оперативной памяти процессора отличается от типа оперативной памяти материнской платы.");
 
                 if (ramCapacitySum > Cpu.MaxRamCapacity)
-                    result.Add("Максимальный объем оперативной памяти процессора меньше, чем сумарный объём всех ОЗУ конфигурации.");
+                    result.Add("Максимальный объем оперативной памяти процессора меньше, чем суммарный объём всех ОЗУ конфигурации.");
 
                 if (Cooler is not null)
                     if (Cooler.Tdp < Cpu.Tdp)
-                       result.Add("TDP кулера меньше, чем TDP процессора.");
+                       result.Add("TDP кулера/СЖО меньше, чем TDP процессора.");
             }
 
             if (Cooler is not null)

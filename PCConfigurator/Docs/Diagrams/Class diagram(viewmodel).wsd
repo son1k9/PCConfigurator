@@ -1,5 +1,4 @@
 @startuml Class diagram ViewModel
-
 interface INotifyPropertyChanged
 
 BaseViewModel ..|> INotifyPropertyChanged
@@ -64,7 +63,6 @@ class ConfigurationsViewModel{
 
 ConfigurationViewModel --* ConfigurationsViewModel
 ConfigurationViewModel --|> BaseViewModel
-ConfigurationViewModel *-- M2SlotWithSsd
 class ConfigurationViewModel{
     - _configuration : Configuration
     - add : bool
@@ -103,12 +101,6 @@ class ConfigurationViewModel{
     + ChangeHdd(commandParameter:object)
     + ChangeM2Ssd(commandParameter:object)
     + AfterMotherboardChange()
-}
-
-
-class M2SlotWithSsd{
-    + M2Slot : M2Slot
-    + M2Ssd : M2Ssd
 }
 
 ComponentsViewModel *-- ComponentViewModel
