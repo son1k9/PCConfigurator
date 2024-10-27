@@ -8,6 +8,9 @@ internal class ComponentsViewModel : BaseViewModel
 {
     private ComponentViewModel _currentViewModel = new MotherboardViewModel();
 
+    /// <summary>
+    /// Current chosen ComponentViewModel
+    /// </summary>
     public ComponentViewModel CurrentViewModel 
     { 
         get => _currentViewModel; 

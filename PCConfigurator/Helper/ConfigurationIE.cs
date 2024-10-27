@@ -14,8 +14,16 @@ using System.Windows;
 
 namespace PCConfigurator.Helper
 {
+    /// <summary>
+    /// Class to import and export pc configurations.
+    /// </summary>
     public static class ConfigurationIE
     {
+        /// <summary>
+        /// Prepares configuration for export.
+        /// </summary>
+        /// <param name="configuration">Configuration to prepare</param>
+        /// <returns>Configuration prepared for export</returns>
         private static Configuration PrepareConfigurationForExport(Configuration configuration)
         {
             Cooler cooler = new Cooler()
@@ -167,6 +175,12 @@ namespace PCConfigurator.Helper
             return configuration1;
         }
 
+        /// <summary>
+        /// Export pc configuration to a file. If file does not exist creates it.
+        /// </summary>
+        /// <param name="path">Path to file to export in.</param>
+        /// <param name="configuration">Configuration to export.</param>
+        /// <returns>True if succesfull, False if configuration is not compatible.</returns>
         public static bool Export(string path, Configuration configuration)
         {
             if (configuration.CheckCompatibility().Length > 0)
@@ -179,6 +193,12 @@ namespace PCConfigurator.Helper
             return true;
         }
 
+        /// <summary>
+        /// Constructs pc configuration with components from database. If components dont exist they are created.
+        /// </summary>
+        /// <param name="configuration">Configuration to construct from</param>
+        /// <param name="dbContext">Database context</param>
+        /// <returns>Constructed configuration if succesfull, null otherwise.</returns>
         private static Configuration? ConstructConfigurationFromImport(Configuration configuration, ApplicationContext dbContext)
         {
             Configuration configuration1 = new Configuration() { Name = configuration.Name, };
@@ -315,6 +335,12 @@ namespace PCConfigurator.Helper
                 return configuration1;
         }
 
+        /// <summary>
+        /// Imports pc configuration from file.
+        /// </summary>
+        /// <param name="path">Path to a file</param>
+        /// <param name="dbContext">Database context to use for constraction of configuration</param>
+        /// <returns>Imported configuration</returns>
         public static Configuration? Import(string path, ApplicationContext dbContext)
         {
             string jsonString = File.ReadAllText(path);
@@ -326,7 +352,7 @@ namespace PCConfigurator.Helper
                     Configuration? configuration1 = ConstructConfigurationFromImport(configuration, dbContext);
                     return configuration1;
                 }
-                catch 
+                catch
                 {
                     Console.WriteLine(1);
                     return null;
