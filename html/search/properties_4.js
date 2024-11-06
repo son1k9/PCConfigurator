@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['gpu_0',['Gpu',['../class_p_c_configurator_1_1_model_1_1_components_1_1_configuration_gpu.html#acae9d03440acd5a8209f8d26be33aaa9',1,'PCConfigurator.Model.Components.ConfigurationGpu.Gpu'],['../class_p_c_configurator_1_1_model_1_1_application_context.html#aed8e5e7ec1e334e8c0e88472ea434781',1,'PCConfigurator.Model.ApplicationContext.Gpu']]],
-  ['gpuid_1',['GpuId',['../class_p_c_configurator_1_1_model_1_1_components_1_1_gpu.html#a3cfc0ca50c0dc0cc8cf116f0152bebf7',1,'PCConfigurator.Model.Components.Gpu.GpuId'],['../class_p_c_configurator_1_1_model_1_1_components_1_1_configuration_gpu.html#ad026a0e8539651f9e3b4ff23e1e1ae03',1,'PCConfigurator.Model.Components.ConfigurationGpu.GpuId']]],
-  ['gpus_2',['Gpus',['../class_p_c_configurator_1_1_model_1_1_components_1_1_configuration.html#a67a44a7272aa602da705965d94824bda',1,'PCConfigurator.Model.Components.Configuration.Gpus'],['../class_p_c_configurator_1_1_view_model_1_1_configuration_view_model.html#aa4dae0e4109350eafb6d4b089b93d8bf',1,'PCConfigurator.ViewModel.ConfigurationViewModel.Gpus']]]
-];
