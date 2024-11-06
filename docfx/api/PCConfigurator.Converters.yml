@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Converters
+  commentId: N:PCConfigurator.Converters
+  id: PCConfigurator.Converters
+  children:
+  - PCConfigurator.Converters.GetIndexConverter
+  - PCConfigurator.Converters.UriConverter
+  - PCConfigurator.Converters.VisibilityConverter
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.Converters
+  nameWithType: PCConfigurator.Converters
+  fullName: PCConfigurator.Converters
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.Converters.GetIndexConverter
+  commentId: T:PCConfigurator.Converters.GetIndexConverter
+  href: PCConfigurator.Converters.GetIndexConverter.html
+  name: GetIndexConverter
+  nameWithType: GetIndexConverter
+  fullName: PCConfigurator.Converters.GetIndexConverter
+- uid: PCConfigurator.Converters.UriConverter
+  commentId: T:PCConfigurator.Converters.UriConverter
+  href: PCConfigurator.Converters.UriConverter.html
+  name: UriConverter
+  nameWithType: UriConverter
+  fullName: PCConfigurator.Converters.UriConverter
+- uid: PCConfigurator.Converters.VisibilityConverter
+  commentId: T:PCConfigurator.Converters.VisibilityConverter
+  href: PCConfigurator.Converters.VisibilityConverter.html
+  name: VisibilityConverter
+  nameWithType: VisibilityConverter
+  fullName: PCConfigurator.Converters.VisibilityConverter

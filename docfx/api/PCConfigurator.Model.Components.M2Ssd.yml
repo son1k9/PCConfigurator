@@ -1,0 +1,1147 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.M2Ssd
+  commentId: T:PCConfigurator.Model.Components.M2Ssd
+  id: M2Ssd
+  parent: PCConfigurator.Model.Components
+  children:
+  - PCConfigurator.Model.Components.M2Ssd.Capacity
+  - PCConfigurator.Model.Components.M2Ssd.ConfigurationM2Ssds
+  - PCConfigurator.Model.Components.M2Ssd.Is22110
+  - PCConfigurator.Model.Components.M2Ssd.Is2230
+  - PCConfigurator.Model.Components.M2Ssd.Is2242
+  - PCConfigurator.Model.Components.M2Ssd.Is2260
+  - PCConfigurator.Model.Components.M2Ssd.Is2280
+  - PCConfigurator.Model.Components.M2Ssd.IsNvme
+  - PCConfigurator.Model.Components.M2Ssd.IsSata
+  - PCConfigurator.Model.Components.M2Ssd.M2Interface
+  - PCConfigurator.Model.Components.M2Ssd.M2Size
+  - PCConfigurator.Model.Components.M2Ssd.M2SsdId
+  - PCConfigurator.Model.Components.M2Ssd.NandType
+  - PCConfigurator.Model.Components.M2Ssd.ReadSpeed
+  - PCConfigurator.Model.Components.M2Ssd.Tbw
+  - PCConfigurator.Model.Components.M2Ssd.WriteSpeed
+  langs:
+  - csharp
+  - vb
+  name: M2Ssd
+  nameWithType: M2Ssd
+  fullName: PCConfigurator.Model.Components.M2Ssd
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Ssd
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 5
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: 'public class M2Ssd : Component'
+    content.vb: Public Class M2Ssd Inherits Component
+  inheritance:
+  - System.Object
+  - PCConfigurator.Model.Components.Component
+  inheritedMembers:
+  - PCConfigurator.Model.Components.Component.Model
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.Model.Components.M2Ssd.M2SsdId
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.M2SsdId
+  id: M2SsdId
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: M2SsdId
+  nameWithType: M2Ssd.M2SsdId
+  fullName: PCConfigurator.Model.Components.M2Ssd.M2SsdId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2SsdId
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 7
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int M2SsdId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property M2SsdId As Integer
+  overload: PCConfigurator.Model.Components.M2Ssd.M2SsdId*
+- uid: PCConfigurator.Model.Components.M2Ssd.Capacity
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.Capacity
+  id: Capacity
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: Capacity
+  nameWithType: M2Ssd.Capacity
+  fullName: PCConfigurator.Model.Components.M2Ssd.Capacity
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Capacity
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 9
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int Capacity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Capacity As Integer
+  overload: PCConfigurator.Model.Components.M2Ssd.Capacity*
+- uid: PCConfigurator.Model.Components.M2Ssd.ReadSpeed
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.ReadSpeed
+  id: ReadSpeed
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: ReadSpeed
+  nameWithType: M2Ssd.ReadSpeed
+  fullName: PCConfigurator.Model.Components.M2Ssd.ReadSpeed
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ReadSpeed
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 11
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int ReadSpeed { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ReadSpeed As Integer
+  overload: PCConfigurator.Model.Components.M2Ssd.ReadSpeed*
+- uid: PCConfigurator.Model.Components.M2Ssd.WriteSpeed
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.WriteSpeed
+  id: WriteSpeed
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: WriteSpeed
+  nameWithType: M2Ssd.WriteSpeed
+  fullName: PCConfigurator.Model.Components.M2Ssd.WriteSpeed
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: WriteSpeed
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 13
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int WriteSpeed { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property WriteSpeed As Integer
+  overload: PCConfigurator.Model.Components.M2Ssd.WriteSpeed*
+- uid: PCConfigurator.Model.Components.M2Ssd.Tbw
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.Tbw
+  id: Tbw
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: Tbw
+  nameWithType: M2Ssd.Tbw
+  fullName: PCConfigurator.Model.Components.M2Ssd.Tbw
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Tbw
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 15
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int Tbw { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Tbw As Integer
+  overload: PCConfigurator.Model.Components.M2Ssd.Tbw*
+- uid: PCConfigurator.Model.Components.M2Ssd.NandType
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.NandType
+  id: NandType
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: NandType
+  nameWithType: M2Ssd.NandType
+  fullName: PCConfigurator.Model.Components.M2Ssd.NandType
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NandType
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 17
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public NandType NandType { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.NandType
+    content.vb: Public Property NandType As NandType
+  overload: PCConfigurator.Model.Components.M2Ssd.NandType*
+- uid: PCConfigurator.Model.Components.M2Ssd.M2Interface
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.M2Interface
+  id: M2Interface
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: M2Interface
+  nameWithType: M2Ssd.M2Interface
+  fullName: PCConfigurator.Model.Components.M2Ssd.M2Interface
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Interface
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 20
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public M2Interface M2Interface { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Interface
+    content.vb: Public Property M2Interface As M2Interface
+  overload: PCConfigurator.Model.Components.M2Ssd.M2Interface*
+- uid: PCConfigurator.Model.Components.M2Ssd.M2Size
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.M2Size
+  id: M2Size
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: M2Size
+  nameWithType: M2Ssd.M2Size
+  fullName: PCConfigurator.Model.Components.M2Ssd.M2Size
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Size
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 23
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public M2Size M2Size { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Size
+    content.vb: Public Property M2Size As M2Size
+  overload: PCConfigurator.Model.Components.M2Ssd.M2Size*
+- uid: PCConfigurator.Model.Components.M2Ssd.ConfigurationM2Ssds
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.ConfigurationM2Ssds
+  id: ConfigurationM2Ssds
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationM2Ssds
+  nameWithType: M2Ssd.ConfigurationM2Ssds
+  fullName: PCConfigurator.Model.Components.M2Ssd.ConfigurationM2Ssds
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationM2Ssds
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 25
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual List<ConfigurationM2Ssd> ConfigurationM2Ssds { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{PCConfigurator.Model.Components.ConfigurationM2Ssd}
+    content.vb: Public Overridable Property ConfigurationM2Ssds As List(Of ConfigurationM2Ssd)
+  overload: PCConfigurator.Model.Components.M2Ssd.ConfigurationM2Ssds*
+- uid: PCConfigurator.Model.Components.M2Ssd.IsNvme
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.IsNvme
+  id: IsNvme
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: IsNvme
+  nameWithType: M2Ssd.IsNvme
+  fullName: PCConfigurator.Model.Components.M2Ssd.IsNvme
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: IsNvme
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 28
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool IsNvme { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property IsNvme As Boolean
+  overload: PCConfigurator.Model.Components.M2Ssd.IsNvme*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.M2Ssd.IsSata
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.IsSata
+  id: IsSata
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: IsSata
+  nameWithType: M2Ssd.IsSata
+  fullName: PCConfigurator.Model.Components.M2Ssd.IsSata
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: IsSata
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 35
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool IsSata { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property IsSata As Boolean
+  overload: PCConfigurator.Model.Components.M2Ssd.IsSata*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.M2Ssd.Is2230
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.Is2230
+  id: Is2230
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: Is2230
+  nameWithType: M2Ssd.Is2230
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is2230
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Is2230
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 44
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool Is2230 { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property Is2230 As Boolean
+  overload: PCConfigurator.Model.Components.M2Ssd.Is2230*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.M2Ssd.Is2242
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.Is2242
+  id: Is2242
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: Is2242
+  nameWithType: M2Ssd.Is2242
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is2242
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Is2242
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 51
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool Is2242 { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property Is2242 As Boolean
+  overload: PCConfigurator.Model.Components.M2Ssd.Is2242*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.M2Ssd.Is2260
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.Is2260
+  id: Is2260
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: Is2260
+  nameWithType: M2Ssd.Is2260
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is2260
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Is2260
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 58
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool Is2260 { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property Is2260 As Boolean
+  overload: PCConfigurator.Model.Components.M2Ssd.Is2260*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.M2Ssd.Is2280
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.Is2280
+  id: Is2280
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: Is2280
+  nameWithType: M2Ssd.Is2280
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is2280
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Is2280
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 65
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool Is2280 { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property Is2280 As Boolean
+  overload: PCConfigurator.Model.Components.M2Ssd.Is2280*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.M2Ssd.Is22110
+  commentId: P:PCConfigurator.Model.Components.M2Ssd.Is22110
+  id: Is22110
+  parent: PCConfigurator.Model.Components.M2Ssd
+  langs:
+  - csharp
+  - vb
+  name: Is22110
+  nameWithType: M2Ssd.Is22110
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is22110
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Is22110
+    path: ../PCConfigurator/Model/Components/M2Ssd.cs
+    startLine: 72
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool Is22110 { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property Is22110 As Boolean
+  overload: PCConfigurator.Model.Components.M2Ssd.Is22110*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+references:
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PCConfigurator.Model.Components.Component
+  commentId: T:PCConfigurator.Model.Components.Component
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Component.html
+  name: Component
+  nameWithType: Component
+  fullName: PCConfigurator.Model.Components.Component
+- uid: PCConfigurator.Model.Components.Component.Model
+  commentId: P:PCConfigurator.Model.Components.Component.Model
+  parent: PCConfigurator.Model.Components.Component
+  href: PCConfigurator.Model.Components.Component.html#PCConfigurator_Model_Components_Component_Model
+  name: Model
+  nameWithType: Component.Model
+  fullName: PCConfigurator.Model.Components.Component.Model
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PCConfigurator.Model.Components.M2Ssd.M2SsdId*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.M2SsdId
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_M2SsdId
+  name: M2SsdId
+  nameWithType: M2Ssd.M2SsdId
+  fullName: PCConfigurator.Model.Components.M2Ssd.M2SsdId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PCConfigurator.Model.Components.M2Ssd.Capacity*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.Capacity
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_Capacity
+  name: Capacity
+  nameWithType: M2Ssd.Capacity
+  fullName: PCConfigurator.Model.Components.M2Ssd.Capacity
+- uid: PCConfigurator.Model.Components.M2Ssd.ReadSpeed*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.ReadSpeed
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_ReadSpeed
+  name: ReadSpeed
+  nameWithType: M2Ssd.ReadSpeed
+  fullName: PCConfigurator.Model.Components.M2Ssd.ReadSpeed
+- uid: PCConfigurator.Model.Components.M2Ssd.WriteSpeed*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.WriteSpeed
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_WriteSpeed
+  name: WriteSpeed
+  nameWithType: M2Ssd.WriteSpeed
+  fullName: PCConfigurator.Model.Components.M2Ssd.WriteSpeed
+- uid: PCConfigurator.Model.Components.M2Ssd.Tbw*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.Tbw
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_Tbw
+  name: Tbw
+  nameWithType: M2Ssd.Tbw
+  fullName: PCConfigurator.Model.Components.M2Ssd.Tbw
+- uid: PCConfigurator.Model.Components.M2Ssd.NandType*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.NandType
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_NandType
+  name: NandType
+  nameWithType: M2Ssd.NandType
+  fullName: PCConfigurator.Model.Components.M2Ssd.NandType
+- uid: PCConfigurator.Model.Components.NandType
+  commentId: T:PCConfigurator.Model.Components.NandType
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.NandType.html
+  name: NandType
+  nameWithType: NandType
+  fullName: PCConfigurator.Model.Components.NandType
+- uid: PCConfigurator.Model.Components.M2Ssd.M2Interface*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.M2Interface
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_M2Interface
+  name: M2Interface
+  nameWithType: M2Ssd.M2Interface
+  fullName: PCConfigurator.Model.Components.M2Ssd.M2Interface
+- uid: PCConfigurator.Model.Components.M2.M2Interface
+  commentId: T:PCConfigurator.Model.Components.M2.M2Interface
+  parent: PCConfigurator.Model.Components.M2
+  href: PCConfigurator.Model.Components.M2.M2Interface.html
+  name: M2Interface
+  nameWithType: M2Interface
+  fullName: PCConfigurator.Model.Components.M2.M2Interface
+- uid: PCConfigurator.Model.Components.M2
+  commentId: N:PCConfigurator.Model.Components.M2
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components.M2
+  nameWithType: PCConfigurator.Model.Components.M2
+  fullName: PCConfigurator.Model.Components.M2
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  - name: .
+  - uid: PCConfigurator.Model.Components.M2
+    name: M2
+    href: PCConfigurator.Model.Components.M2.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  - name: .
+  - uid: PCConfigurator.Model.Components.M2
+    name: M2
+    href: PCConfigurator.Model.Components.M2.html
+- uid: PCConfigurator.Model.Components.M2Ssd.M2Size*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.M2Size
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_M2Size
+  name: M2Size
+  nameWithType: M2Ssd.M2Size
+  fullName: PCConfigurator.Model.Components.M2Ssd.M2Size
+- uid: PCConfigurator.Model.Components.M2.M2Size
+  commentId: T:PCConfigurator.Model.Components.M2.M2Size
+  parent: PCConfigurator.Model.Components.M2
+  href: PCConfigurator.Model.Components.M2.M2Size.html
+  name: M2Size
+  nameWithType: M2Size
+  fullName: PCConfigurator.Model.Components.M2.M2Size
+- uid: PCConfigurator.Model.Components.M2Ssd.ConfigurationM2Ssds*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.ConfigurationM2Ssds
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_ConfigurationM2Ssds
+  name: ConfigurationM2Ssds
+  nameWithType: M2Ssd.ConfigurationM2Ssds
+  fullName: PCConfigurator.Model.Components.M2Ssd.ConfigurationM2Ssds
+- uid: System.Collections.Generic.List{PCConfigurator.Model.Components.ConfigurationM2Ssd}
+  commentId: T:System.Collections.Generic.List{PCConfigurator.Model.Components.ConfigurationM2Ssd}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ConfigurationM2Ssd>
+  nameWithType: List<ConfigurationM2Ssd>
+  fullName: System.Collections.Generic.List<PCConfigurator.Model.Components.ConfigurationM2Ssd>
+  nameWithType.vb: List(Of ConfigurationM2Ssd)
+  fullName.vb: System.Collections.Generic.List(Of PCConfigurator.Model.Components.ConfigurationM2Ssd)
+  name.vb: List(Of ConfigurationM2Ssd)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PCConfigurator.Model.Components.ConfigurationM2Ssd
+    name: ConfigurationM2Ssd
+    href: PCConfigurator.Model.Components.ConfigurationM2Ssd.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PCConfigurator.Model.Components.ConfigurationM2Ssd
+    name: ConfigurationM2Ssd
+    href: PCConfigurator.Model.Components.ConfigurationM2Ssd.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: PCConfigurator.Model.Components.M2Ssd.IsNvme*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.IsNvme
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_IsNvme
+  name: IsNvme
+  nameWithType: M2Ssd.IsNvme
+  fullName: PCConfigurator.Model.Components.M2Ssd.IsNvme
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: PCConfigurator.Model.Components.M2Ssd.IsSata*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.IsSata
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_IsSata
+  name: IsSata
+  nameWithType: M2Ssd.IsSata
+  fullName: PCConfigurator.Model.Components.M2Ssd.IsSata
+- uid: PCConfigurator.Model.Components.M2Ssd.Is2230*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.Is2230
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_Is2230
+  name: Is2230
+  nameWithType: M2Ssd.Is2230
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is2230
+- uid: PCConfigurator.Model.Components.M2Ssd.Is2242*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.Is2242
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_Is2242
+  name: Is2242
+  nameWithType: M2Ssd.Is2242
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is2242
+- uid: PCConfigurator.Model.Components.M2Ssd.Is2260*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.Is2260
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_Is2260
+  name: Is2260
+  nameWithType: M2Ssd.Is2260
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is2260
+- uid: PCConfigurator.Model.Components.M2Ssd.Is2280*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.Is2280
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_Is2280
+  name: Is2280
+  nameWithType: M2Ssd.Is2280
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is2280
+- uid: PCConfigurator.Model.Components.M2Ssd.Is22110*
+  commentId: Overload:PCConfigurator.Model.Components.M2Ssd.Is22110
+  href: PCConfigurator.Model.Components.M2Ssd.html#PCConfigurator_Model_Components_M2Ssd_Is22110
+  name: Is22110
+  nameWithType: M2Ssd.Is22110
+  fullName: PCConfigurator.Model.Components.M2Ssd.Is22110

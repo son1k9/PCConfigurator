@@ -1,0 +1,1304 @@
+{
+  "source_base_path": "C:/Users/Сергей/source/repos/PCConfigurator/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.App.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.App.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Commands.NavigateCommand-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Commands.NavigateCommand-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Commands.RelayCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Commands.RelayCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Converters.GetIndexConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Converters.GetIndexConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Converters.UriConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Converters.UriConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Converters.VisibilityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Converters.VisibilityConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Converters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Converters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Helper.ConfigurationIE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Helper.ConfigurationIE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Helper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Helper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.MainWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.MainWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Migrations.InitialCreate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Migrations.InitialCreate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Migrations.MotherboardRemovedSocket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Migrations.MotherboardRemovedSocket.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Migrations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.ApplicationContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.ApplicationContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Chipset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Chipset.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Component.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Component.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.ConfigurationGpu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.ConfigurationGpu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.ConfigurationHdd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.ConfigurationHdd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.ConfigurationM2Ssd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.ConfigurationM2Ssd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.ConfigurationRam.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.ConfigurationRam.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.ConfigurationSsd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.ConfigurationSsd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Cooler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Cooler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Cpu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Cpu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.FlagsExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.FlagsExtension.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Gpu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Gpu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Hdd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Hdd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.M2.M2Interface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.M2.M2Interface.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.M2.M2Size.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.M2.M2Size.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.M2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.M2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.M2Slot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.M2Slot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.M2Ssd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.M2Ssd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Motherboard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Motherboard.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.NandType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.NandType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.PowerSupply.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.PowerSupply.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Ram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Ram.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.RamType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.RamType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Socket.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Socket.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.Ssd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.Ssd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.Components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.Model.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.Model.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.M2InterfaceUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.M2InterfaceUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.M2SizeUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.M2SizeUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.M2SlotUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.M2SlotUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewCoolerWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewCoolerWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewCpuWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewCpuWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewGpuWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewGpuWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewHddWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewHddWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewM2SsdWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewM2SsdWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewMotherboardWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewMotherboardWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewPowerSupplyWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewPowerSupplyWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewRamWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewRamWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewSocketWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewSocketWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.NewSsdWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.NewSsdWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddComponents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddComponents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.AddConfiguartionWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.AddConfiguartionWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.CoolerUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.CoolerUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.CpuUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.CpuUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.GpuUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.GpuUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.HddUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.HddUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.M2SsdUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.M2SsdUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.MotherboardUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.MotherboardUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.PowerSupplyUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.PowerSupplyUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.RamUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.RamUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.SocketUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.SocketUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.SsdUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.SsdUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentsUserControls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentsUserControls.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.CoolerListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.CoolerListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.CpuListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.CpuListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.GpuListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.GpuListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.HddListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.HddListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.M2SsdListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.M2SsdListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.MotherboardsListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.MotherboardsListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.PowerSupplyListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.PowerSupplyListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.RamListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.RamListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.SsdListUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.SsdListUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ComponentСhoice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ComponentСhoice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ConfigurationNameInputWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ConfigurationNameInputWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.ConfigurationsUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.ConfigurationsUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.M2SlotUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.M2SlotUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.NewConfigurationUserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.NewConfigurationUserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.View.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.View.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.BaseViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.BaseViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.CoolerViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.CoolerViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.CpuViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.CpuViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.GpuViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.GpuViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.HddViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.HddViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.MotherboardViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.MotherboardViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.PowerSupplyViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.PowerSupplyViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.RamViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.RamViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.SocketViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.SocketViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.SsdViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.SsdViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ComponentsViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ConfigurationViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ConfigurationViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.ConfigurationsViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.ConfigurationsViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.MainViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.MainViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewCoolerViewmodel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewCoolerViewmodel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewHddViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewHddViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewM2SsdViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewM2SsdViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewMotherboardViewmodel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewMotherboardViewmodel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewSocketViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewSocketViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewSsdViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.NewSsdViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.NewComponentsViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.ViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.ViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCConfigurator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCConfigurator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/article1.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/article1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/article2.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/article2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "guides/guide1.md",
+      "output": {
+        ".html": {
+          "relative_path": "guides/guide1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "guides/guide2.md",
+      "output": {
+        ".html": {
+          "relative_path": "guides/guide2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "guides/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "guides/toc.html"
+        },
+        ".json": {
+          "relative_path": "guides/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ namespace PCConfigurator.ViewModel;
 /// <summary>
 /// Class that represents ViewModel for main window
 /// </summary>
-internal class MainViewModel : BaseViewModel
+public class MainViewModel : BaseViewModel
 {
     private int lastConfigurationid = 0;
 

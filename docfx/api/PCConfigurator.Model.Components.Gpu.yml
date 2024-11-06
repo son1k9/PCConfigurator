@@ -1,0 +1,716 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.Gpu
+  commentId: T:PCConfigurator.Model.Components.Gpu
+  id: Gpu
+  parent: PCConfigurator.Model.Components
+  children:
+  - PCConfigurator.Model.Components.Gpu.BoostClock
+  - PCConfigurator.Model.Components.Gpu.ConfigurationGpus
+  - PCConfigurator.Model.Components.Gpu.Configurations
+  - PCConfigurator.Model.Components.Gpu.CoreClock
+  - PCConfigurator.Model.Components.Gpu.GpuId
+  - PCConfigurator.Model.Components.Gpu.PowerConsumption
+  - PCConfigurator.Model.Components.Gpu.VramCapacity
+  langs:
+  - csharp
+  - vb
+  name: Gpu
+  nameWithType: Gpu
+  fullName: PCConfigurator.Model.Components.Gpu
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Gpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Gpu
+    path: ../PCConfigurator/Model/Components/Gpu.cs
+    startLine: 2
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: 'public class Gpu : Component'
+    content.vb: Public Class Gpu Inherits Component
+  inheritance:
+  - System.Object
+  - PCConfigurator.Model.Components.Component
+  inheritedMembers:
+  - PCConfigurator.Model.Components.Component.Model
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.Model.Components.Gpu.GpuId
+  commentId: P:PCConfigurator.Model.Components.Gpu.GpuId
+  id: GpuId
+  parent: PCConfigurator.Model.Components.Gpu
+  langs:
+  - csharp
+  - vb
+  name: GpuId
+  nameWithType: Gpu.GpuId
+  fullName: PCConfigurator.Model.Components.Gpu.GpuId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Gpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: GpuId
+    path: ../PCConfigurator/Model/Components/Gpu.cs
+    startLine: 4
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int GpuId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property GpuId As Integer
+  overload: PCConfigurator.Model.Components.Gpu.GpuId*
+- uid: PCConfigurator.Model.Components.Gpu.CoreClock
+  commentId: P:PCConfigurator.Model.Components.Gpu.CoreClock
+  id: CoreClock
+  parent: PCConfigurator.Model.Components.Gpu
+  langs:
+  - csharp
+  - vb
+  name: CoreClock
+  nameWithType: Gpu.CoreClock
+  fullName: PCConfigurator.Model.Components.Gpu.CoreClock
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Gpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: CoreClock
+    path: ../PCConfigurator/Model/Components/Gpu.cs
+    startLine: 6
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int CoreClock { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CoreClock As Integer
+  overload: PCConfigurator.Model.Components.Gpu.CoreClock*
+- uid: PCConfigurator.Model.Components.Gpu.BoostClock
+  commentId: P:PCConfigurator.Model.Components.Gpu.BoostClock
+  id: BoostClock
+  parent: PCConfigurator.Model.Components.Gpu
+  langs:
+  - csharp
+  - vb
+  name: BoostClock
+  nameWithType: Gpu.BoostClock
+  fullName: PCConfigurator.Model.Components.Gpu.BoostClock
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Gpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: BoostClock
+    path: ../PCConfigurator/Model/Components/Gpu.cs
+    startLine: 8
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int BoostClock { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property BoostClock As Integer
+  overload: PCConfigurator.Model.Components.Gpu.BoostClock*
+- uid: PCConfigurator.Model.Components.Gpu.VramCapacity
+  commentId: P:PCConfigurator.Model.Components.Gpu.VramCapacity
+  id: VramCapacity
+  parent: PCConfigurator.Model.Components.Gpu
+  langs:
+  - csharp
+  - vb
+  name: VramCapacity
+  nameWithType: Gpu.VramCapacity
+  fullName: PCConfigurator.Model.Components.Gpu.VramCapacity
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Gpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: VramCapacity
+    path: ../PCConfigurator/Model/Components/Gpu.cs
+    startLine: 10
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int VramCapacity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property VramCapacity As Integer
+  overload: PCConfigurator.Model.Components.Gpu.VramCapacity*
+- uid: PCConfigurator.Model.Components.Gpu.PowerConsumption
+  commentId: P:PCConfigurator.Model.Components.Gpu.PowerConsumption
+  id: PowerConsumption
+  parent: PCConfigurator.Model.Components.Gpu
+  langs:
+  - csharp
+  - vb
+  name: PowerConsumption
+  nameWithType: Gpu.PowerConsumption
+  fullName: PCConfigurator.Model.Components.Gpu.PowerConsumption
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Gpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: PowerConsumption
+    path: ../PCConfigurator/Model/Components/Gpu.cs
+    startLine: 12
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int PowerConsumption { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property PowerConsumption As Integer
+  overload: PCConfigurator.Model.Components.Gpu.PowerConsumption*
+- uid: PCConfigurator.Model.Components.Gpu.Configurations
+  commentId: P:PCConfigurator.Model.Components.Gpu.Configurations
+  id: Configurations
+  parent: PCConfigurator.Model.Components.Gpu
+  langs:
+  - csharp
+  - vb
+  name: Configurations
+  nameWithType: Gpu.Configurations
+  fullName: PCConfigurator.Model.Components.Gpu.Configurations
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Gpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Configurations
+    path: ../PCConfigurator/Model/Components/Gpu.cs
+    startLine: 14
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual List<Configuration> Configurations { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+    content.vb: Public Overridable Property Configurations As List(Of Configuration)
+  overload: PCConfigurator.Model.Components.Gpu.Configurations*
+- uid: PCConfigurator.Model.Components.Gpu.ConfigurationGpus
+  commentId: P:PCConfigurator.Model.Components.Gpu.ConfigurationGpus
+  id: ConfigurationGpus
+  parent: PCConfigurator.Model.Components.Gpu
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationGpus
+  nameWithType: Gpu.ConfigurationGpus
+  fullName: PCConfigurator.Model.Components.Gpu.ConfigurationGpus
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Gpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationGpus
+    path: ../PCConfigurator/Model/Components/Gpu.cs
+    startLine: 15
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual List<ConfigurationGpu> ConfigurationGpus { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{PCConfigurator.Model.Components.ConfigurationGpu}
+    content.vb: Public Overridable Property ConfigurationGpus As List(Of ConfigurationGpu)
+  overload: PCConfigurator.Model.Components.Gpu.ConfigurationGpus*
+references:
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PCConfigurator.Model.Components.Component
+  commentId: T:PCConfigurator.Model.Components.Component
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Component.html
+  name: Component
+  nameWithType: Component
+  fullName: PCConfigurator.Model.Components.Component
+- uid: PCConfigurator.Model.Components.Component.Model
+  commentId: P:PCConfigurator.Model.Components.Component.Model
+  parent: PCConfigurator.Model.Components.Component
+  href: PCConfigurator.Model.Components.Component.html#PCConfigurator_Model_Components_Component_Model
+  name: Model
+  nameWithType: Component.Model
+  fullName: PCConfigurator.Model.Components.Component.Model
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PCConfigurator.Model.Components.Gpu.GpuId*
+  commentId: Overload:PCConfigurator.Model.Components.Gpu.GpuId
+  href: PCConfigurator.Model.Components.Gpu.html#PCConfigurator_Model_Components_Gpu_GpuId
+  name: GpuId
+  nameWithType: Gpu.GpuId
+  fullName: PCConfigurator.Model.Components.Gpu.GpuId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PCConfigurator.Model.Components.Gpu.CoreClock*
+  commentId: Overload:PCConfigurator.Model.Components.Gpu.CoreClock
+  href: PCConfigurator.Model.Components.Gpu.html#PCConfigurator_Model_Components_Gpu_CoreClock
+  name: CoreClock
+  nameWithType: Gpu.CoreClock
+  fullName: PCConfigurator.Model.Components.Gpu.CoreClock
+- uid: PCConfigurator.Model.Components.Gpu.BoostClock*
+  commentId: Overload:PCConfigurator.Model.Components.Gpu.BoostClock
+  href: PCConfigurator.Model.Components.Gpu.html#PCConfigurator_Model_Components_Gpu_BoostClock
+  name: BoostClock
+  nameWithType: Gpu.BoostClock
+  fullName: PCConfigurator.Model.Components.Gpu.BoostClock
+- uid: PCConfigurator.Model.Components.Gpu.VramCapacity*
+  commentId: Overload:PCConfigurator.Model.Components.Gpu.VramCapacity
+  href: PCConfigurator.Model.Components.Gpu.html#PCConfigurator_Model_Components_Gpu_VramCapacity
+  name: VramCapacity
+  nameWithType: Gpu.VramCapacity
+  fullName: PCConfigurator.Model.Components.Gpu.VramCapacity
+- uid: PCConfigurator.Model.Components.Gpu.PowerConsumption*
+  commentId: Overload:PCConfigurator.Model.Components.Gpu.PowerConsumption
+  href: PCConfigurator.Model.Components.Gpu.html#PCConfigurator_Model_Components_Gpu_PowerConsumption
+  name: PowerConsumption
+  nameWithType: Gpu.PowerConsumption
+  fullName: PCConfigurator.Model.Components.Gpu.PowerConsumption
+- uid: PCConfigurator.Model.Components.Gpu.Configurations*
+  commentId: Overload:PCConfigurator.Model.Components.Gpu.Configurations
+  href: PCConfigurator.Model.Components.Gpu.html#PCConfigurator_Model_Components_Gpu_Configurations
+  name: Configurations
+  nameWithType: Gpu.Configurations
+  fullName: PCConfigurator.Model.Components.Gpu.Configurations
+- uid: System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+  commentId: T:System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Configuration>
+  nameWithType: List<Configuration>
+  fullName: System.Collections.Generic.List<PCConfigurator.Model.Components.Configuration>
+  nameWithType.vb: List(Of Configuration)
+  fullName.vb: System.Collections.Generic.List(Of PCConfigurator.Model.Components.Configuration)
+  name.vb: List(Of Configuration)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PCConfigurator.Model.Components.Configuration
+    name: Configuration
+    href: PCConfigurator.Model.Components.Configuration.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PCConfigurator.Model.Components.Configuration
+    name: Configuration
+    href: PCConfigurator.Model.Components.Configuration.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: PCConfigurator.Model.Components.Gpu.ConfigurationGpus*
+  commentId: Overload:PCConfigurator.Model.Components.Gpu.ConfigurationGpus
+  href: PCConfigurator.Model.Components.Gpu.html#PCConfigurator_Model_Components_Gpu_ConfigurationGpus
+  name: ConfigurationGpus
+  nameWithType: Gpu.ConfigurationGpus
+  fullName: PCConfigurator.Model.Components.Gpu.ConfigurationGpus
+- uid: System.Collections.Generic.List{PCConfigurator.Model.Components.ConfigurationGpu}
+  commentId: T:System.Collections.Generic.List{PCConfigurator.Model.Components.ConfigurationGpu}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ConfigurationGpu>
+  nameWithType: List<ConfigurationGpu>
+  fullName: System.Collections.Generic.List<PCConfigurator.Model.Components.ConfigurationGpu>
+  nameWithType.vb: List(Of ConfigurationGpu)
+  fullName.vb: System.Collections.Generic.List(Of PCConfigurator.Model.Components.ConfigurationGpu)
+  name.vb: List(Of ConfigurationGpu)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PCConfigurator.Model.Components.ConfigurationGpu
+    name: ConfigurationGpu
+    href: PCConfigurator.Model.Components.ConfigurationGpu.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PCConfigurator.Model.Components.ConfigurationGpu
+    name: ConfigurationGpu
+    href: PCConfigurator.Model.Components.ConfigurationGpu.html
+  - name: )

@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.M2
+  commentId: N:PCConfigurator.Model.Components.M2
+  id: PCConfigurator.Model.Components.M2
+  children:
+  - PCConfigurator.Model.Components.M2.M2Interface
+  - PCConfigurator.Model.Components.M2.M2Size
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.Model.Components.M2
+  nameWithType: PCConfigurator.Model.Components.M2
+  fullName: PCConfigurator.Model.Components.M2
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.Model.Components.M2.M2Size
+  commentId: T:PCConfigurator.Model.Components.M2.M2Size
+  parent: PCConfigurator.Model.Components.M2
+  href: PCConfigurator.Model.Components.M2.M2Size.html
+  name: M2Size
+  nameWithType: M2Size
+  fullName: PCConfigurator.Model.Components.M2.M2Size
+- uid: PCConfigurator.Model.Components.M2.M2Interface
+  commentId: T:PCConfigurator.Model.Components.M2.M2Interface
+  parent: PCConfigurator.Model.Components.M2
+  href: PCConfigurator.Model.Components.M2.M2Interface.html
+  name: M2Interface
+  nameWithType: M2Interface
+  fullName: PCConfigurator.Model.Components.M2.M2Interface
+- uid: PCConfigurator.Model.Components.M2
+  commentId: N:PCConfigurator.Model.Components.M2
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components.M2
+  nameWithType: PCConfigurator.Model.Components.M2
+  fullName: PCConfigurator.Model.Components.M2
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  - name: .
+  - uid: PCConfigurator.Model.Components.M2
+    name: M2
+    href: PCConfigurator.Model.Components.M2.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  - name: .
+  - uid: PCConfigurator.Model.Components.M2
+    name: M2
+    href: PCConfigurator.Model.Components.M2.html

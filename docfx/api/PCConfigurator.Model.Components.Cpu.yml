@@ -1,0 +1,1145 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.Cpu
+  commentId: T:PCConfigurator.Model.Components.Cpu
+  id: Cpu
+  parent: PCConfigurator.Model.Components
+  children:
+  - PCConfigurator.Model.Components.Cpu.BoostClock
+  - PCConfigurator.Model.Components.Cpu.Configurations
+  - PCConfigurator.Model.Components.Cpu.CoreClock
+  - PCConfigurator.Model.Components.Cpu.Cores
+  - PCConfigurator.Model.Components.Cpu.CpuId
+  - PCConfigurator.Model.Components.Cpu.ECores
+  - PCConfigurator.Model.Components.Cpu.HaveGraphics
+  - PCConfigurator.Model.Components.Cpu.IsDDR3
+  - PCConfigurator.Model.Components.Cpu.IsDDR4
+  - PCConfigurator.Model.Components.Cpu.IsDDR5
+  - PCConfigurator.Model.Components.Cpu.L2Cache
+  - PCConfigurator.Model.Components.Cpu.L3Cache
+  - PCConfigurator.Model.Components.Cpu.MaxRamCapacity
+  - PCConfigurator.Model.Components.Cpu.RamTypes
+  - PCConfigurator.Model.Components.Cpu.Smt
+  - PCConfigurator.Model.Components.Cpu.Socket
+  - PCConfigurator.Model.Components.Cpu.SocketId
+  - PCConfigurator.Model.Components.Cpu.Tdp
+  langs:
+  - csharp
+  - vb
+  name: Cpu
+  nameWithType: Cpu
+  fullName: PCConfigurator.Model.Components.Cpu
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Cpu
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 4
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: 'public class Cpu : Component'
+    content.vb: Public Class Cpu Inherits Component
+  inheritance:
+  - System.Object
+  - PCConfigurator.Model.Components.Component
+  inheritedMembers:
+  - PCConfigurator.Model.Components.Component.Model
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.Model.Components.Cpu.CpuId
+  commentId: P:PCConfigurator.Model.Components.Cpu.CpuId
+  id: CpuId
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: CpuId
+  nameWithType: Cpu.CpuId
+  fullName: PCConfigurator.Model.Components.Cpu.CpuId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: CpuId
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 6
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int CpuId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CpuId As Integer
+  overload: PCConfigurator.Model.Components.Cpu.CpuId*
+- uid: PCConfigurator.Model.Components.Cpu.SocketId
+  commentId: P:PCConfigurator.Model.Components.Cpu.SocketId
+  id: SocketId
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: SocketId
+  nameWithType: Cpu.SocketId
+  fullName: PCConfigurator.Model.Components.Cpu.SocketId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: SocketId
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 8
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int SocketId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SocketId As Integer
+  overload: PCConfigurator.Model.Components.Cpu.SocketId*
+- uid: PCConfigurator.Model.Components.Cpu.Socket
+  commentId: P:PCConfigurator.Model.Components.Cpu.Socket
+  id: Socket
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: Socket
+  nameWithType: Cpu.Socket
+  fullName: PCConfigurator.Model.Components.Cpu.Socket
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Socket
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 9
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual Socket Socket { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Socket
+    content.vb: Public Overridable Property Socket As Socket
+  overload: PCConfigurator.Model.Components.Cpu.Socket*
+- uid: PCConfigurator.Model.Components.Cpu.Cores
+  commentId: P:PCConfigurator.Model.Components.Cpu.Cores
+  id: Cores
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: Cores
+  nameWithType: Cpu.Cores
+  fullName: PCConfigurator.Model.Components.Cpu.Cores
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Cores
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 11
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int Cores { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Cores As Integer
+  overload: PCConfigurator.Model.Components.Cpu.Cores*
+- uid: PCConfigurator.Model.Components.Cpu.ECores
+  commentId: P:PCConfigurator.Model.Components.Cpu.ECores
+  id: ECores
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: ECores
+  nameWithType: Cpu.ECores
+  fullName: PCConfigurator.Model.Components.Cpu.ECores
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ECores
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 13
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int ECores { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ECores As Integer
+  overload: PCConfigurator.Model.Components.Cpu.ECores*
+- uid: PCConfigurator.Model.Components.Cpu.Smt
+  commentId: P:PCConfigurator.Model.Components.Cpu.Smt
+  id: Smt
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: Smt
+  nameWithType: Cpu.Smt
+  fullName: PCConfigurator.Model.Components.Cpu.Smt
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Smt
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 15
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public bool Smt { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Smt As Boolean
+  overload: PCConfigurator.Model.Components.Cpu.Smt*
+- uid: PCConfigurator.Model.Components.Cpu.CoreClock
+  commentId: P:PCConfigurator.Model.Components.Cpu.CoreClock
+  id: CoreClock
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: CoreClock
+  nameWithType: Cpu.CoreClock
+  fullName: PCConfigurator.Model.Components.Cpu.CoreClock
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: CoreClock
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 17
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public float CoreClock { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property CoreClock As Single
+  overload: PCConfigurator.Model.Components.Cpu.CoreClock*
+- uid: PCConfigurator.Model.Components.Cpu.BoostClock
+  commentId: P:PCConfigurator.Model.Components.Cpu.BoostClock
+  id: BoostClock
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: BoostClock
+  nameWithType: Cpu.BoostClock
+  fullName: PCConfigurator.Model.Components.Cpu.BoostClock
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: BoostClock
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 19
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public float BoostClock { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property BoostClock As Single
+  overload: PCConfigurator.Model.Components.Cpu.BoostClock*
+- uid: PCConfigurator.Model.Components.Cpu.L2Cache
+  commentId: P:PCConfigurator.Model.Components.Cpu.L2Cache
+  id: L2Cache
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: L2Cache
+  nameWithType: Cpu.L2Cache
+  fullName: PCConfigurator.Model.Components.Cpu.L2Cache
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: L2Cache
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 21
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int L2Cache { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property L2Cache As Integer
+  overload: PCConfigurator.Model.Components.Cpu.L2Cache*
+- uid: PCConfigurator.Model.Components.Cpu.L3Cache
+  commentId: P:PCConfigurator.Model.Components.Cpu.L3Cache
+  id: L3Cache
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: L3Cache
+  nameWithType: Cpu.L3Cache
+  fullName: PCConfigurator.Model.Components.Cpu.L3Cache
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: L3Cache
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 23
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int L3Cache { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property L3Cache As Integer
+  overload: PCConfigurator.Model.Components.Cpu.L3Cache*
+- uid: PCConfigurator.Model.Components.Cpu.Tdp
+  commentId: P:PCConfigurator.Model.Components.Cpu.Tdp
+  id: Tdp
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: Tdp
+  nameWithType: Cpu.Tdp
+  fullName: PCConfigurator.Model.Components.Cpu.Tdp
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Tdp
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 25
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int Tdp { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Tdp As Integer
+  overload: PCConfigurator.Model.Components.Cpu.Tdp*
+- uid: PCConfigurator.Model.Components.Cpu.RamTypes
+  commentId: P:PCConfigurator.Model.Components.Cpu.RamTypes
+  id: RamTypes
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: RamTypes
+  nameWithType: Cpu.RamTypes
+  fullName: PCConfigurator.Model.Components.Cpu.RamTypes
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: RamTypes
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 28
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public RamType RamTypes { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.RamType
+    content.vb: Public Property RamTypes As RamType
+  overload: PCConfigurator.Model.Components.Cpu.RamTypes*
+- uid: PCConfigurator.Model.Components.Cpu.MaxRamCapacity
+  commentId: P:PCConfigurator.Model.Components.Cpu.MaxRamCapacity
+  id: MaxRamCapacity
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: MaxRamCapacity
+  nameWithType: Cpu.MaxRamCapacity
+  fullName: PCConfigurator.Model.Components.Cpu.MaxRamCapacity
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: MaxRamCapacity
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 30
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int MaxRamCapacity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxRamCapacity As Integer
+  overload: PCConfigurator.Model.Components.Cpu.MaxRamCapacity*
+- uid: PCConfigurator.Model.Components.Cpu.HaveGraphics
+  commentId: P:PCConfigurator.Model.Components.Cpu.HaveGraphics
+  id: HaveGraphics
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: HaveGraphics
+  nameWithType: Cpu.HaveGraphics
+  fullName: PCConfigurator.Model.Components.Cpu.HaveGraphics
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: HaveGraphics
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 32
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public bool HaveGraphics { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HaveGraphics As Boolean
+  overload: PCConfigurator.Model.Components.Cpu.HaveGraphics*
+- uid: PCConfigurator.Model.Components.Cpu.Configurations
+  commentId: P:PCConfigurator.Model.Components.Cpu.Configurations
+  id: Configurations
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: Configurations
+  nameWithType: Cpu.Configurations
+  fullName: PCConfigurator.Model.Components.Cpu.Configurations
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Configurations
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 34
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual List<Configuration> Configurations { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+    content.vb: Public Overridable Property Configurations As List(Of Configuration)
+  overload: PCConfigurator.Model.Components.Cpu.Configurations*
+- uid: PCConfigurator.Model.Components.Cpu.IsDDR3
+  commentId: P:PCConfigurator.Model.Components.Cpu.IsDDR3
+  id: IsDDR3
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: IsDDR3
+  nameWithType: Cpu.IsDDR3
+  fullName: PCConfigurator.Model.Components.Cpu.IsDDR3
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: IsDDR3
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 36
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool IsDDR3 { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property IsDDR3 As Boolean
+  overload: PCConfigurator.Model.Components.Cpu.IsDDR3*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.Cpu.IsDDR4
+  commentId: P:PCConfigurator.Model.Components.Cpu.IsDDR4
+  id: IsDDR4
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: IsDDR4
+  nameWithType: Cpu.IsDDR4
+  fullName: PCConfigurator.Model.Components.Cpu.IsDDR4
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: IsDDR4
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 43
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool IsDDR4 { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property IsDDR4 As Boolean
+  overload: PCConfigurator.Model.Components.Cpu.IsDDR4*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.Cpu.IsDDR5
+  commentId: P:PCConfigurator.Model.Components.Cpu.IsDDR5
+  id: IsDDR5
+  parent: PCConfigurator.Model.Components.Cpu
+  langs:
+  - csharp
+  - vb
+  name: IsDDR5
+  nameWithType: Cpu.IsDDR5
+  fullName: PCConfigurator.Model.Components.Cpu.IsDDR5
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Cpu.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: IsDDR5
+    path: ../PCConfigurator/Model/Components/Cpu.cs
+    startLine: 50
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [NotMapped]
+
+      public bool IsDDR5 { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <NotMapped>
+
+      Public Property IsDDR5 As Boolean
+  overload: PCConfigurator.Model.Components.Cpu.IsDDR5*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute.#ctor
+    arguments: []
+references:
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PCConfigurator.Model.Components.Component
+  commentId: T:PCConfigurator.Model.Components.Component
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Component.html
+  name: Component
+  nameWithType: Component
+  fullName: PCConfigurator.Model.Components.Component
+- uid: PCConfigurator.Model.Components.Component.Model
+  commentId: P:PCConfigurator.Model.Components.Component.Model
+  parent: PCConfigurator.Model.Components.Component
+  href: PCConfigurator.Model.Components.Component.html#PCConfigurator_Model_Components_Component_Model
+  name: Model
+  nameWithType: Component.Model
+  fullName: PCConfigurator.Model.Components.Component.Model
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PCConfigurator.Model.Components.Cpu.CpuId*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.CpuId
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_CpuId
+  name: CpuId
+  nameWithType: Cpu.CpuId
+  fullName: PCConfigurator.Model.Components.Cpu.CpuId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PCConfigurator.Model.Components.Cpu.SocketId*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.SocketId
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_SocketId
+  name: SocketId
+  nameWithType: Cpu.SocketId
+  fullName: PCConfigurator.Model.Components.Cpu.SocketId
+- uid: PCConfigurator.Model.Components.Cpu.Socket*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.Socket
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_Socket
+  name: Socket
+  nameWithType: Cpu.Socket
+  fullName: PCConfigurator.Model.Components.Cpu.Socket
+- uid: PCConfigurator.Model.Components.Socket
+  commentId: T:PCConfigurator.Model.Components.Socket
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Socket.html
+  name: Socket
+  nameWithType: Socket
+  fullName: PCConfigurator.Model.Components.Socket
+- uid: PCConfigurator.Model.Components.Cpu.Cores*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.Cores
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_Cores
+  name: Cores
+  nameWithType: Cpu.Cores
+  fullName: PCConfigurator.Model.Components.Cpu.Cores
+- uid: PCConfigurator.Model.Components.Cpu.ECores*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.ECores
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_ECores
+  name: ECores
+  nameWithType: Cpu.ECores
+  fullName: PCConfigurator.Model.Components.Cpu.ECores
+- uid: PCConfigurator.Model.Components.Cpu.Smt*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.Smt
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_Smt
+  name: Smt
+  nameWithType: Cpu.Smt
+  fullName: PCConfigurator.Model.Components.Cpu.Smt
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: PCConfigurator.Model.Components.Cpu.CoreClock*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.CoreClock
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_CoreClock
+  name: CoreClock
+  nameWithType: Cpu.CoreClock
+  fullName: PCConfigurator.Model.Components.Cpu.CoreClock
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: PCConfigurator.Model.Components.Cpu.BoostClock*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.BoostClock
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_BoostClock
+  name: BoostClock
+  nameWithType: Cpu.BoostClock
+  fullName: PCConfigurator.Model.Components.Cpu.BoostClock
+- uid: PCConfigurator.Model.Components.Cpu.L2Cache*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.L2Cache
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_L2Cache
+  name: L2Cache
+  nameWithType: Cpu.L2Cache
+  fullName: PCConfigurator.Model.Components.Cpu.L2Cache
+- uid: PCConfigurator.Model.Components.Cpu.L3Cache*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.L3Cache
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_L3Cache
+  name: L3Cache
+  nameWithType: Cpu.L3Cache
+  fullName: PCConfigurator.Model.Components.Cpu.L3Cache
+- uid: PCConfigurator.Model.Components.Cpu.Tdp*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.Tdp
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_Tdp
+  name: Tdp
+  nameWithType: Cpu.Tdp
+  fullName: PCConfigurator.Model.Components.Cpu.Tdp
+- uid: PCConfigurator.Model.Components.Cpu.RamTypes*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.RamTypes
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_RamTypes
+  name: RamTypes
+  nameWithType: Cpu.RamTypes
+  fullName: PCConfigurator.Model.Components.Cpu.RamTypes
+- uid: PCConfigurator.Model.Components.RamType
+  commentId: T:PCConfigurator.Model.Components.RamType
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.RamType.html
+  name: RamType
+  nameWithType: RamType
+  fullName: PCConfigurator.Model.Components.RamType
+- uid: PCConfigurator.Model.Components.Cpu.MaxRamCapacity*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.MaxRamCapacity
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_MaxRamCapacity
+  name: MaxRamCapacity
+  nameWithType: Cpu.MaxRamCapacity
+  fullName: PCConfigurator.Model.Components.Cpu.MaxRamCapacity
+- uid: PCConfigurator.Model.Components.Cpu.HaveGraphics*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.HaveGraphics
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_HaveGraphics
+  name: HaveGraphics
+  nameWithType: Cpu.HaveGraphics
+  fullName: PCConfigurator.Model.Components.Cpu.HaveGraphics
+- uid: PCConfigurator.Model.Components.Cpu.Configurations*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.Configurations
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_Configurations
+  name: Configurations
+  nameWithType: Cpu.Configurations
+  fullName: PCConfigurator.Model.Components.Cpu.Configurations
+- uid: System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+  commentId: T:System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Configuration>
+  nameWithType: List<Configuration>
+  fullName: System.Collections.Generic.List<PCConfigurator.Model.Components.Configuration>
+  nameWithType.vb: List(Of Configuration)
+  fullName.vb: System.Collections.Generic.List(Of PCConfigurator.Model.Components.Configuration)
+  name.vb: List(Of Configuration)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PCConfigurator.Model.Components.Configuration
+    name: Configuration
+    href: PCConfigurator.Model.Components.Configuration.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PCConfigurator.Model.Components.Configuration
+    name: Configuration
+    href: PCConfigurator.Model.Components.Configuration.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: PCConfigurator.Model.Components.Cpu.IsDDR3*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.IsDDR3
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_IsDDR3
+  name: IsDDR3
+  nameWithType: Cpu.IsDDR3
+  fullName: PCConfigurator.Model.Components.Cpu.IsDDR3
+- uid: PCConfigurator.Model.Components.Cpu.IsDDR4*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.IsDDR4
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_IsDDR4
+  name: IsDDR4
+  nameWithType: Cpu.IsDDR4
+  fullName: PCConfigurator.Model.Components.Cpu.IsDDR4
+- uid: PCConfigurator.Model.Components.Cpu.IsDDR5*
+  commentId: Overload:PCConfigurator.Model.Components.Cpu.IsDDR5
+  href: PCConfigurator.Model.Components.Cpu.html#PCConfigurator_Model_Components_Cpu_IsDDR5
+  name: IsDDR5
+  nameWithType: Cpu.IsDDR5
+  fullName: PCConfigurator.Model.Components.Cpu.IsDDR5

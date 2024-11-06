@@ -1,0 +1,124 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.ViewModel.ComponentsViewModels
+  commentId: N:PCConfigurator.ViewModel.ComponentsViewModels
+  id: PCConfigurator.ViewModel.ComponentsViewModels
+  children:
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.CoolerViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.CpuViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.GpuViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.HddViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.MotherboardViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.PowerSupplyViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.RamViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.SocketViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.SsdViewModel
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.ViewModel.ComponentsViewModels
+  nameWithType: PCConfigurator.ViewModel.ComponentsViewModels
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  parent: PCConfigurator.ViewModel.ComponentsViewModels
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html
+  name: ComponentViewModel
+  nameWithType: ComponentViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.CoolerViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.CoolerViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.CoolerViewModel.html
+  name: CoolerViewModel
+  nameWithType: CoolerViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.CoolerViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.CpuViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.CpuViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.CpuViewModel.html
+  name: CpuViewModel
+  nameWithType: CpuViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.CpuViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.GpuViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.GpuViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.GpuViewModel.html
+  name: GpuViewModel
+  nameWithType: GpuViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.GpuViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.HddViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.HddViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.HddViewModel.html
+  name: HddViewModel
+  nameWithType: HddViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.HddViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.html
+  name: M2SsdViewModel
+  nameWithType: M2SsdViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.MotherboardViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.MotherboardViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.MotherboardViewModel.html
+  name: MotherboardViewModel
+  nameWithType: MotherboardViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.MotherboardViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.PowerSupplyViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.PowerSupplyViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.PowerSupplyViewModel.html
+  name: PowerSupplyViewModel
+  nameWithType: PowerSupplyViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.PowerSupplyViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.RamViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.RamViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.RamViewModel.html
+  name: RamViewModel
+  nameWithType: RamViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.RamViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.SocketViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.SocketViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.SocketViewModel.html
+  name: SocketViewModel
+  nameWithType: SocketViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.SocketViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.SsdViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.SsdViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.SsdViewModel.html
+  name: SsdViewModel
+  nameWithType: SsdViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.SsdViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels
+  commentId: N:PCConfigurator.ViewModel.ComponentsViewModels
+  href: PCConfigurator.html
+  name: PCConfigurator.ViewModel.ComponentsViewModels
+  nameWithType: PCConfigurator.ViewModel.ComponentsViewModels
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  - name: .
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels
+    name: ComponentsViewModels
+    href: PCConfigurator.ViewModel.ComponentsViewModels.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  - name: .
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels
+    name: ComponentsViewModels
+    href: PCConfigurator.ViewModel.ComponentsViewModels.html

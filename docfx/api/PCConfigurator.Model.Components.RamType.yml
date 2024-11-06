@@ -1,0 +1,271 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.RamType
+  commentId: T:PCConfigurator.Model.Components.RamType
+  id: RamType
+  parent: PCConfigurator.Model.Components
+  children:
+  - PCConfigurator.Model.Components.RamType.DDR3
+  - PCConfigurator.Model.Components.RamType.DDR4
+  - PCConfigurator.Model.Components.RamType.DDR5
+  langs:
+  - csharp
+  - vb
+  name: RamType
+  nameWithType: RamType
+  fullName: PCConfigurator.Model.Components.RamType
+  type: Enum
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/RamType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: RamType
+    path: ../PCConfigurator/Model/Components/RamType.cs
+    startLine: 2
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum RamType
+    content.vb: >-
+      <Flags>
+
+      Public Enum RamType
+  extensionMethods:
+  - PCConfigurator.Model.Components.RamType.PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType,System.Boolean)
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.RamType.DDR3
+  commentId: F:PCConfigurator.Model.Components.RamType.DDR3
+  id: DDR3
+  parent: PCConfigurator.Model.Components.RamType
+  langs:
+  - csharp
+  - vb
+  name: DDR3
+  nameWithType: RamType.DDR3
+  fullName: PCConfigurator.Model.Components.RamType.DDR3
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/RamType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: DDR3
+    path: ../PCConfigurator/Model/Components/RamType.cs
+    startLine: 5
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: DDR3 = 1
+    return:
+      type: PCConfigurator.Model.Components.RamType
+- uid: PCConfigurator.Model.Components.RamType.DDR4
+  commentId: F:PCConfigurator.Model.Components.RamType.DDR4
+  id: DDR4
+  parent: PCConfigurator.Model.Components.RamType
+  langs:
+  - csharp
+  - vb
+  name: DDR4
+  nameWithType: RamType.DDR4
+  fullName: PCConfigurator.Model.Components.RamType.DDR4
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/RamType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: DDR4
+    path: ../PCConfigurator/Model/Components/RamType.cs
+    startLine: 6
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: DDR4 = 2
+    return:
+      type: PCConfigurator.Model.Components.RamType
+- uid: PCConfigurator.Model.Components.RamType.DDR5
+  commentId: F:PCConfigurator.Model.Components.RamType.DDR5
+  id: DDR5
+  parent: PCConfigurator.Model.Components.RamType
+  langs:
+  - csharp
+  - vb
+  name: DDR5
+  nameWithType: RamType.DDR5
+  fullName: PCConfigurator.Model.Components.RamType.DDR5
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/RamType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: DDR5
+    path: ../PCConfigurator/Model/Components/RamType.cs
+    startLine: 7
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: DDR5 = 4
+    return:
+      type: PCConfigurator.Model.Components.RamType
+references:
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: PCConfigurator.Model.Components.RamType.PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType,System.Boolean)
+  commentId: M:PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType@,PCConfigurator.Model.Components.RamType,System.Boolean)
+  parent: PCConfigurator.Model.Components.FlagsExtension
+  definition: PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType@,PCConfigurator.Model.Components.RamType,System.Boolean)
+  href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetRamType_PCConfigurator_Model_Components_RamType__PCConfigurator_Model_Components_RamType_System_Boolean_
+  name: SetRamType(ref RamType, RamType, bool)
+  nameWithType: FlagsExtension.SetRamType(ref RamType, RamType, bool)
+  fullName: PCConfigurator.Model.Components.FlagsExtension.SetRamType(ref PCConfigurator.Model.Components.RamType, PCConfigurator.Model.Components.RamType, bool)
+  nameWithType.vb: FlagsExtension.SetRamType(RamType, RamType, Boolean)
+  fullName.vb: PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType, PCConfigurator.Model.Components.RamType, Boolean)
+  name.vb: SetRamType(RamType, RamType, Boolean)
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType@,PCConfigurator.Model.Components.RamType,System.Boolean)
+    name: SetRamType
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetRamType_PCConfigurator_Model_Components_RamType__PCConfigurator_Model_Components_RamType_System_Boolean_
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+    href: PCConfigurator.Model.Components.RamType.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+    href: PCConfigurator.Model.Components.RamType.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType@,PCConfigurator.Model.Components.RamType,System.Boolean)
+    name: SetRamType
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetRamType_PCConfigurator_Model_Components_RamType__PCConfigurator_Model_Components_RamType_System_Boolean_
+  - name: (
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+    href: PCConfigurator.Model.Components.RamType.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+    href: PCConfigurator.Model.Components.RamType.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType@,PCConfigurator.Model.Components.RamType,System.Boolean)
+  commentId: M:PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType@,PCConfigurator.Model.Components.RamType,System.Boolean)
+  isExternal: true
+  href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetRamType_PCConfigurator_Model_Components_RamType__PCConfigurator_Model_Components_RamType_System_Boolean_
+  name: SetRamType(ref RamType, RamType, bool)
+  nameWithType: FlagsExtension.SetRamType(ref RamType, RamType, bool)
+  fullName: PCConfigurator.Model.Components.FlagsExtension.SetRamType(ref PCConfigurator.Model.Components.RamType, PCConfigurator.Model.Components.RamType, bool)
+  nameWithType.vb: FlagsExtension.SetRamType(RamType, RamType, Boolean)
+  fullName.vb: PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType, PCConfigurator.Model.Components.RamType, Boolean)
+  name.vb: SetRamType(RamType, RamType, Boolean)
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType@,PCConfigurator.Model.Components.RamType,System.Boolean)
+    name: SetRamType
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetRamType_PCConfigurator_Model_Components_RamType__PCConfigurator_Model_Components_RamType_System_Boolean_
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+    href: PCConfigurator.Model.Components.RamType.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+    href: PCConfigurator.Model.Components.RamType.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetRamType(PCConfigurator.Model.Components.RamType@,PCConfigurator.Model.Components.RamType,System.Boolean)
+    name: SetRamType
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetRamType_PCConfigurator_Model_Components_RamType__PCConfigurator_Model_Components_RamType_System_Boolean_
+  - name: (
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+    href: PCConfigurator.Model.Components.RamType.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+    href: PCConfigurator.Model.Components.RamType.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PCConfigurator.Model.Components.FlagsExtension
+  commentId: T:PCConfigurator.Model.Components.FlagsExtension
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.FlagsExtension.html
+  name: FlagsExtension
+  nameWithType: FlagsExtension
+  fullName: PCConfigurator.Model.Components.FlagsExtension
+- uid: PCConfigurator.Model.Components.RamType
+  commentId: T:PCConfigurator.Model.Components.RamType
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.RamType.html
+  name: RamType
+  nameWithType: RamType
+  fullName: PCConfigurator.Model.Components.RamType

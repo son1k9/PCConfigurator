@@ -17,6 +17,23 @@ namespace PCConfigurator.Helper
     /// <summary>
     /// Class to import and export pc configurations.
     /// </summary>
+    /*!
+    * \section faq FAQ
+    * 
+    * \subsection q1 What are possible file formats for import and export of configuration? 
+    * 
+    * File name can have any extension, but at the moment only json format is supported.
+    * 
+    * \subsection q2 How can I export incompatible configuration?
+    * 
+    * Method for export was written around compatible configuration so theres is no garantee 
+    * that it will work with incompatible configurations.
+    * So there is no way to export incompatible configuration.
+    * 
+    */
+    /// <remarks>
+    /// Подробное руководство [Руководство 1](../guides/guide1.html)
+    /// </remarks>
     public static class ConfigurationIE
     {
         /// <summary>
@@ -181,6 +198,18 @@ namespace PCConfigurator.Helper
         /// <param name="path">Path to file to export in.</param>
         /// <param name="configuration">Configuration to export.</param>
         /// <returns>True if succesfull, False if configuration is not compatible.</returns>
+        /// <example>
+        /// Usage example:
+        /// <code>
+        /// var configuration = new Configuration();
+        /// // Add components to a configuration here
+        /// var path = "conf.json";
+        /// if (ConfigurationIE.Export(path, configuration))
+        ///     Console.WriteLine($"Configuration {configuration.Name} exported successfuly.");
+        /// else
+        ///     Console.WriteLine($"Error while exporting configuration {configuration.Name}.");
+        /// </code>
+        /// </example>
         public static bool Export(string path, Configuration configuration)
         {
             if (configuration.CheckCompatibility().Length > 0)
@@ -341,6 +370,16 @@ namespace PCConfigurator.Helper
         /// <param name="path">Path to a file</param>
         /// <param name="dbContext">Database context to use for constraction of configuration</param>
         /// <returns>Imported configuration</returns>
+        /*!
+        * \section faq2 FAQ
+        * 
+        * \subsection q3 Why do i need to pass a dbContext to import configuration?
+        * 
+        * When configuration is imported it is constructed with components 
+        * that are already exist in db instead of creating new once, 
+        * this prevents duplicate components in db.
+        * 
+        */
         public static Configuration? Import(string path, ApplicationContext dbContext)
         {
             string jsonString = File.ReadAllText(path);
@@ -362,3 +401,10 @@ namespace PCConfigurator.Helper
         }
     }
 }
+
+/*!
+ * \page faq_page FAQ
+ *
+ *  There can be some text here.
+ * 
+ */

@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class CpuViewModel : ComponentViewModel
+public class CpuViewModel : ComponentViewModel
 {
     public CpuViewModel()
     {

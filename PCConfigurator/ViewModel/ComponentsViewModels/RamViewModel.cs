@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class RamViewModel : ComponentViewModel
+public class RamViewModel : ComponentViewModel
 {
     public RamViewModel()
     {

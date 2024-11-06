@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.View.ComponentСhoice
+  commentId: N:PCConfigurator.View.ComponentСhoice
+  id: PCConfigurator.View.ComponentСhoice
+  children:
+  - PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow
+  - PCConfigurator.View.ComponentСhoice.CoolerListUserControl
+  - PCConfigurator.View.ComponentСhoice.CpuListUserControl
+  - PCConfigurator.View.ComponentСhoice.GpuListUserControl
+  - PCConfigurator.View.ComponentСhoice.HddListUserControl
+  - PCConfigurator.View.ComponentСhoice.M2SsdListUserControl
+  - PCConfigurator.View.ComponentСhoice.MotherboardsListUserControl
+  - PCConfigurator.View.ComponentСhoice.PowerSupplyListUserControl
+  - PCConfigurator.View.ComponentСhoice.RamListUserControl
+  - PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+  - PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  - PCConfigurator.View.ComponentСhoice.SsdListUserControl
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.View.ComponentСhoice
+  nameWithType: PCConfigurator.View.ComponentСhoice
+  fullName: PCConfigurator.View.ComponentСhoice
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow
+  commentId: T:PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow
+  href: PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow.html
+  name: ComponentChoiceWindow
+  nameWithType: ComponentChoiceWindow
+  fullName: PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow
+- uid: PCConfigurator.View.ComponentСhoice.CoolerListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.CoolerListUserControl
+  href: PCConfigurator.View.ComponentСhoice.CoolerListUserControl.html
+  name: CoolerListUserControl
+  nameWithType: CoolerListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.CoolerListUserControl
+- uid: PCConfigurator.View.ComponentСhoice.CpuListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.CpuListUserControl
+  href: PCConfigurator.View.ComponentСhoice.CpuListUserControl.html
+  name: CpuListUserControl
+  nameWithType: CpuListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.CpuListUserControl
+- uid: PCConfigurator.View.ComponentСhoice.GpuListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.GpuListUserControl
+  href: PCConfigurator.View.ComponentСhoice.GpuListUserControl.html
+  name: GpuListUserControl
+  nameWithType: GpuListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.GpuListUserControl
+- uid: PCConfigurator.View.ComponentСhoice.HddListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.HddListUserControl
+  href: PCConfigurator.View.ComponentСhoice.HddListUserControl.html
+  name: HddListUserControl
+  nameWithType: HddListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.HddListUserControl
+- uid: PCConfigurator.View.ComponentСhoice.M2SsdListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.M2SsdListUserControl
+  href: PCConfigurator.View.ComponentСhoice.M2SsdListUserControl.html
+  name: M2SsdListUserControl
+  nameWithType: M2SsdListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.M2SsdListUserControl
+- uid: PCConfigurator.View.ComponentСhoice.MotherboardsListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.MotherboardsListUserControl
+  href: PCConfigurator.View.ComponentСhoice.MotherboardsListUserControl.html
+  name: MotherboardsListUserControl
+  nameWithType: MotherboardsListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.MotherboardsListUserControl
+- uid: PCConfigurator.View.ComponentСhoice.PowerSupplyListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.PowerSupplyListUserControl
+  href: PCConfigurator.View.ComponentСhoice.PowerSupplyListUserControl.html
+  name: PowerSupplyListUserControl
+  nameWithType: PowerSupplyListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.PowerSupplyListUserControl
+- uid: PCConfigurator.View.ComponentСhoice.RamListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.RamListUserControl
+  href: PCConfigurator.View.ComponentСhoice.RamListUserControl.html
+  name: RamListUserControl
+  nameWithType: RamListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.RamListUserControl
+- uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+  commentId: T:PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+  href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.html
+  name: SataComponentChoiceWindow
+  nameWithType: SataComponentChoiceWindow
+  fullName: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+- uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  commentId: T:PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  parent: PCConfigurator.View.ComponentСhoice
+  href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.html
+  name: SataComponentChoiceWindow.Storage
+  nameWithType: SataComponentChoiceWindow.Storage
+  fullName: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  spec.csharp:
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+    name: SataComponentChoiceWindow
+    href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.html
+  - name: .
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+    name: Storage
+    href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.html
+  spec.vb:
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+    name: SataComponentChoiceWindow
+    href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.html
+  - name: .
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+    name: Storage
+    href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.html
+- uid: PCConfigurator.View.ComponentСhoice.SsdListUserControl
+  commentId: T:PCConfigurator.View.ComponentСhoice.SsdListUserControl
+  href: PCConfigurator.View.ComponentСhoice.SsdListUserControl.html
+  name: SsdListUserControl
+  nameWithType: SsdListUserControl
+  fullName: PCConfigurator.View.ComponentСhoice.SsdListUserControl
+- uid: PCConfigurator.View.ComponentСhoice
+  commentId: N:PCConfigurator.View.ComponentСhoice
+  href: PCConfigurator.html
+  name: PCConfigurator.View.ComponentСhoice
+  nameWithType: PCConfigurator.View.ComponentСhoice
+  fullName: PCConfigurator.View.ComponentСhoice
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.View
+    name: View
+    href: PCConfigurator.View.html
+  - name: .
+  - uid: PCConfigurator.View.ComponentСhoice
+    name: ComponentСhoice
+    href: PCConfigurator.View.ComponentСhoice.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.View
+    name: View
+    href: PCConfigurator.View.html
+  - name: .
+  - uid: PCConfigurator.View.ComponentСhoice
+    name: ComponentСhoice
+    href: PCConfigurator.View.ComponentСhoice.html

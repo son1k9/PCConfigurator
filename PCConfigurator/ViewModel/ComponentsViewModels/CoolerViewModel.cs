@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class CoolerViewModel : ComponentViewModel
+public class CoolerViewModel : ComponentViewModel
 {
     public CoolerViewModel()
     {

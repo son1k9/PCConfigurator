@@ -1,0 +1,729 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel
+  commentId: T:PCConfigurator.ViewModel.ConfigurationsViewModel
+  id: ConfigurationsViewModel
+  parent: PCConfigurator.ViewModel
+  children:
+  - PCConfigurator.ViewModel.ConfigurationsViewModel.#ctor(System.Int32)
+  - PCConfigurator.ViewModel.ConfigurationsViewModel.AddConfiguration
+  - PCConfigurator.ViewModel.ConfigurationsViewModel.ExportConfiguration
+  - PCConfigurator.ViewModel.ConfigurationsViewModel.RemoveConfiguration
+  - PCConfigurator.ViewModel.ConfigurationsViewModel.SelectConfiguration
+  - PCConfigurator.ViewModel.ConfigurationsViewModel.SelectedConfiguration
+  - PCConfigurator.ViewModel.ConfigurationsViewModel.ViewSource
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationsViewModel
+  nameWithType: ConfigurationsViewModel
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationsViewModel
+    path: ../PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+    startLine: 19
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: ViewModel to manage configurations
+  example: []
+  syntax:
+    content: 'public class ConfigurationsViewModel : BaseViewModel, INotifyPropertyChanged'
+    content.vb: Public Class ConfigurationsViewModel Inherits BaseViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - PCConfigurator.ViewModel.BaseViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  - PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.ViewSource
+  commentId: P:PCConfigurator.ViewModel.ConfigurationsViewModel.ViewSource
+  id: ViewSource
+  parent: PCConfigurator.ViewModel.ConfigurationsViewModel
+  langs:
+  - csharp
+  - vb
+  name: ViewSource
+  nameWithType: ConfigurationsViewModel.ViewSource
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.ViewSource
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ViewSource
+    path: ../PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+    startLine: 34
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: View of CollectionViewSource of configurations
+  example: []
+  syntax:
+    content: public ICollectionView ViewSource { get; }
+    parameters: []
+    return:
+      type: System.ComponentModel.ICollectionView
+    content.vb: Public ReadOnly Property ViewSource As ICollectionView
+  overload: PCConfigurator.ViewModel.ConfigurationsViewModel.ViewSource*
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectedConfiguration
+  commentId: P:PCConfigurator.ViewModel.ConfigurationsViewModel.SelectedConfiguration
+  id: SelectedConfiguration
+  parent: PCConfigurator.ViewModel.ConfigurationsViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectedConfiguration
+  nameWithType: ConfigurationsViewModel.SelectedConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectedConfiguration
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: SelectedConfiguration
+    path: ../PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+    startLine: 40
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Current selected configuration
+  example: []
+  syntax:
+    content: public ConfigurationViewModel? SelectedConfiguration { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.ViewModel.ConfigurationViewModel
+    content.vb: Public Property SelectedConfiguration As ConfigurationViewModel
+  overload: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectedConfiguration*
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.#ctor(System.Int32)
+  commentId: M:PCConfigurator.ViewModel.ConfigurationsViewModel.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: PCConfigurator.ViewModel.ConfigurationsViewModel
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationsViewModel(int)
+  nameWithType: ConfigurationsViewModel.ConfigurationsViewModel(int)
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.ConfigurationsViewModel(int)
+  type: Constructor
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: .ctor
+    path: ../PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+    startLine: 71
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Creates new ConfigurationsViewModel with default chosen configuration specified by id
+  example: []
+  syntax:
+    content: public ConfigurationsViewModel(int id = 0)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: Id of configuration
+    content.vb: Public Sub New(id As Integer = 0)
+  overload: PCConfigurator.ViewModel.ConfigurationsViewModel.#ctor*
+  nameWithType.vb: ConfigurationsViewModel.New(Integer)
+  fullName.vb: PCConfigurator.ViewModel.ConfigurationsViewModel.New(Integer)
+  name.vb: New(Integer)
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectConfiguration
+  commentId: P:PCConfigurator.ViewModel.ConfigurationsViewModel.SelectConfiguration
+  id: SelectConfiguration
+  parent: PCConfigurator.ViewModel.ConfigurationsViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectConfiguration
+  nameWithType: ConfigurationsViewModel.SelectConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectConfiguration
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: SelectConfiguration
+    path: ../PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+    startLine: 87
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to select a configuration
+  example: []
+  syntax:
+    content: public ICommand SelectConfiguration { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property SelectConfiguration As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectConfiguration*
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.AddConfiguration
+  commentId: P:PCConfigurator.ViewModel.ConfigurationsViewModel.AddConfiguration
+  id: AddConfiguration
+  parent: PCConfigurator.ViewModel.ConfigurationsViewModel
+  langs:
+  - csharp
+  - vb
+  name: AddConfiguration
+  nameWithType: ConfigurationsViewModel.AddConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.AddConfiguration
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: AddConfiguration
+    path: ../PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+    startLine: 102
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to add configuration
+  example: []
+  syntax:
+    content: public ICommand AddConfiguration { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property AddConfiguration As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationsViewModel.AddConfiguration*
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.RemoveConfiguration
+  commentId: P:PCConfigurator.ViewModel.ConfigurationsViewModel.RemoveConfiguration
+  id: RemoveConfiguration
+  parent: PCConfigurator.ViewModel.ConfigurationsViewModel
+  langs:
+  - csharp
+  - vb
+  name: RemoveConfiguration
+  nameWithType: ConfigurationsViewModel.RemoveConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.RemoveConfiguration
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: RemoveConfiguration
+    path: ../PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+    startLine: 176
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to remove configuration
+  example: []
+  syntax:
+    content: public ICommand RemoveConfiguration { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property RemoveConfiguration As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationsViewModel.RemoveConfiguration*
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.ExportConfiguration
+  commentId: P:PCConfigurator.ViewModel.ConfigurationsViewModel.ExportConfiguration
+  id: ExportConfiguration
+  parent: PCConfigurator.ViewModel.ConfigurationsViewModel
+  langs:
+  - csharp
+  - vb
+  name: ExportConfiguration
+  nameWithType: ConfigurationsViewModel.ExportConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.ExportConfiguration
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ExportConfiguration
+    path: ../PCConfigurator/ViewModel/ConfigurationsViewModel.cs
+    startLine: 204
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to export configuration to a file
+  example: []
+  syntax:
+    content: public ICommand ExportConfiguration { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ExportConfiguration As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationsViewModel.ExportConfiguration*
+references:
+- uid: PCConfigurator.ViewModel
+  commentId: N:PCConfigurator.ViewModel
+  href: PCConfigurator.html
+  name: PCConfigurator.ViewModel
+  nameWithType: PCConfigurator.ViewModel
+  fullName: PCConfigurator.ViewModel
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PCConfigurator.ViewModel.BaseViewModel
+  commentId: T:PCConfigurator.ViewModel.BaseViewModel
+  parent: PCConfigurator.ViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: PCConfigurator.ViewModel.BaseViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  commentId: E:PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  parent: PCConfigurator.ViewModel.BaseViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+- uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  parent: PCConfigurator.ViewModel.BaseViewModel
+  isExternal: true
+  href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.ViewSource*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationsViewModel.ViewSource
+  href: PCConfigurator.ViewModel.ConfigurationsViewModel.html#PCConfigurator_ViewModel_ConfigurationsViewModel_ViewSource
+  name: ViewSource
+  nameWithType: ConfigurationsViewModel.ViewSource
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.ViewSource
+- uid: System.ComponentModel.ICollectionView
+  commentId: T:System.ComponentModel.ICollectionView
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.icollectionview
+  name: ICollectionView
+  nameWithType: ICollectionView
+  fullName: System.ComponentModel.ICollectionView
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectedConfiguration*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationsViewModel.SelectedConfiguration
+  href: PCConfigurator.ViewModel.ConfigurationsViewModel.html#PCConfigurator_ViewModel_ConfigurationsViewModel_SelectedConfiguration
+  name: SelectedConfiguration
+  nameWithType: ConfigurationsViewModel.SelectedConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectedConfiguration
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel
+  commentId: T:PCConfigurator.ViewModel.ConfigurationViewModel
+  parent: PCConfigurator.ViewModel
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html
+  name: ConfigurationViewModel
+  nameWithType: ConfigurationViewModel
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.#ctor*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationsViewModel.#ctor
+  href: PCConfigurator.ViewModel.ConfigurationsViewModel.html#PCConfigurator_ViewModel_ConfigurationsViewModel__ctor_System_Int32_
+  name: ConfigurationsViewModel
+  nameWithType: ConfigurationsViewModel.ConfigurationsViewModel
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.ConfigurationsViewModel
+  nameWithType.vb: ConfigurationsViewModel.New
+  fullName.vb: PCConfigurator.ViewModel.ConfigurationsViewModel.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectConfiguration*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationsViewModel.SelectConfiguration
+  href: PCConfigurator.ViewModel.ConfigurationsViewModel.html#PCConfigurator_ViewModel_ConfigurationsViewModel_SelectConfiguration
+  name: SelectConfiguration
+  nameWithType: ConfigurationsViewModel.SelectConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.SelectConfiguration
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.AddConfiguration*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationsViewModel.AddConfiguration
+  href: PCConfigurator.ViewModel.ConfigurationsViewModel.html#PCConfigurator_ViewModel_ConfigurationsViewModel_AddConfiguration
+  name: AddConfiguration
+  nameWithType: ConfigurationsViewModel.AddConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.AddConfiguration
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.RemoveConfiguration*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationsViewModel.RemoveConfiguration
+  href: PCConfigurator.ViewModel.ConfigurationsViewModel.html#PCConfigurator_ViewModel_ConfigurationsViewModel_RemoveConfiguration
+  name: RemoveConfiguration
+  nameWithType: ConfigurationsViewModel.RemoveConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.RemoveConfiguration
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel.ExportConfiguration*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationsViewModel.ExportConfiguration
+  href: PCConfigurator.ViewModel.ConfigurationsViewModel.html#PCConfigurator_ViewModel_ConfigurationsViewModel_ExportConfiguration
+  name: ExportConfiguration
+  nameWithType: ConfigurationsViewModel.ExportConfiguration
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel.ExportConfiguration

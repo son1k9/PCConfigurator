@@ -1,0 +1,99 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.ViewModel
+  commentId: N:PCConfigurator.ViewModel
+  id: PCConfigurator.ViewModel
+  children:
+  - PCConfigurator.ViewModel.BaseViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModel
+  - PCConfigurator.ViewModel.ConfigurationViewModel
+  - PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+  - PCConfigurator.ViewModel.ConfigurationsViewModel
+  - PCConfigurator.ViewModel.MainViewModel
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.ViewModel
+  nameWithType: PCConfigurator.ViewModel
+  fullName: PCConfigurator.ViewModel
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.ViewModel.BaseViewModel
+  commentId: T:PCConfigurator.ViewModel.BaseViewModel
+  parent: PCConfigurator.ViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: PCConfigurator.ViewModel.BaseViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModel
+  parent: PCConfigurator.ViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html
+  name: ComponentsViewModel
+  nameWithType: ComponentsViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel
+- uid: PCConfigurator.ViewModel.ConfigurationsViewModel
+  commentId: T:PCConfigurator.ViewModel.ConfigurationsViewModel
+  href: PCConfigurator.ViewModel.ConfigurationsViewModel.html
+  name: ConfigurationsViewModel
+  nameWithType: ConfigurationsViewModel
+  fullName: PCConfigurator.ViewModel.ConfigurationsViewModel
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel
+  commentId: T:PCConfigurator.ViewModel.ConfigurationViewModel
+  parent: PCConfigurator.ViewModel
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html
+  name: ConfigurationViewModel
+  nameWithType: ConfigurationViewModel
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+  commentId: T:PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html
+  name: ConfigurationViewModel.M2SlotWithSsd
+  nameWithType: ConfigurationViewModel.M2SlotWithSsd
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.ConfigurationViewModel
+    name: ConfigurationViewModel
+    href: PCConfigurator.ViewModel.ConfigurationViewModel.html
+  - name: .
+  - uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+    name: M2SlotWithSsd
+    href: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd.html
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.ConfigurationViewModel
+    name: ConfigurationViewModel
+    href: PCConfigurator.ViewModel.ConfigurationViewModel.html
+  - name: .
+  - uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+    name: M2SlotWithSsd
+    href: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd.html
+- uid: PCConfigurator.ViewModel.MainViewModel
+  commentId: T:PCConfigurator.ViewModel.MainViewModel
+  href: PCConfigurator.ViewModel.MainViewModel.html
+  name: MainViewModel
+  nameWithType: MainViewModel
+  fullName: PCConfigurator.ViewModel.MainViewModel
+- uid: PCConfigurator.ViewModel
+  commentId: N:PCConfigurator.ViewModel
+  href: PCConfigurator.html
+  name: PCConfigurator.ViewModel
+  nameWithType: PCConfigurator.ViewModel
+  fullName: PCConfigurator.ViewModel
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html

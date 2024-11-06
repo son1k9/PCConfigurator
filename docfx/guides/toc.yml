@@ -1,0 +1,4 @@
+- name: Руководство 1
+  href: guide1.md
+- name: Руководство 2
+  href: guide2.md

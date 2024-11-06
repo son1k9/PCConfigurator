@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.NandType
+  commentId: T:PCConfigurator.Model.Components.NandType
+  id: NandType
+  parent: PCConfigurator.Model.Components
+  children:
+  - PCConfigurator.Model.Components.NandType.MLC
+  - PCConfigurator.Model.Components.NandType.QLC
+  - PCConfigurator.Model.Components.NandType.SLC
+  - PCConfigurator.Model.Components.NandType.TLC
+  langs:
+  - csharp
+  - vb
+  name: NandType
+  nameWithType: NandType
+  fullName: PCConfigurator.Model.Components.NandType
+  type: Enum
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/NandType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NandType
+    path: ../PCConfigurator/Model/Components/NandType.cs
+    startLine: 2
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public enum NandType
+    content.vb: Public Enum NandType
+- uid: PCConfigurator.Model.Components.NandType.SLC
+  commentId: F:PCConfigurator.Model.Components.NandType.SLC
+  id: SLC
+  parent: PCConfigurator.Model.Components.NandType
+  langs:
+  - csharp
+  - vb
+  name: SLC
+  nameWithType: NandType.SLC
+  fullName: PCConfigurator.Model.Components.NandType.SLC
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/NandType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: SLC
+    path: ../PCConfigurator/Model/Components/NandType.cs
+    startLine: 4
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: SLC = 0
+    return:
+      type: PCConfigurator.Model.Components.NandType
+- uid: PCConfigurator.Model.Components.NandType.MLC
+  commentId: F:PCConfigurator.Model.Components.NandType.MLC
+  id: MLC
+  parent: PCConfigurator.Model.Components.NandType
+  langs:
+  - csharp
+  - vb
+  name: MLC
+  nameWithType: NandType.MLC
+  fullName: PCConfigurator.Model.Components.NandType.MLC
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/NandType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: MLC
+    path: ../PCConfigurator/Model/Components/NandType.cs
+    startLine: 5
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: MLC = 1
+    return:
+      type: PCConfigurator.Model.Components.NandType
+- uid: PCConfigurator.Model.Components.NandType.TLC
+  commentId: F:PCConfigurator.Model.Components.NandType.TLC
+  id: TLC
+  parent: PCConfigurator.Model.Components.NandType
+  langs:
+  - csharp
+  - vb
+  name: TLC
+  nameWithType: NandType.TLC
+  fullName: PCConfigurator.Model.Components.NandType.TLC
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/NandType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: TLC
+    path: ../PCConfigurator/Model/Components/NandType.cs
+    startLine: 6
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: TLC = 2
+    return:
+      type: PCConfigurator.Model.Components.NandType
+- uid: PCConfigurator.Model.Components.NandType.QLC
+  commentId: F:PCConfigurator.Model.Components.NandType.QLC
+  id: QLC
+  parent: PCConfigurator.Model.Components.NandType
+  langs:
+  - csharp
+  - vb
+  name: QLC
+  nameWithType: NandType.QLC
+  fullName: PCConfigurator.Model.Components.NandType.QLC
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/NandType.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: QLC
+    path: ../PCConfigurator/Model/Components/NandType.cs
+    startLine: 7
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: QLC = 3
+    return:
+      type: PCConfigurator.Model.Components.NandType
+references:
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: PCConfigurator.Model.Components.NandType
+  commentId: T:PCConfigurator.Model.Components.NandType
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.NandType.html
+  name: NandType
+  nameWithType: NandType
+  fullName: PCConfigurator.Model.Components.NandType

@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class MotherboardViewModel : ComponentViewModel
+public class MotherboardViewModel : ComponentViewModel
 {
     public MotherboardViewModel()
     {

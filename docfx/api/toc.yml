@@ -1,0 +1,248 @@
+### YamlMime:TableOfContent
+items:
+- uid: PCConfigurator
+  name: PCConfigurator
+  items:
+  - uid: PCConfigurator.App
+    name: App
+  - uid: PCConfigurator.MainWindow
+    name: MainWindow
+- uid: PCConfigurator.Commands
+  name: PCConfigurator.Commands
+  items:
+  - uid: PCConfigurator.Commands.NavigateCommand`1
+    name: NavigateCommand<T>
+  - uid: PCConfigurator.Commands.RelayCommand
+    name: RelayCommand
+- uid: PCConfigurator.Converters
+  name: PCConfigurator.Converters
+  items:
+  - uid: PCConfigurator.Converters.GetIndexConverter
+    name: GetIndexConverter
+  - uid: PCConfigurator.Converters.UriConverter
+    name: UriConverter
+  - uid: PCConfigurator.Converters.VisibilityConverter
+    name: VisibilityConverter
+- uid: PCConfigurator.Helper
+  name: PCConfigurator.Helper
+  items:
+  - uid: PCConfigurator.Helper.ConfigurationIE
+    name: ConfigurationIE
+- uid: PCConfigurator.Migrations
+  name: PCConfigurator.Migrations
+  items:
+  - uid: PCConfigurator.Migrations.InitialCreate
+    name: InitialCreate
+  - uid: PCConfigurator.Migrations.MotherboardRemovedSocket
+    name: MotherboardRemovedSocket
+- uid: PCConfigurator.Model
+  name: PCConfigurator.Model
+  items:
+  - uid: PCConfigurator.Model.ApplicationContext
+    name: ApplicationContext
+- uid: PCConfigurator.Model.Components
+  name: PCConfigurator.Model.Components
+  items:
+  - uid: PCConfigurator.Model.Components.Chipset
+    name: Chipset
+  - uid: PCConfigurator.Model.Components.Component
+    name: Component
+  - uid: PCConfigurator.Model.Components.Configuration
+    name: Configuration
+  - uid: PCConfigurator.Model.Components.ConfigurationGpu
+    name: ConfigurationGpu
+  - uid: PCConfigurator.Model.Components.ConfigurationHdd
+    name: ConfigurationHdd
+  - uid: PCConfigurator.Model.Components.ConfigurationM2Ssd
+    name: ConfigurationM2Ssd
+  - uid: PCConfigurator.Model.Components.ConfigurationRam
+    name: ConfigurationRam
+  - uid: PCConfigurator.Model.Components.ConfigurationSsd
+    name: ConfigurationSsd
+  - uid: PCConfigurator.Model.Components.Cooler
+    name: Cooler
+  - uid: PCConfigurator.Model.Components.Cpu
+    name: Cpu
+  - uid: PCConfigurator.Model.Components.FlagsExtension
+    name: FlagsExtension
+  - uid: PCConfigurator.Model.Components.Gpu
+    name: Gpu
+  - uid: PCConfigurator.Model.Components.Hdd
+    name: Hdd
+  - uid: PCConfigurator.Model.Components.M2Slot
+    name: M2Slot
+  - uid: PCConfigurator.Model.Components.M2Ssd
+    name: M2Ssd
+  - uid: PCConfigurator.Model.Components.Motherboard
+    name: Motherboard
+  - uid: PCConfigurator.Model.Components.NandType
+    name: NandType
+  - uid: PCConfigurator.Model.Components.PowerSupply
+    name: PowerSupply
+  - uid: PCConfigurator.Model.Components.Ram
+    name: Ram
+  - uid: PCConfigurator.Model.Components.RamType
+    name: RamType
+  - uid: PCConfigurator.Model.Components.Socket
+    name: Socket
+  - uid: PCConfigurator.Model.Components.Ssd
+    name: Ssd
+- uid: PCConfigurator.Model.Components.M2
+  name: PCConfigurator.Model.Components.M2
+  items:
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+- uid: PCConfigurator.View
+  name: PCConfigurator.View
+  items:
+  - uid: PCConfigurator.View.AddConfiguartionWindow
+    name: AddConfiguartionWindow
+  - uid: PCConfigurator.View.ComponentUserControl
+    name: ComponentUserControl
+  - uid: PCConfigurator.View.ComponentsUserControl
+    name: ComponentsUserControl
+  - uid: PCConfigurator.View.ConfigurationNameInputWindow
+    name: ConfigurationNameInputWindow
+  - uid: PCConfigurator.View.ConfigurationsUserControl
+    name: ConfigurationsUserControl
+  - uid: PCConfigurator.View.M2SlotUserControl
+    name: M2SlotUserControl
+  - uid: PCConfigurator.View.NewConfigurationUserControl
+    name: NewConfigurationUserControl
+- uid: PCConfigurator.View.AddComponents
+  name: PCConfigurator.View.AddComponents
+  items:
+  - uid: PCConfigurator.View.AddComponents.M2InterfaceUserControl
+    name: M2InterfaceUserControl
+  - uid: PCConfigurator.View.AddComponents.M2SizeUserControl
+    name: M2SizeUserControl
+  - uid: PCConfigurator.View.AddComponents.M2SlotUserControl
+    name: M2SlotUserControl
+  - uid: PCConfigurator.View.AddComponents.NewCoolerWindow
+    name: NewCoolerWindow
+  - uid: PCConfigurator.View.AddComponents.NewCpuWindow
+    name: NewCpuWindow
+  - uid: PCConfigurator.View.AddComponents.NewGpuWindow
+    name: NewGpuWindow
+  - uid: PCConfigurator.View.AddComponents.NewHddWindow
+    name: NewHddWindow
+  - uid: PCConfigurator.View.AddComponents.NewM2SsdWindow
+    name: NewM2SsdWindow
+  - uid: PCConfigurator.View.AddComponents.NewMotherboardWindow
+    name: NewMotherboardWindow
+  - uid: PCConfigurator.View.AddComponents.NewPowerSupplyWindow
+    name: NewPowerSupplyWindow
+  - uid: PCConfigurator.View.AddComponents.NewRamWindow
+    name: NewRamWindow
+  - uid: PCConfigurator.View.AddComponents.NewSocketWindow
+    name: NewSocketWindow
+  - uid: PCConfigurator.View.AddComponents.NewSsdWindow
+    name: NewSsdWindow
+- uid: PCConfigurator.View.ComponentsUserControls
+  name: PCConfigurator.View.ComponentsUserControls
+  items:
+  - uid: PCConfigurator.View.ComponentsUserControls.CoolerUserControl
+    name: CoolerUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.CpuUserControl
+    name: CpuUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.GpuUserControl
+    name: GpuUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.HddUserControl
+    name: HddUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.M2SsdUserControl
+    name: M2SsdUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.MotherboardUserControl
+    name: MotherboardUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.PowerSupplyUserControl
+    name: PowerSupplyUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.RamUserControl
+    name: RamUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.SocketUserControl
+    name: SocketUserControl
+  - uid: PCConfigurator.View.ComponentsUserControls.SsdUserControl
+    name: SsdUserControl
+- uid: PCConfigurator.View.ComponentСhoice
+  name: PCConfigurator.View.ComponentСhoice
+  items:
+  - uid: PCConfigurator.View.ComponentСhoice.ComponentChoiceWindow
+    name: ComponentChoiceWindow
+  - uid: PCConfigurator.View.ComponentСhoice.CoolerListUserControl
+    name: CoolerListUserControl
+  - uid: PCConfigurator.View.ComponentСhoice.CpuListUserControl
+    name: CpuListUserControl
+  - uid: PCConfigurator.View.ComponentСhoice.GpuListUserControl
+    name: GpuListUserControl
+  - uid: PCConfigurator.View.ComponentСhoice.HddListUserControl
+    name: HddListUserControl
+  - uid: PCConfigurator.View.ComponentСhoice.M2SsdListUserControl
+    name: M2SsdListUserControl
+  - uid: PCConfigurator.View.ComponentСhoice.MotherboardsListUserControl
+    name: MotherboardsListUserControl
+  - uid: PCConfigurator.View.ComponentСhoice.PowerSupplyListUserControl
+    name: PowerSupplyListUserControl
+  - uid: PCConfigurator.View.ComponentСhoice.RamListUserControl
+    name: RamListUserControl
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+    name: SataComponentChoiceWindow
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+    name: SataComponentChoiceWindow.Storage
+  - uid: PCConfigurator.View.ComponentСhoice.SsdListUserControl
+    name: SsdListUserControl
+- uid: PCConfigurator.ViewModel
+  name: PCConfigurator.ViewModel
+  items:
+  - uid: PCConfigurator.ViewModel.BaseViewModel
+    name: BaseViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModel
+    name: ComponentsViewModel
+  - uid: PCConfigurator.ViewModel.ConfigurationViewModel
+    name: ConfigurationViewModel
+  - uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+    name: ConfigurationViewModel.M2SlotWithSsd
+  - uid: PCConfigurator.ViewModel.ConfigurationsViewModel
+    name: ConfigurationsViewModel
+  - uid: PCConfigurator.ViewModel.MainViewModel
+    name: MainViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels
+  name: PCConfigurator.ViewModel.ComponentsViewModels
+  items:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+    name: ComponentViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.CoolerViewModel
+    name: CoolerViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.CpuViewModel
+    name: CpuViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.GpuViewModel
+    name: GpuViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.HddViewModel
+    name: HddViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+    name: M2SsdViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.MotherboardViewModel
+    name: MotherboardViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.PowerSupplyViewModel
+    name: PowerSupplyViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.RamViewModel
+    name: RamViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.SocketViewModel
+    name: SocketViewModel
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.SsdViewModel
+    name: SsdViewModel
+- uid: PCConfigurator.ViewModel.NewComponentsViewModel
+  name: PCConfigurator.ViewModel.NewComponentsViewModel
+  items:
+  - uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewCoolerViewmodel
+    name: NewCoolerViewmodel
+  - uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewHddViewModel
+    name: NewHddViewModel
+  - uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewM2SsdViewModel
+    name: NewM2SsdViewModel
+  - uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewMotherboardViewmodel
+    name: NewMotherboardViewmodel
+  - uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewSocketViewModel
+    name: NewSocketViewModel
+  - uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewSsdViewModel
+    name: NewSsdViewModel
+memberLayout: SamePage

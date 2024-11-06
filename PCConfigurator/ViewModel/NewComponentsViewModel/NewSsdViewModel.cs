@@ -2,12 +2,31 @@
 
 namespace PCConfigurator.ViewModel.NewComponentsViewModel;
 
-internal class NewSsdViewModel(Ssd ssd) : BaseViewModel
+/// <summary>
+/// ViewModel for addition of a new SSD
+/// </summary>
+public class NewSsdViewModel : BaseViewModel
 {
-    public Ssd Ssd { get; } = ssd;
+    /// <summary>
+    /// Ssd that is being added
+    /// </summary>
+    public Ssd Ssd { get; }
 
-    private bool _tb = ssd.Capacity > 1024;
+    private bool _tb;
 
+    /// <summary>
+    /// Creates new NewSsdViewmodel with given Ssd
+    /// </summary>
+    /// <param name="ssd">Ssd that is beging added</param>
+    public NewSsdViewModel(Ssd ssd)
+    {
+        Ssd = ssd;
+        _tb = ssd.Capacity > 1024;
+    }
+
+    /// <summary>
+    /// Indicates if current Capacity is in Terabytes
+    /// </summary>
     public bool Tb
     {
         get => _tb;
@@ -19,6 +38,9 @@ internal class NewSsdViewModel(Ssd ssd) : BaseViewModel
         }
     }
 
+    /// <summary>
+    /// Capacity of Ssd
+    /// </summary>
     public int Capacity
     {
         get

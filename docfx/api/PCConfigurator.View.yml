@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.View
+  commentId: N:PCConfigurator.View
+  id: PCConfigurator.View
+  children:
+  - PCConfigurator.View.AddConfiguartionWindow
+  - PCConfigurator.View.ComponentUserControl
+  - PCConfigurator.View.ComponentsUserControl
+  - PCConfigurator.View.ConfigurationNameInputWindow
+  - PCConfigurator.View.ConfigurationsUserControl
+  - PCConfigurator.View.M2SlotUserControl
+  - PCConfigurator.View.NewConfigurationUserControl
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.View
+  nameWithType: PCConfigurator.View
+  fullName: PCConfigurator.View
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.View.AddConfiguartionWindow
+  commentId: T:PCConfigurator.View.AddConfiguartionWindow
+  href: PCConfigurator.View.AddConfiguartionWindow.html
+  name: AddConfiguartionWindow
+  nameWithType: AddConfiguartionWindow
+  fullName: PCConfigurator.View.AddConfiguartionWindow
+- uid: PCConfigurator.View.ComponentsUserControl
+  commentId: T:PCConfigurator.View.ComponentsUserControl
+  href: PCConfigurator.View.ComponentsUserControl.html
+  name: ComponentsUserControl
+  nameWithType: ComponentsUserControl
+  fullName: PCConfigurator.View.ComponentsUserControl
+- uid: PCConfigurator.View.ComponentUserControl
+  commentId: T:PCConfigurator.View.ComponentUserControl
+  href: PCConfigurator.View.ComponentUserControl.html
+  name: ComponentUserControl
+  nameWithType: ComponentUserControl
+  fullName: PCConfigurator.View.ComponentUserControl
+- uid: PCConfigurator.View.ConfigurationNameInputWindow
+  commentId: T:PCConfigurator.View.ConfigurationNameInputWindow
+  href: PCConfigurator.View.ConfigurationNameInputWindow.html
+  name: ConfigurationNameInputWindow
+  nameWithType: ConfigurationNameInputWindow
+  fullName: PCConfigurator.View.ConfigurationNameInputWindow
+- uid: PCConfigurator.View.ConfigurationsUserControl
+  commentId: T:PCConfigurator.View.ConfigurationsUserControl
+  href: PCConfigurator.View.ConfigurationsUserControl.html
+  name: ConfigurationsUserControl
+  nameWithType: ConfigurationsUserControl
+  fullName: PCConfigurator.View.ConfigurationsUserControl
+- uid: PCConfigurator.View.M2SlotUserControl
+  commentId: T:PCConfigurator.View.M2SlotUserControl
+  href: PCConfigurator.View.M2SlotUserControl.html
+  name: M2SlotUserControl
+  nameWithType: M2SlotUserControl
+  fullName: PCConfigurator.View.M2SlotUserControl
+- uid: PCConfigurator.View.NewConfigurationUserControl
+  commentId: T:PCConfigurator.View.NewConfigurationUserControl
+  href: PCConfigurator.View.NewConfigurationUserControl.html
+  name: NewConfigurationUserControl
+  nameWithType: NewConfigurationUserControl
+  fullName: PCConfigurator.View.NewConfigurationUserControl

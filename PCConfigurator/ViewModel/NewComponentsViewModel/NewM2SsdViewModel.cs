@@ -2,12 +2,31 @@
 
 namespace PCConfigurator.ViewModel.NewComponentsViewModel;
 
-internal class NewM2SsdViewModel(M2Ssd m2ssd) : BaseViewModel
+/// <summary>
+/// ViewModel for addition of a new M2 SSD
+/// </summary>
+public class NewM2SsdViewModel : BaseViewModel
 {
-    public M2Ssd M2Ssd { get; } = m2ssd;
+    /// <summary>
+    /// M2 SSD that is being added
+    /// </summary>
+    public M2Ssd M2Ssd { get; }
 
-    private bool _tb = m2ssd.Capacity > 1024;
+    private bool _tb;
 
+    /// <summary>
+    /// Creates new NewM2SSDViewmodel with given M2 SSD
+    /// </summary>
+    /// <param name="m2ssd">M2 SSD that is beging added</param>
+    public NewM2SsdViewModel(M2Ssd m2ssd)
+    {
+        M2Ssd = m2ssd;
+        _tb = m2ssd.Capacity > 1024;
+    }
+
+    /// <summary>
+    /// Indicates if current Capacity is in Terabytes
+    /// </summary>
     public bool Tb
     {
         get => _tb;
@@ -19,6 +38,9 @@ internal class NewM2SsdViewModel(M2Ssd m2ssd) : BaseViewModel
         }
     }
 
+    /// <summary>
+    /// Capacity of M2 SSD
+    /// </summary>
     public int Capacity
     {
         get

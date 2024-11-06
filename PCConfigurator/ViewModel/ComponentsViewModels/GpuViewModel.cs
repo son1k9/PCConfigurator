@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class GpuViewModel : ComponentViewModel
+public class GpuViewModel : ComponentViewModel
 {
     public GpuViewModel()
     {

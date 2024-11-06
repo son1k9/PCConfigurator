@@ -1,0 +1,926 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.ViewModel.ComponentsViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModel
+  id: ComponentsViewModel
+  parent: PCConfigurator.ViewModel
+  children:
+  - PCConfigurator.ViewModel.ComponentsViewModel.#ctor
+  - PCConfigurator.ViewModel.ComponentsViewModel.CurrentViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateCoolerCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateCpuCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateGpuCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateHddCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateM2SsdCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateMotherboardCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigatePowerSupplyCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateRamCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateSocketCommand
+  - PCConfigurator.ViewModel.ComponentsViewModel.NavigateSsdCommand
+  langs:
+  - csharp
+  - vb
+  name: ComponentsViewModel
+  nameWithType: ComponentsViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ComponentsViewModel
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 9
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: ViewModel to manage navigation between ComponentsViewModels
+  example: []
+  syntax:
+    content: 'public class ComponentsViewModel : BaseViewModel, INotifyPropertyChanged'
+    content.vb: Public Class ComponentsViewModel Inherits BaseViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - PCConfigurator.ViewModel.BaseViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  - PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.CurrentViewModel
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.CurrentViewModel
+  id: CurrentViewModel
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: CurrentViewModel
+  nameWithType: ComponentsViewModel.CurrentViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.CurrentViewModel
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: CurrentViewModel
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 16
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Current chosen ComponentViewModel
+  example: []
+  syntax:
+    content: public ComponentViewModel CurrentViewModel { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+    content.vb: Public Property CurrentViewModel As ComponentViewModel
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.CurrentViewModel*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.#ctor
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModel.#ctor
+  id: '#ctor'
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: ComponentsViewModel()
+  nameWithType: ComponentsViewModel.ComponentsViewModel()
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.ComponentsViewModel()
+  type: Constructor
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: .ctor
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 29
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Creates new ComponentsViewModel with all navigation commands initialized
+  example: []
+  syntax:
+    content: public ComponentsViewModel()
+    content.vb: Public Sub New()
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.#ctor*
+  nameWithType.vb: ComponentsViewModel.New()
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModel.New()
+  name.vb: New()
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateMotherboardCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateMotherboardCommand
+  id: NavigateMotherboardCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateMotherboardCommand
+  nameWithType: ComponentsViewModel.NavigateMotherboardCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateMotherboardCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateMotherboardCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 46
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to motherboard's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateMotherboardCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateMotherboardCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateMotherboardCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCpuCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateCpuCommand
+  id: NavigateCpuCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateCpuCommand
+  nameWithType: ComponentsViewModel.NavigateCpuCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCpuCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateCpuCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 51
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to CPU's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateCpuCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateCpuCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCpuCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCoolerCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateCoolerCommand
+  id: NavigateCoolerCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateCoolerCommand
+  nameWithType: ComponentsViewModel.NavigateCoolerCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCoolerCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateCoolerCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 56
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to cooler's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateCoolerCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateCoolerCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCoolerCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateRamCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateRamCommand
+  id: NavigateRamCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateRamCommand
+  nameWithType: ComponentsViewModel.NavigateRamCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateRamCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateRamCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 61
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to RAM's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateRamCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateRamCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateRamCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigatePowerSupplyCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigatePowerSupplyCommand
+  id: NavigatePowerSupplyCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigatePowerSupplyCommand
+  nameWithType: ComponentsViewModel.NavigatePowerSupplyCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigatePowerSupplyCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigatePowerSupplyCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 66
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to power supply's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigatePowerSupplyCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigatePowerSupplyCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigatePowerSupplyCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateGpuCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateGpuCommand
+  id: NavigateGpuCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateGpuCommand
+  nameWithType: ComponentsViewModel.NavigateGpuCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateGpuCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateGpuCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 71
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to GPU's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateGpuCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateGpuCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateGpuCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSsdCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateSsdCommand
+  id: NavigateSsdCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateSsdCommand
+  nameWithType: ComponentsViewModel.NavigateSsdCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSsdCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateSsdCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 76
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to SSD's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateSsdCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateSsdCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSsdCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateHddCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateHddCommand
+  id: NavigateHddCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateHddCommand
+  nameWithType: ComponentsViewModel.NavigateHddCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateHddCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateHddCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 81
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to HDD's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateHddCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateHddCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateHddCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateM2SsdCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateM2SsdCommand
+  id: NavigateM2SsdCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateM2SsdCommand
+  nameWithType: ComponentsViewModel.NavigateM2SsdCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateM2SsdCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateM2SsdCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 86
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to M2 SSD's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateM2SsdCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateM2SsdCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateM2SsdCommand*
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSocketCommand
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModel.NavigateSocketCommand
+  id: NavigateSocketCommand
+  parent: PCConfigurator.ViewModel.ComponentsViewModel
+  langs:
+  - csharp
+  - vb
+  name: NavigateSocketCommand
+  nameWithType: ComponentsViewModel.NavigateSocketCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSocketCommand
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: NavigateSocketCommand
+    path: ../PCConfigurator/ViewModel/ComponentsViewModel.cs
+    startLine: 91
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  summary: Command to navigate to socket's ViewModel
+  example: []
+  syntax:
+    content: public ICommand NavigateSocketCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property NavigateSocketCommand As ICommand
+  overload: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSocketCommand*
+references:
+- uid: PCConfigurator.ViewModel
+  commentId: N:PCConfigurator.ViewModel
+  href: PCConfigurator.html
+  name: PCConfigurator.ViewModel
+  nameWithType: PCConfigurator.ViewModel
+  fullName: PCConfigurator.ViewModel
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PCConfigurator.ViewModel.BaseViewModel
+  commentId: T:PCConfigurator.ViewModel.BaseViewModel
+  parent: PCConfigurator.ViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: PCConfigurator.ViewModel.BaseViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  commentId: E:PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  parent: PCConfigurator.ViewModel.BaseViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+- uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  parent: PCConfigurator.ViewModel.BaseViewModel
+  isExternal: true
+  href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.CurrentViewModel*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.CurrentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_CurrentViewModel
+  name: CurrentViewModel
+  nameWithType: ComponentsViewModel.CurrentViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.CurrentViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  parent: PCConfigurator.ViewModel.ComponentsViewModels
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html
+  name: ComponentViewModel
+  nameWithType: ComponentViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels
+  commentId: N:PCConfigurator.ViewModel.ComponentsViewModels
+  href: PCConfigurator.html
+  name: PCConfigurator.ViewModel.ComponentsViewModels
+  nameWithType: PCConfigurator.ViewModel.ComponentsViewModels
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  - name: .
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels
+    name: ComponentsViewModels
+    href: PCConfigurator.ViewModel.ComponentsViewModels.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  - name: .
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels
+    name: ComponentsViewModels
+    href: PCConfigurator.ViewModel.ComponentsViewModels.html
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.#ctor*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.#ctor
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel__ctor
+  name: ComponentsViewModel
+  nameWithType: ComponentsViewModel.ComponentsViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.ComponentsViewModel
+  nameWithType.vb: ComponentsViewModel.New
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModel.New
+  name.vb: New
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateMotherboardCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateMotherboardCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateMotherboardCommand
+  name: NavigateMotherboardCommand
+  nameWithType: ComponentsViewModel.NavigateMotherboardCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateMotherboardCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCpuCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateCpuCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateCpuCommand
+  name: NavigateCpuCommand
+  nameWithType: ComponentsViewModel.NavigateCpuCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCpuCommand
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCoolerCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateCoolerCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateCoolerCommand
+  name: NavigateCoolerCommand
+  nameWithType: ComponentsViewModel.NavigateCoolerCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateCoolerCommand
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateRamCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateRamCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateRamCommand
+  name: NavigateRamCommand
+  nameWithType: ComponentsViewModel.NavigateRamCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateRamCommand
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigatePowerSupplyCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigatePowerSupplyCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigatePowerSupplyCommand
+  name: NavigatePowerSupplyCommand
+  nameWithType: ComponentsViewModel.NavigatePowerSupplyCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigatePowerSupplyCommand
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateGpuCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateGpuCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateGpuCommand
+  name: NavigateGpuCommand
+  nameWithType: ComponentsViewModel.NavigateGpuCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateGpuCommand
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSsdCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateSsdCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateSsdCommand
+  name: NavigateSsdCommand
+  nameWithType: ComponentsViewModel.NavigateSsdCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSsdCommand
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateHddCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateHddCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateHddCommand
+  name: NavigateHddCommand
+  nameWithType: ComponentsViewModel.NavigateHddCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateHddCommand
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateM2SsdCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateM2SsdCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateM2SsdCommand
+  name: NavigateM2SsdCommand
+  nameWithType: ComponentsViewModel.NavigateM2SsdCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateM2SsdCommand
+- uid: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSocketCommand*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModel.NavigateSocketCommand
+  href: PCConfigurator.ViewModel.ComponentsViewModel.html#PCConfigurator_ViewModel_ComponentsViewModel_NavigateSocketCommand
+  name: NavigateSocketCommand
+  nameWithType: ComponentsViewModel.NavigateSocketCommand
+  fullName: PCConfigurator.ViewModel.ComponentsViewModel.NavigateSocketCommand

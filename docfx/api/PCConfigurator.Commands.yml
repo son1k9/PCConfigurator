@@ -1,0 +1,72 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Commands
+  commentId: N:PCConfigurator.Commands
+  id: PCConfigurator.Commands
+  children:
+  - PCConfigurator.Commands.NavigateCommand`1
+  - PCConfigurator.Commands.RelayCommand
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.Commands
+  nameWithType: PCConfigurator.Commands
+  fullName: PCConfigurator.Commands
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.Commands.NavigateCommand`1
+  commentId: T:PCConfigurator.Commands.NavigateCommand`1
+  href: PCConfigurator.Commands.NavigateCommand-1.html
+  name: NavigateCommand<T>
+  nameWithType: NavigateCommand<T>
+  fullName: PCConfigurator.Commands.NavigateCommand<T>
+  nameWithType.vb: NavigateCommand(Of T)
+  fullName.vb: PCConfigurator.Commands.NavigateCommand(Of T)
+  name.vb: NavigateCommand(Of T)
+  spec.csharp:
+  - uid: PCConfigurator.Commands.NavigateCommand`1
+    name: NavigateCommand
+    href: PCConfigurator.Commands.NavigateCommand-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: PCConfigurator.Commands.NavigateCommand`1
+    name: NavigateCommand
+    href: PCConfigurator.Commands.NavigateCommand-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: PCConfigurator.Commands.RelayCommand
+  commentId: T:PCConfigurator.Commands.RelayCommand
+  parent: PCConfigurator.Commands
+  href: PCConfigurator.Commands.RelayCommand.html
+  name: RelayCommand
+  nameWithType: RelayCommand
+  fullName: PCConfigurator.Commands.RelayCommand
+- uid: PCConfigurator.Commands
+  commentId: N:PCConfigurator.Commands
+  href: PCConfigurator.html
+  name: PCConfigurator.Commands
+  nameWithType: PCConfigurator.Commands
+  fullName: PCConfigurator.Commands
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Commands
+    name: Commands
+    href: PCConfigurator.Commands.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Commands
+    name: Commands
+    href: PCConfigurator.Commands.html

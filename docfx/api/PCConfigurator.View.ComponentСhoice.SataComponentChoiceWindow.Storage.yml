@@ -1,0 +1,136 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  commentId: T:PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  id: SataComponentChoiceWindow.Storage
+  parent: PCConfigurator.View.ComponentСhoice
+  children:
+  - PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.HDD
+  - PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.SSD
+  langs:
+  - csharp
+  - vb
+  name: SataComponentChoiceWindow.Storage
+  nameWithType: SataComponentChoiceWindow.Storage
+  fullName: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  type: Enum
+  source:
+    remote:
+      path: PCConfigurator/View/ComponentСhoice/SataComponentChoiceWindow.xaml.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Storage
+    path: ../PCConfigurator/View/ComponentСhoice/SataComponentChoiceWindow.xaml.cs
+    startLine: 14
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.View.ComponentСhoice
+  syntax:
+    content: public enum SataComponentChoiceWindow.Storage
+    content.vb: Public Enum SataComponentChoiceWindow.Storage
+- uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.HDD
+  commentId: F:PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.HDD
+  id: HDD
+  parent: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  langs:
+  - csharp
+  - vb
+  name: HDD
+  nameWithType: SataComponentChoiceWindow.Storage.HDD
+  fullName: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.HDD
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/View/ComponentСhoice/SataComponentChoiceWindow.xaml.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: HDD
+    path: ../PCConfigurator/View/ComponentСhoice/SataComponentChoiceWindow.xaml.cs
+    startLine: 16
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.View.ComponentСhoice
+  syntax:
+    content: HDD = 0
+    return:
+      type: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+- uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.SSD
+  commentId: F:PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.SSD
+  id: SSD
+  parent: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  langs:
+  - csharp
+  - vb
+  name: SSD
+  nameWithType: SataComponentChoiceWindow.Storage.SSD
+  fullName: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.SSD
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/View/ComponentСhoice/SataComponentChoiceWindow.xaml.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: SSD
+    path: ../PCConfigurator/View/ComponentСhoice/SataComponentChoiceWindow.xaml.cs
+    startLine: 17
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.View.ComponentСhoice
+  syntax:
+    content: SSD = 1
+    return:
+      type: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+references:
+- uid: PCConfigurator.View.ComponentСhoice
+  commentId: N:PCConfigurator.View.ComponentСhoice
+  href: PCConfigurator.html
+  name: PCConfigurator.View.ComponentСhoice
+  nameWithType: PCConfigurator.View.ComponentСhoice
+  fullName: PCConfigurator.View.ComponentСhoice
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.View
+    name: View
+    href: PCConfigurator.View.html
+  - name: .
+  - uid: PCConfigurator.View.ComponentСhoice
+    name: ComponentСhoice
+    href: PCConfigurator.View.ComponentСhoice.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.View
+    name: View
+    href: PCConfigurator.View.html
+  - name: .
+  - uid: PCConfigurator.View.ComponentСhoice
+    name: ComponentСhoice
+    href: PCConfigurator.View.ComponentСhoice.html
+- uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  commentId: T:PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  parent: PCConfigurator.View.ComponentСhoice
+  href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.html
+  name: SataComponentChoiceWindow.Storage
+  nameWithType: SataComponentChoiceWindow.Storage
+  fullName: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+  spec.csharp:
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+    name: SataComponentChoiceWindow
+    href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.html
+  - name: .
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+    name: Storage
+    href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.html
+  spec.vb:
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow
+    name: SataComponentChoiceWindow
+    href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.html
+  - name: .
+  - uid: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage
+    name: Storage
+    href: PCConfigurator.View.ComponentСhoice.SataComponentChoiceWindow.Storage.html

@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class M2SsdViewModel : ComponentViewModel
+public class M2SsdViewModel : ComponentViewModel
 {
     public M2SsdViewModel()
     {

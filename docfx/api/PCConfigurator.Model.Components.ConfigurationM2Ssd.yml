@@ -1,0 +1,554 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd
+  commentId: T:PCConfigurator.Model.Components.ConfigurationM2Ssd
+  id: ConfigurationM2Ssd
+  parent: PCConfigurator.Model.Components
+  children:
+  - PCConfigurator.Model.Components.ConfigurationM2Ssd.Configuration
+  - PCConfigurator.Model.Components.ConfigurationM2Ssd.ConfigurationId
+  - PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Slot
+  - PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SlotId
+  - PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Ssd
+  - PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SsdId
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationM2Ssd
+  nameWithType: ConfigurationM2Ssd
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationM2Ssd
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+    startLine: 2
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public class ConfigurationM2Ssd
+    content.vb: Public Class ConfigurationM2Ssd
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.ConfigurationId
+  commentId: P:PCConfigurator.Model.Components.ConfigurationM2Ssd.ConfigurationId
+  id: ConfigurationId
+  parent: PCConfigurator.Model.Components.ConfigurationM2Ssd
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationId
+  nameWithType: ConfigurationM2Ssd.ConfigurationId
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.ConfigurationId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationId
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+    startLine: 4
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int ConfigurationId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ConfigurationId As Integer
+  overload: PCConfigurator.Model.Components.ConfigurationM2Ssd.ConfigurationId*
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.Configuration
+  commentId: P:PCConfigurator.Model.Components.ConfigurationM2Ssd.Configuration
+  id: Configuration
+  parent: PCConfigurator.Model.Components.ConfigurationM2Ssd
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: ConfigurationM2Ssd.Configuration
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.Configuration
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Configuration
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+    startLine: 5
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual Configuration Configuration { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Configuration
+    content.vb: Public Overridable Property Configuration As Configuration
+  overload: PCConfigurator.Model.Components.ConfigurationM2Ssd.Configuration*
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SlotId
+  commentId: P:PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SlotId
+  id: M2SlotId
+  parent: PCConfigurator.Model.Components.ConfigurationM2Ssd
+  langs:
+  - csharp
+  - vb
+  name: M2SlotId
+  nameWithType: ConfigurationM2Ssd.M2SlotId
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SlotId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2SlotId
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+    startLine: 7
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int M2SlotId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property M2SlotId As Integer
+  overload: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SlotId*
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Slot
+  commentId: P:PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Slot
+  id: M2Slot
+  parent: PCConfigurator.Model.Components.ConfigurationM2Ssd
+  langs:
+  - csharp
+  - vb
+  name: M2Slot
+  nameWithType: ConfigurationM2Ssd.M2Slot
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Slot
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Slot
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+    startLine: 8
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual M2Slot M2Slot { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.M2Slot
+    content.vb: Public Overridable Property M2Slot As M2Slot
+  overload: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Slot*
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SsdId
+  commentId: P:PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SsdId
+  id: M2SsdId
+  parent: PCConfigurator.Model.Components.ConfigurationM2Ssd
+  langs:
+  - csharp
+  - vb
+  name: M2SsdId
+  nameWithType: ConfigurationM2Ssd.M2SsdId
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SsdId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2SsdId
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+    startLine: 10
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int M2SsdId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property M2SsdId As Integer
+  overload: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SsdId*
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Ssd
+  commentId: P:PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Ssd
+  id: M2Ssd
+  parent: PCConfigurator.Model.Components.ConfigurationM2Ssd
+  langs:
+  - csharp
+  - vb
+  name: M2Ssd
+  nameWithType: ConfigurationM2Ssd.M2Ssd
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Ssd
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Ssd
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationM2Ssd.cs
+    startLine: 11
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual M2Ssd M2Ssd { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.M2Ssd
+    content.vb: Public Overridable Property M2Ssd As M2Ssd
+  overload: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Ssd*
+references:
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.ConfigurationId*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationM2Ssd.ConfigurationId
+  href: PCConfigurator.Model.Components.ConfigurationM2Ssd.html#PCConfigurator_Model_Components_ConfigurationM2Ssd_ConfigurationId
+  name: ConfigurationId
+  nameWithType: ConfigurationM2Ssd.ConfigurationId
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.ConfigurationId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.Configuration*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationM2Ssd.Configuration
+  href: PCConfigurator.Model.Components.ConfigurationM2Ssd.html#PCConfigurator_Model_Components_ConfigurationM2Ssd_Configuration
+  name: Configuration
+  nameWithType: ConfigurationM2Ssd.Configuration
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.Configuration
+- uid: PCConfigurator.Model.Components.Configuration
+  commentId: T:PCConfigurator.Model.Components.Configuration
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: PCConfigurator.Model.Components.Configuration
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SlotId*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SlotId
+  href: PCConfigurator.Model.Components.ConfigurationM2Ssd.html#PCConfigurator_Model_Components_ConfigurationM2Ssd_M2SlotId
+  name: M2SlotId
+  nameWithType: ConfigurationM2Ssd.M2SlotId
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SlotId
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Slot*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Slot
+  href: PCConfigurator.Model.Components.ConfigurationM2Ssd.html#PCConfigurator_Model_Components_ConfigurationM2Ssd_M2Slot
+  name: M2Slot
+  nameWithType: ConfigurationM2Ssd.M2Slot
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Slot
+- uid: PCConfigurator.Model.Components.M2Slot
+  commentId: T:PCConfigurator.Model.Components.M2Slot
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.M2Slot.html
+  name: M2Slot
+  nameWithType: M2Slot
+  fullName: PCConfigurator.Model.Components.M2Slot
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SsdId*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SsdId
+  href: PCConfigurator.Model.Components.ConfigurationM2Ssd.html#PCConfigurator_Model_Components_ConfigurationM2Ssd_M2SsdId
+  name: M2SsdId
+  nameWithType: ConfigurationM2Ssd.M2SsdId
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2SsdId
+- uid: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Ssd*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Ssd
+  href: PCConfigurator.Model.Components.ConfigurationM2Ssd.html#PCConfigurator_Model_Components_ConfigurationM2Ssd_M2Ssd
+  name: M2Ssd
+  nameWithType: ConfigurationM2Ssd.M2Ssd
+  fullName: PCConfigurator.Model.Components.ConfigurationM2Ssd.M2Ssd
+- uid: PCConfigurator.Model.Components.M2Ssd
+  commentId: T:PCConfigurator.Model.Components.M2Ssd
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.M2Ssd.html
+  name: M2Ssd
+  nameWithType: M2Ssd
+  fullName: PCConfigurator.Model.Components.M2Ssd

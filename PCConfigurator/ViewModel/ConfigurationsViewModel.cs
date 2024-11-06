@@ -17,7 +17,7 @@ namespace PCConfigurator.ViewModel;
 /// <summary>
 /// ViewModel to manage configurations
 /// </summary>
-internal class ConfigurationsViewModel : BaseViewModel
+public class ConfigurationsViewModel : BaseViewModel
 {
     /// <summary>
     /// Database context to use for operations with configurations

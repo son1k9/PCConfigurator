@@ -14,7 +14,7 @@ namespace PCConfigurator.ViewModel.ComponentsViewModels;
 /// <summary>
 /// Base class for all ComponentViewModels
 /// </summary>
-internal abstract class ComponentViewModel : BaseViewModel
+public abstract class ComponentViewModel : BaseViewModel
 {
     /// <summary>
     /// Database context to use for operations

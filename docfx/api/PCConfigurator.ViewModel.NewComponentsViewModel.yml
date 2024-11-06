@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.ViewModel.NewComponentsViewModel
+  commentId: N:PCConfigurator.ViewModel.NewComponentsViewModel
+  id: PCConfigurator.ViewModel.NewComponentsViewModel
+  children:
+  - PCConfigurator.ViewModel.NewComponentsViewModel.NewCoolerViewmodel
+  - PCConfigurator.ViewModel.NewComponentsViewModel.NewHddViewModel
+  - PCConfigurator.ViewModel.NewComponentsViewModel.NewM2SsdViewModel
+  - PCConfigurator.ViewModel.NewComponentsViewModel.NewMotherboardViewmodel
+  - PCConfigurator.ViewModel.NewComponentsViewModel.NewSocketViewModel
+  - PCConfigurator.ViewModel.NewComponentsViewModel.NewSsdViewModel
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.ViewModel.NewComponentsViewModel
+  nameWithType: PCConfigurator.ViewModel.NewComponentsViewModel
+  fullName: PCConfigurator.ViewModel.NewComponentsViewModel
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewCoolerViewmodel
+  commentId: T:PCConfigurator.ViewModel.NewComponentsViewModel.NewCoolerViewmodel
+  href: PCConfigurator.ViewModel.NewComponentsViewModel.NewCoolerViewmodel.html
+  name: NewCoolerViewmodel
+  nameWithType: NewCoolerViewmodel
+  fullName: PCConfigurator.ViewModel.NewComponentsViewModel.NewCoolerViewmodel
+- uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewHddViewModel
+  commentId: T:PCConfigurator.ViewModel.NewComponentsViewModel.NewHddViewModel
+  href: PCConfigurator.ViewModel.NewComponentsViewModel.NewHddViewModel.html
+  name: NewHddViewModel
+  nameWithType: NewHddViewModel
+  fullName: PCConfigurator.ViewModel.NewComponentsViewModel.NewHddViewModel
+- uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewM2SsdViewModel
+  commentId: T:PCConfigurator.ViewModel.NewComponentsViewModel.NewM2SsdViewModel
+  href: PCConfigurator.ViewModel.NewComponentsViewModel.NewM2SsdViewModel.html
+  name: NewM2SsdViewModel
+  nameWithType: NewM2SsdViewModel
+  fullName: PCConfigurator.ViewModel.NewComponentsViewModel.NewM2SsdViewModel
+- uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewMotherboardViewmodel
+  commentId: T:PCConfigurator.ViewModel.NewComponentsViewModel.NewMotherboardViewmodel
+  href: PCConfigurator.ViewModel.NewComponentsViewModel.NewMotherboardViewmodel.html
+  name: NewMotherboardViewmodel
+  nameWithType: NewMotherboardViewmodel
+  fullName: PCConfigurator.ViewModel.NewComponentsViewModel.NewMotherboardViewmodel
+- uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewSocketViewModel
+  commentId: T:PCConfigurator.ViewModel.NewComponentsViewModel.NewSocketViewModel
+  href: PCConfigurator.ViewModel.NewComponentsViewModel.NewSocketViewModel.html
+  name: NewSocketViewModel
+  nameWithType: NewSocketViewModel
+  fullName: PCConfigurator.ViewModel.NewComponentsViewModel.NewSocketViewModel
+- uid: PCConfigurator.ViewModel.NewComponentsViewModel.NewSsdViewModel
+  commentId: T:PCConfigurator.ViewModel.NewComponentsViewModel.NewSsdViewModel
+  href: PCConfigurator.ViewModel.NewComponentsViewModel.NewSsdViewModel.html
+  name: NewSsdViewModel
+  nameWithType: NewSsdViewModel
+  fullName: PCConfigurator.ViewModel.NewComponentsViewModel.NewSsdViewModel

@@ -1,0 +1,9 @@
+- name: API
+  href: api/
+
+- name: Статьи
+  href: articles/
+
+- name: Руководства
+  href: guides/
+

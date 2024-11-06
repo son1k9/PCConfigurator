@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class PowerSupplyViewModel : ComponentViewModel
+public class PowerSupplyViewModel : ComponentViewModel
 {
     public PowerSupplyViewModel()
     {

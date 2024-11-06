@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator
+  commentId: N:PCConfigurator
+  id: PCConfigurator
+  children:
+  - PCConfigurator.App
+  - PCConfigurator.MainWindow
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator
+  nameWithType: PCConfigurator
+  fullName: PCConfigurator
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.App
+  commentId: T:PCConfigurator.App
+  href: PCConfigurator.App.html
+  name: App
+  nameWithType: App
+  fullName: PCConfigurator.App
+- uid: PCConfigurator.MainWindow
+  commentId: T:PCConfigurator.MainWindow
+  href: PCConfigurator.MainWindow.html
+  name: MainWindow
+  nameWithType: MainWindow
+  fullName: PCConfigurator.MainWindow

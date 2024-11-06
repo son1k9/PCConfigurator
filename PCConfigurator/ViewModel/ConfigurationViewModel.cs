@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel;
 
-internal class ConfigurationViewModel : BaseViewModel
+public class ConfigurationViewModel : BaseViewModel
 {
     private readonly Configuration _configuration;
     public Configuration Configuration { get => _configuration; }

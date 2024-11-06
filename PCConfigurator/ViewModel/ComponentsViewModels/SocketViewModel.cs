@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class SocketViewModel : ComponentViewModel
+public class SocketViewModel : ComponentViewModel
 {
     public SocketViewModel()
     {

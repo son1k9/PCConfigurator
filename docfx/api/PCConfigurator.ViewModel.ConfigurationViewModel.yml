@@ -1,0 +1,1904 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel
+  commentId: T:PCConfigurator.ViewModel.ConfigurationViewModel
+  id: ConfigurationViewModel
+  parent: PCConfigurator.ViewModel
+  children:
+  - PCConfigurator.ViewModel.ConfigurationViewModel.#ctor(PCConfigurator.Model.Components.Configuration,PCConfigurator.Model.ApplicationContext,System.Boolean)
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ArrayChanged
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCooler
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCpu
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ChangeGpu
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ChangeM2Ssd
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ChangeMotherboard
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ChangePowerSupply
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ChangeRam
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ChangeSata
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Changes
+  - PCConfigurator.ViewModel.ConfigurationViewModel.CheckCompatibility
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Configuration
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ConfigurationSaved
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Cooler
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Cpu
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Errors
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Gpus
+  - PCConfigurator.ViewModel.ConfigurationViewModel.M2Ssds
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Motherboard
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Name
+  - PCConfigurator.ViewModel.ConfigurationViewModel.PowerSupply
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Rams
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ResetCooler
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ResetCpu
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ResetGpu
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ResetM2Ssd
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ResetMotherboard
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ResetPowerSupply
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ResetRam
+  - PCConfigurator.ViewModel.ConfigurationViewModel.ResetSata
+  - PCConfigurator.ViewModel.ConfigurationViewModel.Save
+  - PCConfigurator.ViewModel.ConfigurationViewModel.SsdAndHdds
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationViewModel
+  nameWithType: ConfigurationViewModel
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationViewModel
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 11
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: 'public class ConfigurationViewModel : BaseViewModel, INotifyPropertyChanged'
+    content.vb: Public Class ConfigurationViewModel Inherits BaseViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - PCConfigurator.ViewModel.BaseViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  - PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Configuration
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Configuration
+  id: Configuration
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: ConfigurationViewModel.Configuration
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Configuration
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Configuration
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 14
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public Configuration Configuration { get; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Configuration
+    content.vb: Public ReadOnly Property Configuration As Configuration
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Configuration*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ConfigurationSaved
+  commentId: E:PCConfigurator.ViewModel.ConfigurationViewModel.ConfigurationSaved
+  id: ConfigurationSaved
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationSaved
+  nameWithType: ConfigurationViewModel.ConfigurationSaved
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ConfigurationSaved
+  type: Event
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationSaved
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 16
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public event EventHandler? ConfigurationSaved
+    return:
+      type: System.EventHandler
+    content.vb: Public Event ConfigurationSaved As EventHandler
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Errors
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Errors
+  id: Errors
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Errors
+  nameWithType: ConfigurationViewModel.Errors
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Errors
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Errors
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 23
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public string[] Errors { get; set; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Property Errors As String()
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Errors*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Changes
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Changes
+  id: Changes
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Changes
+  nameWithType: ConfigurationViewModel.Changes
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Changes
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Changes
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 34
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public bool Changes { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Changes As Boolean
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Changes*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ArrayChanged
+  commentId: E:PCConfigurator.ViewModel.ConfigurationViewModel.ArrayChanged
+  id: ArrayChanged
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ArrayChanged
+  nameWithType: ConfigurationViewModel.ArrayChanged
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ArrayChanged
+  type: Event
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ArrayChanged
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 46
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public event EventHandler<object>? ArrayChanged
+    return:
+      type: System.EventHandler{System.Object}
+    content.vb: Public Event ArrayChanged As EventHandler(Of Object)
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.#ctor(PCConfigurator.Model.Components.Configuration,PCConfigurator.Model.ApplicationContext,System.Boolean)
+  commentId: M:PCConfigurator.ViewModel.ConfigurationViewModel.#ctor(PCConfigurator.Model.Components.Configuration,PCConfigurator.Model.ApplicationContext,System.Boolean)
+  id: '#ctor(PCConfigurator.Model.Components.Configuration,PCConfigurator.Model.ApplicationContext,System.Boolean)'
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationViewModel(Configuration, ApplicationContext, bool)
+  nameWithType: ConfigurationViewModel.ConfigurationViewModel(Configuration, ApplicationContext, bool)
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ConfigurationViewModel(PCConfigurator.Model.Components.Configuration, PCConfigurator.Model.ApplicationContext, bool)
+  type: Constructor
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: .ctor
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 54
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ConfigurationViewModel(Configuration configuration, ApplicationContext context, bool add = false)
+    parameters:
+    - id: configuration
+      type: PCConfigurator.Model.Components.Configuration
+    - id: context
+      type: PCConfigurator.Model.ApplicationContext
+    - id: add
+      type: System.Boolean
+    content.vb: Public Sub New(configuration As Configuration, context As ApplicationContext, add As Boolean = False)
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.#ctor*
+  nameWithType.vb: ConfigurationViewModel.New(Configuration, ApplicationContext, Boolean)
+  fullName.vb: PCConfigurator.ViewModel.ConfigurationViewModel.New(PCConfigurator.Model.Components.Configuration, PCConfigurator.Model.ApplicationContext, Boolean)
+  name.vb: New(Configuration, ApplicationContext, Boolean)
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Name
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Name
+  id: Name
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ConfigurationViewModel.Name
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Name
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Name
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 115
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Name*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Motherboard
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Motherboard
+  id: Motherboard
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Motherboard
+  nameWithType: ConfigurationViewModel.Motherboard
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Motherboard
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Motherboard
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 127
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public Motherboard? Motherboard { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Motherboard
+    content.vb: Public Property Motherboard As Motherboard
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Motherboard*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Cpu
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Cpu
+  id: Cpu
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Cpu
+  nameWithType: ConfigurationViewModel.Cpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Cpu
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Cpu
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 139
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public Cpu? Cpu { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Cpu
+    content.vb: Public Property Cpu As Cpu
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Cpu*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Cooler
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Cooler
+  id: Cooler
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Cooler
+  nameWithType: ConfigurationViewModel.Cooler
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Cooler
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Cooler
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 151
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public Cooler? Cooler { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Cooler
+    content.vb: Public Property Cooler As Cooler
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Cooler*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.PowerSupply
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.PowerSupply
+  id: PowerSupply
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: PowerSupply
+  nameWithType: ConfigurationViewModel.PowerSupply
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.PowerSupply
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: PowerSupply
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 163
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public PowerSupply? PowerSupply { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.PowerSupply
+    content.vb: Public Property PowerSupply As PowerSupply
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.PowerSupply*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Rams
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Rams
+  id: Rams
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Rams
+  nameWithType: ConfigurationViewModel.Rams
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Rams
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Rams
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 175
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public Ram?[]? Rams { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Ram[]
+    content.vb: Public Property Rams As Ram()
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Rams*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Gpus
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Gpus
+  id: Gpus
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Gpus
+  nameWithType: ConfigurationViewModel.Gpus
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Gpus
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Gpus
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 197
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public Gpu?[]? Gpus { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Gpu[]
+    content.vb: Public Property Gpus As Gpu()
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Gpus*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2Ssds
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.M2Ssds
+  id: M2Ssds
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: M2Ssds
+  nameWithType: ConfigurationViewModel.M2Ssds
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.M2Ssds
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Ssds
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 238
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ConfigurationViewModel.M2SlotWithSsd[]? M2Ssds { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd[]
+    content.vb: Public Property M2Ssds As ConfigurationViewModel.M2SlotWithSsd()
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.M2Ssds*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.SsdAndHdds
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.SsdAndHdds
+  id: SsdAndHdds
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: SsdAndHdds
+  nameWithType: ConfigurationViewModel.SsdAndHdds
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.SsdAndHdds
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: SsdAndHdds
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 250
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public Component?[]? SsdAndHdds { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Component[]
+    content.vb: Public Property SsdAndHdds As Component()
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.SsdAndHdds*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Save
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.Save
+  id: Save
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: Save
+  nameWithType: ConfigurationViewModel.Save
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Save
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Save
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 320
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand Save { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property Save As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.Save*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetMotherboard
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ResetMotherboard
+  id: ResetMotherboard
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetMotherboard
+  nameWithType: ConfigurationViewModel.ResetMotherboard
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetMotherboard
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetMotherboard
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 343
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ResetMotherboard { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ResetMotherboard As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ResetMotherboard*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCpu
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ResetCpu
+  id: ResetCpu
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetCpu
+  nameWithType: ConfigurationViewModel.ResetCpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCpu
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetCpu
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 350
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ResetCpu { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ResetCpu As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCpu*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCooler
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ResetCooler
+  id: ResetCooler
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetCooler
+  nameWithType: ConfigurationViewModel.ResetCooler
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCooler
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetCooler
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 357
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ResetCooler { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ResetCooler As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCooler*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetPowerSupply
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ResetPowerSupply
+  id: ResetPowerSupply
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetPowerSupply
+  nameWithType: ConfigurationViewModel.ResetPowerSupply
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetPowerSupply
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetPowerSupply
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 364
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ResetPowerSupply { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ResetPowerSupply As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ResetPowerSupply*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetRam
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ResetRam
+  id: ResetRam
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetRam
+  nameWithType: ConfigurationViewModel.ResetRam
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetRam
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetRam
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 371
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ResetRam { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ResetRam As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ResetRam*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetGpu
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ResetGpu
+  id: ResetGpu
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetGpu
+  nameWithType: ConfigurationViewModel.ResetGpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetGpu
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetGpu
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 379
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ResetGpu { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ResetGpu As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ResetGpu*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetM2Ssd
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ResetM2Ssd
+  id: ResetM2Ssd
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetM2Ssd
+  nameWithType: ConfigurationViewModel.ResetM2Ssd
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetM2Ssd
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetM2Ssd
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 387
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ResetM2Ssd { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ResetM2Ssd As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ResetM2Ssd*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetSata
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ResetSata
+  id: ResetSata
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetSata
+  nameWithType: ConfigurationViewModel.ResetSata
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetSata
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetSata
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 395
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ResetSata { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ResetSata As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ResetSata*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeMotherboard
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeMotherboard
+  id: ChangeMotherboard
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ChangeMotherboard
+  nameWithType: ConfigurationViewModel.ChangeMotherboard
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeMotherboard
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChangeMotherboard
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 422
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ChangeMotherboard { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ChangeMotherboard As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeMotherboard*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCpu
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCpu
+  id: ChangeCpu
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ChangeCpu
+  nameWithType: ConfigurationViewModel.ChangeCpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCpu
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChangeCpu
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 442
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ChangeCpu { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ChangeCpu As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCpu*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCooler
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCooler
+  id: ChangeCooler
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ChangeCooler
+  nameWithType: ConfigurationViewModel.ChangeCooler
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCooler
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChangeCooler
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 462
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ChangeCooler { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ChangeCooler As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCooler*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangePowerSupply
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ChangePowerSupply
+  id: ChangePowerSupply
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ChangePowerSupply
+  nameWithType: ConfigurationViewModel.ChangePowerSupply
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangePowerSupply
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChangePowerSupply
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 482
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ChangePowerSupply { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ChangePowerSupply As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ChangePowerSupply*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeRam
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeRam
+  id: ChangeRam
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ChangeRam
+  nameWithType: ConfigurationViewModel.ChangeRam
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeRam
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChangeRam
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 502
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ChangeRam { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ChangeRam As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeRam*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeGpu
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeGpu
+  id: ChangeGpu
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ChangeGpu
+  nameWithType: ConfigurationViewModel.ChangeGpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeGpu
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChangeGpu
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 522
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ChangeGpu { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ChangeGpu As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeGpu*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeM2Ssd
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeM2Ssd
+  id: ChangeM2Ssd
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ChangeM2Ssd
+  nameWithType: ConfigurationViewModel.ChangeM2Ssd
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeM2Ssd
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChangeM2Ssd
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 542
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ChangeM2Ssd { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ChangeM2Ssd As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeM2Ssd*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeSata
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeSata
+  id: ChangeSata
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: ChangeSata
+  nameWithType: ConfigurationViewModel.ChangeSata
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeSata
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChangeSata
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 563
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand ChangeSata { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property ChangeSata As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeSata*
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.CheckCompatibility
+  commentId: P:PCConfigurator.ViewModel.ConfigurationViewModel.CheckCompatibility
+  id: CheckCompatibility
+  parent: PCConfigurator.ViewModel.ConfigurationViewModel
+  langs:
+  - csharp
+  - vb
+  name: CheckCompatibility
+  nameWithType: ConfigurationViewModel.CheckCompatibility
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.CheckCompatibility
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ConfigurationViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: CheckCompatibility
+    path: ../PCConfigurator/ViewModel/ConfigurationViewModel.cs
+    startLine: 617
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel
+  syntax:
+    content: public ICommand CheckCompatibility { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property CheckCompatibility As ICommand
+  overload: PCConfigurator.ViewModel.ConfigurationViewModel.CheckCompatibility*
+references:
+- uid: PCConfigurator.ViewModel
+  commentId: N:PCConfigurator.ViewModel
+  href: PCConfigurator.html
+  name: PCConfigurator.ViewModel
+  nameWithType: PCConfigurator.ViewModel
+  fullName: PCConfigurator.ViewModel
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PCConfigurator.ViewModel.BaseViewModel
+  commentId: T:PCConfigurator.ViewModel.BaseViewModel
+  parent: PCConfigurator.ViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: PCConfigurator.ViewModel.BaseViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  commentId: E:PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  parent: PCConfigurator.ViewModel.BaseViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+- uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  parent: PCConfigurator.ViewModel.BaseViewModel
+  isExternal: true
+  href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Configuration*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Configuration
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Configuration
+  name: Configuration
+  nameWithType: ConfigurationViewModel.Configuration
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Configuration
+- uid: PCConfigurator.Model.Components.Configuration
+  commentId: T:PCConfigurator.Model.Components.Configuration
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: PCConfigurator.Model.Components.Configuration
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Errors*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Errors
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Errors
+  name: Errors
+  nameWithType: ConfigurationViewModel.Errors
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Errors
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Changes*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Changes
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Changes
+  name: Changes
+  nameWithType: ConfigurationViewModel.Changes
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Changes
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.EventHandler{System.Object}
+  commentId: T:System.EventHandler{System.Object}
+  parent: System
+  definition: System.EventHandler`1
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<object>
+  nameWithType: EventHandler<object>
+  fullName: System.EventHandler<object>
+  nameWithType.vb: EventHandler(Of Object)
+  fullName.vb: System.EventHandler(Of Object)
+  name.vb: EventHandler(Of Object)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - name: TEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEventArgs
+  - name: )
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.#ctor*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.#ctor
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel__ctor_PCConfigurator_Model_Components_Configuration_PCConfigurator_Model_ApplicationContext_System_Boolean_
+  name: ConfigurationViewModel
+  nameWithType: ConfigurationViewModel.ConfigurationViewModel
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ConfigurationViewModel
+  nameWithType.vb: ConfigurationViewModel.New
+  fullName.vb: PCConfigurator.ViewModel.ConfigurationViewModel.New
+  name.vb: New
+- uid: PCConfigurator.Model.ApplicationContext
+  commentId: T:PCConfigurator.Model.ApplicationContext
+  parent: PCConfigurator.Model
+  href: PCConfigurator.Model.ApplicationContext.html
+  name: ApplicationContext
+  nameWithType: ApplicationContext
+  fullName: PCConfigurator.Model.ApplicationContext
+- uid: PCConfigurator.Model
+  commentId: N:PCConfigurator.Model
+  href: PCConfigurator.html
+  name: PCConfigurator.Model
+  nameWithType: PCConfigurator.Model
+  fullName: PCConfigurator.Model
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Name*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Name
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Name
+  name: Name
+  nameWithType: ConfigurationViewModel.Name
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Motherboard*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Motherboard
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Motherboard
+  name: Motherboard
+  nameWithType: ConfigurationViewModel.Motherboard
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Motherboard
+- uid: PCConfigurator.Model.Components.Motherboard
+  commentId: T:PCConfigurator.Model.Components.Motherboard
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Motherboard.html
+  name: Motherboard
+  nameWithType: Motherboard
+  fullName: PCConfigurator.Model.Components.Motherboard
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Cpu*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Cpu
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Cpu
+  name: Cpu
+  nameWithType: ConfigurationViewModel.Cpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Cpu
+- uid: PCConfigurator.Model.Components.Cpu
+  commentId: T:PCConfigurator.Model.Components.Cpu
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Cpu.html
+  name: Cpu
+  nameWithType: Cpu
+  fullName: PCConfigurator.Model.Components.Cpu
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Cooler*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Cooler
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Cooler
+  name: Cooler
+  nameWithType: ConfigurationViewModel.Cooler
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Cooler
+- uid: PCConfigurator.Model.Components.Cooler
+  commentId: T:PCConfigurator.Model.Components.Cooler
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Cooler.html
+  name: Cooler
+  nameWithType: Cooler
+  fullName: PCConfigurator.Model.Components.Cooler
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.PowerSupply*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.PowerSupply
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_PowerSupply
+  name: PowerSupply
+  nameWithType: ConfigurationViewModel.PowerSupply
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.PowerSupply
+- uid: PCConfigurator.Model.Components.PowerSupply
+  commentId: T:PCConfigurator.Model.Components.PowerSupply
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.PowerSupply.html
+  name: PowerSupply
+  nameWithType: PowerSupply
+  fullName: PCConfigurator.Model.Components.PowerSupply
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Rams*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Rams
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Rams
+  name: Rams
+  nameWithType: ConfigurationViewModel.Rams
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Rams
+- uid: PCConfigurator.Model.Components.Ram[]
+  isExternal: true
+  href: PCConfigurator.Model.Components.Ram.html
+  name: Ram[]
+  nameWithType: Ram[]
+  fullName: PCConfigurator.Model.Components.Ram[]
+  nameWithType.vb: Ram()
+  fullName.vb: PCConfigurator.Model.Components.Ram()
+  name.vb: Ram()
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.Ram
+    name: Ram
+    href: PCConfigurator.Model.Components.Ram.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.Ram
+    name: Ram
+    href: PCConfigurator.Model.Components.Ram.html
+  - name: (
+  - name: )
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Gpus*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Gpus
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Gpus
+  name: Gpus
+  nameWithType: ConfigurationViewModel.Gpus
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Gpus
+- uid: PCConfigurator.Model.Components.Gpu[]
+  isExternal: true
+  href: PCConfigurator.Model.Components.Gpu.html
+  name: Gpu[]
+  nameWithType: Gpu[]
+  fullName: PCConfigurator.Model.Components.Gpu[]
+  nameWithType.vb: Gpu()
+  fullName.vb: PCConfigurator.Model.Components.Gpu()
+  name.vb: Gpu()
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.Gpu
+    name: Gpu
+    href: PCConfigurator.Model.Components.Gpu.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.Gpu
+    name: Gpu
+    href: PCConfigurator.Model.Components.Gpu.html
+  - name: (
+  - name: )
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2Ssds*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.M2Ssds
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_M2Ssds
+  name: M2Ssds
+  nameWithType: ConfigurationViewModel.M2Ssds
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.M2Ssds
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd[]
+  isExternal: true
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd.html
+  name: M2SlotWithSsd[]
+  nameWithType: ConfigurationViewModel.M2SlotWithSsd[]
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd[]
+  nameWithType.vb: ConfigurationViewModel.M2SlotWithSsd()
+  fullName.vb: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd()
+  name.vb: M2SlotWithSsd()
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+    name: M2SlotWithSsd
+    href: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd
+    name: M2SlotWithSsd
+    href: PCConfigurator.ViewModel.ConfigurationViewModel.M2SlotWithSsd.html
+  - name: (
+  - name: )
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.SsdAndHdds*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.SsdAndHdds
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_SsdAndHdds
+  name: SsdAndHdds
+  nameWithType: ConfigurationViewModel.SsdAndHdds
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.SsdAndHdds
+- uid: PCConfigurator.Model.Components.Component[]
+  isExternal: true
+  href: PCConfigurator.Model.Components.Component.html
+  name: Component[]
+  nameWithType: Component[]
+  fullName: PCConfigurator.Model.Components.Component[]
+  nameWithType.vb: Component()
+  fullName.vb: PCConfigurator.Model.Components.Component()
+  name.vb: Component()
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.Component
+    name: Component
+    href: PCConfigurator.Model.Components.Component.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.Component
+    name: Component
+    href: PCConfigurator.Model.Components.Component.html
+  - name: (
+  - name: )
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.Save*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.Save
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_Save
+  name: Save
+  nameWithType: ConfigurationViewModel.Save
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.Save
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetMotherboard*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ResetMotherboard
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ResetMotherboard
+  name: ResetMotherboard
+  nameWithType: ConfigurationViewModel.ResetMotherboard
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetMotherboard
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCpu*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ResetCpu
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ResetCpu
+  name: ResetCpu
+  nameWithType: ConfigurationViewModel.ResetCpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCpu
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCooler*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ResetCooler
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ResetCooler
+  name: ResetCooler
+  nameWithType: ConfigurationViewModel.ResetCooler
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetCooler
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetPowerSupply*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ResetPowerSupply
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ResetPowerSupply
+  name: ResetPowerSupply
+  nameWithType: ConfigurationViewModel.ResetPowerSupply
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetPowerSupply
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetRam*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ResetRam
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ResetRam
+  name: ResetRam
+  nameWithType: ConfigurationViewModel.ResetRam
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetRam
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetGpu*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ResetGpu
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ResetGpu
+  name: ResetGpu
+  nameWithType: ConfigurationViewModel.ResetGpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetGpu
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetM2Ssd*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ResetM2Ssd
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ResetM2Ssd
+  name: ResetM2Ssd
+  nameWithType: ConfigurationViewModel.ResetM2Ssd
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetM2Ssd
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ResetSata*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ResetSata
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ResetSata
+  name: ResetSata
+  nameWithType: ConfigurationViewModel.ResetSata
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ResetSata
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeMotherboard*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeMotherboard
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ChangeMotherboard
+  name: ChangeMotherboard
+  nameWithType: ConfigurationViewModel.ChangeMotherboard
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeMotherboard
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCpu*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCpu
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ChangeCpu
+  name: ChangeCpu
+  nameWithType: ConfigurationViewModel.ChangeCpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCpu
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCooler*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCooler
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ChangeCooler
+  name: ChangeCooler
+  nameWithType: ConfigurationViewModel.ChangeCooler
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeCooler
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangePowerSupply*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ChangePowerSupply
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ChangePowerSupply
+  name: ChangePowerSupply
+  nameWithType: ConfigurationViewModel.ChangePowerSupply
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangePowerSupply
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeRam*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeRam
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ChangeRam
+  name: ChangeRam
+  nameWithType: ConfigurationViewModel.ChangeRam
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeRam
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeGpu*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeGpu
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ChangeGpu
+  name: ChangeGpu
+  nameWithType: ConfigurationViewModel.ChangeGpu
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeGpu
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeM2Ssd*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeM2Ssd
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ChangeM2Ssd
+  name: ChangeM2Ssd
+  nameWithType: ConfigurationViewModel.ChangeM2Ssd
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeM2Ssd
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeSata*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.ChangeSata
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_ChangeSata
+  name: ChangeSata
+  nameWithType: ConfigurationViewModel.ChangeSata
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.ChangeSata
+- uid: PCConfigurator.ViewModel.ConfigurationViewModel.CheckCompatibility*
+  commentId: Overload:PCConfigurator.ViewModel.ConfigurationViewModel.CheckCompatibility
+  href: PCConfigurator.ViewModel.ConfigurationViewModel.html#PCConfigurator_ViewModel_ConfigurationViewModel_CheckCompatibility
+  name: CheckCompatibility
+  nameWithType: ConfigurationViewModel.CheckCompatibility
+  fullName: PCConfigurator.ViewModel.ConfigurationViewModel.CheckCompatibility

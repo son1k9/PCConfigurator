@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model
+  commentId: N:PCConfigurator.Model
+  id: PCConfigurator.Model
+  children:
+  - PCConfigurator.Model.ApplicationContext
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.Model
+  nameWithType: PCConfigurator.Model
+  fullName: PCConfigurator.Model
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.Model.ApplicationContext
+  commentId: T:PCConfigurator.Model.ApplicationContext
+  parent: PCConfigurator.Model
+  href: PCConfigurator.Model.ApplicationContext.html
+  name: ApplicationContext
+  nameWithType: ApplicationContext
+  fullName: PCConfigurator.Model.ApplicationContext
+- uid: PCConfigurator.Model
+  commentId: N:PCConfigurator.Model
+  href: PCConfigurator.html
+  name: PCConfigurator.Model
+  nameWithType: PCConfigurator.Model
+  fullName: PCConfigurator.Model
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html

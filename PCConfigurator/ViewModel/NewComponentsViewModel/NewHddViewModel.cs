@@ -2,12 +2,31 @@
 
 namespace PCConfigurator.ViewModel.NewComponentsViewModel;
 
-internal class NewHddViewModel(Hdd hdd) : BaseViewModel
+/// <summary>
+/// ViewModel for addition of a new HDD
+/// </summary>
+public class NewHddViewModel : BaseViewModel
 {
-    public Hdd Hdd { get; } = hdd;
+    /// <summary>
+    /// HDD that is being added
+    /// </summary>
+    public Hdd Hdd { get; }
 
-    private bool _tb = hdd.Capacity > 1024;
+    private bool _tb;
 
+    /// <summary>
+    /// Creates new NewHDDViewmodel with given HDD
+    /// </summary>
+    /// <param name="hdd">HDD that is beging added</param>
+    public NewHddViewModel(Hdd hdd)
+    {
+        Hdd = hdd;
+        _tb = hdd.Capacity > 1024;
+    }
+
+    /// <summary>
+    /// Indicates if current Capacity is in Terabytes
+    /// </summary>
     public bool Tb
     {
         get => _tb;
@@ -19,6 +38,9 @@ internal class NewHddViewModel(Hdd hdd) : BaseViewModel
         }
     }
 
+    /// <summary>
+    /// Capacity of HDD
+    /// </summary>
     public int Capacity
     {
         get

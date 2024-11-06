@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Helper
+  commentId: N:PCConfigurator.Helper
+  id: PCConfigurator.Helper
+  children:
+  - PCConfigurator.Helper.ConfigurationIE
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.Helper
+  nameWithType: PCConfigurator.Helper
+  fullName: PCConfigurator.Helper
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.Helper.ConfigurationIE
+  commentId: T:PCConfigurator.Helper.ConfigurationIE
+  href: PCConfigurator.Helper.ConfigurationIE.html
+  name: ConfigurationIE
+  nameWithType: ConfigurationIE
+  fullName: PCConfigurator.Helper.ConfigurationIE

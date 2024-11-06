@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.Commands;
 
-internal class NavigateCommand<T>(ComponentsViewModel viewModel) : ICommand
+public class NavigateCommand<T>(ComponentsViewModel viewModel) : ICommand
     where T : ComponentViewModel, new()
 {
     private ComponentsViewModel _viewModel = viewModel;

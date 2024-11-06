@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Migrations
+  commentId: N:PCConfigurator.Migrations
+  id: PCConfigurator.Migrations
+  children:
+  - PCConfigurator.Migrations.InitialCreate
+  - PCConfigurator.Migrations.MotherboardRemovedSocket
+  langs:
+  - csharp
+  - vb
+  name: PCConfigurator.Migrations
+  nameWithType: PCConfigurator.Migrations
+  fullName: PCConfigurator.Migrations
+  type: Namespace
+  assemblies:
+  - PCConfigurator
+references:
+- uid: PCConfigurator.Migrations.InitialCreate
+  commentId: T:PCConfigurator.Migrations.InitialCreate
+  href: PCConfigurator.Migrations.InitialCreate.html
+  name: InitialCreate
+  nameWithType: InitialCreate
+  fullName: PCConfigurator.Migrations.InitialCreate
+- uid: PCConfigurator.Migrations.MotherboardRemovedSocket
+  commentId: T:PCConfigurator.Migrations.MotherboardRemovedSocket
+  href: PCConfigurator.Migrations.MotherboardRemovedSocket.html
+  name: MotherboardRemovedSocket
+  nameWithType: MotherboardRemovedSocket
+  fullName: PCConfigurator.Migrations.MotherboardRemovedSocket

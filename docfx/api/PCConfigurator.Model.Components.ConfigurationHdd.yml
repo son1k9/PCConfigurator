@@ -1,0 +1,511 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.ConfigurationHdd
+  commentId: T:PCConfigurator.Model.Components.ConfigurationHdd
+  id: ConfigurationHdd
+  parent: PCConfigurator.Model.Components
+  children:
+  - PCConfigurator.Model.Components.ConfigurationHdd.Configuration
+  - PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationHddId
+  - PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationId
+  - PCConfigurator.Model.Components.ConfigurationHdd.Hdd
+  - PCConfigurator.Model.Components.ConfigurationHdd.HddId
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationHdd
+  nameWithType: ConfigurationHdd
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationHdd
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+    startLine: 2
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public class ConfigurationHdd
+    content.vb: Public Class ConfigurationHdd
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationHddId
+  commentId: P:PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationHddId
+  id: ConfigurationHddId
+  parent: PCConfigurator.Model.Components.ConfigurationHdd
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationHddId
+  nameWithType: ConfigurationHdd.ConfigurationHddId
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationHddId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationHddId
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+    startLine: 4
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int ConfigurationHddId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ConfigurationHddId As Integer
+  overload: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationHddId*
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationId
+  commentId: P:PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationId
+  id: ConfigurationId
+  parent: PCConfigurator.Model.Components.ConfigurationHdd
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationId
+  nameWithType: ConfigurationHdd.ConfigurationId
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ConfigurationId
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+    startLine: 6
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int ConfigurationId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ConfigurationId As Integer
+  overload: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationId*
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.Configuration
+  commentId: P:PCConfigurator.Model.Components.ConfigurationHdd.Configuration
+  id: Configuration
+  parent: PCConfigurator.Model.Components.ConfigurationHdd
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: ConfigurationHdd.Configuration
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.Configuration
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Configuration
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+    startLine: 7
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual Configuration Configuration { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Configuration
+    content.vb: Public Overridable Property Configuration As Configuration
+  overload: PCConfigurator.Model.Components.ConfigurationHdd.Configuration*
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.HddId
+  commentId: P:PCConfigurator.Model.Components.ConfigurationHdd.HddId
+  id: HddId
+  parent: PCConfigurator.Model.Components.ConfigurationHdd
+  langs:
+  - csharp
+  - vb
+  name: HddId
+  nameWithType: ConfigurationHdd.HddId
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.HddId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: HddId
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+    startLine: 9
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int HddId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property HddId As Integer
+  overload: PCConfigurator.Model.Components.ConfigurationHdd.HddId*
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.Hdd
+  commentId: P:PCConfigurator.Model.Components.ConfigurationHdd.Hdd
+  id: Hdd
+  parent: PCConfigurator.Model.Components.ConfigurationHdd
+  langs:
+  - csharp
+  - vb
+  name: Hdd
+  nameWithType: ConfigurationHdd.Hdd
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.Hdd
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Hdd
+    path: ../PCConfigurator/Model/Components/ManyToMany/ConfigurationHdd.cs
+    startLine: 10
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual Hdd Hdd { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Hdd
+    content.vb: Public Overridable Property Hdd As Hdd
+  overload: PCConfigurator.Model.Components.ConfigurationHdd.Hdd*
+references:
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationHddId*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationHddId
+  href: PCConfigurator.Model.Components.ConfigurationHdd.html#PCConfigurator_Model_Components_ConfigurationHdd_ConfigurationHddId
+  name: ConfigurationHddId
+  nameWithType: ConfigurationHdd.ConfigurationHddId
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationHddId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationId*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationId
+  href: PCConfigurator.Model.Components.ConfigurationHdd.html#PCConfigurator_Model_Components_ConfigurationHdd_ConfigurationId
+  name: ConfigurationId
+  nameWithType: ConfigurationHdd.ConfigurationId
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.ConfigurationId
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.Configuration*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationHdd.Configuration
+  href: PCConfigurator.Model.Components.ConfigurationHdd.html#PCConfigurator_Model_Components_ConfigurationHdd_Configuration
+  name: Configuration
+  nameWithType: ConfigurationHdd.Configuration
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.Configuration
+- uid: PCConfigurator.Model.Components.Configuration
+  commentId: T:PCConfigurator.Model.Components.Configuration
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Configuration.html
+  name: Configuration
+  nameWithType: Configuration
+  fullName: PCConfigurator.Model.Components.Configuration
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.HddId*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationHdd.HddId
+  href: PCConfigurator.Model.Components.ConfigurationHdd.html#PCConfigurator_Model_Components_ConfigurationHdd_HddId
+  name: HddId
+  nameWithType: ConfigurationHdd.HddId
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.HddId
+- uid: PCConfigurator.Model.Components.ConfigurationHdd.Hdd*
+  commentId: Overload:PCConfigurator.Model.Components.ConfigurationHdd.Hdd
+  href: PCConfigurator.Model.Components.ConfigurationHdd.html#PCConfigurator_Model_Components_ConfigurationHdd_Hdd
+  name: Hdd
+  nameWithType: ConfigurationHdd.Hdd
+  fullName: PCConfigurator.Model.Components.ConfigurationHdd.Hdd
+- uid: PCConfigurator.Model.Components.Hdd
+  commentId: T:PCConfigurator.Model.Components.Hdd
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Hdd.html
+  name: Hdd
+  nameWithType: Hdd
+  fullName: PCConfigurator.Model.Components.Hdd

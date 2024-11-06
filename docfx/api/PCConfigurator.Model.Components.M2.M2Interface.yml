@@ -1,0 +1,282 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.M2.M2Interface
+  commentId: T:PCConfigurator.Model.Components.M2.M2Interface
+  id: M2Interface
+  parent: PCConfigurator.Model.Components.M2
+  children:
+  - PCConfigurator.Model.Components.M2.M2Interface.Nvme
+  - PCConfigurator.Model.Components.M2.M2Interface.Sata
+  langs:
+  - csharp
+  - vb
+  name: M2Interface
+  nameWithType: M2Interface
+  fullName: PCConfigurator.Model.Components.M2.M2Interface
+  type: Enum
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Interface
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 12
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum M2Interface
+    content.vb: >-
+      <Flags>
+
+      Public Enum M2Interface
+  extensionMethods:
+  - PCConfigurator.Model.Components.M2.M2Interface.PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.M2.M2Interface.Nvme
+  commentId: F:PCConfigurator.Model.Components.M2.M2Interface.Nvme
+  id: Nvme
+  parent: PCConfigurator.Model.Components.M2.M2Interface
+  langs:
+  - csharp
+  - vb
+  name: Nvme
+  nameWithType: M2Interface.Nvme
+  fullName: PCConfigurator.Model.Components.M2.M2Interface.Nvme
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Nvme
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 15
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: Nvme = 1
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Interface
+- uid: PCConfigurator.Model.Components.M2.M2Interface.Sata
+  commentId: F:PCConfigurator.Model.Components.M2.M2Interface.Sata
+  id: Sata
+  parent: PCConfigurator.Model.Components.M2.M2Interface
+  langs:
+  - csharp
+  - vb
+  name: Sata
+  nameWithType: M2Interface.Sata
+  fullName: PCConfigurator.Model.Components.M2.M2Interface.Sata
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Sata
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 16
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: Sata = 2
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Interface
+references:
+- uid: PCConfigurator.Model.Components.M2
+  commentId: N:PCConfigurator.Model.Components.M2
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components.M2
+  nameWithType: PCConfigurator.Model.Components.M2
+  fullName: PCConfigurator.Model.Components.M2
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  - name: .
+  - uid: PCConfigurator.Model.Components.M2
+    name: M2
+    href: PCConfigurator.Model.Components.M2.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  - name: .
+  - uid: PCConfigurator.Model.Components.M2
+    name: M2
+    href: PCConfigurator.Model.Components.M2.html
+- uid: PCConfigurator.Model.Components.M2.M2Interface.PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+  commentId: M:PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface@,PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+  parent: PCConfigurator.Model.Components.FlagsExtension
+  definition: PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface@,PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+  href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetInterface_PCConfigurator_Model_Components_M2_M2Interface__PCConfigurator_Model_Components_M2_M2Interface_System_Boolean_
+  name: SetInterface(ref M2Interface, M2Interface, bool)
+  nameWithType: FlagsExtension.SetInterface(ref M2Interface, M2Interface, bool)
+  fullName: PCConfigurator.Model.Components.FlagsExtension.SetInterface(ref PCConfigurator.Model.Components.M2.M2Interface, PCConfigurator.Model.Components.M2.M2Interface, bool)
+  nameWithType.vb: FlagsExtension.SetInterface(M2Interface, M2Interface, Boolean)
+  fullName.vb: PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface, PCConfigurator.Model.Components.M2.M2Interface, Boolean)
+  name.vb: SetInterface(M2Interface, M2Interface, Boolean)
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface@,PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+    name: SetInterface
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetInterface_PCConfigurator_Model_Components_M2_M2Interface__PCConfigurator_Model_Components_M2_M2Interface_System_Boolean_
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+    href: PCConfigurator.Model.Components.M2.M2Interface.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+    href: PCConfigurator.Model.Components.M2.M2Interface.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface@,PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+    name: SetInterface
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetInterface_PCConfigurator_Model_Components_M2_M2Interface__PCConfigurator_Model_Components_M2_M2Interface_System_Boolean_
+  - name: (
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+    href: PCConfigurator.Model.Components.M2.M2Interface.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+    href: PCConfigurator.Model.Components.M2.M2Interface.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface@,PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+  commentId: M:PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface@,PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+  isExternal: true
+  href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetInterface_PCConfigurator_Model_Components_M2_M2Interface__PCConfigurator_Model_Components_M2_M2Interface_System_Boolean_
+  name: SetInterface(ref M2Interface, M2Interface, bool)
+  nameWithType: FlagsExtension.SetInterface(ref M2Interface, M2Interface, bool)
+  fullName: PCConfigurator.Model.Components.FlagsExtension.SetInterface(ref PCConfigurator.Model.Components.M2.M2Interface, PCConfigurator.Model.Components.M2.M2Interface, bool)
+  nameWithType.vb: FlagsExtension.SetInterface(M2Interface, M2Interface, Boolean)
+  fullName.vb: PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface, PCConfigurator.Model.Components.M2.M2Interface, Boolean)
+  name.vb: SetInterface(M2Interface, M2Interface, Boolean)
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface@,PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+    name: SetInterface
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetInterface_PCConfigurator_Model_Components_M2_M2Interface__PCConfigurator_Model_Components_M2_M2Interface_System_Boolean_
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+    href: PCConfigurator.Model.Components.M2.M2Interface.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+    href: PCConfigurator.Model.Components.M2.M2Interface.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetInterface(PCConfigurator.Model.Components.M2.M2Interface@,PCConfigurator.Model.Components.M2.M2Interface,System.Boolean)
+    name: SetInterface
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetInterface_PCConfigurator_Model_Components_M2_M2Interface__PCConfigurator_Model_Components_M2_M2Interface_System_Boolean_
+  - name: (
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+    href: PCConfigurator.Model.Components.M2.M2Interface.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Interface
+    name: M2Interface
+    href: PCConfigurator.Model.Components.M2.M2Interface.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PCConfigurator.Model.Components.FlagsExtension
+  commentId: T:PCConfigurator.Model.Components.FlagsExtension
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.FlagsExtension.html
+  name: FlagsExtension
+  nameWithType: FlagsExtension
+  fullName: PCConfigurator.Model.Components.FlagsExtension
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: PCConfigurator.Model.Components.M2.M2Interface
+  commentId: T:PCConfigurator.Model.Components.M2.M2Interface
+  parent: PCConfigurator.Model.Components.M2
+  href: PCConfigurator.Model.Components.M2.M2Interface.html
+  name: M2Interface
+  nameWithType: M2Interface
+  fullName: PCConfigurator.Model.Components.M2.M2Interface

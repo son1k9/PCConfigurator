@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PCConfigurator.ViewModel.ComponentsViewModels;
 
-internal class HddViewModel : ComponentViewModel
+public class HddViewModel : ComponentViewModel
 {
     public HddViewModel()
     {

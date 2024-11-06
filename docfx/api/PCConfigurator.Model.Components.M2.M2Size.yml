@@ -1,0 +1,363 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.M2.M2Size
+  commentId: T:PCConfigurator.Model.Components.M2.M2Size
+  id: M2Size
+  parent: PCConfigurator.Model.Components.M2
+  children:
+  - PCConfigurator.Model.Components.M2.M2Size._22110
+  - PCConfigurator.Model.Components.M2.M2Size._2230
+  - PCConfigurator.Model.Components.M2.M2Size._2242
+  - PCConfigurator.Model.Components.M2.M2Size._2260
+  - PCConfigurator.Model.Components.M2.M2Size._2280
+  langs:
+  - csharp
+  - vb
+  name: M2Size
+  nameWithType: M2Size
+  fullName: PCConfigurator.Model.Components.M2.M2Size
+  type: Enum
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Size
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 2
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum M2Size
+    content.vb: >-
+      <Flags>
+
+      Public Enum M2Size
+  extensionMethods:
+  - PCConfigurator.Model.Components.M2.M2Size.PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: PCConfigurator.Model.Components.M2.M2Size._2230
+  commentId: F:PCConfigurator.Model.Components.M2.M2Size._2230
+  id: _2230
+  parent: PCConfigurator.Model.Components.M2.M2Size
+  langs:
+  - csharp
+  - vb
+  name: _2230
+  nameWithType: M2Size._2230
+  fullName: PCConfigurator.Model.Components.M2.M2Size._2230
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: _2230
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 5
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: _2230 = 1
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Size
+- uid: PCConfigurator.Model.Components.M2.M2Size._2242
+  commentId: F:PCConfigurator.Model.Components.M2.M2Size._2242
+  id: _2242
+  parent: PCConfigurator.Model.Components.M2.M2Size
+  langs:
+  - csharp
+  - vb
+  name: _2242
+  nameWithType: M2Size._2242
+  fullName: PCConfigurator.Model.Components.M2.M2Size._2242
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: _2242
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 6
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: _2242 = 2
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Size
+- uid: PCConfigurator.Model.Components.M2.M2Size._2260
+  commentId: F:PCConfigurator.Model.Components.M2.M2Size._2260
+  id: _2260
+  parent: PCConfigurator.Model.Components.M2.M2Size
+  langs:
+  - csharp
+  - vb
+  name: _2260
+  nameWithType: M2Size._2260
+  fullName: PCConfigurator.Model.Components.M2.M2Size._2260
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: _2260
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 7
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: _2260 = 4
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Size
+- uid: PCConfigurator.Model.Components.M2.M2Size._2280
+  commentId: F:PCConfigurator.Model.Components.M2.M2Size._2280
+  id: _2280
+  parent: PCConfigurator.Model.Components.M2.M2Size
+  langs:
+  - csharp
+  - vb
+  name: _2280
+  nameWithType: M2Size._2280
+  fullName: PCConfigurator.Model.Components.M2.M2Size._2280
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: _2280
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 8
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: _2280 = 8
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Size
+- uid: PCConfigurator.Model.Components.M2.M2Size._22110
+  commentId: F:PCConfigurator.Model.Components.M2.M2Size._22110
+  id: _22110
+  parent: PCConfigurator.Model.Components.M2.M2Size
+  langs:
+  - csharp
+  - vb
+  name: _22110
+  nameWithType: M2Size._22110
+  fullName: PCConfigurator.Model.Components.M2.M2Size._22110
+  type: Field
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/M2/M2Characteristics.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: _22110
+    path: ../PCConfigurator/Model/Components/M2/M2Characteristics.cs
+    startLine: 9
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components.M2
+  syntax:
+    content: _22110 = 16
+    return:
+      type: PCConfigurator.Model.Components.M2.M2Size
+references:
+- uid: PCConfigurator.Model.Components.M2
+  commentId: N:PCConfigurator.Model.Components.M2
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components.M2
+  nameWithType: PCConfigurator.Model.Components.M2
+  fullName: PCConfigurator.Model.Components.M2
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  - name: .
+  - uid: PCConfigurator.Model.Components.M2
+    name: M2
+    href: PCConfigurator.Model.Components.M2.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  - name: .
+  - uid: PCConfigurator.Model.Components.M2
+    name: M2
+    href: PCConfigurator.Model.Components.M2.html
+- uid: PCConfigurator.Model.Components.M2.M2Size.PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+  commentId: M:PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size@,PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+  parent: PCConfigurator.Model.Components.FlagsExtension
+  definition: PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size@,PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+  href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetSize_PCConfigurator_Model_Components_M2_M2Size__PCConfigurator_Model_Components_M2_M2Size_System_Boolean_
+  name: SetSize(ref M2Size, M2Size, bool)
+  nameWithType: FlagsExtension.SetSize(ref M2Size, M2Size, bool)
+  fullName: PCConfigurator.Model.Components.FlagsExtension.SetSize(ref PCConfigurator.Model.Components.M2.M2Size, PCConfigurator.Model.Components.M2.M2Size, bool)
+  nameWithType.vb: FlagsExtension.SetSize(M2Size, M2Size, Boolean)
+  fullName.vb: PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size, PCConfigurator.Model.Components.M2.M2Size, Boolean)
+  name.vb: SetSize(M2Size, M2Size, Boolean)
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size@,PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+    name: SetSize
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetSize_PCConfigurator_Model_Components_M2_M2Size__PCConfigurator_Model_Components_M2_M2Size_System_Boolean_
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+    href: PCConfigurator.Model.Components.M2.M2Size.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+    href: PCConfigurator.Model.Components.M2.M2Size.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size@,PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+    name: SetSize
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetSize_PCConfigurator_Model_Components_M2_M2Size__PCConfigurator_Model_Components_M2_M2Size_System_Boolean_
+  - name: (
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+    href: PCConfigurator.Model.Components.M2.M2Size.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+    href: PCConfigurator.Model.Components.M2.M2Size.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size@,PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+  commentId: M:PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size@,PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+  isExternal: true
+  href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetSize_PCConfigurator_Model_Components_M2_M2Size__PCConfigurator_Model_Components_M2_M2Size_System_Boolean_
+  name: SetSize(ref M2Size, M2Size, bool)
+  nameWithType: FlagsExtension.SetSize(ref M2Size, M2Size, bool)
+  fullName: PCConfigurator.Model.Components.FlagsExtension.SetSize(ref PCConfigurator.Model.Components.M2.M2Size, PCConfigurator.Model.Components.M2.M2Size, bool)
+  nameWithType.vb: FlagsExtension.SetSize(M2Size, M2Size, Boolean)
+  fullName.vb: PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size, PCConfigurator.Model.Components.M2.M2Size, Boolean)
+  name.vb: SetSize(M2Size, M2Size, Boolean)
+  spec.csharp:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size@,PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+    name: SetSize
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetSize_PCConfigurator_Model_Components_M2_M2Size__PCConfigurator_Model_Components_M2_M2Size_System_Boolean_
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+    href: PCConfigurator.Model.Components.M2.M2Size.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+    href: PCConfigurator.Model.Components.M2.M2Size.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.Model.Components.FlagsExtension.SetSize(PCConfigurator.Model.Components.M2.M2Size@,PCConfigurator.Model.Components.M2.M2Size,System.Boolean)
+    name: SetSize
+    href: PCConfigurator.Model.Components.FlagsExtension.html#PCConfigurator_Model_Components_FlagsExtension_SetSize_PCConfigurator_Model_Components_M2_M2Size__PCConfigurator_Model_Components_M2_M2Size_System_Boolean_
+  - name: (
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+    href: PCConfigurator.Model.Components.M2.M2Size.html
+  - name: ','
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2.M2Size
+    name: M2Size
+    href: PCConfigurator.Model.Components.M2.M2Size.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: PCConfigurator.Model.Components.FlagsExtension
+  commentId: T:PCConfigurator.Model.Components.FlagsExtension
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.FlagsExtension.html
+  name: FlagsExtension
+  nameWithType: FlagsExtension
+  fullName: PCConfigurator.Model.Components.FlagsExtension
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: PCConfigurator.Model.Components.M2.M2Size
+  commentId: T:PCConfigurator.Model.Components.M2.M2Size
+  parent: PCConfigurator.Model.Components.M2
+  href: PCConfigurator.Model.Components.M2.M2Size.html
+  name: M2Size
+  nameWithType: M2Size
+  fullName: PCConfigurator.Model.Components.M2.M2Size

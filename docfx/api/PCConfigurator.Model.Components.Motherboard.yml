@@ -1,0 +1,866 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.Model.Components.Motherboard
+  commentId: T:PCConfigurator.Model.Components.Motherboard
+  id: Motherboard
+  parent: PCConfigurator.Model.Components
+  children:
+  - PCConfigurator.Model.Components.Motherboard.Chipset
+  - PCConfigurator.Model.Components.Motherboard.ChipsetId
+  - PCConfigurator.Model.Components.Motherboard.Configurations
+  - PCConfigurator.Model.Components.Motherboard.M2Slots
+  - PCConfigurator.Model.Components.Motherboard.MaxRamCapacity
+  - PCConfigurator.Model.Components.Motherboard.MotherboardId
+  - PCConfigurator.Model.Components.Motherboard.PCIex16Slots
+  - PCConfigurator.Model.Components.Motherboard.RamSlots
+  - PCConfigurator.Model.Components.Motherboard.RamType
+  - PCConfigurator.Model.Components.Motherboard.Sata3Ports
+  langs:
+  - csharp
+  - vb
+  name: Motherboard
+  nameWithType: Motherboard
+  fullName: PCConfigurator.Model.Components.Motherboard
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Motherboard
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 4
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: 'public class Motherboard : Component'
+    content.vb: Public Class Motherboard Inherits Component
+  inheritance:
+  - System.Object
+  - PCConfigurator.Model.Components.Component
+  inheritedMembers:
+  - PCConfigurator.Model.Components.Component.Model
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.Model.Components.Motherboard.MotherboardId
+  commentId: P:PCConfigurator.Model.Components.Motherboard.MotherboardId
+  id: MotherboardId
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: MotherboardId
+  nameWithType: Motherboard.MotherboardId
+  fullName: PCConfigurator.Model.Components.Motherboard.MotherboardId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: MotherboardId
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 6
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int MotherboardId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MotherboardId As Integer
+  overload: PCConfigurator.Model.Components.Motherboard.MotherboardId*
+- uid: PCConfigurator.Model.Components.Motherboard.ChipsetId
+  commentId: P:PCConfigurator.Model.Components.Motherboard.ChipsetId
+  id: ChipsetId
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: ChipsetId
+  nameWithType: Motherboard.ChipsetId
+  fullName: PCConfigurator.Model.Components.Motherboard.ChipsetId
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ChipsetId
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 8
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int ChipsetId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ChipsetId As Integer
+  overload: PCConfigurator.Model.Components.Motherboard.ChipsetId*
+- uid: PCConfigurator.Model.Components.Motherboard.Chipset
+  commentId: P:PCConfigurator.Model.Components.Motherboard.Chipset
+  id: Chipset
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: Chipset
+  nameWithType: Motherboard.Chipset
+  fullName: PCConfigurator.Model.Components.Motherboard.Chipset
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Chipset
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 9
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual Chipset Chipset { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.Chipset
+    content.vb: Public Overridable Property Chipset As Chipset
+  overload: PCConfigurator.Model.Components.Motherboard.Chipset*
+- uid: PCConfigurator.Model.Components.Motherboard.RamType
+  commentId: P:PCConfigurator.Model.Components.Motherboard.RamType
+  id: RamType
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: RamType
+  nameWithType: Motherboard.RamType
+  fullName: PCConfigurator.Model.Components.Motherboard.RamType
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: RamType
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 11
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public RamType RamType { get; set; }
+    parameters: []
+    return:
+      type: PCConfigurator.Model.Components.RamType
+    content.vb: Public Property RamType As RamType
+  overload: PCConfigurator.Model.Components.Motherboard.RamType*
+- uid: PCConfigurator.Model.Components.Motherboard.RamSlots
+  commentId: P:PCConfigurator.Model.Components.Motherboard.RamSlots
+  id: RamSlots
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: RamSlots
+  nameWithType: Motherboard.RamSlots
+  fullName: PCConfigurator.Model.Components.Motherboard.RamSlots
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: RamSlots
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 13
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int RamSlots { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RamSlots As Integer
+  overload: PCConfigurator.Model.Components.Motherboard.RamSlots*
+- uid: PCConfigurator.Model.Components.Motherboard.MaxRamCapacity
+  commentId: P:PCConfigurator.Model.Components.Motherboard.MaxRamCapacity
+  id: MaxRamCapacity
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: MaxRamCapacity
+  nameWithType: Motherboard.MaxRamCapacity
+  fullName: PCConfigurator.Model.Components.Motherboard.MaxRamCapacity
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: MaxRamCapacity
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 15
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int MaxRamCapacity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxRamCapacity As Integer
+  overload: PCConfigurator.Model.Components.Motherboard.MaxRamCapacity*
+- uid: PCConfigurator.Model.Components.Motherboard.M2Slots
+  commentId: P:PCConfigurator.Model.Components.Motherboard.M2Slots
+  id: M2Slots
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: M2Slots
+  nameWithType: Motherboard.M2Slots
+  fullName: PCConfigurator.Model.Components.Motherboard.M2Slots
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2Slots
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 17
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual ICollection<M2Slot> M2Slots { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{PCConfigurator.Model.Components.M2Slot}
+    content.vb: Public Overridable Property M2Slots As ICollection(Of M2Slot)
+  overload: PCConfigurator.Model.Components.Motherboard.M2Slots*
+- uid: PCConfigurator.Model.Components.Motherboard.Sata3Ports
+  commentId: P:PCConfigurator.Model.Components.Motherboard.Sata3Ports
+  id: Sata3Ports
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: Sata3Ports
+  nameWithType: Motherboard.Sata3Ports
+  fullName: PCConfigurator.Model.Components.Motherboard.Sata3Ports
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Sata3Ports
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 19
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int Sata3Ports { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Sata3Ports As Integer
+  overload: PCConfigurator.Model.Components.Motherboard.Sata3Ports*
+- uid: PCConfigurator.Model.Components.Motherboard.PCIex16Slots
+  commentId: P:PCConfigurator.Model.Components.Motherboard.PCIex16Slots
+  id: PCIex16Slots
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: PCIex16Slots
+  nameWithType: Motherboard.PCIex16Slots
+  fullName: PCConfigurator.Model.Components.Motherboard.PCIex16Slots
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: PCIex16Slots
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 21
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public int PCIex16Slots { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property PCIex16Slots As Integer
+  overload: PCConfigurator.Model.Components.Motherboard.PCIex16Slots*
+- uid: PCConfigurator.Model.Components.Motherboard.Configurations
+  commentId: P:PCConfigurator.Model.Components.Motherboard.Configurations
+  id: Configurations
+  parent: PCConfigurator.Model.Components.Motherboard
+  langs:
+  - csharp
+  - vb
+  name: Configurations
+  nameWithType: Motherboard.Configurations
+  fullName: PCConfigurator.Model.Components.Motherboard.Configurations
+  type: Property
+  source:
+    remote:
+      path: PCConfigurator/Model/Components/Motherboard.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: Configurations
+    path: ../PCConfigurator/Model/Components/Motherboard.cs
+    startLine: 23
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.Model.Components
+  syntax:
+    content: public virtual List<Configuration> Configurations { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+    content.vb: Public Overridable Property Configurations As List(Of Configuration)
+  overload: PCConfigurator.Model.Components.Motherboard.Configurations*
+references:
+- uid: PCConfigurator.Model.Components
+  commentId: N:PCConfigurator.Model.Components
+  href: PCConfigurator.html
+  name: PCConfigurator.Model.Components
+  nameWithType: PCConfigurator.Model.Components
+  fullName: PCConfigurator.Model.Components
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.Model
+    name: Model
+    href: PCConfigurator.Model.html
+  - name: .
+  - uid: PCConfigurator.Model.Components
+    name: Components
+    href: PCConfigurator.Model.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PCConfigurator.Model.Components.Component
+  commentId: T:PCConfigurator.Model.Components.Component
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Component.html
+  name: Component
+  nameWithType: Component
+  fullName: PCConfigurator.Model.Components.Component
+- uid: PCConfigurator.Model.Components.Component.Model
+  commentId: P:PCConfigurator.Model.Components.Component.Model
+  parent: PCConfigurator.Model.Components.Component
+  href: PCConfigurator.Model.Components.Component.html#PCConfigurator_Model_Components_Component_Model
+  name: Model
+  nameWithType: Component.Model
+  fullName: PCConfigurator.Model.Components.Component.Model
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PCConfigurator.Model.Components.Motherboard.MotherboardId*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.MotherboardId
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_MotherboardId
+  name: MotherboardId
+  nameWithType: Motherboard.MotherboardId
+  fullName: PCConfigurator.Model.Components.Motherboard.MotherboardId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: PCConfigurator.Model.Components.Motherboard.ChipsetId*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.ChipsetId
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_ChipsetId
+  name: ChipsetId
+  nameWithType: Motherboard.ChipsetId
+  fullName: PCConfigurator.Model.Components.Motherboard.ChipsetId
+- uid: PCConfigurator.Model.Components.Motherboard.Chipset*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.Chipset
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_Chipset
+  name: Chipset
+  nameWithType: Motherboard.Chipset
+  fullName: PCConfigurator.Model.Components.Motherboard.Chipset
+- uid: PCConfigurator.Model.Components.Chipset
+  commentId: T:PCConfigurator.Model.Components.Chipset
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.Chipset.html
+  name: Chipset
+  nameWithType: Chipset
+  fullName: PCConfigurator.Model.Components.Chipset
+- uid: PCConfigurator.Model.Components.Motherboard.RamType*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.RamType
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_RamType
+  name: RamType
+  nameWithType: Motherboard.RamType
+  fullName: PCConfigurator.Model.Components.Motherboard.RamType
+- uid: PCConfigurator.Model.Components.RamType
+  commentId: T:PCConfigurator.Model.Components.RamType
+  parent: PCConfigurator.Model.Components
+  href: PCConfigurator.Model.Components.RamType.html
+  name: RamType
+  nameWithType: RamType
+  fullName: PCConfigurator.Model.Components.RamType
+- uid: PCConfigurator.Model.Components.Motherboard.RamSlots*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.RamSlots
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_RamSlots
+  name: RamSlots
+  nameWithType: Motherboard.RamSlots
+  fullName: PCConfigurator.Model.Components.Motherboard.RamSlots
+- uid: PCConfigurator.Model.Components.Motherboard.MaxRamCapacity*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.MaxRamCapacity
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_MaxRamCapacity
+  name: MaxRamCapacity
+  nameWithType: Motherboard.MaxRamCapacity
+  fullName: PCConfigurator.Model.Components.Motherboard.MaxRamCapacity
+- uid: PCConfigurator.Model.Components.Motherboard.M2Slots*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.M2Slots
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_M2Slots
+  name: M2Slots
+  nameWithType: Motherboard.M2Slots
+  fullName: PCConfigurator.Model.Components.Motherboard.M2Slots
+- uid: System.Collections.Generic.ICollection{PCConfigurator.Model.Components.M2Slot}
+  commentId: T:System.Collections.Generic.ICollection{PCConfigurator.Model.Components.M2Slot}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<M2Slot>
+  nameWithType: ICollection<M2Slot>
+  fullName: System.Collections.Generic.ICollection<PCConfigurator.Model.Components.M2Slot>
+  nameWithType.vb: ICollection(Of M2Slot)
+  fullName.vb: System.Collections.Generic.ICollection(Of PCConfigurator.Model.Components.M2Slot)
+  name.vb: ICollection(Of M2Slot)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: PCConfigurator.Model.Components.M2Slot
+    name: M2Slot
+    href: PCConfigurator.Model.Components.M2Slot.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PCConfigurator.Model.Components.M2Slot
+    name: M2Slot
+    href: PCConfigurator.Model.Components.M2Slot.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: PCConfigurator.Model.Components.Motherboard.Sata3Ports*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.Sata3Ports
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_Sata3Ports
+  name: Sata3Ports
+  nameWithType: Motherboard.Sata3Ports
+  fullName: PCConfigurator.Model.Components.Motherboard.Sata3Ports
+- uid: PCConfigurator.Model.Components.Motherboard.PCIex16Slots*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.PCIex16Slots
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_PCIex16Slots
+  name: PCIex16Slots
+  nameWithType: Motherboard.PCIex16Slots
+  fullName: PCConfigurator.Model.Components.Motherboard.PCIex16Slots
+- uid: PCConfigurator.Model.Components.Motherboard.Configurations*
+  commentId: Overload:PCConfigurator.Model.Components.Motherboard.Configurations
+  href: PCConfigurator.Model.Components.Motherboard.html#PCConfigurator_Model_Components_Motherboard_Configurations
+  name: Configurations
+  nameWithType: Motherboard.Configurations
+  fullName: PCConfigurator.Model.Components.Motherboard.Configurations
+- uid: System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+  commentId: T:System.Collections.Generic.List{PCConfigurator.Model.Components.Configuration}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Configuration>
+  nameWithType: List<Configuration>
+  fullName: System.Collections.Generic.List<PCConfigurator.Model.Components.Configuration>
+  nameWithType.vb: List(Of Configuration)
+  fullName.vb: System.Collections.Generic.List(Of PCConfigurator.Model.Components.Configuration)
+  name.vb: List(Of Configuration)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: PCConfigurator.Model.Components.Configuration
+    name: Configuration
+    href: PCConfigurator.Model.Components.Configuration.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: PCConfigurator.Model.Components.Configuration
+    name: Configuration
+    href: PCConfigurator.Model.Components.Configuration.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

@@ -1,0 +1,809 @@
+### YamlMime:ManagedReference
+items:
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  id: M2SsdViewModel
+  parent: PCConfigurator.ViewModel.ComponentsViewModels
+  children:
+  - PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.#ctor
+  - PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd(System.Object)
+  - PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit(System.Object)
+  - PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove(System.Object)
+  - PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.ResetContext
+  langs:
+  - csharp
+  - vb
+  name: M2SsdViewModel
+  nameWithType: M2SsdViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  type: Class
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: M2SsdViewModel
+    path: ../PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+    startLine: 13
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel.ComponentsViewModels
+  syntax:
+    content: 'public class M2SsdViewModel : ComponentViewModel, INotifyPropertyChanged'
+    content.vb: Public Class M2SsdViewModel Inherits ComponentViewModel Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - PCConfigurator.ViewModel.BaseViewModel
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.dbContext
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._viewSource
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ViewSource
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._add
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Add
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._remove
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Remove
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._edit
+  - PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Edit
+  - PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  - PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.#ctor
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.#ctor
+  id: '#ctor'
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  langs:
+  - csharp
+  - vb
+  name: M2SsdViewModel()
+  nameWithType: M2SsdViewModel.M2SsdViewModel()
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.M2SsdViewModel()
+  type: Constructor
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: .ctor
+    path: ../PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+    startLine: 15
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel.ComponentsViewModels
+  syntax:
+    content: public M2SsdViewModel()
+    content.vb: Public Sub New()
+  overload: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.#ctor*
+  nameWithType.vb: M2SsdViewModel.New()
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.New()
+  name.vb: New()
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.ResetContext
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.ResetContext
+  id: ResetContext
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResetContext()
+  nameWithType: M2SsdViewModel.ResetContext()
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.ResetContext()
+  type: Method
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: ResetContext
+    path: ../PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+    startLine: 21
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel.ComponentsViewModels
+  summary: Resets database context
+  example: []
+  syntax:
+    content: protected override void ResetContext()
+    content.vb: Protected Overrides Sub ResetContext()
+  overridden: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ResetContext
+  overload: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.ResetContext*
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd(System.Object)
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd(System.Object)
+  id: PerformAdd(System.Object)
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  langs:
+  - csharp
+  - vb
+  name: PerformAdd(object?)
+  nameWithType: M2SsdViewModel.PerformAdd(object?)
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd(object?)
+  type: Method
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: PerformAdd
+    path: ../PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+    startLine: 30
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel.ComponentsViewModels
+  summary: Adds a components
+  example: []
+  syntax:
+    content: protected override void PerformAdd(object? commandParameter)
+    parameters:
+    - id: commandParameter
+      type: System.Object
+      description: Component to add
+    content.vb: Protected Overrides Sub PerformAdd(commandParameter As Object)
+  overridden: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformAdd(System.Object)
+  overload: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd*
+  nameWithType.vb: M2SsdViewModel.PerformAdd(Object)
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd(Object)
+  name.vb: PerformAdd(Object)
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove(System.Object)
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove(System.Object)
+  id: PerformRemove(System.Object)
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  langs:
+  - csharp
+  - vb
+  name: PerformRemove(object?)
+  nameWithType: M2SsdViewModel.PerformRemove(object?)
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove(object?)
+  type: Method
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: PerformRemove
+    path: ../PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+    startLine: 49
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel.ComponentsViewModels
+  summary: Removes a component
+  example: []
+  syntax:
+    content: protected override void PerformRemove(object? commandParameter)
+    parameters:
+    - id: commandParameter
+      type: System.Object
+      description: Component to remove
+    content.vb: Protected Overrides Sub PerformRemove(commandParameter As Object)
+  overridden: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformRemove(System.Object)
+  overload: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove*
+  nameWithType.vb: M2SsdViewModel.PerformRemove(Object)
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove(Object)
+  name.vb: PerformRemove(Object)
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit(System.Object)
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit(System.Object)
+  id: PerformEdit(System.Object)
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel
+  langs:
+  - csharp
+  - vb
+  name: PerformEdit(object?)
+  nameWithType: M2SsdViewModel.PerformEdit(object?)
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit(object?)
+  type: Method
+  source:
+    remote:
+      path: PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+      branch: master
+      repo: https://github.com/son1k9/PCConfigurator.git
+    id: PerformEdit
+    path: ../PCConfigurator/ViewModel/ComponentsViewModels/M2SsdViewModel.cs
+    startLine: 67
+  assemblies:
+  - PCConfigurator
+  namespace: PCConfigurator.ViewModel.ComponentsViewModels
+  summary: Edits a component
+  example: []
+  syntax:
+    content: protected override void PerformEdit(object? commandParameter)
+    parameters:
+    - id: commandParameter
+      type: System.Object
+      description: Component to edit
+    content.vb: Protected Overrides Sub PerformEdit(commandParameter As Object)
+  overridden: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformEdit(System.Object)
+  overload: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit*
+  nameWithType.vb: M2SsdViewModel.PerformEdit(Object)
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit(Object)
+  name.vb: PerformEdit(Object)
+references:
+- uid: PCConfigurator.ViewModel.ComponentsViewModels
+  commentId: N:PCConfigurator.ViewModel.ComponentsViewModels
+  href: PCConfigurator.html
+  name: PCConfigurator.ViewModel.ComponentsViewModels
+  nameWithType: PCConfigurator.ViewModel.ComponentsViewModels
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  - name: .
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels
+    name: ComponentsViewModels
+    href: PCConfigurator.ViewModel.ComponentsViewModels.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  - name: .
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels
+    name: ComponentsViewModels
+    href: PCConfigurator.ViewModel.ComponentsViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: PCConfigurator.ViewModel.BaseViewModel
+  commentId: T:PCConfigurator.ViewModel.BaseViewModel
+  parent: PCConfigurator.ViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: PCConfigurator.ViewModel.BaseViewModel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  commentId: T:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  parent: PCConfigurator.ViewModel.ComponentsViewModels
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html
+  name: ComponentViewModel
+  nameWithType: ComponentViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.dbContext
+  commentId: F:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.dbContext
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_dbContext
+  name: dbContext
+  nameWithType: ComponentViewModel.dbContext
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.dbContext
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._viewSource
+  commentId: F:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._viewSource
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel__viewSource
+  name: _viewSource
+  nameWithType: ComponentViewModel._viewSource
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._viewSource
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ViewSource
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ViewSource
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_ViewSource
+  name: ViewSource
+  nameWithType: ComponentViewModel.ViewSource
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ViewSource
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._add
+  commentId: F:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._add
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel__add
+  name: _add
+  nameWithType: ComponentViewModel._add
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._add
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Add
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Add
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_Add
+  name: Add
+  nameWithType: ComponentViewModel.Add
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Add
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._remove
+  commentId: F:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._remove
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel__remove
+  name: _remove
+  nameWithType: ComponentViewModel._remove
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._remove
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Remove
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Remove
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_Remove
+  name: Remove
+  nameWithType: ComponentViewModel.Remove
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Remove
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._edit
+  commentId: F:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._edit
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel__edit
+  name: _edit
+  nameWithType: ComponentViewModel._edit
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel._edit
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Edit
+  commentId: P:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Edit
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_Edit
+  name: Edit
+  nameWithType: ComponentViewModel.Edit
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.Edit
+- uid: PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  commentId: E:PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+  parent: PCConfigurator.ViewModel.BaseViewModel
+  href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_PropertyChanged
+  name: PropertyChanged
+  nameWithType: BaseViewModel.PropertyChanged
+  fullName: PCConfigurator.ViewModel.BaseViewModel.PropertyChanged
+- uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  commentId: M:PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+  parent: PCConfigurator.ViewModel.BaseViewModel
+  isExternal: true
+  href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: BaseViewModel.OnPropertyChanged(string)
+  fullName: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(string)
+  nameWithType.vb: BaseViewModel.OnPropertyChanged(String)
+  fullName.vb: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.BaseViewModel.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: PCConfigurator.ViewModel.BaseViewModel.html#PCConfigurator_ViewModel_BaseViewModel_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PCConfigurator.ViewModel
+  commentId: N:PCConfigurator.ViewModel
+  href: PCConfigurator.html
+  name: PCConfigurator.ViewModel
+  nameWithType: PCConfigurator.ViewModel
+  fullName: PCConfigurator.ViewModel
+  spec.csharp:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+  spec.vb:
+  - uid: PCConfigurator
+    name: PCConfigurator
+    href: PCConfigurator.html
+  - name: .
+  - uid: PCConfigurator.ViewModel
+    name: ViewModel
+    href: PCConfigurator.ViewModel.html
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.#ctor*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.#ctor
+  href: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_M2SsdViewModel__ctor
+  name: M2SsdViewModel
+  nameWithType: M2SsdViewModel.M2SsdViewModel
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.M2SsdViewModel
+  nameWithType.vb: M2SsdViewModel.New
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.New
+  name.vb: New
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ResetContext
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ResetContext
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_ResetContext
+  name: ResetContext()
+  nameWithType: ComponentViewModel.ResetContext()
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ResetContext()
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ResetContext
+    name: ResetContext
+    href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_ResetContext
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.ResetContext
+    name: ResetContext
+    href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_ResetContext
+  - name: (
+  - name: )
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.ResetContext*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.ResetContext
+  href: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_M2SsdViewModel_ResetContext
+  name: ResetContext
+  nameWithType: M2SsdViewModel.ResetContext
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.ResetContext
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformAdd(System.Object)
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformAdd(System.Object)
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  isExternal: true
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformAdd_System_Object_
+  name: PerformAdd(object)
+  nameWithType: ComponentViewModel.PerformAdd(object)
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformAdd(object)
+  nameWithType.vb: ComponentViewModel.PerformAdd(Object)
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformAdd(Object)
+  name.vb: PerformAdd(Object)
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformAdd(System.Object)
+    name: PerformAdd
+    href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformAdd_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformAdd(System.Object)
+    name: PerformAdd
+    href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformAdd_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd
+  href: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_M2SsdViewModel_PerformAdd_System_Object_
+  name: PerformAdd
+  nameWithType: M2SsdViewModel.PerformAdd
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformAdd
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformRemove(System.Object)
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformRemove(System.Object)
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  isExternal: true
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformRemove_System_Object_
+  name: PerformRemove(object)
+  nameWithType: ComponentViewModel.PerformRemove(object)
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformRemove(object)
+  nameWithType.vb: ComponentViewModel.PerformRemove(Object)
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformRemove(Object)
+  name.vb: PerformRemove(Object)
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformRemove(System.Object)
+    name: PerformRemove
+    href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformRemove_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformRemove(System.Object)
+    name: PerformRemove
+    href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformRemove_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove
+  href: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_M2SsdViewModel_PerformRemove_System_Object_
+  name: PerformRemove
+  nameWithType: M2SsdViewModel.PerformRemove
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformRemove
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformEdit(System.Object)
+  commentId: M:PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformEdit(System.Object)
+  parent: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel
+  isExternal: true
+  href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformEdit_System_Object_
+  name: PerformEdit(object)
+  nameWithType: ComponentViewModel.PerformEdit(object)
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformEdit(object)
+  nameWithType.vb: ComponentViewModel.PerformEdit(Object)
+  fullName.vb: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformEdit(Object)
+  name.vb: PerformEdit(Object)
+  spec.csharp:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformEdit(System.Object)
+    name: PerformEdit
+    href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformEdit_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.PerformEdit(System.Object)
+    name: PerformEdit
+    href: PCConfigurator.ViewModel.ComponentsViewModels.ComponentViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_ComponentViewModel_PerformEdit_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit*
+  commentId: Overload:PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit
+  href: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.html#PCConfigurator_ViewModel_ComponentsViewModels_M2SsdViewModel_PerformEdit_System_Object_
+  name: PerformEdit
+  nameWithType: M2SsdViewModel.PerformEdit
+  fullName: PCConfigurator.ViewModel.ComponentsViewModels.M2SsdViewModel.PerformEdit
